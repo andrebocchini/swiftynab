@@ -1,0 +1,7 @@
+{
+	"error": {
+		"id": "400",
+		"name": "bad_request",
+		"detail": "date must not be in the future or over 5 years ago"
+	}
+}

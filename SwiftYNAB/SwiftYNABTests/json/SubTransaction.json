@@ -1,0 +1,10 @@
+{
+    "id": "5c74ce7b-a6cd-3c60-e06f-0ae2c30337fd",
+    "transaction_id": "5c74ce7b-a6cd-3c60-e06f-0ae2c30337fd",
+    "amount": 0,
+    "memo": "Import Warning: This transaction was previously categorized as \"Pre-YNAB Debt: Discover\" -- ",
+    "payee_id": "e379b298-ec3f-74ce-5638-0ae2c2f74465",
+    "category_id": null,
+    "transfer_account_id": null,
+    "deleted": false
+}

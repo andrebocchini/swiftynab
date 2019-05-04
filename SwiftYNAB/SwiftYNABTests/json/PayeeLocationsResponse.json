@@ -1,0 +1,13 @@
+{
+    "data": {
+        "payee_locations": [
+            {
+                "id": "1fa5db3b-8338-c91d-7bf2-0ae2c2f774d6",
+                "payee_id": "0bfe752a-89e1-65d4-73d4-0ae2c2f71d54",
+                "latitude": "41.72825999",
+                "longitude": "-87.70034126",
+                "deleted": false
+            }
+        ]
+    }
+}

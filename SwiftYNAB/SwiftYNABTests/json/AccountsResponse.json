@@ -1,0 +1,18 @@
+{
+	"data": {
+		"accounts": [{
+			"id": "f9574c30-0614-7880-e926-0ae2c2f6d990",
+			"name": "Chase",
+			"type": "checking",
+			"on_budget": true,
+			"closed": true,
+			"note": null,
+			"balance": 0,
+			"cleared_balance": 0,
+			"uncleared_balance": 0,
+			"transfer_payee_id": "0bfe752a-89e1-65d4-73d4-0ae2c2f71d54",
+			"deleted": false
+		}],
+		"server_knowledge": 18814
+	}
+}

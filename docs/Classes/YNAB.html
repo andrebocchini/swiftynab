@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>YNAB Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/YNAB" class="dashAnchor"></a>
+    <a title="YNAB Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftYNAB Docs</a></p>
+        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftYNAB Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        YNAB Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AccountService.html">AccountService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BudgetService.html">BudgetService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CategoryService.html">CategoryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CurrencyFormatter.html">CurrencyFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DateConverter.html">DateConverter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MonthService.html">MonthService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PayeeLocationService.html">PayeeLocationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ScheduledTransactionService.html">ScheduledTransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:9SwiftYNAB7ServiceC">Service</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TransactionService.html">TransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserService.html">UserService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/YNAB.html">YNAB</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TransactionType.html">TransactionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Account.html">Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Category.html">Category</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroup.html">CategoryGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CurrencyFormat.html">CurrencyFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DateFormat.html">DateFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthDetail.html">MonthDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthSummary.html">MonthSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Payee.html">Payee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeeLocation.html">PayeeLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveTransaction.html">SaveTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledSubTransaction.html">ScheduledSubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionDetail.html">ScheduledTransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionSummary.html">ScheduledTransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SubTransaction.html">SubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionDetail.html">TransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionSummary.html">TransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9SwiftYNAB14NewTransactiona">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9SwiftYNAB17UpdateTransactiona">UpdateTransaction</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>YNAB</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">YNAB</span></code></pre>
+
+                </div>
+              </div>
+            <p>YNAB API client</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C5usersAA11UserServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/users" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C5usersAA11UserServiceCvp">users</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to user operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">users</span><span class="p">:</span> <span class="kt"><a href="../Classes/UserService.html">UserService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C7budgetsAA13BudgetServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/budgets" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C7budgetsAA13BudgetServiceCvp">budgets</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to budget operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">budgets</span><span class="p">:</span> <span class="kt"><a href="../Classes/BudgetService.html">BudgetService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C8accountsAA14AccountServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/accounts" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C8accountsAA14AccountServiceCvp">accounts</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to account operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">accounts</span><span class="p">:</span> <span class="kt"><a href="../Classes/AccountService.html">AccountService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C10categoriesAA15CategoryServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/categories" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C10categoriesAA15CategoryServiceCvp">categories</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to category operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">categories</span><span class="p">:</span> <span class="kt"><a href="../Classes/CategoryService.html">CategoryService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C6payeesAA12PayeeServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/payees" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C6payeesAA12PayeeServiceCvp">payees</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to payee operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">payees</span><span class="p">:</span> <span class="kt"><a href="../Classes/PayeeService.html">PayeeService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C14payeeLocationsAA20PayeeLocationServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/payeeLocations" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C14payeeLocationsAA20PayeeLocationServiceCvp">payeeLocations</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to payee location operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">payeeLocations</span><span class="p">:</span> <span class="kt"><a href="../Classes/PayeeLocationService.html">PayeeLocationService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C6monthsAA12MonthServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/months" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C6monthsAA12MonthServiceCvp">months</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to month operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">months</span><span class="p">:</span> <span class="kt"><a href="../Classes/MonthService.html">MonthService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C12transactionsAA18TransactionServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/transactions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C12transactionsAA18TransactionServiceCvp">transactions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to transaction operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">transactions</span><span class="p">:</span> <span class="kt"><a href="../Classes/TransactionService.html">TransactionService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C21scheduledTransactionsAA27ScheduledTransactionServiceCvp"></a>
+                    <a name="//apple_ref/swift/Property/scheduledTransactions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C21scheduledTransactionsAA27ScheduledTransactionServiceCvp">scheduledTransactions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to scheduled transaction operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">scheduledTransactions</span><span class="p">:</span> <span class="kt"><a href="../Classes/ScheduledTransactionService.html">ScheduledTransactionService</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB0B0C11accessTokenACSS_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(accessToken:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB0B0C11accessTokenACSS_tcfc">init(accessToken:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes the YNAB API client</p>
+
+<ul>
+<li>accessToken: Personal API access token, or token obtained via OAuth login</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">accessToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2019-05-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

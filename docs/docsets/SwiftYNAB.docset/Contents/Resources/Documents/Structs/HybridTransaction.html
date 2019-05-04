@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HybridTransaction Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/HybridTransaction" class="dashAnchor"></a>
+    <a title="HybridTransaction Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftYNAB Docs</a></p>
+        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftYNAB Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        HybridTransaction Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AccountService.html">AccountService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BudgetService.html">BudgetService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CategoryService.html">CategoryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CurrencyFormatter.html">CurrencyFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DateConverter.html">DateConverter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MonthService.html">MonthService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PayeeLocationService.html">PayeeLocationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ScheduledTransactionService.html">ScheduledTransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:9SwiftYNAB7ServiceC">Service</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TransactionService.html">TransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserService.html">UserService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/YNAB.html">YNAB</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TransactionType.html">TransactionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Account.html">Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Category.html">Category</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroup.html">CategoryGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CurrencyFormat.html">CurrencyFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DateFormat.html">DateFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthDetail.html">MonthDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthSummary.html">MonthSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Payee.html">Payee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeeLocation.html">PayeeLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveTransaction.html">SaveTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledSubTransaction.html">ScheduledSubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionDetail.html">ScheduledTransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionSummary.html">ScheduledTransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SubTransaction.html">SubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionDetail.html">TransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionSummary.html">TransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9SwiftYNAB14NewTransactiona">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9SwiftYNAB17UpdateTransactiona">UpdateTransaction</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>HybridTransaction</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HybridTransaction</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Hybrid transaction</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV4typeSSvp"></a>
+                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV4typeSSvp">type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transaction type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV06parentD2IdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/parentTransactionId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV06parentD2IdSSSgvp">parentTransactionId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Id of the parent transaction</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">parentTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV2idSSvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV2idSSvp">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transaction id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV4dateSSvp"></a>
+                    <a name="//apple_ref/swift/Property/date" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV4dateSSvp">date</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transaction date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV6amountSivp"></a>
+                    <a name="//apple_ref/swift/Property/amount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV6amountSivp">amount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transaction amount</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV4memoSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/memo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV4memoSSSgvp">memo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transaction memo</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">memo</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV7clearedSSvp"></a>
+                    <a name="//apple_ref/swift/Property/cleared" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV7clearedSSvp">cleared</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not the transaction is cleared</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">cleared</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV8approvedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/approved" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV8approvedSbvp">approved</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Where or not the transaction is approved</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">approved</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV9flagColorSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/flagColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV9flagColorSSSgvp">flagColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flag color</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">flagColor</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV9accountIdSSvp"></a>
+                    <a name="//apple_ref/swift/Property/accountId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV9accountIdSSvp">accountId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Account id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV11accountNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/accountName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV11accountNameSSvp">accountName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Account name</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">accountName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV7payeeIdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/payeeId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV7payeeIdSSSgvp">payeeId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Payee id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">payeeId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV9payeeNameSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/payeeName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV9payeeNameSSSgvp">payeeName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Payee name</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">payeeName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV10categoryIdSSvp"></a>
+                    <a name="//apple_ref/swift/Property/categoryId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV10categoryIdSSvp">categoryId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Category id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV17transferAccountIdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/transferAccountId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV17transferAccountIdSSSgvp">transferAccountId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transfer account id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">transferAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV08transferD2IdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/transferTransactionId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV08transferD2IdSSSgvp">transferTransactionId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transfer transaction id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">transferTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV07matchedD2IdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/matchedTransactionId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV07matchedD2IdSSSgvp">matchedTransactionId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Matched transaction id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">matchedTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV8importIdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/importId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV8importIdSSSgvp">importId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Import id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">importId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV7deletedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/deleted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV7deletedSbvp">deleted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not the transaction is deleted</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">deleted</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2019-05-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

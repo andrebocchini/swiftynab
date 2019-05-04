@@ -1,0 +1,5 @@
+language: swift
+xcode_project: SwiftYNAB/SwiftYNAB.xcodeproj
+xcode_scheme: SwiftYNAB
+xcode_destination: platform=iOS Simulator,OS=11.0.1,name=iPhone X
+osx_image: xcode10.2

@@ -1,0 +1,10 @@
+{
+    "iso_code": "USD",
+    "example_format": "123,456.78",
+    "decimal_digits": 2,
+    "decimal_separator": ".",
+    "symbol_first": true,
+    "group_separator": ",",
+    "currency_symbol": "$",
+    "display_symbol": true
+}

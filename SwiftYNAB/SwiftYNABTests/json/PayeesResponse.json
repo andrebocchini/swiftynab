@@ -1,0 +1,18 @@
+{
+    "data": {
+        "payees": [
+            {
+                "id": "e379b298-ec3f-74ce-5248-0ae2c2f74465",
+                "name": "Starting Balance",
+                "transfer_account_id": null,
+                "deleted": false
+            },
+            {
+                "id": "e658fde4-b049-7d7b-151c-0ae2c2f89891",
+                "name": "Transfer : BofA",
+                "transfer_account_id": "e7a4053a-d163-b906-7712-0112c2f778e2",
+                "deleted": false
+            }],
+        "server_knowledge": 18884
+    }
+}

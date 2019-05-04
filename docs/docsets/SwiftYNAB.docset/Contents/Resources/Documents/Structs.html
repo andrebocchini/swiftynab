@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Structures  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Structures" class="dashAnchor"></a>
+    <a title="Structures  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">SwiftYNAB Docs</a></p>
+        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">SwiftYNAB Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Structures  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AccountService.html">AccountService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BudgetService.html">BudgetService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CategoryService.html">CategoryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CurrencyFormatter.html">CurrencyFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DateConverter.html">DateConverter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MonthService.html">MonthService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PayeeLocationService.html">PayeeLocationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ScheduledTransactionService.html">ScheduledTransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:9SwiftYNAB7ServiceC">Service</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TransactionService.html">TransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/UserService.html">UserService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/YNAB.html">YNAB</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/TransactionType.html">TransactionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Account.html">Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BudgetDetail.html">BudgetDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BudgetSettings.html">BudgetSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BudgetSummary.html">BudgetSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Category.html">Category</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CategoryGroup.html">CategoryGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CurrencyFormat.html">CurrencyFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DateFormat.html">DateFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ErrorDetail.html">ErrorDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HybridTransaction.html">HybridTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MonthDetail.html">MonthDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MonthSummary.html">MonthSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Payee.html">Payee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PayeeLocation.html">PayeeLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SaveTransaction.html">SaveTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ScheduledSubTransaction.html">ScheduledSubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ScheduledTransactionDetail.html">ScheduledTransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ScheduledTransactionSummary.html">ScheduledTransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SubTransaction.html">SubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/TransactionDetail.html">TransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/TransactionSummary.html">TransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:9SwiftYNAB14NewTransactiona">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:9SwiftYNAB17UpdateTransactiona">UpdateTransaction</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Structures</h1>
+            <p>The following structures are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB7AccountV"></a>
+                    <a name="//apple_ref/swift/Struct/Account" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB7AccountV">Account</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Budget account model</p>
+
+                        <a href="Structs/Account.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Account</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12BudgetDetailV"></a>
+                    <a name="//apple_ref/swift/Struct/BudgetDetail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12BudgetDetailV">BudgetDetail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Full budget model. This represents a complete budget export.</p>
+
+                        <a href="Structs/BudgetDetail.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BudgetDetail</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB14BudgetSettingsV"></a>
+                    <a name="//apple_ref/swift/Struct/BudgetSettings" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14BudgetSettingsV">BudgetSettings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Budget settings model</p>
+
+                        <a href="Structs/BudgetSettings.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BudgetSettings</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB13BudgetSummaryV"></a>
+                    <a name="//apple_ref/swift/Struct/BudgetSummary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB13BudgetSummaryV">BudgetSummary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Budget summary model</p>
+
+                        <a href="Structs/BudgetSummary.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BudgetSummary</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV"></a>
+                    <a name="//apple_ref/swift/Struct/Category" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV">Category</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Budget category</p>
+
+                        <a href="Structs/Category.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Category</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB13CategoryGroupV"></a>
+                    <a name="//apple_ref/swift/Struct/CategoryGroup" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB13CategoryGroupV">CategoryGroup</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Category group model</p>
+
+                        <a href="Structs/CategoryGroup.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CategoryGroup</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB27CategoryGroupWithCategoriesV"></a>
+                    <a name="//apple_ref/swift/Struct/CategoryGroupWithCategories" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB27CategoryGroupWithCategoriesV">CategoryGroupWithCategories</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Category group including categories</p>
+
+                        <a href="Structs/CategoryGroupWithCategories.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CategoryGroupWithCategories</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB14CurrencyFormatV"></a>
+                    <a name="//apple_ref/swift/Struct/CurrencyFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14CurrencyFormatV">CurrencyFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Currency formatting settings</p>
+
+                        <a href="Structs/CurrencyFormat.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CurrencyFormat</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB10DateFormatV"></a>
+                    <a name="//apple_ref/swift/Struct/DateFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB10DateFormatV">DateFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Date format settings</p>
+
+                        <a href="Structs/DateFormat.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DateFormat</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB11ErrorDetailV"></a>
+                    <a name="//apple_ref/swift/Struct/ErrorDetail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB11ErrorDetailV">ErrorDetail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model for API errors and client Framework errors</p>
+
+                        <a href="Structs/ErrorDetail.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ErrorDetail</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17HybridTransactionV"></a>
+                    <a name="//apple_ref/swift/Struct/HybridTransaction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV">HybridTransaction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hybrid transaction</p>
+
+                        <a href="Structs/HybridTransaction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HybridTransaction</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB11MonthDetailV"></a>
+                    <a name="//apple_ref/swift/Struct/MonthDetail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB11MonthDetailV">MonthDetail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Month detail model</p>
+
+                        <a href="Structs/MonthDetail.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MonthDetail</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV"></a>
+                    <a name="//apple_ref/swift/Struct/MonthSummary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV">MonthSummary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Month summary model</p>
+
+                        <a href="Structs/MonthSummary.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MonthSummary</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB5PayeeV"></a>
+                    <a name="//apple_ref/swift/Struct/Payee" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB5PayeeV">Payee</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Payee model</p>
+
+                        <a href="Structs/Payee.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Payee</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB13PayeeLocationV"></a>
+                    <a name="//apple_ref/swift/Struct/PayeeLocation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB13PayeeLocationV">PayeeLocation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Payee location model</p>
+
+                        <a href="Structs/PayeeLocation.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PayeeLocation</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB15SaveTransactionV"></a>
+                    <a name="//apple_ref/swift/Struct/SaveTransaction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15SaveTransactionV">SaveTransaction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model used for creating and updating transactions</p>
+
+                        <a href="Structs/SaveTransaction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SaveTransaction</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB23ScheduledSubTransactionV"></a>
+                    <a name="//apple_ref/swift/Struct/ScheduledSubTransaction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB23ScheduledSubTransactionV">ScheduledSubTransaction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Scheduled sub transaction</p>
+
+                        <a href="Structs/ScheduledSubTransaction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ScheduledSubTransaction</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB26ScheduledTransactionDetailV"></a>
+                    <a name="//apple_ref/swift/Struct/ScheduledTransactionDetail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB26ScheduledTransactionDetailV">ScheduledTransactionDetail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Full details of a scheduled transaction</p>
+
+                        <a href="Structs/ScheduledTransactionDetail.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ScheduledTransactionDetail</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB27ScheduledTransactionSummaryV"></a>
+                    <a name="//apple_ref/swift/Struct/ScheduledTransactionSummary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB27ScheduledTransactionSummaryV">ScheduledTransactionSummary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Summary of a scheduled transaction</p>
+
+                        <a href="Structs/ScheduledTransactionSummary.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ScheduledTransactionSummary</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB14SubTransactionV"></a>
+                    <a name="//apple_ref/swift/Struct/SubTransaction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14SubTransactionV">SubTransaction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Subtransaction model</p>
+
+                        <a href="Structs/SubTransaction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SubTransaction</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB17TransactionDetailV"></a>
+                    <a name="//apple_ref/swift/Struct/TransactionDetail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB17TransactionDetailV">TransactionDetail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Detailed model of a transaction</p>
+
+                        <a href="Structs/TransactionDetail.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">TransactionDetail</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB18TransactionSummaryV"></a>
+                    <a name="//apple_ref/swift/Struct/TransactionSummary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionSummaryV">TransactionSummary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Summary details of a transaction</p>
+
+                        <a href="Structs/TransactionSummary.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">TransactionSummary</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB4UserV"></a>
+                    <a name="//apple_ref/swift/Struct/User" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB4UserV">User</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Authenticate user information</p>
+
+                        <a href="Structs/User.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">User</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2019-05-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

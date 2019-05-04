@@ -1,0 +1,17 @@
+{
+    "id": "c36fbd68-131e-4ea8-b30f-94f43423021c",
+    "date": "2019-05-02",
+    "amount": -195750,
+    "memo": "Bus pass",
+    "cleared": "uncleared",
+    "approved": true,
+    "flag_color": null,
+    "account_id": "c7b07ca4-a629-d0bb-b9b5-0ae2c2f7ea45",
+    "payee_id": "00bc79a3-f1ee-24ae-9d17-0ae2c2ffe6b4",
+    "category_id": null,
+    "transfer_account_id": null,
+    "transfer_transaction_id": null,
+    "matched_transaction_id": null,
+    "import_id": null,
+    "deleted": false
+}

@@ -1,0 +1,14 @@
+{
+    "id": "e24753b1-5da2-7070-a8e2-0ae2c35ecb3a",
+    "date_first": "2019-02-13",
+    "date_next": "2019-05-13",
+    "frequency": "monthly",
+    "amount": 25000,
+    "memo": null,
+    "flag_color": null,
+    "account_id": "0cc17faa-16e0-031c-a867-0ae2c2f7a27c",
+    "payee_id": "bbe9d88f-09e4-59f3-7b07-0ae2c2fc411f",
+    "category_id": null,
+    "transfer_account_id": null,
+    "deleted": false
+}

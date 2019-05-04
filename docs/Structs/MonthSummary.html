@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MonthSummary Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/MonthSummary" class="dashAnchor"></a>
+    <a title="MonthSummary Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftYNAB Docs</a></p>
+        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftYNAB Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MonthSummary Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AccountService.html">AccountService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BudgetService.html">BudgetService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CategoryService.html">CategoryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CurrencyFormatter.html">CurrencyFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DateConverter.html">DateConverter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MonthService.html">MonthService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PayeeLocationService.html">PayeeLocationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ScheduledTransactionService.html">ScheduledTransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:9SwiftYNAB7ServiceC">Service</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TransactionService.html">TransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserService.html">UserService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/YNAB.html">YNAB</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TransactionType.html">TransactionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Account.html">Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Category.html">Category</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroup.html">CategoryGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CurrencyFormat.html">CurrencyFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DateFormat.html">DateFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthDetail.html">MonthDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthSummary.html">MonthSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Payee.html">Payee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeeLocation.html">PayeeLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveTransaction.html">SaveTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledSubTransaction.html">ScheduledSubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionDetail.html">ScheduledTransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionSummary.html">ScheduledTransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SubTransaction.html">SubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionDetail.html">TransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionSummary.html">TransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9SwiftYNAB14NewTransactiona">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9SwiftYNAB17UpdateTransactiona">UpdateTransaction</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MonthSummary</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MonthSummary</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Month summary model</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV5monthSSvp"></a>
+                    <a name="//apple_ref/swift/Property/month" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV5monthSSvp">month</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Month</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV4noteSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/note" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV4noteSSSgvp">note</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Note</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">note</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV6incomeSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/income" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV6incomeSiSgvp">income</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Amount of income for the month</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">income</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV8budgetedSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/budgeted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV8budgetedSiSgvp">budgeted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Budgeted amount for the month</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">budgeted</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV8activitySiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/activity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV8activitySiSgvp">activity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Activity for the month</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">activity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV12toBeBudgetedSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/toBeBudgeted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV12toBeBudgetedSiSgvp">toBeBudgeted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Amount available to be budgeted for the month</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">toBeBudgeted</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV10ageOfMoneySiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/ageOfMoney" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV10ageOfMoneySiSgvp">ageOfMoney</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Age of money</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">ageOfMoney</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12MonthSummaryV7deletedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/deleted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthSummaryV7deletedSbvp">deleted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not the month is deleted</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">deleted</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2019-05-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,24 @@
+{
+	"data": {
+		"budgets": [{
+			"id": "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+			"name": "Budget",
+			"last_modified_on": "2019-04-30T14:11:15+00:00",
+			"first_month": "2015-01-01",
+			"last_month": "2019-07-01",
+			"date_format": {
+				"format": "MM/DD/YYYY"
+			},
+			"currency_format": {
+				"iso_code": "USD",
+				"example_format": "123,456.78",
+				"decimal_digits": 2,
+				"decimal_separator": ".",
+				"symbol_first": true,
+				"group_separator": ",",
+				"currency_symbol": "$",
+				"display_symbol": true
+			}
+		}]
+	}
+}
