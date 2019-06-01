@@ -15,7 +15,7 @@ public struct TransactionDetail: Codable {
     public let id: String
     
     /// Transaction date
-    public let date: String
+    public let date: Date
     
     /// Amount of the transaction in milliunits
     public let amount: Int
