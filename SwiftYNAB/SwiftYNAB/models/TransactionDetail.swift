@@ -39,10 +39,10 @@ public struct TransactionDetail: Codable {
     public let accountName: String
     
     /// Payee id
-    public let payeeId: String
+    public let payeeId: String?
     
     /// Payee name
-    public let payeeName: String
+    public let payeeName: String?
     
     /// Category id
     public let categoryId: String?
