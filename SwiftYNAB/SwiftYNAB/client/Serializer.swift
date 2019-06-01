@@ -13,7 +13,6 @@ class Serializer {
     static func decode<T: Codable>(_ type: T.Type, from data: Data) throws -> T {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .iso8601
         
         do {
             return try decoder.decode(T.self, from: data)
