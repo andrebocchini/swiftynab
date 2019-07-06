@@ -1,5 +1,7 @@
 language: swift
-xcode_project: SwiftYNAB/SwiftYNAB.xcodeproj
+xcode_workspace: SwiftYNAB.xcworkspace
 xcode_scheme: SwiftYNAB
 xcode_destination: platform=iOS Simulator,OS=11.0.1,name=iPhone X
 osx_image: xcode10.2
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
