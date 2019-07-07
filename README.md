@@ -6,11 +6,11 @@
 
 SwiftYNAB is a Swift framework for iOS/macOS/WatchOS/tvOS for accessing the [You Need a Budget](https://www.youneedabudget.com) [API](https://api.youneedabudget.com).  It currently supports all [endpoints](https://api.youneedabudget.com/v1) made available by the API.
 
+You can browse the online documentation [here](https://andrebocchini.github.io/swiftynab) to see what features this framework offers.
+
 ## How to use it
 
 ### CocoaPods
-
-I built this framework as part of a small weekend project, and didn't go through the trouble of adding it to the official pods repositories, but you can still use CocoaPods to install it directly from this repository. 
 
 1. Create a new project in Xcode
 2. Add a `Podfile` to the root directory of your project with the following contents:
@@ -23,6 +23,10 @@ target :'Test' do
 end
 ```
 3. Run `pod install`
+
+### Swift Package Manager
+
+You can also use the [Swift Package Manager](https://swift.org/package-manager/).  It's especially easy with Xcode 11 where adding a package dependency is as simple as choosing *File > Swift Packages > Add Package Dependency*.
 
 ### Trying it out
 
@@ -38,11 +42,13 @@ https://api.youneedabudget.com/#personal-access-tokens
 
 Once you have your personal access token, you can use it to try out the framework. Start by creating a new project and at the top of the file where you plan to use SwiftYNAB, add:
 
-`import SwiftYNAB`
+```swift
+import SwiftYNAB
+```
 
 Then, you can try it out by writing something like:
 
-```
+```swift
 let ynab = YNAB(accessToken: "TOKEN_GOES_HERE")
 ynab.budgets.getBudgets() {
     (budgets, error) in
@@ -56,7 +62,3 @@ ynab.budgets.getBudgets() {
     }
 }
 ```
-
-## Documentation
-
-You can find documentation [here](https://andrebocchini.github.io/swiftynab).
