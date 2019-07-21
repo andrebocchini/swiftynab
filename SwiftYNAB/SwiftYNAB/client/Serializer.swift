@@ -10,12 +10,22 @@ import Foundation
 
 class Serializer {
     
-    static func decode<T: Codable>(_ type: T.Type, from data: Data) throws -> T {
+    private static let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
+        return decoder
+    }()
+    
+    private static let encoder: JSONEncoder = {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        return encoder
+    }()
+    
+    static func decode<T: Codable>(_ type: T.Type, from data: Data) throws -> T {
         do {
-            return try decoder.decode(T.self, from: data)
+            return try self.decoder.decode(T.self, from: data)
         } catch let decodingError as DecodingError {
             switch(decodingError) {
             case .keyNotFound(_, let context),
@@ -30,12 +40,8 @@ class Serializer {
     }
 
     static func encode<T: Codable>(_ model: T) throws -> Data {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        
         do {
-            return try encoder.encode(model)
+            return try self.encoder.encode(model)
         } catch let encodingError as EncodingError {
             switch(encodingError) {
             case .invalidValue(_, let context):
