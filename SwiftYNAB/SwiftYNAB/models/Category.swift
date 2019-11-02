@@ -24,7 +24,7 @@ public struct Category: Codable {
     public let hidden: Bool
     
     /// Original category group id
-    public let originaCategoryGroupId: String?
+    public let originalCategoryGroupId: String?
     
     /// Category note
     public let note: String?
