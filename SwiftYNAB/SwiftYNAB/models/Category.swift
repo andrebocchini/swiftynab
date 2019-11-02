@@ -39,7 +39,7 @@ public struct Category: Codable {
     public let balance: Int
     
     /// Type of goal associated with this category
-    public let goal_type: String?
+    public let goalType: String?
     
     /// Goal creation month
     public let goalCreationMonth: String?
@@ -51,7 +51,7 @@ public struct Category: Codable {
     public let goalTargetMonth: String?
     
     /// Goal percentage complete
-    public let goal_percentage_complete: Int?
+    public let goalPercentageComplete: Int?
     
     /// Whether or not the goal is deleted
     public let deleted: Bool
