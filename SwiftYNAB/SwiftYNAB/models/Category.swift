@@ -45,7 +45,7 @@ public struct Category: Codable {
     public let goalCreationMonth: String?
     
     /// Goal target amount
-    public let goalTarget: Int
+    public let goalTarget: Int?
     
     /// Goal target date
     public let goalTargetMonth: String?
