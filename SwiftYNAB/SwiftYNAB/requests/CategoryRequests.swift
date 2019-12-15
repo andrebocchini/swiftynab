@@ -48,7 +48,7 @@ struct CategoryRequest {
 extension CategoryRequest: Request {
     
     var path: String {
-        return "/v1/budgets/\(self.budgetId)/category/\(self.categoryId)"
+        return "/v1/budgets/\(self.budgetId)/categories/\(self.categoryId)"
     }
     
 }
