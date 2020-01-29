@@ -44,6 +44,11 @@ class LandingViewController: UIViewController {
                 completion(token, nil)
             }
         }
+        if #available(iOS 13.0, *) {
+            self.authSession?.presentationContextProvider = self
+        } else {
+            // No need for a presentation context in previous versions of iOS
+        }
         self.authSession?.start()
     }
     
@@ -119,6 +124,14 @@ class LandingViewController: UIViewController {
                 destination.api = self.api
             }
         }
+    }
+    
+}
+
+extension LandingViewController: ASWebAuthenticationPresentationContextProviding {
+    
+    func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
+        return self.view.window!
     }
     
 }
