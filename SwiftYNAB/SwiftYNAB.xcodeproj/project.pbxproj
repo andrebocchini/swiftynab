@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		301BF1C3227B642E00BD657E /* PayeeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 301BF1C1227B642D00BD657E /* PayeeResponse.json */; };
 		301BF1C5227B644300BD657E /* PayeeResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BF1C4227B644300BD657E /* PayeeResponseTests.swift */; };
+		302BA5C424EF1CED00BAA404 /* NewBudgetAccountResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 302BA5C324EF1CED00BAA404 /* NewBudgetAccountResponse.json */; };
 		30307FB1227B50F600CBF404 /* Payee.json in Resources */ = {isa = PBXBuildFile; fileRef = 30307FAE227B50F500CBF404 /* Payee.json */; };
 		30307FB3227B50F600CBF404 /* PayeesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30307FB0227B50F500CBF404 /* PayeesResponse.json */; };
 		30307FB5227B511400CBF404 /* PayeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30307FB4227B511400CBF404 /* PayeeTests.swift */; };
@@ -366,6 +367,7 @@
 /* Begin PBXFileReference section */
 		301BF1C1227B642D00BD657E /* PayeeResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PayeeResponse.json; sourceTree = "<group>"; };
 		301BF1C4227B644300BD657E /* PayeeResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeResponseTests.swift; sourceTree = "<group>"; };
+		302BA5C324EF1CED00BAA404 /* NewBudgetAccountResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewBudgetAccountResponse.json; sourceTree = "<group>"; };
 		30307FAE227B50F500CBF404 /* Payee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Payee.json; sourceTree = "<group>"; };
 		30307FB0227B50F500CBF404 /* PayeesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PayeesResponse.json; sourceTree = "<group>"; };
 		30307FB4227B511400CBF404 /* PayeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeTests.swift; sourceTree = "<group>"; };
@@ -637,6 +639,7 @@
 				30BA9B72227C98D200BD4281 /* MonthResponse.json */,
 				30BA9B69227C95BC00BD4281 /* MonthsResponse.json */,
 				3046F3F6227B74B8007778A1 /* MonthSummary.json */,
+				302BA5C324EF1CED00BAA404 /* NewBudgetAccountResponse.json */,
 				30307FAE227B50F500CBF404 /* Payee.json */,
 				3046F3F4227B7467007778A1 /* PayeeLocation.json */,
 				30BA9B61227C889200BD4281 /* PayeeLocationResponse.json */,
@@ -1118,6 +1121,7 @@
 				301BF1C3227B642E00BD657E /* PayeeResponse.json in Resources */,
 				30BA9B6B227C95BC00BD4281 /* MonthsResponse.json in Resources */,
 				30BA9B7B227C9FAB00BD4281 /* SaveTransactionsRequestWrapper.json in Resources */,
+				302BA5C424EF1CED00BAA404 /* NewBudgetAccountResponse.json in Resources */,
 				3046F3F7227B74B8007778A1 /* MonthSummary.json in Resources */,
 				30BA9B7D227CC1E000BD4281 /* TransactionResponse.json in Resources */,
 				3046F3E5227B6D68007778A1 /* BudgetSettingsResponse.json in Resources */,
@@ -1522,6 +1526,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebocchini.SwiftYNAB-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1550,6 +1555,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebocchini.SwiftYNAB-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1581,6 +1587,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebocchini.SwiftYNAB-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1610,6 +1617,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebocchini.SwiftYNAB-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1761,6 +1769,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrebocchini.SwiftYNAB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1788,6 +1797,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrebocchini.SwiftYNAB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1855,6 +1865,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebocchini.SwiftYNAB-WatchOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1884,6 +1895,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebocchini.SwiftYNAB-WatchOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

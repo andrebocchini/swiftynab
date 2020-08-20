@@ -8,14 +8,22 @@
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
     <a name="//apple_ref/swift/Class/TransactionService" class="dashAnchor"></a>
     <a title="TransactionService Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 1.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -173,6 +181,7 @@
             <h1>TransactionService</h1>
               <div class="declaration">
                 <div class="language">
+                  
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TransactionService</span> <span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:9SwiftYNAB7ServiceC">Service</a></span></code></pre>
 
                 </div>
@@ -188,7 +197,7 @@
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC03getC08budgetId011transactionG010completionySS_SSyAA0C6DetailVSg_AA05ErrorJ0VSgtctF"></a>
                     <a name="//apple_ref/swift/Method/getTransaction(budgetId:transactionId:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC03getC08budgetId011transactionG010completionySS_SSyAA0C6DetailVSg_AA05ErrorJ0VSgtctF">getTransaction(budgetId:transactionId:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC03getC08budgetId011transactionG010completionySS_SSyAA0C6DetailVSg_AA05ErrorJ0VSgtctF">getTransaction(budgetId:<wbr>transactionId:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -224,7 +233,7 @@ the transactions, and the second one takes in any errors that may occur during r
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId9sinceDate4type21lastKnowledgeOfServer10completionySS_10Foundation0J0VSgAA0C4TypeOSgSiSgySayAA0C6DetailVGSg_AA05ErrorS0VSgtctF"></a>
                     <a name="//apple_ref/swift/Method/getTransactions(budgetId:sinceDate:type:lastKnowledgeOfServer:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId9sinceDate4type21lastKnowledgeOfServer10completionySS_10Foundation0J0VSgAA0C4TypeOSgSiSgySayAA0C6DetailVGSg_AA05ErrorS0VSgtctF">getTransactions(budgetId:sinceDate:type:lastKnowledgeOfServer:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId9sinceDate4type21lastKnowledgeOfServer10completionySS_10Foundation0J0VSgAA0C4TypeOSgSiSgySayAA0C6DetailVGSg_AA05ErrorS0VSgtctF">getTransactions(budgetId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -266,7 +275,7 @@ the list of transactions, and the second one takes in any errors that may occur 
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId07accountH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA0C6DetailVGSg_AA05ErrorT0VSgtctF"></a>
                     <a name="//apple_ref/swift/Method/getTransactions(budgetId:accountId:sinceDate:type:lastKnowledgeOfServer:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId07accountH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA0C6DetailVGSg_AA05ErrorT0VSgtctF">getTransactions(budgetId:accountId:sinceDate:type:lastKnowledgeOfServer:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId07accountH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA0C6DetailVGSg_AA05ErrorT0VSgtctF">getTransactions(budgetId:<wbr>accountId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -310,7 +319,7 @@ the list of transactions, and the second one takes in any errors that may occur 
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId08categoryH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA06HybridC0VGSg_AA11ErrorDetailVSgtctF"></a>
                     <a name="//apple_ref/swift/Method/getTransactions(budgetId:categoryId:sinceDate:type:lastKnowledgeOfServer:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId08categoryH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA06HybridC0VGSg_AA11ErrorDetailVSgtctF">getTransactions(budgetId:categoryId:sinceDate:type:lastKnowledgeOfServer:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId08categoryH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA06HybridC0VGSg_AA11ErrorDetailVSgtctF">getTransactions(budgetId:<wbr>categoryId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -354,7 +363,7 @@ the list of transactions, and the second one takes in any errors that may occur 
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId05payeeH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA06HybridC0VGSg_AA11ErrorDetailVSgtctF"></a>
                     <a name="//apple_ref/swift/Method/getTransactions(budgetId:payeeId:sinceDate:type:lastKnowledgeOfServer:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId05payeeH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA06HybridC0VGSg_AA11ErrorDetailVSgtctF">getTransactions(budgetId:payeeId:sinceDate:type:lastKnowledgeOfServer:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC15getTransactions8budgetId05payeeH09sinceDate4type21lastKnowledgeOfServer10completionySS_SS10Foundation0K0VSgAA0C4TypeOSgSiSgySayAA06HybridC0VGSg_AA11ErrorDetailVSgtctF">getTransactions(budgetId:<wbr>payeeId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -398,7 +407,7 @@ the list of transactions, and the second one takes in any errors that may occur 
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC04saveC08budgetId11transaction10completionySS_AA04SaveC0VyAA0C6DetailVSg_SaySSGSgAA05ErrorK0VSgtctF"></a>
                     <a name="//apple_ref/swift/Method/saveTransaction(budgetId:transaction:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC04saveC08budgetId11transaction10completionySS_AA04SaveC0VyAA0C6DetailVSg_SaySSGSgAA05ErrorK0VSgtctF">saveTransaction(budgetId:transaction:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC04saveC08budgetId11transaction10completionySS_AA04SaveC0VyAA0C6DetailVSg_SaySSGSgAA05ErrorK0VSgtctF">saveTransaction(budgetId:<wbr>transaction:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -435,7 +444,7 @@ errors that may occur during creation.</li>
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC16saveTransactions8budgetId12transactions10completionySS_SayAA04SaveC0VGySayAA0C6DetailVGSg_SaySSGSgApA05ErrorL0VSgtctF"></a>
                     <a name="//apple_ref/swift/Method/saveTransactions(budgetId:transactions:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC16saveTransactions8budgetId12transactions10completionySS_SayAA04SaveC0VGySayAA0C6DetailVGSg_SaySSGSgApA05ErrorL0VSgtctF">saveTransactions(budgetId:transactions:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC16saveTransactions8budgetId12transactions10completionySS_SayAA04SaveC0VGySayAA0C6DetailVGSg_SaySSGSgApA05ErrorL0VSgtctF">saveTransactions(budgetId:<wbr>transactions:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -472,7 +481,7 @@ a list of duplicate import ids, and the fourth takes in any errors that may occu
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC06updateC08budgetId11transaction10completionySS_AA04SaveC0VyAA0C6DetailVSg_AA05ErrorK0VSgtctF"></a>
                     <a name="//apple_ref/swift/Method/updateTransaction(budgetId:transaction:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC06updateC08budgetId11transaction10completionySS_AA04SaveC0VyAA0C6DetailVSg_AA05ErrorK0VSgtctF">updateTransaction(budgetId:transaction:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC06updateC08budgetId11transaction10completionySS_AA04SaveC0VyAA0C6DetailVSg_AA05ErrorK0VSgtctF">updateTransaction(budgetId:<wbr>transaction:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -508,7 +517,7 @@ the updated transaction, and the second takes in any errors that may occur durin
                     <code>
                     <a name="/s:9SwiftYNAB18TransactionServiceC18updateTransactions8budgetId12transactions10completionySS_SayAA04SaveC0VGySayAA0C6DetailVGSg_SaySSGSgApA05ErrorL0VSgtctF"></a>
                     <a name="//apple_ref/swift/Method/updateTransactions(budgetId:transactions:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC18updateTransactions8budgetId12transactions10completionySS_SayAA04SaveC0VGySayAA0C6DetailVGSg_SaySSGSgApA05ErrorL0VSgtctF">updateTransactions(budgetId:transactions:completion:)</a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceC18updateTransactions8budgetId12transactions10completionySS_SayAA04SaveC0VGySayAA0C6DetailVGSg_SaySSGSgApA05ErrorL0VSgtctF">updateTransactions(budgetId:<wbr>transactions:<wbr>completion:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -545,8 +554,8 @@ a list of duplicate import ids, and the fourth takes in any errors that may occu
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2019-05-04)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2020-08-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

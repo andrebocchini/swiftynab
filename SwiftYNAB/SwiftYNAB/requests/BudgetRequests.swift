@@ -64,3 +64,52 @@ extension BudgetDetailRequest: Request {
     }
     
 }
+
+
+struct NewBudgetAccountRequest {
+    
+    let budgetId: String
+    let name: String
+    let type: String
+    let balance: Int
+    
+    init(budgetId: String, name: String, type: String, balance: Int) {
+        self.budgetId = budgetId
+        self.name = name
+        self.type = type
+        self.balance = balance
+    }
+    
+}
+
+extension NewBudgetAccountRequest: Request {
+    
+    var method: String {
+        return "POST"
+    }
+    
+    var path: String {
+        return "/v1/budgets/\(self.budgetId)/accounts"
+    }
+    
+    var body: Data? {
+        let body = NewBudgetAccountRequestBody(name: self.name, type: self.type, balance: self.balance)
+        let wrapper = NewBudgetAccountRequestWrapper(account: body)
+        return try? Serializer.encode(wrapper)
+    }
+        
+}
+
+struct NewBudgetAccountRequestWrapper: Codable {
+    
+    let account: NewBudgetAccountRequestBody
+
+}
+
+struct NewBudgetAccountRequestBody: Codable {
+    
+    let name: String
+    let type: String
+    let balance: Int
+
+}

@@ -1,0 +1,40 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/andrebocchini/Dev/swiftynab/SwiftYNAB/SwiftYNAB/protocols/Request.swift",
+      "line": null,
+      "symbol": "Request",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Dev/swiftynab/SwiftYNAB/SwiftYNAB/requests/AccountRequests.swift",
+      "line": null,
+      "symbol": "AccountsRequest",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Dev/swiftynab/SwiftYNAB/SwiftYNAB/requests/CategoryRequests.swift",
+      "line": null,
+      "symbol": "SaveMonthCategoryRequest",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Dev/swiftynab/SwiftYNAB/SwiftYNAB/requests/TransactionRequests.swift",
+      "line": null,
+      "symbol": "SaveTransactionRequest",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Dev/swiftynab/SwiftYNAB/SwiftYNAB/requests/TransactionRequests.swift",
+      "line": null,
+      "symbol": "SaveTransactionsRequest",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/andrebocchini/Dev/swiftynab/SwiftYNAB"
+}
