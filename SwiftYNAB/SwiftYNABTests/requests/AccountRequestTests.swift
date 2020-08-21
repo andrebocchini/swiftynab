@@ -37,5 +37,16 @@ class AccountsRequestTests: XCTestCase {
         XCTAssertNil(request.query)
         XCTAssertNil(request.body)
     }
+    
+    func testNewBudgetAccountRequest() {
+        let request = NewBudgetAccountRequest(budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99", name: "name", type: "checking", balance: 0)
+        
+        let account = NewBudgetAccountRequestBody(name: "name", type: "checking", balance: 0)
+        let wrapper = try! Serializer.encode(NewBudgetAccountRequestWrapper(account: account))
+        XCTAssertEqual(request.path, "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/accounts")
+        XCTAssertEqual(request.method, "POST")
+        XCTAssertNil(request.query)
+        XCTAssertEqual(request.body, wrapper)
+    }
 
 }

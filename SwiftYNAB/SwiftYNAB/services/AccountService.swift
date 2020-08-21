@@ -51,4 +51,27 @@ public class AccountService: Service {
         }
     }
     
+    /**
+     Creates a new unlinked account in a budget.
+     
+     - Parameters:
+     - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
+     - name: The name of the new account
+     - type: The type of the new account
+     - completion: Completion handler that takes in two parameters.  First parameter contains the
+     new account, and the second parameter contains any errors encountered during creation.
+     */
+    public func newBudgetAccount(budgetId: String,
+                                 name: String,
+                                 type: String,
+                                 balance: Int,
+                                 completion: @escaping (Account?, ErrorDetail?) -> Void) {
+        let request = NewBudgetAccountRequest(budgetId: budgetId, name: name, type: type, balance: balance)
+        self.client.request(request) {
+            (response: NewBudgetAccountResponse?, error: ErrorDetail?) in
+            
+            completion(response?.data.account, error)
+        }
+    }
+    
 }

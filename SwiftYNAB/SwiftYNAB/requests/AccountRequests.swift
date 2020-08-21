@@ -54,3 +54,18 @@ extension AccountRequest: Request {
     }
     
 }
+
+
+struct NewBudgetAccountRequestWrapper: Codable {
+    
+    let account: NewBudgetAccountRequestBody
+
+}
+
+struct NewBudgetAccountRequestBody: Codable {
+    
+    let name: String
+    let type: String
+    let balance: Int
+
+}

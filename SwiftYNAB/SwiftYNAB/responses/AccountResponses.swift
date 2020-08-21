@@ -35,3 +35,14 @@ struct AccountResponse: Codable {
 }
 
 
+struct NewBudgetAccountResponse: Codable {
+    
+    let data: NewBudgetAccountResponseWrapper
+  
+    struct NewBudgetAccountResponseWrapper: Codable {
+        
+        let account: Account
+        
+    }
+    
+}

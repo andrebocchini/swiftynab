@@ -23,9 +23,5 @@ class BudgetResponseTests: XCTestCase {
     func testBudgetDetailResponseDecoding() {
         XCTAssertNoThrow(try TestingTools.testDecoding(BudgetDetailResponse.self))
     }
-
-    func testNewBudgetAccountResponseDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(NewBudgetAccountResponse.self))
-    }
     
 }

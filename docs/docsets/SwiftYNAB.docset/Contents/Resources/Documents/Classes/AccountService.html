@@ -17,7 +17,7 @@
     <a title="AccountService Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 1.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 1.1.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right">
           <form role="search" action="../search.json">
@@ -258,6 +258,45 @@ error will contain error information.</li>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAccounts</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
                         <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                         <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">([</span><span class="kt"><a href="../Structs/Account.html">Account</a></span><span class="p">]?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB14AccountServiceC09newBudgetC08budgetId4name4type7balance10completionySS_S2SSiyAA0C0VSg_AA11ErrorDetailVSgtctF"></a>
+                    <a name="//apple_ref/swift/Method/newBudgetAccount(budgetId:name:type:balance:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceC09newBudgetC08budgetId4name4type7balance10completionySS_S2SSiyAA0C0VSg_AA11ErrorDetailVSgtctF">newBudgetAccount(budgetId:<wbr>name:<wbr>type:<wbr>balance:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new unlinked account in a budget.</p>
+
+<ul>
+<li>budgetId: The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</li>
+<li>name: The name of the new account</li>
+<li>type: The type of the new account</li>
+<li>completion: Completion handler that takes in two parameters.  First parameter contains the
+new account, and the second parameter contains any errors encountered during creation.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">newBudgetAccount</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                             <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                             <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                             <span class="nv">balance</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+                             <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Account.html">Account</a></span><span class="p">?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
