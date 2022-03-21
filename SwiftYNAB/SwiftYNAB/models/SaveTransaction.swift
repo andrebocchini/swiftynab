@@ -67,7 +67,7 @@ public struct SaveTransaction: Codable {
                 date: String,
                 amount: Int,
                 accountId: String,
-                payeeId: String,
+                payeeId: String? = nil,
                 payeeName: String,
                 importId: String? = nil) {
         self.id = id
