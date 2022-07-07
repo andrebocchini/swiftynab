@@ -1,19 +1,17 @@
 
 {
-    "data": {
-        "account": {
-            "id": "aeb850d2-ccac-4211-b4ce-dc016344bd30",
-            "name": "test",
-            "type": "checking",
-            "on_budget": true,
-            "closed": false,
-            "note": null,
-            "balance": 0,
-            "cleared_balance": 0,
-            "uncleared_balance": 0,
-            "transfer_payee_id": "47c0ff92-43rd-47da-1234-13d9e16cb394",
-            "deleted": false
-        },
-        "server_knowledge": 36971
-    }
+    "account": {
+        "id": "aeb850d2-ccac-4211-b4ce-dc016344bd30",
+        "name": "test",
+        "type": "checking",
+        "on_budget": true,
+        "closed": false,
+        "note": null,
+        "balance": 0,
+        "cleared_balance": 0,
+        "uncleared_balance": 0,
+        "transfer_payee_id": "47c0ff92-43rd-47da-1234-13d9e16cb394",
+        "deleted": false
+    },
+    "server_knowledge": 36971
 }

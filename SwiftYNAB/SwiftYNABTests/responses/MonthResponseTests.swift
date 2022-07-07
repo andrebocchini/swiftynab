@@ -6,20 +6,15 @@
 //  Copyright © 2019 Andre Bocchini. All rights reserved.
 //
 
-import Foundation
-
 import XCTest
-
 @testable import SwiftYNAB
 
 class MonthResponseTests: XCTestCase {
-    
     func testMonthsResponseDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(MonthsResponse.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: MonthsResponse.self))
     }
 
     func testMonthResponseDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(MonthResponse.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: MonthResponse.self))
     }
-    
 }

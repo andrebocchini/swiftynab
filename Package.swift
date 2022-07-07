@@ -1,11 +1,11 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.5
 
 import PackageDescription
 
 let package = Package(
     name: "SwiftYNAB",
     platforms: [
-   		.macOS(.v10_14), .iOS(.v11), .tvOS(.v12), .watchOS(.v5)
+   		.macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)
 	],
     products: [
     	.library(name: "SwiftYNAB", targets: ["SwiftYNAB"]),
@@ -17,6 +17,10 @@ let package = Package(
         	dependencies: [],
         	path: "SwiftYNAB/SwiftYNAB"
         ),
+        .testTarget(
+            name: "SwiftYNABTests",
+            dependencies: ["SwiftYNAB"]),
+            path: "SwiftYNAB/SwiftYNABTests"
     ],
-    swiftLanguageVersions: [.v4, .v4_2, .v5]
+    swiftLanguageVersions: [.v5]
 )

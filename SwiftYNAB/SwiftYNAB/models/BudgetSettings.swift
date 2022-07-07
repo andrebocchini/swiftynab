@@ -9,12 +9,10 @@
 import Foundation
 
 /// Budget settings model
-public struct BudgetSettings: Codable {
-    
+public struct BudgetSettings: Codable, Equatable {
     /// Date formatting settings
     public let dateFormat: DateFormat
-    
+
     /// Currency formatting settings
     public let currencyFormat: CurrencyFormat
-    
 }

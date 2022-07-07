@@ -7,22 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3008B4462878ACD20025034C /* AccountsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4452878ACD20025034C /* AccountsResponseTests.swift */; };
+		3008B4482878AD180025034C /* BudgetDetailsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4472878AD180025034C /* BudgetDetailsResponseTests.swift */; };
+		3008B44A2878AD420025034C /* BudgetSummaryResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4492878AD420025034C /* BudgetSummaryResponseTests.swift */; };
+		3008B44C2878AD6A0025034C /* BudgetSettingsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B44B2878AD6A0025034C /* BudgetSettingsResponseTests.swift */; };
+		3008B44E2878AD9F0025034C /* CategoriesResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B44D2878AD9F0025034C /* CategoriesResponseTests.swift */; };
+		3008B4502878ADDC0025034C /* MonthsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B44F2878ADDC0025034C /* MonthsResponseTests.swift */; };
+		3008B4522878AE090025034C /* PayeeLocationsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4512878AE090025034C /* PayeeLocationsResponseTests.swift */; };
+		3008B4542878AE2B0025034C /* PayeesResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4532878AE2B0025034C /* PayeesResponseTests.swift */; };
+		3008B4562878AE5A0025034C /* ScheduleTransactionResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4552878AE5A0025034C /* ScheduleTransactionResponseTests.swift */; };
+		3008B4582878AE920025034C /* SaveTransactionResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4572878AE920025034C /* SaveTransactionResponseTests.swift */; };
+		3008B45A2878AEBD0025034C /* TransactionsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4592878AEBD0025034C /* TransactionsResponseTests.swift */; };
+		3008B45C2878AEEA0025034C /* SaveTransactionsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B45B2878AEEA0025034C /* SaveTransactionsResponseTests.swift */; };
+		3008B45E2878AF150025034C /* HybridTransactionsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B45D2878AF150025034C /* HybridTransactionsResponseTests.swift */; };
+		3008B4602878BACC0025034C /* AccountsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B45F2878BACC0025034C /* AccountsRequest.swift */; };
+		3008B4622878BAF30025034C /* NewBudgetAccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3008B4612878BAF30025034C /* NewBudgetAccountRequest.swift */; };
+		300F8139288A596D005DEAF2 /* ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F8138288A596D005DEAF2 /* ClientTests.swift */; };
 		301BF1C3227B642E00BD657E /* PayeeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 301BF1C1227B642D00BD657E /* PayeeResponse.json */; };
 		301BF1C5227B644300BD657E /* PayeeResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BF1C4227B644300BD657E /* PayeeResponseTests.swift */; };
 		302BA5C424EF1CED00BAA404 /* NewBudgetAccountResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 302BA5C324EF1CED00BAA404 /* NewBudgetAccountResponse.json */; };
+		302F168828792D8C00A336AD /* BudgetSummaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F168728792D8C00A336AD /* BudgetSummaryRequest.swift */; };
+		302F168A28792DA700A336AD /* BudgetSettingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F168928792DA700A336AD /* BudgetSettingsRequest.swift */; };
+		302F168C28792DC200A336AD /* BudgetDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F168B28792DC200A336AD /* BudgetDetailRequest.swift */; };
+		302F168E28792E0F00A336AD /* AccountsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F168D28792E0F00A336AD /* AccountsRequestTests.swift */; };
+		302F169028792E7000A336AD /* NewBudgetAccountRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F168F28792E7000A336AD /* NewBudgetAccountRequestTests.swift */; };
+		302F169228792F3F00A336AD /* BudgetSummaryRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F169128792F3F00A336AD /* BudgetSummaryRequestTests.swift */; };
+		302F169428792FA100A336AD /* BudgetSettingsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F169328792FA100A336AD /* BudgetSettingsRequestTests.swift */; };
+		302F16962879306A00A336AD /* CategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16952879306A00A336AD /* CategoriesRequest.swift */; };
+		302F16982879308600A336AD /* CategoriesRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16972879308600A336AD /* CategoriesRequestTests.swift */; };
+		302F169A287930F800A336AD /* CategoryByMonthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F1699287930F800A336AD /* CategoryByMonthRequest.swift */; };
+		302F169C2879311500A336AD /* CategoryByMonthRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F169B2879311500A336AD /* CategoryByMonthRequestTests.swift */; };
+		302F169E2879316100A336AD /* SaveMonthCategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F169D2879316100A336AD /* SaveMonthCategoryRequest.swift */; };
+		302F16A02879318800A336AD /* SaveMonthCategoryRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F169F2879318800A336AD /* SaveMonthCategoryRequestTests.swift */; };
+		302F16A22879332100A336AD /* MonthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16A12879332100A336AD /* MonthRequest.swift */; };
+		302F16A42879336000A336AD /* MonthsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16A32879336000A336AD /* MonthsRequestTests.swift */; };
+		302F16A6287934CA00A336AD /* PayeeLocationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16A5287934CA00A336AD /* PayeeLocationsRequest.swift */; };
+		302F16A82879350E00A336AD /* PayeeLocationsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16A72879350E00A336AD /* PayeeLocationsRequestTests.swift */; };
+		302F16AA2879359A00A336AD /* LocationsForPayeeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16A92879359A00A336AD /* LocationsForPayeeRequest.swift */; };
+		302F16AC287935A900A336AD /* LocationsForPayeeRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16AB287935A900A336AD /* LocationsForPayeeRequestTests.swift */; };
+		302F16AE2879365100A336AD /* PayeesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16AD2879365100A336AD /* PayeesRequest.swift */; };
+		302F16B02879368500A336AD /* PayeesRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16AF2879368500A336AD /* PayeesRequestTests.swift */; };
+		302F16B2287936F500A336AD /* ScheduledTransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16B1287936F500A336AD /* ScheduledTransactionRequest.swift */; };
+		302F16B42879371E00A336AD /* ScheduledTransactionsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16B32879371E00A336AD /* ScheduledTransactionsRequestTests.swift */; };
+		302F16B62879392700A336AD /* SaveTransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16B52879392700A336AD /* SaveTransactionRequest.swift */; };
+		302F16B82879394100A336AD /* SaveTransactionRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16B72879394100A336AD /* SaveTransactionRequestTests.swift */; };
+		302F16BA28793B0D00A336AD /* SaveTransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16B928793B0D00A336AD /* SaveTransactionsRequest.swift */; };
+		302F16BC28793B3600A336AD /* SaveTransactionsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16BB28793B3600A336AD /* SaveTransactionsRequestTests.swift */; };
+		302F16BE28793BC100A336AD /* TransactionsByAccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16BD28793BC100A336AD /* TransactionsByAccountRequest.swift */; };
+		302F16C028793C4700A336AD /* TransactionsByAccountRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16BF28793C4700A336AD /* TransactionsByAccountRequestTests.swift */; };
+		302F16C228793CA800A336AD /* TransactionsByBudgetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16C128793CA800A336AD /* TransactionsByBudgetRequest.swift */; };
+		302F16C428793CD500A336AD /* TransactionsByBudgetRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16C328793CD500A336AD /* TransactionsByBudgetRequestTests.swift */; };
+		302F16C628793D4900A336AD /* TransactionsByCategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16C528793D4900A336AD /* TransactionsByCategoryRequest.swift */; };
+		302F16C828793D6A00A336AD /* TransactionsByCategoryRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16C728793D6A00A336AD /* TransactionsByCategoryRequestTests.swift */; };
+		302F16CA28793E1A00A336AD /* TransactionsByPayeeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16C928793E1A00A336AD /* TransactionsByPayeeRequest.swift */; };
+		302F16CC28793E3100A336AD /* TransactionsByPayeeRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16CB28793E3100A336AD /* TransactionsByPayeeRequestTests.swift */; };
+		302F16CE28793E7B00A336AD /* TransactionQueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F16CD28793E7B00A336AD /* TransactionQueryBuilder.swift */; };
 		30307FB1227B50F600CBF404 /* Payee.json in Resources */ = {isa = PBXBuildFile; fileRef = 30307FAE227B50F500CBF404 /* Payee.json */; };
 		30307FB3227B50F600CBF404 /* PayeesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30307FB0227B50F500CBF404 /* PayeesResponse.json */; };
 		30307FB5227B511400CBF404 /* PayeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30307FB4227B511400CBF404 /* PayeeTests.swift */; };
 		30307FB7227B513B00CBF404 /* Payee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30307FB6227B513B00CBF404 /* Payee.swift */; };
-		30307FBB227B521500CBF404 /* PayeeResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30307FBA227B521500CBF404 /* PayeeResponses.swift */; };
 		303358442278E466003229CF /* SaveTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 303358432278E466003229CF /* SaveTransaction.json */; };
 		3033584A2278F24D003229CF /* SaveTransactionResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 303358492278F24D003229CF /* SaveTransactionResponse.json */; };
 		3033584C2278F26E003229CF /* SubTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 3033584B2278F26E003229CF /* SubTransaction.json */; };
 		3033584F2278F35B003229CF /* AccountRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033584E2278F35B003229CF /* AccountRequestTests.swift */; };
 		303358512278F4C6003229CF /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303358502278F4C6003229CF /* RequestTests.swift */; };
-		303358532278FE2B003229CF /* BudgetRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303358522278FE2B003229CF /* BudgetRequestTests.swift */; };
+		303358532278FE2B003229CF /* BudgetDetailRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303358522278FE2B003229CF /* BudgetDetailRequestTests.swift */; };
+		3046A4EF2876A098006CB35A /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4EE2876A098006CB35A /* ClientType.swift */; };
+		3046A4F12876A189006CB35A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4F02876A189006CB35A /* Client.swift */; };
+		3046A4F32876A511006CB35A /* URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4F22876A511006CB35A /* URLSessionType.swift */; };
+		3046A4F52876A559006CB35A /* URLSession+URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4F42876A559006CB35A /* URLSession+URLSessionType.swift */; };
+		3046A4F72876A68D006CB35A /* AccountServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4F62876A68D006CB35A /* AccountServiceType.swift */; };
+		3046A4F92876F3DB006CB35A /* BudgetServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4F82876F3DB006CB35A /* BudgetServiceType.swift */; };
+		3046A4FB28776B38006CB35A /* CategoryServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4FA28776B38006CB35A /* CategoryServiceType.swift */; };
+		3046A4FD28776E6F006CB35A /* MonthServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4FC28776E6F006CB35A /* MonthServiceType.swift */; };
+		3046A4FF28777007006CB35A /* PayeeLocationServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A4FE28777007006CB35A /* PayeeLocationServiceType.swift */; };
+		3046A5012877726D006CB35A /* PayeeServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A5002877726D006CB35A /* PayeeServiceType.swift */; };
+		3046A50328777363006CB35A /* ScheduledTransactionsServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A50228777363006CB35A /* ScheduledTransactionsServiceType.swift */; };
+		3046A5052877CA61006CB35A /* UserServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A5042877CA61006CB35A /* UserServiceType.swift */; };
+		3046A5072877CAE4006CB35A /* TransactionServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046A5062877CAE4006CB35A /* TransactionServiceType.swift */; };
 		3046F3DB227B6567007778A1 /* PayeeRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DA227B6567007778A1 /* PayeeRequestTests.swift */; };
-		3046F3DD227B6613007778A1 /* PayeeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DC227B6613007778A1 /* PayeeRequests.swift */; };
+		3046F3DD227B6613007778A1 /* PayeeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DC227B6613007778A1 /* PayeeRequest.swift */; };
 		3046F3E5227B6D68007778A1 /* BudgetSettingsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3046F3E2227B6D68007778A1 /* BudgetSettingsResponse.json */; };
 		3046F3E6227B6D68007778A1 /* BudgetSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 3046F3E3227B6D68007778A1 /* BudgetSettings.json */; };
 		3046F3E9227B6DCB007778A1 /* BudgetSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3E8227B6DCB007778A1 /* BudgetSettingsTests.swift */; };
@@ -41,10 +105,10 @@
 		3046F403227B7878007778A1 /* ScheduledSubTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 3046F402227B7878007778A1 /* ScheduledSubTransaction.json */; };
 		3046F405227B789D007778A1 /* ScheduledSubTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F404227B789D007778A1 /* ScheduledSubTransactionTests.swift */; };
 		3046F407227B78C6007778A1 /* ScheduledSubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F406227B78C6007778A1 /* ScheduledSubTransaction.swift */; };
+		305CD25A28823B4D002B6C6E /* SerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CD25928823B4D002B6C6E /* SerializerTests.swift */; };
 		305EAA3A227D1D9C002E3B8F /* SwiftYNAB_WatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 30CE605F227D1C8E000B87BD /* SwiftYNAB_WatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305EAA50227D1DB3002E3B8F /* SwiftYNAB_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 305EAA42227D1DB3002E3B8F /* SwiftYNAB_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305EAA57227D1DD1002E3B8F /* YNAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB531227A7592000FE07D /* YNAB.swift */; };
-		305EAA58227D1DD1002E3B8F /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8E2277CC1400AE95B8 /* Client.swift */; };
 		305EAA59227D1DD1002E3B8F /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350FD2278D27500456287 /* Serializer.swift */; };
 		305EAA5A227D1DD1002E3B8F /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52022792744000FE07D /* CurrencyFormatter.swift */; };
 		305EAA5B227D1DD1002E3B8F /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52422793086000FE07D /* DateConverter.swift */; };
@@ -68,32 +132,23 @@
 		305EAA6D227D1DD2002E3B8F /* ScheduledSubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F406227B78C6007778A1 /* ScheduledSubTransaction.swift */; };
 		305EAA6E227D1DD2002E3B8F /* ScheduledTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */; };
 		305EAA6F227D1DD2002E3B8F /* ScheduledTransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B5F227B8E33005C5477 /* ScheduledTransactionSummary.swift */; };
-		305EAA70227D1DD2002E3B8F /* SerializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5262279BD00000FE07D /* SerializationError.swift */; };
+		305EAA70227D1DD2002E3B8F /* SwiftYNABError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5262279BD00000FE07D /* SwiftYNABError.swift */; };
 		305EAA71227D1DD2002E3B8F /* SubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF872277CC1400AE95B8 /* SubTransaction.swift */; };
 		305EAA72227D1DD2002E3B8F /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8A2277CC1400AE95B8 /* TransactionDetail.swift */; };
 		305EAA73227D1DD2002E3B8F /* TransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B59227B8B82005C5477 /* TransactionSummary.swift */; };
 		305EAA74227D1DD2002E3B8F /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CA3227A27690005E34E /* TransactionType.swift */; };
 		305EAA75227D1DD2002E3B8F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB50A22791929000FE07D /* User.swift */; };
 		305EAA76227D1DD2002E3B8F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8B2277CC1400AE95B8 /* Request.swift */; };
-		305EAA77227D1DD2002E3B8F /* AccountRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB5227A31B20005E34E /* AccountRequests.swift */; };
-		305EAA78227D1DD2002E3B8F /* BudgetRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB3227A31320005E34E /* BudgetRequests.swift */; };
-		305EAA79227D1DD2002E3B8F /* CategoryRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB563227BC32C000FE07D /* CategoryRequests.swift */; };
+		305EAA77227D1DD2002E3B8F /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB5227A31B20005E34E /* AccountRequest.swift */; };
+		305EAA79227D1DD2002E3B8F /* CategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB563227BC32C000FE07D /* CategoryRequest.swift */; };
 		305EAA7A227D1DD2002E3B8F /* MonthsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B6E227C962100BD4281 /* MonthsRequest.swift */; };
-		305EAA7B227D1DD2002E3B8F /* PayeeLocationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5A227C860600BD4281 /* PayeeLocationRequests.swift */; };
-		305EAA7C227D1DD2002E3B8F /* PayeeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DC227B6613007778A1 /* PayeeRequests.swift */; };
-		305EAA7D227D1DD2002E3B8F /* ScheduledTransactionsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634288227CD715001CF381 /* ScheduledTransactionsRequests.swift */; };
-		305EAA7E227D1DD2002E3B8F /* TransactionRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB7227A3A7A0005E34E /* TransactionRequests.swift */; };
-		305EAA7F227D1DD2002E3B8F /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB1227A30C00005E34E /* UserRequests.swift */; };
-		305EAA80227D1DD2002E3B8F /* AccountResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E163392277EC3500A1222B /* AccountResponses.swift */; };
-		305EAA81227D1DD2002E3B8F /* BudgetResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633B2277ED1700A1222B /* BudgetResponses.swift */; };
-		305EAA82227D1DD2002E3B8F /* CategoryResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB55F227BC168000FE07D /* CategoryResponses.swift */; };
+		305EAA7B227D1DD2002E3B8F /* PayeeLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5A227C860600BD4281 /* PayeeLocationRequest.swift */; };
+		305EAA7C227D1DD2002E3B8F /* PayeeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DC227B6613007778A1 /* PayeeRequest.swift */; };
+		305EAA7D227D1DD2002E3B8F /* ScheduledTransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634288227CD715001CF381 /* ScheduledTransactionsRequest.swift */; };
+		305EAA7E227D1DD2002E3B8F /* TransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB7227A3A7A0005E34E /* TransactionRequest.swift */; };
+		305EAA7F227D1DD2002E3B8F /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB1227A30C00005E34E /* UserRequest.swift */; };
 		305EAA83227D1DD2002E3B8F /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633D2277ED8D00A1222B /* ErrorResponse.swift */; };
-		305EAA84227D1DD2002E3B8F /* MonthResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B66227C950600BD4281 /* MonthResponses.swift */; };
-		305EAA85227D1DD2002E3B8F /* PayeeLocationResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B52227C84FE00BD4281 /* PayeeLocationResponses.swift */; };
-		305EAA86227D1DD2002E3B8F /* PayeeResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30307FBA227B521500CBF404 /* PayeeResponses.swift */; };
-		305EAA87227D1DD2002E3B8F /* ScheduledTransactionResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634284227CD662001CF381 /* ScheduledTransactionResponses.swift */; };
-		305EAA88227D1DD2002E3B8F /* TransactionResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350CF2278AE7D00456287 /* TransactionResponses.swift */; };
-		305EAA89227D1DD2002E3B8F /* UserResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51422791B5B000FE07D /* UserResponses.swift */; };
+		305EAA89227D1DD2002E3B8F /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51422791B5B000FE07D /* UserResponse.swift */; };
 		305EAA8A227D1DD2002E3B8F /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB533227A7987000FE07D /* AccountService.swift */; };
 		305EAA8B227D1DD2002E3B8F /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52F227A746F000FE07D /* BudgetService.swift */; };
 		305EAA8C227D1DD2002E3B8F /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB557227BBF15000FE07D /* CategoryService.swift */; };
@@ -101,12 +156,10 @@
 		305EAA8E227D1DD2002E3B8F /* PayeeLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5C227C865000BD4281 /* PayeeLocationService.swift */; };
 		305EAA8F227D1DD2002E3B8F /* PayeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B4E227C7B6D00BD4281 /* PayeeService.swift */; };
 		305EAA90227D1DD2002E3B8F /* ScheduledTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063428A227CD774001CF381 /* ScheduledTransactionService.swift */; };
-		305EAA91227D1DD2002E3B8F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5E227C86A500BD4281 /* Service.swift */; };
 		305EAA92227D1DD2002E3B8F /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB535227A7993000FE07D /* TransactionService.swift */; };
 		305EAA93227D1DD2002E3B8F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB537227A799D000FE07D /* UserService.swift */; };
 		305EAAA9227D1DF7002E3B8F /* SwiftYNAB_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 305EAA9B227D1DF6002E3B8F /* SwiftYNAB_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305EAAB0227D1E13002E3B8F /* YNAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB531227A7592000FE07D /* YNAB.swift */; };
-		305EAAB1227D1E13002E3B8F /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8E2277CC1400AE95B8 /* Client.swift */; };
 		305EAAB2227D1E13002E3B8F /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350FD2278D27500456287 /* Serializer.swift */; };
 		305EAAB3227D1E13002E3B8F /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52022792744000FE07D /* CurrencyFormatter.swift */; };
 		305EAAB4227D1E13002E3B8F /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52422793086000FE07D /* DateConverter.swift */; };
@@ -130,32 +183,23 @@
 		305EAAC6227D1E13002E3B8F /* ScheduledSubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F406227B78C6007778A1 /* ScheduledSubTransaction.swift */; };
 		305EAAC7227D1E13002E3B8F /* ScheduledTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */; };
 		305EAAC8227D1E13002E3B8F /* ScheduledTransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B5F227B8E33005C5477 /* ScheduledTransactionSummary.swift */; };
-		305EAAC9227D1E13002E3B8F /* SerializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5262279BD00000FE07D /* SerializationError.swift */; };
+		305EAAC9227D1E13002E3B8F /* SwiftYNABError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5262279BD00000FE07D /* SwiftYNABError.swift */; };
 		305EAACA227D1E13002E3B8F /* SubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF872277CC1400AE95B8 /* SubTransaction.swift */; };
 		305EAACB227D1E13002E3B8F /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8A2277CC1400AE95B8 /* TransactionDetail.swift */; };
 		305EAACC227D1E13002E3B8F /* TransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B59227B8B82005C5477 /* TransactionSummary.swift */; };
 		305EAACD227D1E13002E3B8F /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CA3227A27690005E34E /* TransactionType.swift */; };
 		305EAACE227D1E13002E3B8F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB50A22791929000FE07D /* User.swift */; };
 		305EAACF227D1E13002E3B8F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8B2277CC1400AE95B8 /* Request.swift */; };
-		305EAAD0227D1E13002E3B8F /* AccountRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB5227A31B20005E34E /* AccountRequests.swift */; };
-		305EAAD1227D1E13002E3B8F /* BudgetRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB3227A31320005E34E /* BudgetRequests.swift */; };
-		305EAAD2227D1E13002E3B8F /* CategoryRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB563227BC32C000FE07D /* CategoryRequests.swift */; };
+		305EAAD0227D1E13002E3B8F /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB5227A31B20005E34E /* AccountRequest.swift */; };
+		305EAAD2227D1E13002E3B8F /* CategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB563227BC32C000FE07D /* CategoryRequest.swift */; };
 		305EAAD3227D1E13002E3B8F /* MonthsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B6E227C962100BD4281 /* MonthsRequest.swift */; };
-		305EAAD4227D1E13002E3B8F /* PayeeLocationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5A227C860600BD4281 /* PayeeLocationRequests.swift */; };
-		305EAAD5227D1E13002E3B8F /* PayeeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DC227B6613007778A1 /* PayeeRequests.swift */; };
-		305EAAD6227D1E13002E3B8F /* ScheduledTransactionsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634288227CD715001CF381 /* ScheduledTransactionsRequests.swift */; };
-		305EAAD7227D1E13002E3B8F /* TransactionRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB7227A3A7A0005E34E /* TransactionRequests.swift */; };
-		305EAAD8227D1E13002E3B8F /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB1227A30C00005E34E /* UserRequests.swift */; };
-		305EAAD9227D1E13002E3B8F /* AccountResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E163392277EC3500A1222B /* AccountResponses.swift */; };
-		305EAADA227D1E13002E3B8F /* BudgetResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633B2277ED1700A1222B /* BudgetResponses.swift */; };
-		305EAADB227D1E13002E3B8F /* CategoryResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB55F227BC168000FE07D /* CategoryResponses.swift */; };
+		305EAAD4227D1E13002E3B8F /* PayeeLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5A227C860600BD4281 /* PayeeLocationRequest.swift */; };
+		305EAAD5227D1E13002E3B8F /* PayeeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DC227B6613007778A1 /* PayeeRequest.swift */; };
+		305EAAD6227D1E13002E3B8F /* ScheduledTransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634288227CD715001CF381 /* ScheduledTransactionsRequest.swift */; };
+		305EAAD7227D1E13002E3B8F /* TransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB7227A3A7A0005E34E /* TransactionRequest.swift */; };
+		305EAAD8227D1E13002E3B8F /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB1227A30C00005E34E /* UserRequest.swift */; };
 		305EAADC227D1E13002E3B8F /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633D2277ED8D00A1222B /* ErrorResponse.swift */; };
-		305EAADD227D1E13002E3B8F /* MonthResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B66227C950600BD4281 /* MonthResponses.swift */; };
-		305EAADE227D1E13002E3B8F /* PayeeLocationResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B52227C84FE00BD4281 /* PayeeLocationResponses.swift */; };
-		305EAADF227D1E13002E3B8F /* PayeeResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30307FBA227B521500CBF404 /* PayeeResponses.swift */; };
-		305EAAE0227D1E13002E3B8F /* ScheduledTransactionResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634284227CD662001CF381 /* ScheduledTransactionResponses.swift */; };
-		305EAAE1227D1E13002E3B8F /* TransactionResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350CF2278AE7D00456287 /* TransactionResponses.swift */; };
-		305EAAE2227D1E13002E3B8F /* UserResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51422791B5B000FE07D /* UserResponses.swift */; };
+		305EAAE2227D1E13002E3B8F /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51422791B5B000FE07D /* UserResponse.swift */; };
 		305EAAE3227D1E13002E3B8F /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB533227A7987000FE07D /* AccountService.swift */; };
 		305EAAE4227D1E13002E3B8F /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52F227A746F000FE07D /* BudgetService.swift */; };
 		305EAAE5227D1E13002E3B8F /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB557227BBF15000FE07D /* CategoryService.swift */; };
@@ -163,22 +207,19 @@
 		305EAAE7227D1E13002E3B8F /* PayeeLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5C227C865000BD4281 /* PayeeLocationService.swift */; };
 		305EAAE8227D1E13002E3B8F /* PayeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B4E227C7B6D00BD4281 /* PayeeService.swift */; };
 		305EAAE9227D1E13002E3B8F /* ScheduledTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063428A227CD774001CF381 /* ScheduledTransactionService.swift */; };
-		305EAAEA227D1E13002E3B8F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5E227C86A500BD4281 /* Service.swift */; };
 		305EAAEB227D1E13002E3B8F /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB535227A7993000FE07D /* TransactionService.swift */; };
 		305EAAEC227D1E13002E3B8F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB537227A799D000FE07D /* UserService.swift */; };
 		30634281227CD5C2001CF381 /* ScheduledTransactionsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30634280227CD5C2001CF381 /* ScheduledTransactionsResponse.json */; };
 		30634283227CD611001CF381 /* ScheduledTransactionsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634282227CD611001CF381 /* ScheduledTransactionsResponseTests.swift */; };
-		30634285227CD662001CF381 /* ScheduledTransactionResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634284227CD662001CF381 /* ScheduledTransactionResponses.swift */; };
 		30634287227CD698001CF381 /* ScheduledTransactionRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634286227CD698001CF381 /* ScheduledTransactionRequestTests.swift */; };
-		30634289227CD715001CF381 /* ScheduledTransactionsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634288227CD715001CF381 /* ScheduledTransactionsRequests.swift */; };
+		30634289227CD715001CF381 /* ScheduledTransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634288227CD715001CF381 /* ScheduledTransactionsRequest.swift */; };
 		3063428B227CD775001CF381 /* ScheduledTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063428A227CD774001CF381 /* ScheduledTransactionService.swift */; };
 		3063428D227CD930001CF381 /* ScheduledTransactionResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3063428C227CD930001CF381 /* ScheduledTransactionResponse.json */; };
 		3063428F227CDFB0001CF381 /* SaveTransactionRequestWrapper.json in Resources */ = {isa = PBXBuildFile; fileRef = 3063428E227CDFB0001CF381 /* SaveTransactionRequestWrapper.json */; };
 		307350CC2278A0D200456287 /* SaveTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350CB2278A0D200456287 /* SaveTransaction.swift */; };
-		307350D02278AE7D00456287 /* TransactionResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350CF2278AE7D00456287 /* TransactionResponses.swift */; };
 		307350DA2278BF5600456287 /* BudgetSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 307350D72278BF5600456287 /* BudgetSummary.json */; };
 		307350DC2278BF8A00456287 /* BudgetSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350DB2278BF8A00456287 /* BudgetSummaryTests.swift */; };
-		307350DE2278BFB600456287 /* TestingTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350DD2278BFB600456287 /* TestingTools.swift */; };
+		307350DE2278BFB600456287 /* JSONTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350DD2278BFB600456287 /* JSONTools.swift */; };
 		307350E32278C8E000456287 /* AccountsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 307350E02278C8E000456287 /* AccountsResponse.json */; };
 		307350E42278C8E000456287 /* Account.json in Resources */ = {isa = PBXBuildFile; fileRef = 307350E12278C8E000456287 /* Account.json */; };
 		307350E62278C90600456287 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350E52278C90600456287 /* AccountTests.swift */; };
@@ -192,6 +233,30 @@
 		307350F82278CE8500456287 /* TransactionDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 307350F72278CE8500456287 /* TransactionDetail.json */; };
 		307350FC2278D22100456287 /* TransactionsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 307350FB2278D22100456287 /* TransactionsResponse.json */; };
 		307350FE2278D27500456287 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350FD2278D27500456287 /* Serializer.swift */; };
+		3076E6AA28B9C8A6006BAADC /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076E6A928B9C8A6006BAADC /* RequestMethod.swift */; };
+		3076E6AC28B9CC13006BAADC /* RequestMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076E6AB28B9CC13006BAADC /* RequestMethodTests.swift */; };
+		307EA3B12878794A00E380E7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3B02878794A00E380E7 /* Response.swift */; };
+		307EA3B328787DC000E380E7 /* AccountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3B228787DC000E380E7 /* AccountsResponse.swift */; };
+		307EA3B528787DF600E380E7 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3B428787DF600E380E7 /* AccountResponse.swift */; };
+		307EA3B72878854100E380E7 /* BudgetSummaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3B62878854100E380E7 /* BudgetSummaryResponse.swift */; };
+		307EA3B92878856000E380E7 /* BudgetSettingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3B82878856000E380E7 /* BudgetSettingsResponse.swift */; };
+		307EA3BB2878857D00E380E7 /* BudgetDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3BA2878857D00E380E7 /* BudgetDetailsResponse.swift */; };
+		307EA3BD28788A7800E380E7 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3BC28788A7800E380E7 /* CategoriesResponse.swift */; };
+		307EA3BF28788A9B00E380E7 /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3BE28788A9B00E380E7 /* CategoryResponse.swift */; };
+		307EA3C128788B1C00E380E7 /* MonthsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3C028788B1C00E380E7 /* MonthsResponse.swift */; };
+		307EA3C328788B3D00E380E7 /* MonthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3C228788B3D00E380E7 /* MonthResponse.swift */; };
+		307EA3C528788C5300E380E7 /* PayeeLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3C428788C5300E380E7 /* PayeeLocationsResponse.swift */; };
+		307EA3C728788C6800E380E7 /* PayeeLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3C628788C6800E380E7 /* PayeeLocationResponse.swift */; };
+		307EA3C928788CF500E380E7 /* PayeeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3C828788CF500E380E7 /* PayeeResponse.swift */; };
+		307EA3CB28788D1300E380E7 /* PayeesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3CA28788D1300E380E7 /* PayeesResponse.swift */; };
+		307EA3CD28788D7F00E380E7 /* ScheduledTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3CC28788D7F00E380E7 /* ScheduledTransactionResponse.swift */; };
+		307EA3CF28788D9500E380E7 /* ScheduledTransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3CE28788D9500E380E7 /* ScheduledTransactionsResponse.swift */; };
+		307EA3D128788E4700E380E7 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3D028788E4700E380E7 /* TransactionResponse.swift */; };
+		307EA3D328788E6700E380E7 /* TransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3D228788E6700E380E7 /* TransactionsResponse.swift */; };
+		307EA3D528788E8D00E380E7 /* SaveTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3D428788E8D00E380E7 /* SaveTransactionResponse.swift */; };
+		307EA3D728788EB300E380E7 /* SaveTransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3D628788EB300E380E7 /* SaveTransactionsResponse.swift */; };
+		307EA3D928788ECE00E380E7 /* HybridTransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3D828788ECE00E380E7 /* HybridTransactionsResponse.swift */; };
+		307EA3DB2878A13C00E380E7 /* SerializerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3DA2878A13C00E380E7 /* SerializerType.swift */; };
 		308C2B42227B8377005C5477 /* ScheduledTransactionDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 308C2B41227B8377005C5477 /* ScheduledTransactionDetail.json */; };
 		308C2B48227B85B6005C5477 /* ScheduledTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */; };
 		308C2B4A227B85EB005C5477 /* ScheduledTransactionDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B49227B85EB005C5477 /* ScheduledTransactionDetailTests.swift */; };
@@ -216,6 +281,14 @@
 		308C2B70227B962D005C5477 /* SaveMonthCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 308C2B6F227B962D005C5477 /* SaveMonthCategory.json */; };
 		308C2B72227B9648005C5477 /* SaveMonthCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B71227B9648005C5477 /* SaveMonthCategoryTests.swift */; };
 		308C2B74227B967B005C5477 /* SaveMonthCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B73227B967B005C5477 /* SaveMonthCategory.swift */; };
+		308F599D28B8687100445343 /* AccountServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F599C28B8687100445343 /* AccountServiceTests.swift */; };
+		308F599F28B86D3C00445343 /* BudgetServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F599E28B86D3C00445343 /* BudgetServiceTests.swift */; };
+		308F59A128B8D6FC00445343 /* CategoryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F59A028B8D6FC00445343 /* CategoryServiceTests.swift */; };
+		308F59A328B8DBF500445343 /* MonthServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F59A228B8DBF500445343 /* MonthServiceTests.swift */; };
+		308F59A528B93ECF00445343 /* PayeeLocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F59A428B93ECF00445343 /* PayeeLocationServiceTests.swift */; };
+		308F59A728B940C700445343 /* PayeeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F59A628B940C700445343 /* PayeeServiceTests.swift */; };
+		308F59A928B9427700445343 /* ScheduledTransactionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F59A828B9427700445343 /* ScheduledTransactionServiceTests.swift */; };
+		308F59AB28B947EC00445343 /* TransactionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F59AA28B947EC00445343 /* TransactionServiceTests.swift */; };
 		30AADF6D2277CBE000AE95B8 /* SwiftYNAB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AADF632277CBDF00AE95B8 /* SwiftYNAB.framework */; };
 		30AADF742277CBE000AE95B8 /* SwiftYNAB.h in Headers */ = {isa = PBXBuildFile; fileRef = 30AADF662277CBDF00AE95B8 /* SwiftYNAB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30AADF922277CC1400AE95B8 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF842277CC1400AE95B8 /* DateFormat.swift */; };
@@ -225,18 +298,14 @@
 		30AADF972277CC1400AE95B8 /* BudgetSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF892277CC1400AE95B8 /* BudgetSummary.swift */; };
 		30AADF982277CC1400AE95B8 /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8A2277CC1400AE95B8 /* TransactionDetail.swift */; };
 		30AADF992277CC1400AE95B8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8B2277CC1400AE95B8 /* Request.swift */; };
-		30AADF9B2277CC1400AE95B8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8E2277CC1400AE95B8 /* Client.swift */; };
 		30BA9B4F227C7B6D00BD4281 /* PayeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B4E227C7B6D00BD4281 /* PayeeService.swift */; };
 		30BA9B51227C84BE00BD4281 /* PayeeLocationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B50227C84BE00BD4281 /* PayeeLocationResponseTests.swift */; };
-		30BA9B53227C84FE00BD4281 /* PayeeLocationResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B52227C84FE00BD4281 /* PayeeLocationResponses.swift */; };
 		30BA9B57227C857900BD4281 /* PayeeLocationsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BA9B55227C857900BD4281 /* PayeeLocationsResponse.json */; };
-		30BA9B59227C85A000BD4281 /* PayeeLocationRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B58227C85A000BD4281 /* PayeeLocationRequestsTests.swift */; };
-		30BA9B5B227C860600BD4281 /* PayeeLocationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5A227C860600BD4281 /* PayeeLocationRequests.swift */; };
+		30BA9B59227C85A000BD4281 /* PayeeLocationRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B58227C85A000BD4281 /* PayeeLocationRequestTests.swift */; };
+		30BA9B5B227C860600BD4281 /* PayeeLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5A227C860600BD4281 /* PayeeLocationRequest.swift */; };
 		30BA9B5D227C865000BD4281 /* PayeeLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5C227C865000BD4281 /* PayeeLocationService.swift */; };
-		30BA9B5F227C86A500BD4281 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5E227C86A500BD4281 /* Service.swift */; };
 		30BA9B63227C889200BD4281 /* PayeeLocationResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BA9B61227C889200BD4281 /* PayeeLocationResponse.json */; };
 		30BA9B65227C94C600BD4281 /* MonthResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B64227C94C600BD4281 /* MonthResponseTests.swift */; };
-		30BA9B67227C950600BD4281 /* MonthResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B66227C950600BD4281 /* MonthResponses.swift */; };
 		30BA9B6B227C95BC00BD4281 /* MonthsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BA9B69227C95BC00BD4281 /* MonthsResponse.json */; };
 		30BA9B6D227C95D800BD4281 /* MonthRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B6C227C95D800BD4281 /* MonthRequestTests.swift */; };
 		30BA9B6F227C962100BD4281 /* MonthsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B6E227C962100BD4281 /* MonthsRequest.swift */; };
@@ -247,7 +316,6 @@
 		30BA9B7D227CC1E000BD4281 /* TransactionResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BA9B7C227CC1DF00BD4281 /* TransactionResponse.json */; };
 		30BA9B7F227CCB6C00BD4281 /* HybridTransactionsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BA9B7E227CCB6C00BD4281 /* HybridTransactionsResponse.json */; };
 		30CE6061227D1D12000B87BD /* YNAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB531227A7592000FE07D /* YNAB.swift */; };
-		30CE6062227D1D12000B87BD /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8E2277CC1400AE95B8 /* Client.swift */; };
 		30CE6063227D1D12000B87BD /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350FD2278D27500456287 /* Serializer.swift */; };
 		30CE6064227D1D12000B87BD /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52022792744000FE07D /* CurrencyFormatter.swift */; };
 		30CE6065227D1D12000B87BD /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52422793086000FE07D /* DateConverter.swift */; };
@@ -271,32 +339,23 @@
 		30CE6077227D1D12000B87BD /* ScheduledSubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F406227B78C6007778A1 /* ScheduledSubTransaction.swift */; };
 		30CE6078227D1D12000B87BD /* ScheduledTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */; };
 		30CE6079227D1D12000B87BD /* ScheduledTransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B5F227B8E33005C5477 /* ScheduledTransactionSummary.swift */; };
-		30CE607A227D1D12000B87BD /* SerializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5262279BD00000FE07D /* SerializationError.swift */; };
+		30CE607A227D1D12000B87BD /* SwiftYNABError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5262279BD00000FE07D /* SwiftYNABError.swift */; };
 		30CE607B227D1D12000B87BD /* SubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF872277CC1400AE95B8 /* SubTransaction.swift */; };
 		30CE607C227D1D12000B87BD /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8A2277CC1400AE95B8 /* TransactionDetail.swift */; };
 		30CE607D227D1D12000B87BD /* TransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B59227B8B82005C5477 /* TransactionSummary.swift */; };
 		30CE607E227D1D12000B87BD /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CA3227A27690005E34E /* TransactionType.swift */; };
 		30CE607F227D1D12000B87BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB50A22791929000FE07D /* User.swift */; };
 		30CE6080227D1D12000B87BD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF8B2277CC1400AE95B8 /* Request.swift */; };
-		30CE6081227D1D12000B87BD /* AccountRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB5227A31B20005E34E /* AccountRequests.swift */; };
-		30CE6082227D1D12000B87BD /* BudgetRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB3227A31320005E34E /* BudgetRequests.swift */; };
-		30CE6083227D1D12000B87BD /* CategoryRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB563227BC32C000FE07D /* CategoryRequests.swift */; };
+		30CE6081227D1D12000B87BD /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB5227A31B20005E34E /* AccountRequest.swift */; };
+		30CE6083227D1D12000B87BD /* CategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB563227BC32C000FE07D /* CategoryRequest.swift */; };
 		30CE6084227D1D12000B87BD /* MonthsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B6E227C962100BD4281 /* MonthsRequest.swift */; };
-		30CE6085227D1D12000B87BD /* PayeeLocationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5A227C860600BD4281 /* PayeeLocationRequests.swift */; };
-		30CE6086227D1D12000B87BD /* PayeeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DC227B6613007778A1 /* PayeeRequests.swift */; };
-		30CE6087227D1D12000B87BD /* ScheduledTransactionsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634288227CD715001CF381 /* ScheduledTransactionsRequests.swift */; };
-		30CE6088227D1D12000B87BD /* TransactionRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB7227A3A7A0005E34E /* TransactionRequests.swift */; };
-		30CE6089227D1D12000B87BD /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB1227A30C00005E34E /* UserRequests.swift */; };
-		30CE608A227D1D12000B87BD /* AccountResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E163392277EC3500A1222B /* AccountResponses.swift */; };
-		30CE608B227D1D12000B87BD /* BudgetResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633B2277ED1700A1222B /* BudgetResponses.swift */; };
-		30CE608C227D1D12000B87BD /* CategoryResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB55F227BC168000FE07D /* CategoryResponses.swift */; };
+		30CE6085227D1D12000B87BD /* PayeeLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5A227C860600BD4281 /* PayeeLocationRequest.swift */; };
+		30CE6086227D1D12000B87BD /* PayeeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046F3DC227B6613007778A1 /* PayeeRequest.swift */; };
+		30CE6087227D1D12000B87BD /* ScheduledTransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634288227CD715001CF381 /* ScheduledTransactionsRequest.swift */; };
+		30CE6088227D1D12000B87BD /* TransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB7227A3A7A0005E34E /* TransactionRequest.swift */; };
+		30CE6089227D1D12000B87BD /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB1227A30C00005E34E /* UserRequest.swift */; };
 		30CE608D227D1D12000B87BD /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633D2277ED8D00A1222B /* ErrorResponse.swift */; };
-		30CE608E227D1D12000B87BD /* MonthResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B66227C950600BD4281 /* MonthResponses.swift */; };
-		30CE608F227D1D12000B87BD /* PayeeLocationResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B52227C84FE00BD4281 /* PayeeLocationResponses.swift */; };
-		30CE6090227D1D12000B87BD /* PayeeResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30307FBA227B521500CBF404 /* PayeeResponses.swift */; };
-		30CE6091227D1D12000B87BD /* ScheduledTransactionResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30634284227CD662001CF381 /* ScheduledTransactionResponses.swift */; };
-		30CE6092227D1D12000B87BD /* TransactionResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350CF2278AE7D00456287 /* TransactionResponses.swift */; };
-		30CE6093227D1D12000B87BD /* UserResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51422791B5B000FE07D /* UserResponses.swift */; };
+		30CE6093227D1D12000B87BD /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51422791B5B000FE07D /* UserResponse.swift */; };
 		30CE6094227D1D12000B87BD /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB533227A7987000FE07D /* AccountService.swift */; };
 		30CE6095227D1D12000B87BD /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52F227A746F000FE07D /* BudgetService.swift */; };
 		30CE6096227D1D12000B87BD /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB557227BBF15000FE07D /* CategoryService.swift */; };
@@ -304,17 +363,14 @@
 		30CE6098227D1D12000B87BD /* PayeeLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5C227C865000BD4281 /* PayeeLocationService.swift */; };
 		30CE6099227D1D12000B87BD /* PayeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B4E227C7B6D00BD4281 /* PayeeService.swift */; };
 		30CE609A227D1D12000B87BD /* ScheduledTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063428A227CD774001CF381 /* ScheduledTransactionService.swift */; };
-		30CE609B227D1D12000B87BD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA9B5E227C86A500BD4281 /* Service.swift */; };
 		30CE609C227D1D12000B87BD /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB535227A7993000FE07D /* TransactionService.swift */; };
 		30CE609D227D1D12000B87BD /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB537227A799D000FE07D /* UserService.swift */; };
 		30DA1CA4227A27690005E34E /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CA3227A27690005E34E /* TransactionType.swift */; };
-		30DA1CB2227A30C00005E34E /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB1227A30C00005E34E /* UserRequests.swift */; };
-		30DA1CB4227A31320005E34E /* BudgetRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB3227A31320005E34E /* BudgetRequests.swift */; };
-		30DA1CB6227A31B20005E34E /* AccountRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB5227A31B20005E34E /* AccountRequests.swift */; };
-		30DA1CB8227A3A7A0005E34E /* TransactionRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB7227A3A7A0005E34E /* TransactionRequests.swift */; };
+		30DA1CB2227A30C00005E34E /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB1227A30C00005E34E /* UserRequest.swift */; };
+		30DA1CB6227A31B20005E34E /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB5227A31B20005E34E /* AccountRequest.swift */; };
+		30DA1CB8227A3A7A0005E34E /* TransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB7227A3A7A0005E34E /* TransactionRequest.swift */; };
 		30DA1CBA227A3C8F0005E34E /* TransactionRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CB9227A3C8F0005E34E /* TransactionRequestTests.swift */; };
 		30DA1CBE227A4F4F0005E34E /* AccountResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CBD227A4F4F0005E34E /* AccountResponseTests.swift */; };
-		30DA1CC2227A4FDA0005E34E /* BudgetResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CC1227A4FDA0005E34E /* BudgetResponseTests.swift */; };
 		30DA1CC4227A50AC0005E34E /* ErrorResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CC3227A50AC0005E34E /* ErrorResponseTests.swift */; };
 		30DA1CC6227A522E0005E34E /* SubTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CC5227A522E0005E34E /* SubTransactionTests.swift */; };
 		30DA1CC8227A52900005E34E /* TransactionResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CC7227A52900005E34E /* TransactionResponseTests.swift */; };
@@ -322,19 +378,17 @@
 		30DA1CD4227A543D0005E34E /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CD3227A543D0005E34E /* UserTests.swift */; };
 		30DA1CD8227A54830005E34E /* UserResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CD7227A54830005E34E /* UserResponseTests.swift */; };
 		30E163302277D7A500A1222B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1632F2277D7A500A1222B /* Account.swift */; };
-		30E1633A2277EC3500A1222B /* AccountResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E163392277EC3500A1222B /* AccountResponses.swift */; };
-		30E1633C2277ED1700A1222B /* BudgetResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633B2277ED1700A1222B /* BudgetResponses.swift */; };
 		30E1633E2277ED8D00A1222B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633D2277ED8D00A1222B /* ErrorResponse.swift */; };
 		30EBB50B22791929000FE07D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB50A22791929000FE07D /* User.swift */; };
 		30EBB50D22791A36000FE07D /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB50C22791A36000FE07D /* User.json */; };
 		30EBB51322791B45000FE07D /* UserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB51222791B45000FE07D /* UserResponse.json */; };
-		30EBB51522791B5B000FE07D /* UserResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51422791B5B000FE07D /* UserResponses.swift */; };
+		30EBB51522791B5B000FE07D /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51422791B5B000FE07D /* UserResponse.swift */; };
 		30EBB51922791C18000FE07D /* UserRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51822791C18000FE07D /* UserRequestTests.swift */; };
 		30EBB51F227925CB000FE07D /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB51E227925CB000FE07D /* CurrencyFormatterTests.swift */; };
 		30EBB52122792744000FE07D /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52022792744000FE07D /* CurrencyFormatter.swift */; };
 		30EBB52322792FAA000FE07D /* DateConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52222792FAA000FE07D /* DateConverterTests.swift */; };
 		30EBB52522793086000FE07D /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52422793086000FE07D /* DateConverter.swift */; };
-		30EBB5272279BD00000FE07D /* SerializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5262279BD00000FE07D /* SerializationError.swift */; };
+		30EBB5272279BD00000FE07D /* SwiftYNABError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5262279BD00000FE07D /* SwiftYNABError.swift */; };
 		30EBB530227A746F000FE07D /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB52F227A746F000FE07D /* BudgetService.swift */; };
 		30EBB532227A7592000FE07D /* YNAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB531227A7592000FE07D /* YNAB.swift */; };
 		30EBB534227A7987000FE07D /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB533227A7987000FE07D /* AccountService.swift */; };
@@ -346,12 +400,16 @@
 		30EBB558227BBF15000FE07D /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB557227BBF15000FE07D /* CategoryService.swift */; };
 		30EBB55C227BC0EE000FE07D /* CategoriesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB55A227BC0EE000FE07D /* CategoriesResponse.json */; };
 		30EBB55E227BC104000FE07D /* CategoryResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB55D227BC104000FE07D /* CategoryResponseTests.swift */; };
-		30EBB560227BC168000FE07D /* CategoryResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB55F227BC168000FE07D /* CategoryResponses.swift */; };
 		30EBB562227BC206000FE07D /* CategoryRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB561227BC206000FE07D /* CategoryRequestTests.swift */; };
-		30EBB564227BC32C000FE07D /* CategoryRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB563227BC32C000FE07D /* CategoryRequests.swift */; };
+		30EBB564227BC32C000FE07D /* CategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB563227BC32C000FE07D /* CategoryRequest.swift */; };
 		30EBB569227BC629000FE07D /* Category.json in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB566227BC629000FE07D /* Category.json */; };
 		30EBB56A227BC629000FE07D /* CategoryResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB567227BC629000FE07D /* CategoryResponse.json */; };
 		30EBB56C227BD65D000FE07D /* SaveMonthCategoryRequestWrapper.json in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB56B227BD65D000FE07D /* SaveMonthCategoryRequestWrapper.json */; };
+		30EEBE8328B63766005D5F8E /* SwiftYNABErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEBE8228B63766005D5F8E /* SwiftYNABErrorTests.swift */; };
+		30EEBE8628B65B85005D5F8E /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEBE8528B65B85005D5F8E /* UserServiceTests.swift */; };
+		30EEBE8928B77811005D5F8E /* MockSuccessClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEBE8828B77811005D5F8E /* MockSuccessClient.swift */; };
+		30EEBE8B28B77836005D5F8E /* MockFailureClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEBE8A28B77836005D5F8E /* MockFailureClient.swift */; };
+		30EEBE8D28B77CAF005D5F8E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEBE8C28B77CAF005D5F8E /* MockURLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -365,22 +423,86 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3008B4452878ACD20025034C /* AccountsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsResponseTests.swift; sourceTree = "<group>"; };
+		3008B4472878AD180025034C /* BudgetDetailsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsResponseTests.swift; sourceTree = "<group>"; };
+		3008B4492878AD420025034C /* BudgetSummaryResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummaryResponseTests.swift; sourceTree = "<group>"; };
+		3008B44B2878AD6A0025034C /* BudgetSettingsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSettingsResponseTests.swift; sourceTree = "<group>"; };
+		3008B44D2878AD9F0025034C /* CategoriesResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponseTests.swift; sourceTree = "<group>"; };
+		3008B44F2878ADDC0025034C /* MonthsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsResponseTests.swift; sourceTree = "<group>"; };
+		3008B4512878AE090025034C /* PayeeLocationsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationsResponseTests.swift; sourceTree = "<group>"; };
+		3008B4532878AE2B0025034C /* PayeesResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeesResponseTests.swift; sourceTree = "<group>"; };
+		3008B4552878AE5A0025034C /* ScheduleTransactionResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTransactionResponseTests.swift; sourceTree = "<group>"; };
+		3008B4572878AE920025034C /* SaveTransactionResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionResponseTests.swift; sourceTree = "<group>"; };
+		3008B4592878AEBD0025034C /* TransactionsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsResponseTests.swift; sourceTree = "<group>"; };
+		3008B45B2878AEEA0025034C /* SaveTransactionsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionsResponseTests.swift; sourceTree = "<group>"; };
+		3008B45D2878AF150025034C /* HybridTransactionsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridTransactionsResponseTests.swift; sourceTree = "<group>"; };
+		3008B45F2878BACC0025034C /* AccountsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRequest.swift; sourceTree = "<group>"; };
+		3008B4612878BAF30025034C /* NewBudgetAccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBudgetAccountRequest.swift; sourceTree = "<group>"; };
+		300F8138288A596D005DEAF2 /* ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTests.swift; sourceTree = "<group>"; };
 		301BF1C1227B642D00BD657E /* PayeeResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PayeeResponse.json; sourceTree = "<group>"; };
 		301BF1C4227B644300BD657E /* PayeeResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeResponseTests.swift; sourceTree = "<group>"; };
 		302BA5C324EF1CED00BAA404 /* NewBudgetAccountResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewBudgetAccountResponse.json; sourceTree = "<group>"; };
+		302F168728792D8C00A336AD /* BudgetSummaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummaryRequest.swift; sourceTree = "<group>"; };
+		302F168928792DA700A336AD /* BudgetSettingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSettingsRequest.swift; sourceTree = "<group>"; };
+		302F168B28792DC200A336AD /* BudgetDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailRequest.swift; sourceTree = "<group>"; };
+		302F168D28792E0F00A336AD /* AccountsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRequestTests.swift; sourceTree = "<group>"; };
+		302F168F28792E7000A336AD /* NewBudgetAccountRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBudgetAccountRequestTests.swift; sourceTree = "<group>"; };
+		302F169128792F3F00A336AD /* BudgetSummaryRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummaryRequestTests.swift; sourceTree = "<group>"; };
+		302F169328792FA100A336AD /* BudgetSettingsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSettingsRequestTests.swift; sourceTree = "<group>"; };
+		302F16952879306A00A336AD /* CategoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRequest.swift; sourceTree = "<group>"; };
+		302F16972879308600A336AD /* CategoriesRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRequestTests.swift; sourceTree = "<group>"; };
+		302F1699287930F800A336AD /* CategoryByMonthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryByMonthRequest.swift; sourceTree = "<group>"; };
+		302F169B2879311500A336AD /* CategoryByMonthRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryByMonthRequestTests.swift; sourceTree = "<group>"; };
+		302F169D2879316100A336AD /* SaveMonthCategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMonthCategoryRequest.swift; sourceTree = "<group>"; };
+		302F169F2879318800A336AD /* SaveMonthCategoryRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMonthCategoryRequestTests.swift; sourceTree = "<group>"; };
+		302F16A12879332100A336AD /* MonthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthRequest.swift; sourceTree = "<group>"; };
+		302F16A32879336000A336AD /* MonthsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsRequestTests.swift; sourceTree = "<group>"; };
+		302F16A5287934CA00A336AD /* PayeeLocationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationsRequest.swift; sourceTree = "<group>"; };
+		302F16A72879350E00A336AD /* PayeeLocationsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationsRequestTests.swift; sourceTree = "<group>"; };
+		302F16A92879359A00A336AD /* LocationsForPayeeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsForPayeeRequest.swift; sourceTree = "<group>"; };
+		302F16AB287935A900A336AD /* LocationsForPayeeRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsForPayeeRequestTests.swift; sourceTree = "<group>"; };
+		302F16AD2879365100A336AD /* PayeesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeesRequest.swift; sourceTree = "<group>"; };
+		302F16AF2879368500A336AD /* PayeesRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeesRequestTests.swift; sourceTree = "<group>"; };
+		302F16B1287936F500A336AD /* ScheduledTransactionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionRequest.swift; sourceTree = "<group>"; };
+		302F16B32879371E00A336AD /* ScheduledTransactionsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionsRequestTests.swift; sourceTree = "<group>"; };
+		302F16B52879392700A336AD /* SaveTransactionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionRequest.swift; sourceTree = "<group>"; };
+		302F16B72879394100A336AD /* SaveTransactionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionRequestTests.swift; sourceTree = "<group>"; };
+		302F16B928793B0D00A336AD /* SaveTransactionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionsRequest.swift; sourceTree = "<group>"; };
+		302F16BB28793B3600A336AD /* SaveTransactionsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionsRequestTests.swift; sourceTree = "<group>"; };
+		302F16BD28793BC100A336AD /* TransactionsByAccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsByAccountRequest.swift; sourceTree = "<group>"; };
+		302F16BF28793C4700A336AD /* TransactionsByAccountRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsByAccountRequestTests.swift; sourceTree = "<group>"; };
+		302F16C128793CA800A336AD /* TransactionsByBudgetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsByBudgetRequest.swift; sourceTree = "<group>"; };
+		302F16C328793CD500A336AD /* TransactionsByBudgetRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsByBudgetRequestTests.swift; sourceTree = "<group>"; };
+		302F16C528793D4900A336AD /* TransactionsByCategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsByCategoryRequest.swift; sourceTree = "<group>"; };
+		302F16C728793D6A00A336AD /* TransactionsByCategoryRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsByCategoryRequestTests.swift; sourceTree = "<group>"; };
+		302F16C928793E1A00A336AD /* TransactionsByPayeeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsByPayeeRequest.swift; sourceTree = "<group>"; };
+		302F16CB28793E3100A336AD /* TransactionsByPayeeRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsByPayeeRequestTests.swift; sourceTree = "<group>"; };
+		302F16CD28793E7B00A336AD /* TransactionQueryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionQueryBuilder.swift; sourceTree = "<group>"; };
 		30307FAE227B50F500CBF404 /* Payee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Payee.json; sourceTree = "<group>"; };
 		30307FB0227B50F500CBF404 /* PayeesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PayeesResponse.json; sourceTree = "<group>"; };
 		30307FB4227B511400CBF404 /* PayeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeTests.swift; sourceTree = "<group>"; };
 		30307FB6227B513B00CBF404 /* Payee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payee.swift; sourceTree = "<group>"; };
-		30307FBA227B521500CBF404 /* PayeeResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeResponses.swift; sourceTree = "<group>"; };
 		303358432278E466003229CF /* SaveTransaction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SaveTransaction.json; sourceTree = "<group>"; };
 		303358492278F24D003229CF /* SaveTransactionResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SaveTransactionResponse.json; sourceTree = "<group>"; };
 		3033584B2278F26E003229CF /* SubTransaction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SubTransaction.json; sourceTree = "<group>"; };
 		3033584E2278F35B003229CF /* AccountRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequestTests.swift; sourceTree = "<group>"; };
 		303358502278F4C6003229CF /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
-		303358522278FE2B003229CF /* BudgetRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRequestTests.swift; sourceTree = "<group>"; };
+		303358522278FE2B003229CF /* BudgetDetailRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailRequestTests.swift; sourceTree = "<group>"; };
+		3046A4EE2876A098006CB35A /* ClientType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientType.swift; sourceTree = "<group>"; };
+		3046A4F02876A189006CB35A /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		3046A4F22876A511006CB35A /* URLSessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionType.swift; sourceTree = "<group>"; };
+		3046A4F42876A559006CB35A /* URLSession+URLSessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+URLSessionType.swift"; sourceTree = "<group>"; };
+		3046A4F62876A68D006CB35A /* AccountServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServiceType.swift; sourceTree = "<group>"; };
+		3046A4F82876F3DB006CB35A /* BudgetServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetServiceType.swift; sourceTree = "<group>"; };
+		3046A4FA28776B38006CB35A /* CategoryServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryServiceType.swift; sourceTree = "<group>"; };
+		3046A4FC28776E6F006CB35A /* MonthServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthServiceType.swift; sourceTree = "<group>"; };
+		3046A4FE28777007006CB35A /* PayeeLocationServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationServiceType.swift; sourceTree = "<group>"; };
+		3046A5002877726D006CB35A /* PayeeServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeServiceType.swift; sourceTree = "<group>"; };
+		3046A50228777363006CB35A /* ScheduledTransactionsServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionsServiceType.swift; sourceTree = "<group>"; };
+		3046A5042877CA61006CB35A /* UserServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceType.swift; sourceTree = "<group>"; };
+		3046A5062877CAE4006CB35A /* TransactionServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceType.swift; sourceTree = "<group>"; };
 		3046F3DA227B6567007778A1 /* PayeeRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeRequestTests.swift; sourceTree = "<group>"; };
-		3046F3DC227B6613007778A1 /* PayeeRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeRequests.swift; sourceTree = "<group>"; };
+		3046F3DC227B6613007778A1 /* PayeeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeRequest.swift; sourceTree = "<group>"; };
 		3046F3E2227B6D68007778A1 /* BudgetSettingsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BudgetSettingsResponse.json; sourceTree = "<group>"; };
 		3046F3E3227B6D68007778A1 /* BudgetSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BudgetSettings.json; sourceTree = "<group>"; };
 		3046F3E8227B6DCB007778A1 /* BudgetSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSettingsTests.swift; sourceTree = "<group>"; };
@@ -399,6 +521,7 @@
 		3046F402227B7878007778A1 /* ScheduledSubTransaction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduledSubTransaction.json; sourceTree = "<group>"; };
 		3046F404227B789D007778A1 /* ScheduledSubTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledSubTransactionTests.swift; sourceTree = "<group>"; };
 		3046F406227B78C6007778A1 /* ScheduledSubTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledSubTransaction.swift; sourceTree = "<group>"; };
+		305CD25928823B4D002B6C6E /* SerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializerTests.swift; sourceTree = "<group>"; };
 		305EAA40227D1DB3002E3B8F /* SwiftYNAB_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftYNAB_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		305EAA42227D1DB3002E3B8F /* SwiftYNAB_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftYNAB_tvOS.h; sourceTree = "<group>"; };
 		305EAA43227D1DB3002E3B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -407,18 +530,16 @@
 		305EAA9C227D1DF6002E3B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30634280227CD5C2001CF381 /* ScheduledTransactionsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduledTransactionsResponse.json; sourceTree = "<group>"; };
 		30634282227CD611001CF381 /* ScheduledTransactionsResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionsResponseTests.swift; sourceTree = "<group>"; };
-		30634284227CD662001CF381 /* ScheduledTransactionResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionResponses.swift; sourceTree = "<group>"; };
 		30634286227CD698001CF381 /* ScheduledTransactionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionRequestTests.swift; sourceTree = "<group>"; };
-		30634288227CD715001CF381 /* ScheduledTransactionsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionsRequests.swift; sourceTree = "<group>"; };
+		30634288227CD715001CF381 /* ScheduledTransactionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionsRequest.swift; sourceTree = "<group>"; };
 		3063428A227CD774001CF381 /* ScheduledTransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionService.swift; sourceTree = "<group>"; };
 		3063428C227CD930001CF381 /* ScheduledTransactionResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduledTransactionResponse.json; sourceTree = "<group>"; };
 		3063428E227CDFB0001CF381 /* SaveTransactionRequestWrapper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SaveTransactionRequestWrapper.json; sourceTree = "<group>"; };
 		307350CB2278A0D200456287 /* SaveTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransaction.swift; sourceTree = "<group>"; };
-		307350CF2278AE7D00456287 /* TransactionResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponses.swift; sourceTree = "<group>"; };
 		307350D52278BF5600456287 /* BudgetSummaryResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BudgetSummaryResponse.json; sourceTree = "<group>"; };
 		307350D72278BF5600456287 /* BudgetSummary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BudgetSummary.json; sourceTree = "<group>"; };
 		307350DB2278BF8A00456287 /* BudgetSummaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummaryTests.swift; sourceTree = "<group>"; };
-		307350DD2278BFB600456287 /* TestingTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTools.swift; sourceTree = "<group>"; };
+		307350DD2278BFB600456287 /* JSONTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTools.swift; sourceTree = "<group>"; };
 		307350E02278C8E000456287 /* AccountsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AccountsResponse.json; sourceTree = "<group>"; };
 		307350E12278C8E000456287 /* Account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Account.json; sourceTree = "<group>"; };
 		307350E52278C90600456287 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
@@ -432,6 +553,30 @@
 		307350F72278CE8500456287 /* TransactionDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TransactionDetail.json; sourceTree = "<group>"; };
 		307350FB2278D22100456287 /* TransactionsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TransactionsResponse.json; sourceTree = "<group>"; };
 		307350FD2278D27500456287 /* Serializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		3076E6A928B9C8A6006BAADC /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		3076E6AB28B9CC13006BAADC /* RequestMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethodTests.swift; sourceTree = "<group>"; };
+		307EA3B02878794A00E380E7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		307EA3B228787DC000E380E7 /* AccountsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsResponse.swift; sourceTree = "<group>"; };
+		307EA3B428787DF600E380E7 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
+		307EA3B62878854100E380E7 /* BudgetSummaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummaryResponse.swift; sourceTree = "<group>"; };
+		307EA3B82878856000E380E7 /* BudgetSettingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSettingsResponse.swift; sourceTree = "<group>"; };
+		307EA3BA2878857D00E380E7 /* BudgetDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsResponse.swift; sourceTree = "<group>"; };
+		307EA3BC28788A7800E380E7 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
+		307EA3BE28788A9B00E380E7 /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
+		307EA3C028788B1C00E380E7 /* MonthsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsResponse.swift; sourceTree = "<group>"; };
+		307EA3C228788B3D00E380E7 /* MonthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthResponse.swift; sourceTree = "<group>"; };
+		307EA3C428788C5300E380E7 /* PayeeLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationsResponse.swift; sourceTree = "<group>"; };
+		307EA3C628788C6800E380E7 /* PayeeLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationResponse.swift; sourceTree = "<group>"; };
+		307EA3C828788CF500E380E7 /* PayeeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeResponse.swift; sourceTree = "<group>"; };
+		307EA3CA28788D1300E380E7 /* PayeesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeesResponse.swift; sourceTree = "<group>"; };
+		307EA3CC28788D7F00E380E7 /* ScheduledTransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionResponse.swift; sourceTree = "<group>"; };
+		307EA3CE28788D9500E380E7 /* ScheduledTransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionsResponse.swift; sourceTree = "<group>"; };
+		307EA3D028788E4700E380E7 /* TransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
+		307EA3D228788E6700E380E7 /* TransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsResponse.swift; sourceTree = "<group>"; };
+		307EA3D428788E8D00E380E7 /* SaveTransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionResponse.swift; sourceTree = "<group>"; };
+		307EA3D628788EB300E380E7 /* SaveTransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionsResponse.swift; sourceTree = "<group>"; };
+		307EA3D828788ECE00E380E7 /* HybridTransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridTransactionsResponse.swift; sourceTree = "<group>"; };
+		307EA3DA2878A13C00E380E7 /* SerializerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializerType.swift; sourceTree = "<group>"; };
 		308C2B41227B8377005C5477 /* ScheduledTransactionDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduledTransactionDetail.json; sourceTree = "<group>"; };
 		308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionDetail.swift; sourceTree = "<group>"; };
 		308C2B49227B85EB005C5477 /* ScheduledTransactionDetailTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionDetailTests.swift; sourceTree = "<group>"; };
@@ -456,6 +601,14 @@
 		308C2B6F227B962D005C5477 /* SaveMonthCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SaveMonthCategory.json; sourceTree = "<group>"; };
 		308C2B71227B9648005C5477 /* SaveMonthCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMonthCategoryTests.swift; sourceTree = "<group>"; };
 		308C2B73227B967B005C5477 /* SaveMonthCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMonthCategory.swift; sourceTree = "<group>"; };
+		308F599C28B8687100445343 /* AccountServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServiceTests.swift; sourceTree = "<group>"; };
+		308F599E28B86D3C00445343 /* BudgetServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetServiceTests.swift; sourceTree = "<group>"; };
+		308F59A028B8D6FC00445343 /* CategoryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryServiceTests.swift; sourceTree = "<group>"; };
+		308F59A228B8DBF500445343 /* MonthServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthServiceTests.swift; sourceTree = "<group>"; };
+		308F59A428B93ECF00445343 /* PayeeLocationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationServiceTests.swift; sourceTree = "<group>"; };
+		308F59A628B940C700445343 /* PayeeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeServiceTests.swift; sourceTree = "<group>"; };
+		308F59A828B9427700445343 /* ScheduledTransactionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionServiceTests.swift; sourceTree = "<group>"; };
+		308F59AA28B947EC00445343 /* TransactionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceTests.swift; sourceTree = "<group>"; };
 		30AADF632277CBDF00AE95B8 /* SwiftYNAB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftYNAB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30AADF662277CBDF00AE95B8 /* SwiftYNAB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftYNAB.h; sourceTree = "<group>"; };
 		30AADF672277CBDF00AE95B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -468,18 +621,14 @@
 		30AADF892277CC1400AE95B8 /* BudgetSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetSummary.swift; sourceTree = "<group>"; };
 		30AADF8A2277CC1400AE95B8 /* TransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
 		30AADF8B2277CC1400AE95B8 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		30AADF8E2277CC1400AE95B8 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		30BA9B4E227C7B6D00BD4281 /* PayeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeService.swift; sourceTree = "<group>"; };
 		30BA9B50227C84BE00BD4281 /* PayeeLocationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationResponseTests.swift; sourceTree = "<group>"; };
-		30BA9B52227C84FE00BD4281 /* PayeeLocationResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationResponses.swift; sourceTree = "<group>"; };
 		30BA9B55227C857900BD4281 /* PayeeLocationsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PayeeLocationsResponse.json; sourceTree = "<group>"; };
-		30BA9B58227C85A000BD4281 /* PayeeLocationRequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationRequestsTests.swift; sourceTree = "<group>"; };
-		30BA9B5A227C860600BD4281 /* PayeeLocationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationRequests.swift; sourceTree = "<group>"; };
+		30BA9B58227C85A000BD4281 /* PayeeLocationRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationRequestTests.swift; sourceTree = "<group>"; };
+		30BA9B5A227C860600BD4281 /* PayeeLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationRequest.swift; sourceTree = "<group>"; };
 		30BA9B5C227C865000BD4281 /* PayeeLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeLocationService.swift; sourceTree = "<group>"; };
-		30BA9B5E227C86A500BD4281 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		30BA9B61227C889200BD4281 /* PayeeLocationResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PayeeLocationResponse.json; sourceTree = "<group>"; };
 		30BA9B64227C94C600BD4281 /* MonthResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthResponseTests.swift; sourceTree = "<group>"; };
-		30BA9B66227C950600BD4281 /* MonthResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthResponses.swift; sourceTree = "<group>"; };
 		30BA9B69227C95BC00BD4281 /* MonthsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MonthsResponse.json; sourceTree = "<group>"; };
 		30BA9B6C227C95D800BD4281 /* MonthRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthRequestTests.swift; sourceTree = "<group>"; };
 		30BA9B6E227C962100BD4281 /* MonthsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsRequest.swift; sourceTree = "<group>"; };
@@ -493,13 +642,11 @@
 		30CE605A227D1C66000B87BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30CE605F227D1C8E000B87BD /* SwiftYNAB_WatchOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftYNAB_WatchOS.h; sourceTree = "<group>"; };
 		30DA1CA3227A27690005E34E /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
-		30DA1CB1227A30C00005E34E /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
-		30DA1CB3227A31320005E34E /* BudgetRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRequests.swift; sourceTree = "<group>"; };
-		30DA1CB5227A31B20005E34E /* AccountRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequests.swift; sourceTree = "<group>"; };
-		30DA1CB7227A3A7A0005E34E /* TransactionRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequests.swift; sourceTree = "<group>"; };
+		30DA1CB1227A30C00005E34E /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		30DA1CB5227A31B20005E34E /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
+		30DA1CB7227A3A7A0005E34E /* TransactionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequest.swift; sourceTree = "<group>"; };
 		30DA1CB9227A3C8F0005E34E /* TransactionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequestTests.swift; sourceTree = "<group>"; };
 		30DA1CBD227A4F4F0005E34E /* AccountResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponseTests.swift; sourceTree = "<group>"; };
-		30DA1CC1227A4FDA0005E34E /* BudgetResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetResponseTests.swift; sourceTree = "<group>"; };
 		30DA1CC3227A50AC0005E34E /* ErrorResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseTests.swift; sourceTree = "<group>"; };
 		30DA1CC5227A522E0005E34E /* SubTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTransactionTests.swift; sourceTree = "<group>"; };
 		30DA1CC7227A52900005E34E /* TransactionResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponseTests.swift; sourceTree = "<group>"; };
@@ -507,19 +654,17 @@
 		30DA1CD3227A543D0005E34E /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		30DA1CD7227A54830005E34E /* UserResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseTests.swift; sourceTree = "<group>"; };
 		30E1632F2277D7A500A1222B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		30E163392277EC3500A1222B /* AccountResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponses.swift; sourceTree = "<group>"; };
-		30E1633B2277ED1700A1222B /* BudgetResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetResponses.swift; sourceTree = "<group>"; };
 		30E1633D2277ED8D00A1222B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		30EBB50A22791929000FE07D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		30EBB50C22791A36000FE07D /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		30EBB51222791B45000FE07D /* UserResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserResponse.json; sourceTree = "<group>"; };
-		30EBB51422791B5B000FE07D /* UserResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponses.swift; sourceTree = "<group>"; };
+		30EBB51422791B5B000FE07D /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		30EBB51822791C18000FE07D /* UserRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestTests.swift; sourceTree = "<group>"; };
 		30EBB51E227925CB000FE07D /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		30EBB52022792744000FE07D /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		30EBB52222792FAA000FE07D /* DateConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverterTests.swift; sourceTree = "<group>"; };
 		30EBB52422793086000FE07D /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
-		30EBB5262279BD00000FE07D /* SerializationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializationError.swift; sourceTree = "<group>"; };
+		30EBB5262279BD00000FE07D /* SwiftYNABError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftYNABError.swift; sourceTree = "<group>"; };
 		30EBB52F227A746F000FE07D /* BudgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
 		30EBB531227A7592000FE07D /* YNAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNAB.swift; sourceTree = "<group>"; };
 		30EBB533227A7987000FE07D /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
@@ -530,12 +675,16 @@
 		30EBB557227BBF15000FE07D /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		30EBB55A227BC0EE000FE07D /* CategoriesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoriesResponse.json; sourceTree = "<group>"; };
 		30EBB55D227BC104000FE07D /* CategoryResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponseTests.swift; sourceTree = "<group>"; };
-		30EBB55F227BC168000FE07D /* CategoryResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponses.swift; sourceTree = "<group>"; };
 		30EBB561227BC206000FE07D /* CategoryRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRequestTests.swift; sourceTree = "<group>"; };
-		30EBB563227BC32C000FE07D /* CategoryRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRequests.swift; sourceTree = "<group>"; };
+		30EBB563227BC32C000FE07D /* CategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRequest.swift; sourceTree = "<group>"; };
 		30EBB566227BC629000FE07D /* Category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Category.json; sourceTree = "<group>"; };
 		30EBB567227BC629000FE07D /* CategoryResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoryResponse.json; sourceTree = "<group>"; };
 		30EBB56B227BD65D000FE07D /* SaveMonthCategoryRequestWrapper.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SaveMonthCategoryRequestWrapper.json; sourceTree = "<group>"; };
+		30EEBE8228B63766005D5F8E /* SwiftYNABErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftYNABErrorTests.swift; sourceTree = "<group>"; };
+		30EEBE8528B65B85005D5F8E /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
+		30EEBE8828B77811005D5F8E /* MockSuccessClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSuccessClient.swift; sourceTree = "<group>"; };
+		30EEBE8A28B77836005D5F8E /* MockFailureClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFailureClient.swift; sourceTree = "<group>"; };
+		30EEBE8C28B77CAF005D5F8E /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,20 +727,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302F16CF28793FA700A336AD /* error */ = {
+			isa = PBXGroup;
+			children = (
+				30EBB5262279BD00000FE07D /* SwiftYNABError.swift */,
+			);
+			path = error;
+			sourceTree = "<group>";
+		};
 		3033584D2278F33A003229CF /* requests */ = {
 			isa = PBXGroup;
 			children = (
 				3033584E2278F35B003229CF /* AccountRequestTests.swift */,
-				303358522278FE2B003229CF /* BudgetRequestTests.swift */,
+				302F168D28792E0F00A336AD /* AccountsRequestTests.swift */,
+				303358522278FE2B003229CF /* BudgetDetailRequestTests.swift */,
+				302F169328792FA100A336AD /* BudgetSettingsRequestTests.swift */,
+				302F169128792F3F00A336AD /* BudgetSummaryRequestTests.swift */,
+				302F16972879308600A336AD /* CategoriesRequestTests.swift */,
+				302F169B2879311500A336AD /* CategoryByMonthRequestTests.swift */,
 				30EBB561227BC206000FE07D /* CategoryRequestTests.swift */,
+				302F16AB287935A900A336AD /* LocationsForPayeeRequestTests.swift */,
 				30BA9B6C227C95D800BD4281 /* MonthRequestTests.swift */,
-				30BA9B58227C85A000BD4281 /* PayeeLocationRequestsTests.swift */,
+				302F16A32879336000A336AD /* MonthsRequestTests.swift */,
+				302F168F28792E7000A336AD /* NewBudgetAccountRequestTests.swift */,
+				30BA9B58227C85A000BD4281 /* PayeeLocationRequestTests.swift */,
+				302F16A72879350E00A336AD /* PayeeLocationsRequestTests.swift */,
 				3046F3DA227B6567007778A1 /* PayeeRequestTests.swift */,
+				302F16AF2879368500A336AD /* PayeesRequestTests.swift */,
+				3076E6AB28B9CC13006BAADC /* RequestMethodTests.swift */,
+				303358502278F4C6003229CF /* RequestTests.swift */,
+				302F169F2879318800A336AD /* SaveMonthCategoryRequestTests.swift */,
+				302F16B72879394100A336AD /* SaveTransactionRequestTests.swift */,
+				302F16BB28793B3600A336AD /* SaveTransactionsRequestTests.swift */,
 				30634286227CD698001CF381 /* ScheduledTransactionRequestTests.swift */,
+				302F16B32879371E00A336AD /* ScheduledTransactionsRequestTests.swift */,
 				30DA1CB9227A3C8F0005E34E /* TransactionRequestTests.swift */,
+				302F16BF28793C4700A336AD /* TransactionsByAccountRequestTests.swift */,
+				302F16C328793CD500A336AD /* TransactionsByBudgetRequestTests.swift */,
+				302F16C728793D6A00A336AD /* TransactionsByCategoryRequestTests.swift */,
+				302F16CB28793E3100A336AD /* TransactionsByPayeeRequestTests.swift */,
 				30EBB51822791C18000FE07D /* UserRequestTests.swift */,
 			);
 			path = requests;
+			sourceTree = "<group>";
+		};
+		305CD25828823B1A002B6C6E /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				300F8138288A596D005DEAF2 /* ClientTests.swift */,
+				305CD25928823B4D002B6C6E /* SerializerTests.swift */,
+			);
+			path = networking;
 			sourceTree = "<group>";
 		};
 		305EAA41227D1DB3002E3B8F /* SwiftYNAB-tvOS */ = {
@@ -729,10 +915,10 @@
 				30AADF662277CBDF00AE95B8 /* SwiftYNAB.h */,
 				30AADF672277CBDF00AE95B8 /* Info.plist */,
 				30EBB531227A7592000FE07D /* YNAB.swift */,
-				30AADF8D2277CC1400AE95B8 /* client */,
+				302F16CF28793FA700A336AD /* error */,
 				30EBB51C2279252D000FE07D /* formatters */,
 				30AADF832277CC1400AE95B8 /* models */,
-				30EBB54C227A9830000FE07D /* protocols */,
+				30AADF8D2277CC1400AE95B8 /* networking */,
 				30AADF8F2277CC1400AE95B8 /* requests */,
 				30EBB54B227A979E000FE07D /* responses */,
 				30EBB52E227A7446000FE07D /* services */,
@@ -744,13 +930,15 @@
 			isa = PBXGroup;
 			children = (
 				30AADF732277CBE000AE95B8 /* Info.plist */,
-				307350DD2278BFB600456287 /* TestingTools.swift */,
+				30EEBE8128B63758005D5F8E /* error */,
 				30EBB51D227925B1000FE07D /* formatters */,
 				307350D32278BEA500456287 /* json */,
 				307350D42278BEAD00456287 /* models */,
-				30EBB550227B01E5000FE07D /* protocols */,
+				305CD25828823B1A002B6C6E /* networking */,
 				3033584D2278F33A003229CF /* requests */,
 				30EBB54D227A98D8000FE07D /* responses */,
+				30EEBE8428B65B6E005D5F8E /* services */,
+				30EEBE8728B777F6005D5F8E /* tools */,
 			);
 			path = SwiftYNABTests;
 			sourceTree = "<group>";
@@ -778,7 +966,6 @@
 				3046F406227B78C6007778A1 /* ScheduledSubTransaction.swift */,
 				308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */,
 				308C2B5F227B8E33005C5477 /* ScheduledTransactionSummary.swift */,
-				30EBB5262279BD00000FE07D /* SerializationError.swift */,
 				30AADF872277CC1400AE95B8 /* SubTransaction.swift */,
 				30AADF8A2277CC1400AE95B8 /* TransactionDetail.swift */,
 				308C2B59227B8B82005C5477 /* TransactionSummary.swift */,
@@ -788,27 +975,52 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		30AADF8D2277CC1400AE95B8 /* client */ = {
+		30AADF8D2277CC1400AE95B8 /* networking */ = {
 			isa = PBXGroup;
 			children = (
-				30AADF8E2277CC1400AE95B8 /* Client.swift */,
+				3046A4F02876A189006CB35A /* Client.swift */,
+				3046A4EE2876A098006CB35A /* ClientType.swift */,
 				307350FD2278D27500456287 /* Serializer.swift */,
+				307EA3DA2878A13C00E380E7 /* SerializerType.swift */,
+				3046A4F42876A559006CB35A /* URLSession+URLSessionType.swift */,
+				3046A4F22876A511006CB35A /* URLSessionType.swift */,
 			);
-			path = client;
+			path = networking;
 			sourceTree = "<group>";
 		};
 		30AADF8F2277CC1400AE95B8 /* requests */ = {
 			isa = PBXGroup;
 			children = (
-				30DA1CB5227A31B20005E34E /* AccountRequests.swift */,
-				30DA1CB3227A31320005E34E /* BudgetRequests.swift */,
-				30EBB563227BC32C000FE07D /* CategoryRequests.swift */,
+				30DA1CB5227A31B20005E34E /* AccountRequest.swift */,
+				3008B45F2878BACC0025034C /* AccountsRequest.swift */,
+				302F168B28792DC200A336AD /* BudgetDetailRequest.swift */,
+				302F168928792DA700A336AD /* BudgetSettingsRequest.swift */,
+				302F168728792D8C00A336AD /* BudgetSummaryRequest.swift */,
+				302F16952879306A00A336AD /* CategoriesRequest.swift */,
+				302F1699287930F800A336AD /* CategoryByMonthRequest.swift */,
+				30EBB563227BC32C000FE07D /* CategoryRequest.swift */,
+				302F16A92879359A00A336AD /* LocationsForPayeeRequest.swift */,
+				302F16A12879332100A336AD /* MonthRequest.swift */,
 				30BA9B6E227C962100BD4281 /* MonthsRequest.swift */,
-				30BA9B5A227C860600BD4281 /* PayeeLocationRequests.swift */,
-				3046F3DC227B6613007778A1 /* PayeeRequests.swift */,
-				30634288227CD715001CF381 /* ScheduledTransactionsRequests.swift */,
-				30DA1CB7227A3A7A0005E34E /* TransactionRequests.swift */,
-				30DA1CB1227A30C00005E34E /* UserRequests.swift */,
+				3008B4612878BAF30025034C /* NewBudgetAccountRequest.swift */,
+				30BA9B5A227C860600BD4281 /* PayeeLocationRequest.swift */,
+				302F16A5287934CA00A336AD /* PayeeLocationsRequest.swift */,
+				3046F3DC227B6613007778A1 /* PayeeRequest.swift */,
+				302F16AD2879365100A336AD /* PayeesRequest.swift */,
+				30AADF8B2277CC1400AE95B8 /* Request.swift */,
+				3076E6A928B9C8A6006BAADC /* RequestMethod.swift */,
+				302F169D2879316100A336AD /* SaveMonthCategoryRequest.swift */,
+				302F16B52879392700A336AD /* SaveTransactionRequest.swift */,
+				302F16B928793B0D00A336AD /* SaveTransactionsRequest.swift */,
+				302F16B1287936F500A336AD /* ScheduledTransactionRequest.swift */,
+				30634288227CD715001CF381 /* ScheduledTransactionsRequest.swift */,
+				302F16CD28793E7B00A336AD /* TransactionQueryBuilder.swift */,
+				30DA1CB7227A3A7A0005E34E /* TransactionRequest.swift */,
+				302F16BD28793BC100A336AD /* TransactionsByAccountRequest.swift */,
+				302F16C128793CA800A336AD /* TransactionsByBudgetRequest.swift */,
+				302F16C528793D4900A336AD /* TransactionsByCategoryRequest.swift */,
+				302F16C928793E1A00A336AD /* TransactionsByPayeeRequest.swift */,
+				30DA1CB1227A30C00005E34E /* UserRequest.swift */,
 			);
 			path = requests;
 			sourceTree = "<group>";
@@ -844,15 +1056,23 @@
 			isa = PBXGroup;
 			children = (
 				30EBB533227A7987000FE07D /* AccountService.swift */,
+				3046A4F62876A68D006CB35A /* AccountServiceType.swift */,
 				30EBB52F227A746F000FE07D /* BudgetService.swift */,
+				3046A4F82876F3DB006CB35A /* BudgetServiceType.swift */,
 				30EBB557227BBF15000FE07D /* CategoryService.swift */,
+				3046A4FA28776B38006CB35A /* CategoryServiceType.swift */,
 				30BA9B70227C966200BD4281 /* MonthService.swift */,
+				3046A4FC28776E6F006CB35A /* MonthServiceType.swift */,
 				30BA9B5C227C865000BD4281 /* PayeeLocationService.swift */,
+				3046A4FE28777007006CB35A /* PayeeLocationServiceType.swift */,
 				30BA9B4E227C7B6D00BD4281 /* PayeeService.swift */,
+				3046A5002877726D006CB35A /* PayeeServiceType.swift */,
 				3063428A227CD774001CF381 /* ScheduledTransactionService.swift */,
-				30BA9B5E227C86A500BD4281 /* Service.swift */,
+				3046A50228777363006CB35A /* ScheduledTransactionsServiceType.swift */,
 				30EBB535227A7993000FE07D /* TransactionService.swift */,
+				3046A5062877CAE4006CB35A /* TransactionServiceType.swift */,
 				30EBB537227A799D000FE07D /* UserService.swift */,
+				3046A5042877CA61006CB35A /* UserServiceType.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -860,51 +1080,95 @@
 		30EBB54B227A979E000FE07D /* responses */ = {
 			isa = PBXGroup;
 			children = (
-				30E163392277EC3500A1222B /* AccountResponses.swift */,
-				30E1633B2277ED1700A1222B /* BudgetResponses.swift */,
-				30EBB55F227BC168000FE07D /* CategoryResponses.swift */,
+				307EA3B428787DF600E380E7 /* AccountResponse.swift */,
+				307EA3B228787DC000E380E7 /* AccountsResponse.swift */,
+				307EA3BA2878857D00E380E7 /* BudgetDetailsResponse.swift */,
+				307EA3B82878856000E380E7 /* BudgetSettingsResponse.swift */,
+				307EA3B62878854100E380E7 /* BudgetSummaryResponse.swift */,
+				307EA3BC28788A7800E380E7 /* CategoriesResponse.swift */,
+				307EA3BE28788A9B00E380E7 /* CategoryResponse.swift */,
 				30E1633D2277ED8D00A1222B /* ErrorResponse.swift */,
-				30BA9B66227C950600BD4281 /* MonthResponses.swift */,
-				30BA9B52227C84FE00BD4281 /* PayeeLocationResponses.swift */,
-				30307FBA227B521500CBF404 /* PayeeResponses.swift */,
-				30634284227CD662001CF381 /* ScheduledTransactionResponses.swift */,
-				307350CF2278AE7D00456287 /* TransactionResponses.swift */,
-				30EBB51422791B5B000FE07D /* UserResponses.swift */,
+				307EA3D828788ECE00E380E7 /* HybridTransactionsResponse.swift */,
+				307EA3C228788B3D00E380E7 /* MonthResponse.swift */,
+				307EA3C028788B1C00E380E7 /* MonthsResponse.swift */,
+				307EA3C628788C6800E380E7 /* PayeeLocationResponse.swift */,
+				307EA3C428788C5300E380E7 /* PayeeLocationsResponse.swift */,
+				307EA3C828788CF500E380E7 /* PayeeResponse.swift */,
+				307EA3CA28788D1300E380E7 /* PayeesResponse.swift */,
+				307EA3B02878794A00E380E7 /* Response.swift */,
+				307EA3D428788E8D00E380E7 /* SaveTransactionResponse.swift */,
+				307EA3D628788EB300E380E7 /* SaveTransactionsResponse.swift */,
+				307EA3CC28788D7F00E380E7 /* ScheduledTransactionResponse.swift */,
+				307EA3CE28788D9500E380E7 /* ScheduledTransactionsResponse.swift */,
+				307EA3D028788E4700E380E7 /* TransactionResponse.swift */,
+				307EA3D228788E6700E380E7 /* TransactionsResponse.swift */,
+				30EBB51422791B5B000FE07D /* UserResponse.swift */,
 			);
 			path = responses;
-			sourceTree = "<group>";
-		};
-		30EBB54C227A9830000FE07D /* protocols */ = {
-			isa = PBXGroup;
-			children = (
-				30AADF8B2277CC1400AE95B8 /* Request.swift */,
-			);
-			path = protocols;
 			sourceTree = "<group>";
 		};
 		30EBB54D227A98D8000FE07D /* responses */ = {
 			isa = PBXGroup;
 			children = (
 				30DA1CBD227A4F4F0005E34E /* AccountResponseTests.swift */,
-				30DA1CC1227A4FDA0005E34E /* BudgetResponseTests.swift */,
+				3008B4452878ACD20025034C /* AccountsResponseTests.swift */,
+				3008B4472878AD180025034C /* BudgetDetailsResponseTests.swift */,
+				3008B44B2878AD6A0025034C /* BudgetSettingsResponseTests.swift */,
+				3008B4492878AD420025034C /* BudgetSummaryResponseTests.swift */,
+				3008B44D2878AD9F0025034C /* CategoriesResponseTests.swift */,
 				30EBB55D227BC104000FE07D /* CategoryResponseTests.swift */,
 				30DA1CC3227A50AC0005E34E /* ErrorResponseTests.swift */,
+				3008B45D2878AF150025034C /* HybridTransactionsResponseTests.swift */,
 				30BA9B64227C94C600BD4281 /* MonthResponseTests.swift */,
+				3008B44F2878ADDC0025034C /* MonthsResponseTests.swift */,
 				30BA9B50227C84BE00BD4281 /* PayeeLocationResponseTests.swift */,
+				3008B4512878AE090025034C /* PayeeLocationsResponseTests.swift */,
 				301BF1C4227B644300BD657E /* PayeeResponseTests.swift */,
+				3008B4532878AE2B0025034C /* PayeesResponseTests.swift */,
+				3008B4572878AE920025034C /* SaveTransactionResponseTests.swift */,
+				3008B45B2878AEEA0025034C /* SaveTransactionsResponseTests.swift */,
 				30634282227CD611001CF381 /* ScheduledTransactionsResponseTests.swift */,
+				3008B4552878AE5A0025034C /* ScheduleTransactionResponseTests.swift */,
 				30DA1CC7227A52900005E34E /* TransactionResponseTests.swift */,
+				3008B4592878AEBD0025034C /* TransactionsResponseTests.swift */,
 				30DA1CD7227A54830005E34E /* UserResponseTests.swift */,
 			);
 			path = responses;
 			sourceTree = "<group>";
 		};
-		30EBB550227B01E5000FE07D /* protocols */ = {
+		30EEBE8128B63758005D5F8E /* error */ = {
 			isa = PBXGroup;
 			children = (
-				303358502278F4C6003229CF /* RequestTests.swift */,
+				30EEBE8228B63766005D5F8E /* SwiftYNABErrorTests.swift */,
 			);
-			path = protocols;
+			path = error;
+			sourceTree = "<group>";
+		};
+		30EEBE8428B65B6E005D5F8E /* services */ = {
+			isa = PBXGroup;
+			children = (
+				308F599C28B8687100445343 /* AccountServiceTests.swift */,
+				308F599E28B86D3C00445343 /* BudgetServiceTests.swift */,
+				308F59A028B8D6FC00445343 /* CategoryServiceTests.swift */,
+				308F59A228B8DBF500445343 /* MonthServiceTests.swift */,
+				308F59A428B93ECF00445343 /* PayeeLocationServiceTests.swift */,
+				308F59A628B940C700445343 /* PayeeServiceTests.swift */,
+				308F59A828B9427700445343 /* ScheduledTransactionServiceTests.swift */,
+				308F59AA28B947EC00445343 /* TransactionServiceTests.swift */,
+				30EEBE8528B65B85005D5F8E /* UserServiceTests.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		30EEBE8728B777F6005D5F8E /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				307350DD2278BFB600456287 /* JSONTools.swift */,
+				30EEBE8A28B77836005D5F8E /* MockFailureClient.swift */,
+				30EEBE8828B77811005D5F8E /* MockSuccessClient.swift */,
+				30EEBE8C28B77CAF005D5F8E /* MockURLSession.swift */,
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1042,7 +1306,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Andre Bocchini";
 				TargetAttributes = {
 					305EAA3F227D1DB3002E3B8F = {
@@ -1178,7 +1442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				305EAA57227D1DD1002E3B8F /* YNAB.swift in Sources */,
-				305EAA58227D1DD1002E3B8F /* Client.swift in Sources */,
 				305EAA59227D1DD1002E3B8F /* Serializer.swift in Sources */,
 				305EAA5A227D1DD1002E3B8F /* CurrencyFormatter.swift in Sources */,
 				305EAA5B227D1DD1002E3B8F /* DateConverter.swift in Sources */,
@@ -1202,32 +1465,23 @@
 				305EAA6D227D1DD2002E3B8F /* ScheduledSubTransaction.swift in Sources */,
 				305EAA6E227D1DD2002E3B8F /* ScheduledTransactionDetail.swift in Sources */,
 				305EAA6F227D1DD2002E3B8F /* ScheduledTransactionSummary.swift in Sources */,
-				305EAA70227D1DD2002E3B8F /* SerializationError.swift in Sources */,
+				305EAA70227D1DD2002E3B8F /* SwiftYNABError.swift in Sources */,
 				305EAA71227D1DD2002E3B8F /* SubTransaction.swift in Sources */,
 				305EAA72227D1DD2002E3B8F /* TransactionDetail.swift in Sources */,
 				305EAA73227D1DD2002E3B8F /* TransactionSummary.swift in Sources */,
 				305EAA74227D1DD2002E3B8F /* TransactionType.swift in Sources */,
 				305EAA75227D1DD2002E3B8F /* User.swift in Sources */,
 				305EAA76227D1DD2002E3B8F /* Request.swift in Sources */,
-				305EAA77227D1DD2002E3B8F /* AccountRequests.swift in Sources */,
-				305EAA78227D1DD2002E3B8F /* BudgetRequests.swift in Sources */,
-				305EAA79227D1DD2002E3B8F /* CategoryRequests.swift in Sources */,
+				305EAA77227D1DD2002E3B8F /* AccountRequest.swift in Sources */,
+				305EAA79227D1DD2002E3B8F /* CategoryRequest.swift in Sources */,
 				305EAA7A227D1DD2002E3B8F /* MonthsRequest.swift in Sources */,
-				305EAA7B227D1DD2002E3B8F /* PayeeLocationRequests.swift in Sources */,
-				305EAA7C227D1DD2002E3B8F /* PayeeRequests.swift in Sources */,
-				305EAA7D227D1DD2002E3B8F /* ScheduledTransactionsRequests.swift in Sources */,
-				305EAA7E227D1DD2002E3B8F /* TransactionRequests.swift in Sources */,
-				305EAA7F227D1DD2002E3B8F /* UserRequests.swift in Sources */,
-				305EAA80227D1DD2002E3B8F /* AccountResponses.swift in Sources */,
-				305EAA81227D1DD2002E3B8F /* BudgetResponses.swift in Sources */,
-				305EAA82227D1DD2002E3B8F /* CategoryResponses.swift in Sources */,
+				305EAA7B227D1DD2002E3B8F /* PayeeLocationRequest.swift in Sources */,
+				305EAA7C227D1DD2002E3B8F /* PayeeRequest.swift in Sources */,
+				305EAA7D227D1DD2002E3B8F /* ScheduledTransactionsRequest.swift in Sources */,
+				305EAA7E227D1DD2002E3B8F /* TransactionRequest.swift in Sources */,
+				305EAA7F227D1DD2002E3B8F /* UserRequest.swift in Sources */,
 				305EAA83227D1DD2002E3B8F /* ErrorResponse.swift in Sources */,
-				305EAA84227D1DD2002E3B8F /* MonthResponses.swift in Sources */,
-				305EAA85227D1DD2002E3B8F /* PayeeLocationResponses.swift in Sources */,
-				305EAA86227D1DD2002E3B8F /* PayeeResponses.swift in Sources */,
-				305EAA87227D1DD2002E3B8F /* ScheduledTransactionResponses.swift in Sources */,
-				305EAA88227D1DD2002E3B8F /* TransactionResponses.swift in Sources */,
-				305EAA89227D1DD2002E3B8F /* UserResponses.swift in Sources */,
+				305EAA89227D1DD2002E3B8F /* UserResponse.swift in Sources */,
 				305EAA8A227D1DD2002E3B8F /* AccountService.swift in Sources */,
 				305EAA8B227D1DD2002E3B8F /* BudgetService.swift in Sources */,
 				305EAA8C227D1DD2002E3B8F /* CategoryService.swift in Sources */,
@@ -1235,7 +1489,6 @@
 				305EAA8E227D1DD2002E3B8F /* PayeeLocationService.swift in Sources */,
 				305EAA8F227D1DD2002E3B8F /* PayeeService.swift in Sources */,
 				305EAA90227D1DD2002E3B8F /* ScheduledTransactionService.swift in Sources */,
-				305EAA91227D1DD2002E3B8F /* Service.swift in Sources */,
 				305EAA92227D1DD2002E3B8F /* TransactionService.swift in Sources */,
 				305EAA93227D1DD2002E3B8F /* UserService.swift in Sources */,
 			);
@@ -1246,7 +1499,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				305EAAB0227D1E13002E3B8F /* YNAB.swift in Sources */,
-				305EAAB1227D1E13002E3B8F /* Client.swift in Sources */,
 				305EAAB2227D1E13002E3B8F /* Serializer.swift in Sources */,
 				305EAAB3227D1E13002E3B8F /* CurrencyFormatter.swift in Sources */,
 				305EAAB4227D1E13002E3B8F /* DateConverter.swift in Sources */,
@@ -1270,32 +1522,23 @@
 				305EAAC6227D1E13002E3B8F /* ScheduledSubTransaction.swift in Sources */,
 				305EAAC7227D1E13002E3B8F /* ScheduledTransactionDetail.swift in Sources */,
 				305EAAC8227D1E13002E3B8F /* ScheduledTransactionSummary.swift in Sources */,
-				305EAAC9227D1E13002E3B8F /* SerializationError.swift in Sources */,
+				305EAAC9227D1E13002E3B8F /* SwiftYNABError.swift in Sources */,
 				305EAACA227D1E13002E3B8F /* SubTransaction.swift in Sources */,
 				305EAACB227D1E13002E3B8F /* TransactionDetail.swift in Sources */,
 				305EAACC227D1E13002E3B8F /* TransactionSummary.swift in Sources */,
 				305EAACD227D1E13002E3B8F /* TransactionType.swift in Sources */,
 				305EAACE227D1E13002E3B8F /* User.swift in Sources */,
 				305EAACF227D1E13002E3B8F /* Request.swift in Sources */,
-				305EAAD0227D1E13002E3B8F /* AccountRequests.swift in Sources */,
-				305EAAD1227D1E13002E3B8F /* BudgetRequests.swift in Sources */,
-				305EAAD2227D1E13002E3B8F /* CategoryRequests.swift in Sources */,
+				305EAAD0227D1E13002E3B8F /* AccountRequest.swift in Sources */,
+				305EAAD2227D1E13002E3B8F /* CategoryRequest.swift in Sources */,
 				305EAAD3227D1E13002E3B8F /* MonthsRequest.swift in Sources */,
-				305EAAD4227D1E13002E3B8F /* PayeeLocationRequests.swift in Sources */,
-				305EAAD5227D1E13002E3B8F /* PayeeRequests.swift in Sources */,
-				305EAAD6227D1E13002E3B8F /* ScheduledTransactionsRequests.swift in Sources */,
-				305EAAD7227D1E13002E3B8F /* TransactionRequests.swift in Sources */,
-				305EAAD8227D1E13002E3B8F /* UserRequests.swift in Sources */,
-				305EAAD9227D1E13002E3B8F /* AccountResponses.swift in Sources */,
-				305EAADA227D1E13002E3B8F /* BudgetResponses.swift in Sources */,
-				305EAADB227D1E13002E3B8F /* CategoryResponses.swift in Sources */,
+				305EAAD4227D1E13002E3B8F /* PayeeLocationRequest.swift in Sources */,
+				305EAAD5227D1E13002E3B8F /* PayeeRequest.swift in Sources */,
+				305EAAD6227D1E13002E3B8F /* ScheduledTransactionsRequest.swift in Sources */,
+				305EAAD7227D1E13002E3B8F /* TransactionRequest.swift in Sources */,
+				305EAAD8227D1E13002E3B8F /* UserRequest.swift in Sources */,
 				305EAADC227D1E13002E3B8F /* ErrorResponse.swift in Sources */,
-				305EAADD227D1E13002E3B8F /* MonthResponses.swift in Sources */,
-				305EAADE227D1E13002E3B8F /* PayeeLocationResponses.swift in Sources */,
-				305EAADF227D1E13002E3B8F /* PayeeResponses.swift in Sources */,
-				305EAAE0227D1E13002E3B8F /* ScheduledTransactionResponses.swift in Sources */,
-				305EAAE1227D1E13002E3B8F /* TransactionResponses.swift in Sources */,
-				305EAAE2227D1E13002E3B8F /* UserResponses.swift in Sources */,
+				305EAAE2227D1E13002E3B8F /* UserResponse.swift in Sources */,
 				305EAAE3227D1E13002E3B8F /* AccountService.swift in Sources */,
 				305EAAE4227D1E13002E3B8F /* BudgetService.swift in Sources */,
 				305EAAE5227D1E13002E3B8F /* CategoryService.swift in Sources */,
@@ -1303,7 +1546,6 @@
 				305EAAE7227D1E13002E3B8F /* PayeeLocationService.swift in Sources */,
 				305EAAE8227D1E13002E3B8F /* PayeeService.swift in Sources */,
 				305EAAE9227D1E13002E3B8F /* ScheduledTransactionService.swift in Sources */,
-				305EAAEA227D1E13002E3B8F /* Service.swift in Sources */,
 				305EAAEB227D1E13002E3B8F /* TransactionService.swift in Sources */,
 				305EAAEC227D1E13002E3B8F /* UserService.swift in Sources */,
 			);
@@ -1313,67 +1555,112 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302F168C28792DC200A336AD /* BudgetDetailRequest.swift in Sources */,
+				307EA3D528788E8D00E380E7 /* SaveTransactionResponse.swift in Sources */,
 				30307FB7227B513B00CBF404 /* Payee.swift in Sources */,
-				30BA9B5F227C86A500BD4281 /* Service.swift in Sources */,
-				30307FBB227B521500CBF404 /* PayeeResponses.swift in Sources */,
-				30EBB560227BC168000FE07D /* CategoryResponses.swift in Sources */,
-				30E1633C2277ED1700A1222B /* BudgetResponses.swift in Sources */,
 				3046F3FB227B7569007778A1 /* MonthSummary.swift in Sources */,
+				3008B4622878BAF30025034C /* NewBudgetAccountRequest.swift in Sources */,
 				30BA9B5D227C865000BD4281 /* PayeeLocationService.swift in Sources */,
+				307EA3BD28788A7800E380E7 /* CategoriesResponse.swift in Sources */,
 				3046F401227B76CA007778A1 /* MonthDetail.swift in Sources */,
-				30E1633A2277EC3500A1222B /* AccountResponses.swift in Sources */,
 				30AADF982277CC1400AE95B8 /* TransactionDetail.swift in Sources */,
+				307EA3BF28788A9B00E380E7 /* CategoryResponse.swift in Sources */,
+				302F16B2287936F500A336AD /* ScheduledTransactionRequest.swift in Sources */,
 				30BA9B6F227C962100BD4281 /* MonthsRequest.swift in Sources */,
 				308C2B68227B91AC005C5477 /* BudgetDetail.swift in Sources */,
 				3046F3F3227B7407007778A1 /* PayeeLocation.swift in Sources */,
+				307EA3BB2878857D00E380E7 /* BudgetDetailsResponse.swift in Sources */,
 				30EBB50B22791929000FE07D /* User.swift in Sources */,
+				302F16CA28793E1A00A336AD /* TransactionsByPayeeRequest.swift in Sources */,
 				308C2B6E227B9529005C5477 /* CategoryGroupWithCategories.swift in Sources */,
+				3076E6AA28B9C8A6006BAADC /* RequestMethod.swift in Sources */,
+				3046A4F92876F3DB006CB35A /* BudgetServiceType.swift in Sources */,
 				308C2B48227B85B6005C5477 /* ScheduledTransactionDetail.swift in Sources */,
+				3046A5012877726D006CB35A /* PayeeServiceType.swift in Sources */,
+				302F16C228793CA800A336AD /* TransactionsByBudgetRequest.swift in Sources */,
+				307EA3C928788CF500E380E7 /* PayeeResponse.swift in Sources */,
 				30EBB52122792744000FE07D /* CurrencyFormatter.swift in Sources */,
-				30EBB5272279BD00000FE07D /* SerializationError.swift in Sources */,
-				30DA1CB6227A31B20005E34E /* AccountRequests.swift in Sources */,
-				30EBB564227BC32C000FE07D /* CategoryRequests.swift in Sources */,
-				30DA1CB4227A31320005E34E /* BudgetRequests.swift in Sources */,
-				307350D02278AE7D00456287 /* TransactionResponses.swift in Sources */,
+				30EBB5272279BD00000FE07D /* SwiftYNABError.swift in Sources */,
+				307EA3C528788C5300E380E7 /* PayeeLocationsResponse.swift in Sources */,
+				3046A4FD28776E6F006CB35A /* MonthServiceType.swift in Sources */,
+				302F16A6287934CA00A336AD /* PayeeLocationsRequest.swift in Sources */,
+				307EA3B328787DC000E380E7 /* AccountsResponse.swift in Sources */,
+				30DA1CB6227A31B20005E34E /* AccountRequest.swift in Sources */,
+				30EBB564227BC32C000FE07D /* CategoryRequest.swift in Sources */,
 				30EBB558227BBF15000FE07D /* CategoryService.swift in Sources */,
 				30AADF922277CC1400AE95B8 /* DateFormat.swift in Sources */,
 				30AADF972277CC1400AE95B8 /* BudgetSummary.swift in Sources */,
+				3008B4602878BACC0025034C /* AccountsRequest.swift in Sources */,
+				302F168828792D8C00A336AD /* BudgetSummaryRequest.swift in Sources */,
 				308C2B60227B8E33005C5477 /* ScheduledTransactionSummary.swift in Sources */,
 				3063428B227CD775001CF381 /* ScheduledTransactionService.swift in Sources */,
 				30EBB52522793086000FE07D /* DateConverter.swift in Sources */,
 				308C2B50227B875D005C5477 /* HybridTransaction.swift in Sources */,
 				3046F407227B78C6007778A1 /* ScheduledSubTransaction.swift in Sources */,
+				307EA3C728788C6800E380E7 /* PayeeLocationResponse.swift in Sources */,
 				30AADF942277CC1400AE95B8 /* ErrorDetail.swift in Sources */,
 				30BA9B71227C966200BD4281 /* MonthService.swift in Sources */,
+				302F169E2879316100A336AD /* SaveMonthCategoryRequest.swift in Sources */,
+				302F16962879306A00A336AD /* CategoriesRequest.swift in Sources */,
 				3046F3EB227B6DF9007778A1 /* BudgetSettings.swift in Sources */,
-				30DA1CB8227A3A7A0005E34E /* TransactionRequests.swift in Sources */,
-				30DA1CB2227A30C00005E34E /* UserRequests.swift in Sources */,
+				30DA1CB8227A3A7A0005E34E /* TransactionRequest.swift in Sources */,
+				302F16BE28793BC100A336AD /* TransactionsByAccountRequest.swift in Sources */,
+				307EA3B528787DF600E380E7 /* AccountResponse.swift in Sources */,
+				30DA1CB2227A30C00005E34E /* UserRequest.swift in Sources */,
 				308C2B56227B8979005C5477 /* CategoryGroup.swift in Sources */,
 				30EBB534227A7987000FE07D /* AccountService.swift in Sources */,
+				307EA3DB2878A13C00E380E7 /* SerializerType.swift in Sources */,
 				30AADF962277CC1400AE95B8 /* CurrencyFormat.swift in Sources */,
 				30BA9B4F227C7B6D00BD4281 /* PayeeService.swift in Sources */,
-				30BA9B5B227C860600BD4281 /* PayeeLocationRequests.swift in Sources */,
+				30BA9B5B227C860600BD4281 /* PayeeLocationRequest.swift in Sources */,
+				3046A4F32876A511006CB35A /* URLSessionType.swift in Sources */,
+				302F168A28792DA700A336AD /* BudgetSettingsRequest.swift in Sources */,
+				307EA3CF28788D9500E380E7 /* ScheduledTransactionsResponse.swift in Sources */,
 				307350FE2278D27500456287 /* Serializer.swift in Sources */,
-				3046F3DD227B6613007778A1 /* PayeeRequests.swift in Sources */,
-				30BA9B67227C950600BD4281 /* MonthResponses.swift in Sources */,
+				3046A4FF28777007006CB35A /* PayeeLocationServiceType.swift in Sources */,
+				302F16AE2879365100A336AD /* PayeesRequest.swift in Sources */,
+				302F16B62879392700A336AD /* SaveTransactionRequest.swift in Sources */,
+				3046F3DD227B6613007778A1 /* PayeeRequest.swift in Sources */,
+				3046A4EF2876A098006CB35A /* ClientType.swift in Sources */,
+				307EA3D728788EB300E380E7 /* SaveTransactionsResponse.swift in Sources */,
+				302F16C628793D4900A336AD /* TransactionsByCategoryRequest.swift in Sources */,
 				3046F3EF227B7281007778A1 /* Category.swift in Sources */,
-				30BA9B53227C84FE00BD4281 /* PayeeLocationResponses.swift in Sources */,
+				3046A4FB28776B38006CB35A /* CategoryServiceType.swift in Sources */,
+				3046A4F72876A68D006CB35A /* AccountServiceType.swift in Sources */,
+				3046A50328777363006CB35A /* ScheduledTransactionsServiceType.swift in Sources */,
+				307EA3CD28788D7F00E380E7 /* ScheduledTransactionResponse.swift in Sources */,
 				30EBB532227A7592000FE07D /* YNAB.swift in Sources */,
-				30EBB51522791B5B000FE07D /* UserResponses.swift in Sources */,
+				30EBB51522791B5B000FE07D /* UserResponse.swift in Sources */,
+				3046A4F52876A559006CB35A /* URLSession+URLSessionType.swift in Sources */,
 				30EBB536227A7993000FE07D /* TransactionService.swift in Sources */,
 				308C2B74227B967B005C5477 /* SaveMonthCategory.swift in Sources */,
-				30634289227CD715001CF381 /* ScheduledTransactionsRequests.swift in Sources */,
+				307EA3D928788ECE00E380E7 /* HybridTransactionsResponse.swift in Sources */,
+				3046A5052877CA61006CB35A /* UserServiceType.swift in Sources */,
+				302F16AA2879359A00A336AD /* LocationsForPayeeRequest.swift in Sources */,
+				30634289227CD715001CF381 /* ScheduledTransactionsRequest.swift in Sources */,
+				307EA3B72878854100E380E7 /* BudgetSummaryResponse.swift in Sources */,
+				3046A5072877CAE4006CB35A /* TransactionServiceType.swift in Sources */,
 				30AADF952277CC1400AE95B8 /* SubTransaction.swift in Sources */,
-				30AADF9B2277CC1400AE95B8 /* Client.swift in Sources */,
+				3046A4F12876A189006CB35A /* Client.swift in Sources */,
 				30DA1CA4227A27690005E34E /* TransactionType.swift in Sources */,
 				30EBB538227A799D000FE07D /* UserService.swift in Sources */,
 				30E1633E2277ED8D00A1222B /* ErrorResponse.swift in Sources */,
+				302F169A287930F800A336AD /* CategoryByMonthRequest.swift in Sources */,
+				307EA3C128788B1C00E380E7 /* MonthsResponse.swift in Sources */,
+				307EA3CB28788D1300E380E7 /* PayeesResponse.swift in Sources */,
+				307EA3C328788B3D00E380E7 /* MonthResponse.swift in Sources */,
 				307350CC2278A0D200456287 /* SaveTransaction.swift in Sources */,
-				30634285227CD662001CF381 /* ScheduledTransactionResponses.swift in Sources */,
+				307EA3D128788E4700E380E7 /* TransactionResponse.swift in Sources */,
+				302F16A22879332100A336AD /* MonthRequest.swift in Sources */,
 				30EBB530227A746F000FE07D /* BudgetService.swift in Sources */,
+				302F16CE28793E7B00A336AD /* TransactionQueryBuilder.swift in Sources */,
 				30AADF992277CC1400AE95B8 /* Request.swift in Sources */,
 				30E163302277D7A500A1222B /* Account.swift in Sources */,
 				308C2B5A227B8B82005C5477 /* TransactionSummary.swift in Sources */,
+				307EA3B92878856000E380E7 /* BudgetSettingsResponse.swift in Sources */,
+				302F16BA28793B0D00A336AD /* SaveTransactionsRequest.swift in Sources */,
+				307EA3B12878794A00E380E7 /* Response.swift in Sources */,
+				307EA3D328788E6700E380E7 /* TransactionsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1382,50 +1669,96 @@
 			buildActionMask = 2147483647;
 			files = (
 				30634287227CD698001CF381 /* ScheduledTransactionRequestTests.swift in Sources */,
+				302F169228792F3F00A336AD /* BudgetSummaryRequestTests.swift in Sources */,
+				308F59A928B9427700445343 /* ScheduledTransactionServiceTests.swift in Sources */,
 				308C2B6C227B94F8005C5477 /* CategoryGroupWithCategoriesTests.swift in Sources */,
+				308F59AB28B947EC00445343 /* TransactionServiceTests.swift in Sources */,
+				3008B4582878AE920025034C /* SaveTransactionResponseTests.swift in Sources */,
+				30EEBE8628B65B85005D5F8E /* UserServiceTests.swift in Sources */,
+				308F59A128B8D6FC00445343 /* CategoryServiceTests.swift in Sources */,
 				3046F3F9227B74D0007778A1 /* MonthSummaryTests.swift in Sources */,
 				307350F02278CD7E00456287 /* ErrorDetailTests.swift in Sources */,
-				30DA1CC2227A4FDA0005E34E /* BudgetResponseTests.swift in Sources */,
 				3046F3DB227B6567007778A1 /* PayeeRequestTests.swift in Sources */,
-				303358532278FE2B003229CF /* BudgetRequestTests.swift in Sources */,
+				303358532278FE2B003229CF /* BudgetDetailRequestTests.swift in Sources */,
+				302F169428792FA100A336AD /* BudgetSettingsRequestTests.swift in Sources */,
 				30DA1CC8227A52900005E34E /* TransactionResponseTests.swift in Sources */,
 				30EBB562227BC206000FE07D /* CategoryRequestTests.swift in Sources */,
 				307350EC2278CCAC00456287 /* DateFormatTests.swift in Sources */,
 				3033584F2278F35B003229CF /* AccountRequestTests.swift in Sources */,
-				30BA9B59227C85A000BD4281 /* PayeeLocationRequestsTests.swift in Sources */,
+				302F16A02879318800A336AD /* SaveMonthCategoryRequestTests.swift in Sources */,
+				30BA9B59227C85A000BD4281 /* PayeeLocationRequestTests.swift in Sources */,
+				3008B4542878AE2B0025034C /* PayeesResponseTests.swift in Sources */,
+				3008B4482878AD180025034C /* BudgetDetailsResponseTests.swift in Sources */,
 				30EBB55E227BC104000FE07D /* CategoryResponseTests.swift in Sources */,
+				302F16B82879394100A336AD /* SaveTransactionRequestTests.swift in Sources */,
 				30BA9B6D227C95D800BD4281 /* MonthRequestTests.swift in Sources */,
 				30634283227CD611001CF381 /* ScheduledTransactionsResponseTests.swift in Sources */,
+				308F59A728B940C700445343 /* PayeeServiceTests.swift in Sources */,
 				30BA9B65227C94C600BD4281 /* MonthResponseTests.swift in Sources */,
+				30EEBE8B28B77836005D5F8E /* MockFailureClient.swift in Sources */,
 				307350E62278C90600456287 /* AccountTests.swift in Sources */,
+				302F16A82879350E00A336AD /* PayeeLocationsRequestTests.swift in Sources */,
+				3008B4562878AE5A0025034C /* ScheduleTransactionResponseTests.swift in Sources */,
+				3008B45C2878AEEA0025034C /* SaveTransactionsResponseTests.swift in Sources */,
 				308C2B5E227B8DBE005C5477 /* ScheduledTransactionSummaryTests.swift in Sources */,
+				302F16C028793C4700A336AD /* TransactionsByAccountRequestTests.swift in Sources */,
+				3008B44A2878AD420025034C /* BudgetSummaryResponseTests.swift in Sources */,
 				30EBB52322792FAA000FE07D /* DateConverterTests.swift in Sources */,
 				303358512278F4C6003229CF /* RequestTests.swift in Sources */,
 				308C2B58227B8B58005C5477 /* TransactionSummaryTests.swift in Sources */,
+				302F16C428793CD500A336AD /* TransactionsByBudgetRequestTests.swift in Sources */,
+				3008B4502878ADDC0025034C /* MonthsResponseTests.swift in Sources */,
+				302F16982879308600A336AD /* CategoriesRequestTests.swift in Sources */,
 				30307FB5227B511400CBF404 /* PayeeTests.swift in Sources */,
+				302F16AC287935A900A336AD /* LocationsForPayeeRequestTests.swift in Sources */,
+				3008B44C2878AD6A0025034C /* BudgetSettingsResponseTests.swift in Sources */,
 				30EBB51922791C18000FE07D /* UserRequestTests.swift in Sources */,
 				308C2B66227B913B005C5477 /* BudgetDetailTests.swift in Sources */,
+				302F168E28792E0F00A336AD /* AccountsRequestTests.swift in Sources */,
 				30DA1CD8227A54830005E34E /* UserResponseTests.swift in Sources */,
 				307350E82278C9EF00456287 /* CurrencyFormatTests.swift in Sources */,
+				302F169C2879311500A336AD /* CategoryByMonthRequestTests.swift in Sources */,
 				3046F3F1227B73DD007778A1 /* PayeeLocationTests.swift in Sources */,
+				308F59A328B8DBF500445343 /* MonthServiceTests.swift in Sources */,
 				307350DC2278BF8A00456287 /* BudgetSummaryTests.swift in Sources */,
 				308C2B4A227B85EB005C5477 /* ScheduledTransactionDetailTests.swift in Sources */,
+				302F16BC28793B3600A336AD /* SaveTransactionsRequestTests.swift in Sources */,
+				302F16CC28793E3100A336AD /* TransactionsByPayeeRequestTests.swift in Sources */,
 				308C2B4E227B8728005C5477 /* HybridTransactionTests.swift in Sources */,
 				301BF1C5227B644300BD657E /* PayeeResponseTests.swift in Sources */,
+				308F599D28B8687100445343 /* AccountServiceTests.swift in Sources */,
+				302F169028792E7000A336AD /* NewBudgetAccountRequestTests.swift in Sources */,
+				3076E6AC28B9CC13006BAADC /* RequestMethodTests.swift in Sources */,
+				305CD25A28823B4D002B6C6E /* SerializerTests.swift in Sources */,
+				3008B4522878AE090025034C /* PayeeLocationsResponseTests.swift in Sources */,
+				30EEBE8328B63766005D5F8E /* SwiftYNABErrorTests.swift in Sources */,
 				3046F3E9227B6DCB007778A1 /* BudgetSettingsTests.swift in Sources */,
+				3008B44E2878AD9F0025034C /* CategoriesResponseTests.swift in Sources */,
 				3046F405227B789D007778A1 /* ScheduledSubTransactionTests.swift in Sources */,
 				308C2B54227B8952005C5477 /* CategoryGroupTests.swift in Sources */,
-				307350DE2278BFB600456287 /* TestingTools.swift in Sources */,
+				3008B45E2878AF150025034C /* HybridTransactionsResponseTests.swift in Sources */,
+				307350DE2278BFB600456287 /* JSONTools.swift in Sources */,
+				302F16B42879371E00A336AD /* ScheduledTransactionsRequestTests.swift in Sources */,
+				308F59A528B93ECF00445343 /* PayeeLocationServiceTests.swift in Sources */,
 				30BA9B51227C84BE00BD4281 /* PayeeLocationResponseTests.swift in Sources */,
+				308F599F28B86D3C00445343 /* BudgetServiceTests.swift in Sources */,
 				30DA1CC4227A50AC0005E34E /* ErrorResponseTests.swift in Sources */,
+				30EEBE8928B77811005D5F8E /* MockSuccessClient.swift in Sources */,
+				3008B45A2878AEBD0025034C /* TransactionsResponseTests.swift in Sources */,
 				30DA1CD2227A540A0005E34E /* TransactionDetailTests.swift in Sources */,
+				302F16B02879368500A336AD /* PayeesRequestTests.swift in Sources */,
+				302F16A42879336000A336AD /* MonthsRequestTests.swift in Sources */,
+				3008B4462878ACD20025034C /* AccountsResponseTests.swift in Sources */,
 				30DA1CC6227A522E0005E34E /* SubTransactionTests.swift in Sources */,
+				30EEBE8D28B77CAF005D5F8E /* MockURLSession.swift in Sources */,
 				30DA1CBE227A4F4F0005E34E /* AccountResponseTests.swift in Sources */,
+				302F16C828793D6A00A336AD /* TransactionsByCategoryRequestTests.swift in Sources */,
 				30DA1CBA227A3C8F0005E34E /* TransactionRequestTests.swift in Sources */,
 				3046F3ED227B71DE007778A1 /* CategoryTests.swift in Sources */,
 				3046F3FF227B769F007778A1 /* MonthDetailTests.swift in Sources */,
 				30DA1CD4227A543D0005E34E /* UserTests.swift in Sources */,
 				30EBB51F227925CB000FE07D /* CurrencyFormatterTests.swift in Sources */,
+				300F8139288A596D005DEAF2 /* ClientTests.swift in Sources */,
 				308C2B72227B9648005C5477 /* SaveMonthCategoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1435,7 +1768,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30CE6061227D1D12000B87BD /* YNAB.swift in Sources */,
-				30CE6062227D1D12000B87BD /* Client.swift in Sources */,
 				30CE6063227D1D12000B87BD /* Serializer.swift in Sources */,
 				30CE6064227D1D12000B87BD /* CurrencyFormatter.swift in Sources */,
 				30CE6065227D1D12000B87BD /* DateConverter.swift in Sources */,
@@ -1459,32 +1791,23 @@
 				30CE6077227D1D12000B87BD /* ScheduledSubTransaction.swift in Sources */,
 				30CE6078227D1D12000B87BD /* ScheduledTransactionDetail.swift in Sources */,
 				30CE6079227D1D12000B87BD /* ScheduledTransactionSummary.swift in Sources */,
-				30CE607A227D1D12000B87BD /* SerializationError.swift in Sources */,
+				30CE607A227D1D12000B87BD /* SwiftYNABError.swift in Sources */,
 				30CE607B227D1D12000B87BD /* SubTransaction.swift in Sources */,
 				30CE607C227D1D12000B87BD /* TransactionDetail.swift in Sources */,
 				30CE607D227D1D12000B87BD /* TransactionSummary.swift in Sources */,
 				30CE607E227D1D12000B87BD /* TransactionType.swift in Sources */,
 				30CE607F227D1D12000B87BD /* User.swift in Sources */,
 				30CE6080227D1D12000B87BD /* Request.swift in Sources */,
-				30CE6081227D1D12000B87BD /* AccountRequests.swift in Sources */,
-				30CE6082227D1D12000B87BD /* BudgetRequests.swift in Sources */,
-				30CE6083227D1D12000B87BD /* CategoryRequests.swift in Sources */,
+				30CE6081227D1D12000B87BD /* AccountRequest.swift in Sources */,
+				30CE6083227D1D12000B87BD /* CategoryRequest.swift in Sources */,
 				30CE6084227D1D12000B87BD /* MonthsRequest.swift in Sources */,
-				30CE6085227D1D12000B87BD /* PayeeLocationRequests.swift in Sources */,
-				30CE6086227D1D12000B87BD /* PayeeRequests.swift in Sources */,
-				30CE6087227D1D12000B87BD /* ScheduledTransactionsRequests.swift in Sources */,
-				30CE6088227D1D12000B87BD /* TransactionRequests.swift in Sources */,
-				30CE6089227D1D12000B87BD /* UserRequests.swift in Sources */,
-				30CE608A227D1D12000B87BD /* AccountResponses.swift in Sources */,
-				30CE608B227D1D12000B87BD /* BudgetResponses.swift in Sources */,
-				30CE608C227D1D12000B87BD /* CategoryResponses.swift in Sources */,
+				30CE6085227D1D12000B87BD /* PayeeLocationRequest.swift in Sources */,
+				30CE6086227D1D12000B87BD /* PayeeRequest.swift in Sources */,
+				30CE6087227D1D12000B87BD /* ScheduledTransactionsRequest.swift in Sources */,
+				30CE6088227D1D12000B87BD /* TransactionRequest.swift in Sources */,
+				30CE6089227D1D12000B87BD /* UserRequest.swift in Sources */,
 				30CE608D227D1D12000B87BD /* ErrorResponse.swift in Sources */,
-				30CE608E227D1D12000B87BD /* MonthResponses.swift in Sources */,
-				30CE608F227D1D12000B87BD /* PayeeLocationResponses.swift in Sources */,
-				30CE6090227D1D12000B87BD /* PayeeResponses.swift in Sources */,
-				30CE6091227D1D12000B87BD /* ScheduledTransactionResponses.swift in Sources */,
-				30CE6092227D1D12000B87BD /* TransactionResponses.swift in Sources */,
-				30CE6093227D1D12000B87BD /* UserResponses.swift in Sources */,
+				30CE6093227D1D12000B87BD /* UserResponse.swift in Sources */,
 				30CE6094227D1D12000B87BD /* AccountService.swift in Sources */,
 				30CE6095227D1D12000B87BD /* BudgetService.swift in Sources */,
 				30CE6096227D1D12000B87BD /* CategoryService.swift in Sources */,
@@ -1492,7 +1815,6 @@
 				30CE6098227D1D12000B87BD /* PayeeLocationService.swift in Sources */,
 				30CE6099227D1D12000B87BD /* PayeeService.swift in Sources */,
 				30CE609A227D1D12000B87BD /* ScheduledTransactionService.swift in Sources */,
-				30CE609B227D1D12000B87BD /* Service.swift in Sources */,
 				30CE609C227D1D12000B87BD /* TransactionService.swift in Sources */,
 				30CE609D227D1D12000B87BD /* UserService.swift in Sources */,
 			);
@@ -1517,7 +1839,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 2.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "SwiftYNAB-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1533,7 +1855,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.2;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Debug;
 		};
@@ -1545,7 +1867,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 2.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "SwiftYNAB-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1561,7 +1883,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.2;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Release;
 		};
@@ -1571,10 +1893,11 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 2.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "SwiftYNAB-macOS/Info.plist";
@@ -1584,7 +1907,8 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebocchini.SwiftYNAB-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1600,10 +1924,11 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 2.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "SwiftYNAB-macOS/Info.plist";
@@ -1613,7 +1938,8 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebocchini.SwiftYNAB-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1649,6 +1975,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1657,7 +1984,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1675,7 +2002,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1683,8 +2011,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1714,6 +2044,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1722,7 +2053,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1734,16 +2065,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1755,11 +2089,11 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 2.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftYNAB/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1782,11 +2116,11 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 2.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftYNAB/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1850,7 +2184,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 2.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "SwiftYNAB-WatchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1866,7 +2200,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1879,7 +2213,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 2.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "SwiftYNAB-WatchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1895,7 +2229,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};

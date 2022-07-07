@@ -7,13 +7,10 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class UserResponseTests: XCTestCase {
-
     func testUserResponse() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(UserResponse.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: UserResponse.self))
     }
-    
 }

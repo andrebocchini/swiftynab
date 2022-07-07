@@ -7,21 +7,17 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class AccountResponseTests: XCTestCase {
-    
-    func testAccountsResponseDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(AccountsResponse.self))
-    }
-    
     func testAccountResponseDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(AccountResponse.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: AccountResponse.self))
     }
-    
+
     func testNewBudgetAccountResponseDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(NewBudgetAccountResponse.self))
+        XCTAssertNoThrow(
+            try JSONTools
+                .testDecoding(jsonFile: "NewBudgetAccountResponse", type: AccountResponse.self)
+        )
     }
-    
 }

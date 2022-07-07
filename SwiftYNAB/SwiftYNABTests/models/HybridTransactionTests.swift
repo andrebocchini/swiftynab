@@ -7,14 +7,10 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class HybridTransactionTests: XCTestCase {
-    
     func testHybridTransactionDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(HybridTransaction.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: HybridTransaction.self))
     }
-    
 }
-

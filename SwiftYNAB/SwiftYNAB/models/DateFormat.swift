@@ -9,9 +9,7 @@
 import Foundation
 
 /// Date format settings
-public struct DateFormat: Codable {
-    
+public struct DateFormat: Codable, Equatable {
     /// Date display format
     public let format: String
-    
 }

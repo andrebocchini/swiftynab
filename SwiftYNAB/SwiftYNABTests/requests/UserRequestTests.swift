@@ -7,17 +7,14 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class UserRequestTests: XCTestCase {
-
     func testUserRequest() {
         let request = UserRequest()
         XCTAssertEqual(request.path, "/v1/user")
-        XCTAssertEqual(request.method, "GET")
+        XCTAssertEqual(request.method, .get)
         XCTAssertNil(request.query)
         XCTAssertNil(request.body)
     }
-
 }

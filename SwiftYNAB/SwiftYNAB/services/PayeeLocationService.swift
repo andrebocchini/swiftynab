@@ -9,64 +9,53 @@
 import Foundation
 
 /// Provides access to payee location operations
-public class PayeeLocationService: Service {
+public class PayeeLocationService {
+    private let client: ClientType
 
-    /**
-     Returns a list of all payee locations.
-     
-     - Parameters:
-     - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
-     - completion: Completion handler that takes in two parameters.  First parameter contains the
-     list of payee locations, and the second parameter contains any errors encountered during retrieval.
-     */
-    public func getPayeeLocations(budgetId: String,
-                                  completion: @escaping ([PayeeLocation]?, ErrorDetail?) -> Void) {
+    init(client: ClientType) {
+        self.client = client
+    }
+}
+
+extension PayeeLocationService: PayeeLocationServiceType {
+    /// Returns a list of all payee locations for a budget.
+    ///
+    /// - Parameters:
+    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
+    ///
+    /// - Returns: A list of payee locations
+    public func getPayeeLocations(budgetId: String) async throws -> [PayeeLocation] {
         let request = PayeeLocationsRequest(budgetId: budgetId)
-        self.client.request(request) {
-            (response: PayeeLocationsResponse?, error: ErrorDetail?) in
-            
-            completion(response?.data.payeeLocations, error)
-        }
+        let response: PayeeLocationsResponse = try await client.request(request)
+        return response.payeeLocations
     }
-    
-    /**
-     Returns a single payee location.
-     
-     - Parameters:
-     - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
-     - payeeId: The id of the payee
-     - completion: Completion handler that takes in two parameters.  First parameter contains the
-     payee locations, and the second parameter contains any errors encountered during retrieval.
-     */
-    public func getPayeeLocation(budgetId: String,
-                                 payeeId: String,
-                                 completion: @escaping (PayeeLocation?, ErrorDetail?) -> Void) {
+
+    /// Returns a specific payee location.
+    ///
+    /// - Parameters:
+    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
+    ///    - payeeId: The id of the payee
+    ///
+    /// - Returns: A single payee location
+    public func getPayeeLocation(budgetId: String, payeeId: String) async throws -> PayeeLocation {
         let request = PayeeLocationRequest(budgetId: budgetId, payeeId: payeeId)
-        self.client.request(request) {
-            (response: PayeeLocationResponse?, error: ErrorDetail?) in
-            
-            completion(response?.data.payeeLocation, error)
-        }
+        let response: PayeeLocationResponse = try await client.request(request)
+        return response.payeeLocation
     }
-    
-    /**
-     Returns all locations for a payee.
-     
-     - Parameters:
-     - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
-     - payeeId: The id of the payee
-     - completion: Completion handler that takes in two parameters.  First parameter contains the
-     list of payee locations, and the second parameter contains any errors encountered during retrieval.
-     */
-    public func getLocationsForPayee(budgetId: String,
-                                     payeeId: String,
-                                     completion: @escaping ([PayeeLocation]?, ErrorDetail?) -> Void) {
+
+    /// Returns all locations for a payee.
+    ///
+    /// - Parameters:
+    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
+    ///    - payeeId: The id of the payee
+    ///
+    /// - Returns: A list of payee locations
+    public func getLocationsForPayee(
+        budgetId: String,
+        payeeId: String
+    ) async throws -> [PayeeLocation] {
         let request = LocationsForPayeeRequest(budgetId: budgetId, payeeId: payeeId)
-        self.client.request(request) {
-            (response: PayeeLocationsResponse?, error: ErrorDetail?) in
-            
-            completion(response?.data.payeeLocations, error)
-        }
+        let response: PayeeLocationsResponse = try await client.request(request)
+        return response.payeeLocations
     }
-    
 }

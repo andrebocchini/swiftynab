@@ -7,12 +7,10 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class ErrorResponseTests: XCTestCase {
-    
     func testErrorResponseDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(ErrorResponse.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: ErrorResponse.self))
     }
 }

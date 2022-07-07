@@ -9,21 +9,19 @@
 import Foundation
 
 /// Category group including categories
-public struct CategoryGroupWithCategories: Codable {
-    
+public struct CategoryGroupWithCategories: Codable, Equatable {
     /// Category group id
     public let id: String
-    
+
     /// Category name
     public let name: String
-    
+
     /// Whether or not the category is hidden
     public let hidden: Bool
-    
+
     /// Whether or not the category is deleted
     public let deleted: Bool
-    
+
     /// Categories belonging to this group
     public let categories: [Category]
-    
 }

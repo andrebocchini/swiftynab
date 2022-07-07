@@ -9,18 +9,16 @@
 import Foundation
 
 /// Payee model
-public struct Payee: Codable {
-    
+public struct Payee: Codable, Equatable {
     /// Payeed id
     public let id: String
-    
+
     /// Payee name
     public let name: String
-    
+
     /// Transfer account id
     public let transferAccountId: String?
-    
+
     /// Whether or not the payee is deleted
     public let deleted: Bool
-    
 }

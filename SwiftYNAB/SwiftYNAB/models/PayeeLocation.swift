@@ -9,21 +9,19 @@
 import Foundation
 
 /// Payee location model
-public struct PayeeLocation: Codable {
-    
+public struct PayeeLocation: Codable, Equatable {
     /// Payee location id
     public let id: String
-    
+
     /// Payeed id
     public let payeeId: String
-    
+
     /// Longitude of the payee location
     public let longitude: String
-    
+
     /// Latitude of the payee location
     public let latitude: String
-    
+
     /// Whether or not the payee is deleted
     public let deleted: Bool
-    
 }

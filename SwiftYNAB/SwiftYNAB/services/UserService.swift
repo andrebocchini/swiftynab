@@ -9,22 +9,21 @@
 import Foundation
 
 /// Provides access to user operations
-public class UserService: Service {
-    
-    /**
-     Returns authenticated user information
-     
-     - Parameters:
-     - completion: Completion handler that takes in two parameters.  First parameter contains the
-     user information, and the second parameter contains any errors encountered during retrieval.
-     */
-    public func getUser(completion: @escaping (User?, ErrorDetail?) -> Void) {
-        let request = UserRequest()
-        self.client.request(request) {
-            (response: UserResponse?, error: ErrorDetail?) in
-            
-            completion(response?.data.user, error)
-        }
+public class UserService {
+    private let client: ClientType
+
+    init(client: ClientType) {
+        self.client = client
     }
-    
+}
+
+extension UserService: UserServiceType {
+    /// Returns authenticated user information
+    ///
+    /// - Returns: A single user
+    public func getUser() async throws -> User {
+        let request = UserRequest()
+        let response: UserResponse = try await client.request(request)
+        return response.user
+    }
 }

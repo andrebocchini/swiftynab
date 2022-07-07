@@ -7,13 +7,10 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class PayeeLocationTests: XCTestCase {
-    
     func testPayeeLocationDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(PayeeLocation.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: PayeeLocation.self))
     }
-    
 }

@@ -10,17 +10,17 @@ import SwiftYNAB
 import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var payeeLabel: UILabel!
+    @IBOutlet var amountLabel: UILabel!
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var payeeLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-
-    func configure(with transaction: TransactionDetail,
-                   currencyFormatter: CurrencyFormatter,
-                   dateFormatter: DateConverter) {
-        self.dateLabel.text = dateFormatter.budgetFormatDateString(from: transaction.date)
-        self.payeeLabel.text = transaction.payeeName
-        self.amountLabel.text = currencyFormatter.currencyString(from: transaction.amount)
+    func configure(
+        with transaction: TransactionDetail,
+        currencyFormatter: CurrencyFormatter,
+        dateFormatter: DateConverter
+    ) {
+        dateLabel.text = dateFormatter.budgetFormatDateString(from: transaction.date)
+        payeeLabel.text = transaction.payeeName
+        amountLabel.text = currencyFormatter.currencyString(from: transaction.amount)
     }
-    
 }

@@ -17,19 +17,19 @@
     <a title="CategoryService Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 1.1.0 Docs</a></p>
-        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right">
+        <p><a href="../index.html">SwiftYNAB 2.0.0 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="../index.html">SwiftYNAB Reference</a>
-        <img id="carat" src="../img/carat.png" />
+        <img id="carat" src="../img/carat.png" alt=""/>
         CategoryService Class Reference
       </p>
     </div>
@@ -65,9 +65,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/ScheduledTransactionService.html">ScheduledTransactionService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes.html#/s:9SwiftYNAB7ServiceC">Service</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/TransactionService.html">TransactionService</a>
@@ -182,7 +179,7 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CategoryService</span> <span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:9SwiftYNAB7ServiceC">Service</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CategoryService</span></code></pre>
 
                 </div>
               </div>
@@ -195,10 +192,13 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceC13getCategories8budgetId21lastKnowledgeOfServer10completionySS_SiSgySayAA0c9GroupWithF0VGSg_AA11ErrorDetailVSgtctF"></a>
-                    <a name="//apple_ref/swift/Method/getCategories(budgetId:lastKnowledgeOfServer:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceC13getCategories8budgetId21lastKnowledgeOfServer10completionySS_SiSgySayAA0c9GroupWithF0VGSg_AA11ErrorDetailVSgtctF">getCategories(budgetId:<wbr>lastKnowledgeOfServer:<wbr>completion:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceC13getCategories8budgetId21lastKnowledgeOfServerSayAA0c9GroupWithF0VGSS_SiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/getCategories(budgetId:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceC13getCategories8budgetId21lastKnowledgeOfServerSayAA0c9GroupWithF0VGSS_SiSgtYaKF">getCategories(budgetId:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
@@ -210,22 +210,53 @@
 <p>Returns all categories grouped by category group. Amounts (budgeted, activity, balance, etc.)
 are specific to the current budget month (UTC).</p>
 
-<ul>
-<li>budgetId: The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</li>
-<li>completion: Completion handler that takes in two parameters.  First parameter contains the
-list of categories, and the second parameter contains any errors encountered during retrieval.</li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getCategories</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                          <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-                          <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">([</span><span class="kt"><a href="../Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a></span><span class="p">]?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getCategories</span><span class="p">(</span>
+    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a></span><span class="p">]</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgetId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastKnowledgeOfServer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If provided, only entities that have changed since <code>lastKnowledgeOfServer</code>
+will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A list of category groups</p>
                       </div>
                     </section>
                   </div>
@@ -233,10 +264,13 @@ list of categories, and the second parameter contains any errors encountered dur
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceC03getC08budgetId08categoryG010completionySS_SSyAA0C0VSg_AA11ErrorDetailVSgtctF"></a>
-                    <a name="//apple_ref/swift/Method/getCategory(budgetId:categoryId:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceC03getC08budgetId08categoryG010completionySS_SSyAA0C0VSg_AA11ErrorDetailVSgtctF">getCategory(budgetId:<wbr>categoryId:<wbr>completion:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceC03getC08budgetId08categoryG0AA0C0VSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/getCategory(budgetId:categoryId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceC03getC08budgetId08categoryG0AA0C0VSS_SStYaKF">getCategory(budgetId:<wbr>categoryId:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
@@ -247,22 +281,49 @@ list of categories, and the second parameter contains any errors encountered dur
 
 <p>Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC).</p>
 
-<ul>
-<li>budgetId: The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</li>
-<li>completion: Completion handler that takes in two parameters.  First parameter contains the
-category, and the second parameter contains any errors encountered during retrieval.</li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getCategory</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                        <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                        <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Category.html">Category</a></span><span class="p">?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getCategory</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Category.html">Category</a></span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgetId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>categoryId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the category</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A single category</p>
                       </div>
                     </section>
                   </div>
@@ -270,38 +331,81 @@ category, and the second parameter contains any errors encountered during retrie
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceC03getC08budgetId5month08categoryG010completionySS_S2SyAA0C0VSg_AA11ErrorDetailVSgtctF"></a>
-                    <a name="//apple_ref/swift/Method/getCategory(budgetId:month:categoryId:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceC03getC08budgetId5month08categoryG010completionySS_S2SyAA0C0VSg_AA11ErrorDetailVSgtctF">getCategory(budgetId:<wbr>month:<wbr>categoryId:<wbr>completion:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceC03getC08budgetId5month08categoryG0AA0C0VSS_S2StYaKF"></a>
+                    <a name="//apple_ref/swift/Method/getCategory(budgetId:month:categoryId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceC03getC08budgetId5month08categoryG0AA0C0VSS_S2StYaKF">getCategory(budgetId:<wbr>month:<wbr>categoryId:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns a single category for a specific budget month</p>
-
-<ul>
-<li>budgetId: The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</li>
-<li>month: The budget month in ISO format (e.g. 2016-12-01) (“current” can also be used to
-specify the current calendar month (UTC))</li>
-<li>categoryId: The id of the category</li>
-<li>completion: Completion handler that takes in two parameters.  First parameter contains the
-category, and the second parameter contains any errors encountered during retrieval.</li>
-</ul>
+                        <p>Returns a single category for a specific budget month.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getCategory</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                        <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                        <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                        <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Category.html">Category</a></span><span class="p">?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getCategory</span><span class="p">(</span>
+    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Category.html">Category</a></span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgetId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>month</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The budget month in ISO format (e.g. 2016-12-01) (“current” can also be used to
+specify the current calendar month (UTC))</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>categoryId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the category</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A single category</p>
                       </div>
                     </section>
                   </div>
@@ -309,40 +413,94 @@ category, and the second parameter contains any errors encountered during retrie
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceC06updateC08budgetId5month08categoryG08budgeted10completionySS_S2SSiyAA0C0VSg_AA11ErrorDetailVSgtctF"></a>
-                    <a name="//apple_ref/swift/Method/updateCategory(budgetId:month:categoryId:budgeted:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceC06updateC08budgetId5month08categoryG08budgeted10completionySS_S2SSiyAA0C0VSg_AA11ErrorDetailVSgtctF">updateCategory(budgetId:<wbr>month:<wbr>categoryId:<wbr>budgeted:<wbr>completion:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceC06updateC08budgetId5month08categoryG08budgetedAA0C0VSS_S2SSitYaKF"></a>
+                    <a name="//apple_ref/swift/Method/updateCategory(budgetId:month:categoryId:budgeted:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceC06updateC08budgetId5month08categoryG08budgetedAA0C0VSS_S2SSitYaKF">updateCategory(budgetId:<wbr>month:<wbr>categoryId:<wbr>budgeted:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Update a category for a specific month</p>
-
-<ul>
-<li>budgetId: The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</li>
-<li>month: The budget month in ISO format (e.g. 2016-12-01) (“current” can also be used to
-specify the current calendar month (UTC))</li>
-<li>categoryId: The id of the category</li>
-<li>budgeted: Budgeted amount for the category</li>
-<li>completion: Completion handler that takes in two parameters.  First parameter contains the
-category, and the second parameter contains any errors encountered during retrieval.</li>
-</ul>
+                        <p>Update a category for a specific month.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateCategory</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                           <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                           <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                           <span class="nv">budgeted</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
-                           <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Category.html">Category</a></span><span class="p">?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateCategory</span><span class="p">(</span>
+    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">budgeted</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Category.html">Category</a></span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgetId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>month</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The budget month in ISO format (e.g. 2016-12-01) (“current” can also be used to
+specify the current calendar month (UTC))</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>categoryId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the category</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgeted</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Budgeted amount for the category</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A single category</p>
                       </div>
                     </section>
                   </div>
@@ -352,11 +510,10 @@ category, and the second parameter contains any errors encountered during retrie
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2020-08-20)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2022 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2022-08-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>

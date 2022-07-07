@@ -1,29 +1,27 @@
 {
-    "data": {
-        "category_groups": [{
-            "id": "856a745a-6a1c-484b-8e72-0ae2c2f55a45",
-            "name": "Internal Master Category",
-            "hidden": false,
-            "deleted": false,
-            "categories": [
-                {
-                    "id": "9b6ff04f-b123-d126-4605-0ae2c2f5e3ba",
-                    "category_group_id": "856a745a-6a1c-484b-8e72-0ae2c2f55a45",
-                    "name": "To be Budgeted",
-                    "hidden": false,
-                    "original_category_group_id": null,
-                    "note": null,
-                    "budgeted": -381750,
-                    "activity": 1793000,
-                    "balance": 502239480,
-                    "goal_type": null,
-                    "goal_creation_month": null,
-                    "goal_target": 0,
-                    "goal_target_month": null,
-                    "goal_percentage_complete": null,
-                    "deleted": false
-                }
-            ]
-        }]
-    }
+    "category_groups": [{
+        "id": "856a745a-6a1c-484b-8e72-0ae2c2f55a45",
+        "name": "Internal Master Category",
+        "hidden": false,
+        "deleted": false,
+        "categories": [
+            {
+                "id": "9b6ff04f-b123-d126-4605-0ae2c2f5e3ba",
+                "category_group_id": "856a745a-6a1c-484b-8e72-0ae2c2f55a45",
+                "name": "To be Budgeted",
+                "hidden": false,
+                "original_category_group_id": null,
+                "note": null,
+                "budgeted": -381750,
+                "activity": 1793000,
+                "balance": 502239480,
+                "goal_type": null,
+                "goal_creation_month": null,
+                "goal_target": 0,
+                "goal_target_month": null,
+                "goal_percentage_complete": null,
+                "deleted": false
+            }
+        ]
+    }]
 }

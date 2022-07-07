@@ -76,3 +76,12 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Mac
+.DS_Store
+
+# SwiftPM
+.swiftpm
+
+# User-specific stuff
+.idea

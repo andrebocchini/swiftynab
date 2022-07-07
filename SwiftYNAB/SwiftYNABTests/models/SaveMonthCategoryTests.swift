@@ -7,14 +7,11 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class SaveMonthCategoryTests: XCTestCase {
-    
     func testSaveMonthCategoryEncoding() {
         let saveMonthCategory = SaveMonthCategory(budgeted: 0)
-        XCTAssertNoThrow(try TestingTools.testEncoding(saveMonthCategory))
+        XCTAssertNoThrow(try JSONTools.testEncoding(saveMonthCategory))
     }
-    
 }

@@ -10,30 +10,38 @@ import SwiftYNAB
 import UIKit
 
 class BudgetsTableViewController: UITableViewController {
-
     var api: YNAB?
-    
+
     private var budgets: [BudgetSummary]?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 44
+
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
 
         fetchBudgets()
     }
-    
+
     private func fetchBudgets() {
-        self.api?.budgets.getBudgets() {
-            (budgets: [BudgetSummary]?, error: ErrorDetail?) in
-            
-            if let budgets = budgets {
-                self.budgets = budgets
-            } else {
-                self.budgets = [BudgetSummary]()
+        guard let api = api else {
+            budgets = []
+            return
+        }
+
+        Task { [weak self] in
+            guard let self = self else {
+                budgets = []
+                return
             }
-            
+
+            do {
+                let budgets = try await api.budgets.getBudgets()
+                self.budgets = budgets
+            } catch {
+                budgets = []
+            }
+
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -42,20 +50,23 @@ class BudgetsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func numberOfSections(in _: UITableView) -> Int {
+        1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.budgets?.count ?? 0
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        budgets?.count ?? 0
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "budgetCell", for: indexPath)
-    
+
         if let label = cell.viewWithTag(1) as? UILabel,
-            let budgets = self.budgets {
-            
+           let budgets = budgets
+        {
             label.text = budgets[indexPath.row].name
         }
 
@@ -64,17 +75,17 @@ class BudgetsTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == "showAccounts" {
             if let destination = segue.destination as? AccountsTableViewController {
-                destination.api = self.api
-                
-                if let selectedRow = self.tableView.indexPathForSelectedRow?.row,
-                    let budgets = self.budgets {
+                destination.api = api
+
+                if let selectedRow = tableView.indexPathForSelectedRow?.row,
+                   let budgets = budgets
+                {
                     destination.budget = budgets[selectedRow]
                 }
             }
         }
     }
-
 }

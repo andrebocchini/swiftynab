@@ -1,5 +1,4 @@
 {
-  "data": {
       "transaction_ids": [
           "c36fbd68-131e-4ea8-b30f-94f43423021c"
       ],
@@ -24,5 +23,4 @@
           "deleted": false,
           "subtransactions": []
       }
-  }
 }

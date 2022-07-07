@@ -10,8 +10,6 @@ import Foundation
 
 /// Model used for updating the budgeted amount for a categoryx
 struct SaveMonthCategory: Codable {
-
     /// Budgeted amount for the category
     let budgeted: Int
-    
 }

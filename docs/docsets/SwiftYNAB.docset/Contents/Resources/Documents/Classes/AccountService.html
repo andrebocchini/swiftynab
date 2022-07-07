@@ -17,19 +17,19 @@
     <a title="AccountService Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 1.1.0 Docs</a></p>
-        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right">
+        <p><a href="../index.html">SwiftYNAB 2.0.0 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="../index.html">SwiftYNAB Reference</a>
-        <img id="carat" src="../img/carat.png" />
+        <img id="carat" src="../img/carat.png" alt=""/>
         AccountService Class Reference
       </p>
     </div>
@@ -65,9 +65,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/ScheduledTransactionService.html">ScheduledTransactionService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes.html#/s:9SwiftYNAB7ServiceC">Service</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/TransactionService.html">TransactionService</a>
@@ -182,7 +179,7 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AccountService</span> <span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:9SwiftYNAB7ServiceC">Service</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AccountService</span></code></pre>
 
                 </div>
               </div>
@@ -195,36 +192,64 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB14AccountServiceC03getC08budgetId07accountG010completionySS_SSyAA0C0VSg_AA11ErrorDetailVSgtctF"></a>
-                    <a name="//apple_ref/swift/Method/getAccount(budgetId:accountId:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceC03getC08budgetId07accountG010completionySS_SSyAA0C0VSg_AA11ErrorDetailVSgtctF">getAccount(budgetId:<wbr>accountId:<wbr>completion:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB14AccountServiceC03getC08budgetId07accountG0AA0C0VSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/getAccount(budgetId:accountId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceC03getC08budgetId07accountG0AA0C0VSS_SStYaKF">getAccount(budgetId:<wbr>accountId:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Retrieves a single account</p>
-
-<ul>
-<li>budgetId: Id of the budget the account belongs to</li>
-<li>accountId: Id of the account to be retrieved</li>
-<li>completion: Completion handler that accepts account and error data as parameters.
-If the are problems retrieving the account, the account data will be <code>nil</code> and the
-error will contain error information.</li>
-</ul>
+                        <p>Retrieves a single account.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAccount</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                       <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                       <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Account.html">Account</a></span><span class="p">?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAccount</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Account.html">Account</a></span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgetId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Id of the budget the account belongs to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>accountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Id of the account to be retrieved</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A single account</p>
                       </div>
                     </section>
                   </div>
@@ -232,34 +257,68 @@ error will contain error information.</li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB14AccountServiceC11getAccounts8budgetId21lastKnowledgeOfServer10completionySS_SiSgySayAA0C0VGSg_AA11ErrorDetailVSgtctF"></a>
-                    <a name="//apple_ref/swift/Method/getAccounts(budgetId:lastKnowledgeOfServer:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceC11getAccounts8budgetId21lastKnowledgeOfServer10completionySS_SiSgySayAA0C0VGSg_AA11ErrorDetailVSgtctF">getAccounts(budgetId:<wbr>lastKnowledgeOfServer:<wbr>completion:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB14AccountServiceC11getAccounts8budgetId21lastKnowledgeOfServerSayAA0C0VGSS_SiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/getAccounts(budgetId:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceC11getAccounts8budgetId21lastKnowledgeOfServerSayAA0C0VGSS_SiSgtYaKF">getAccounts(budgetId:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Retrieves all accounts for a single budget</p>
-
-<ul>
-<li>budgetId: Id of the budget the accounts belongs to</li>
-<li>lastKnowledgeOfServer: If provided, only entities that have changed since <code>lastKnowledgeOfServer</code> will be included.</li>
-<li>completion: Completion handler that accepts accounts and error data as parameters.</li>
-</ul>
+                        <p>Retrieves all accounts for a single budget.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAccounts</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                        <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-                        <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">([</span><span class="kt"><a href="../Structs/Account.html">Account</a></span><span class="p">]?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAccounts</span><span class="p">(</span>
+    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/Account.html">Account</a></span><span class="p">]</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgetId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Id of the budget the accounts belongs to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastKnowledgeOfServer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If provided, only entities that have changed since <code>lastKnowledgeOfServer</code>
+will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A list of accounts</p>
                       </div>
                     </section>
                   </div>
@@ -267,10 +326,13 @@ error will contain error information.</li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB14AccountServiceC09newBudgetC08budgetId4name4type7balance10completionySS_S2SSiyAA0C0VSg_AA11ErrorDetailVSgtctF"></a>
-                    <a name="//apple_ref/swift/Method/newBudgetAccount(budgetId:name:type:balance:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceC09newBudgetC08budgetId4name4type7balance10completionySS_S2SSiyAA0C0VSg_AA11ErrorDetailVSgtctF">newBudgetAccount(budgetId:<wbr>name:<wbr>type:<wbr>balance:<wbr>completion:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB14AccountServiceC09newBudgetC08budgetId4name4type7balanceAA0C0VSS_S2SSitYaKF"></a>
+                    <a name="//apple_ref/swift/Method/newBudgetAccount(budgetId:name:type:balance:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceC09newBudgetC08budgetId4name4type7balanceAA0C0VSS_S2SSitYaKF">newBudgetAccount(budgetId:<wbr>name:<wbr>type:<wbr>balance:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
@@ -279,26 +341,66 @@ error will contain error information.</li>
                       <div class="abstract">
                         <p>Creates a new unlinked account in a budget.</p>
 
-<ul>
-<li>budgetId: The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</li>
-<li>name: The name of the new account</li>
-<li>type: The type of the new account</li>
-<li>completion: Completion handler that takes in two parameters.  First parameter contains the
-new account, and the second parameter contains any errors encountered during creation.</li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">newBudgetAccount</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                             <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                             <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                             <span class="nv">balance</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
-                             <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Account.html">Account</a></span><span class="p">?,</span> <span class="kt"><a href="../Structs/ErrorDetail.html">ErrorDetail</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">newBudgetAccount</span><span class="p">(</span>
+    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">balance</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Account.html">Account</a></span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgetId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used budget)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the new account</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the new account</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A single account</p>
                       </div>
                     </section>
                   </div>
@@ -308,11 +410,10 @@ new account, and the second parameter contains any errors encountered during cre
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2020-08-20)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2022 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2022-08-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>

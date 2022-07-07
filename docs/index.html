@@ -16,19 +16,19 @@
     <a title="SwiftYNAB  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftYNAB 1.1.0 Docs</a></p>
-        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right">
+        <p><a href="index.html">SwiftYNAB 2.0.0 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="index.html">SwiftYNAB Reference</a>
-        <img id="carat" src="img/carat.png" />
+        <img id="carat" src="img/carat.png" alt=""/>
         SwiftYNAB  Reference
       </p>
     </div>
@@ -64,9 +64,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ScheduledTransactionService.html">ScheduledTransactionService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes.html#/s:9SwiftYNAB7ServiceC">Service</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/TransactionService.html">TransactionService</a>
@@ -178,25 +175,71 @@
         <section>
           <section class="section">
             
-            <h1 id='swiftynab' class='heading'>SwiftYNAB</h1>
-<h3 id='ynab-api-framework' class='heading'>YNAB API Framework</h3>
+            <p><a href="https://travis-ci.com/andrebocchini/swiftynab"><img src="https://travis-ci.com/andrebocchini/swiftynab.svg?branch=master" alt="Build Status"></a>  <a href="https://codecov.io/gh/andrebocchini/swiftynab"><img src="https://codecov.io/gh/andrebocchini/swiftynab/branch/master/graph/badge.svg" alt="codecov"></a></p>
+<h1 id='swiftynab' class='heading'>SwiftYNAB</h1>
 
-<p>SwiftYNAB is an iOS/macOS/tvOS/WatchOS framework for the You Need a Budget API</p>
-<h3 id='installation' class='heading'>Installation</h3>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'SwiftYNAB'</span>
+<p>SwiftYNAB is a Swift framework for iOS/macOS/WatchOS/tvOS for accessing the <a href="https://www.youneedabudget.com">You Need a Budget</a> <a href="https://api.youneedabudget.com">API</a>.  It currently supports all <a href="https://api.youneedabudget.com/v1">endpoints</a> made available by the API.</p>
+
+<p>You can browse the online documentation <a href="https://andrebocchini.github.io/swiftynab">here</a> to see what features this framework offers.</p>
+<h2 id='how-to-use-it' class='heading'>How to use it</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<ol>
+<li>Create a new project in Xcode</li>
+<li>Add a <code>Podfile</code> to the root directory of your project with the following contents:</li>
+</ol>
+<pre class="highlight plaintext"><code>use_frameworks!
+
+target :'Test' do
+        pod 'SwiftYNAB', :git =&gt; 'https://github.com/andrebocchini/swiftynab.git'
+end
 </code></pre>
-<h3 id='authors' class='heading'>Authors</h3>
 
-<p>Andre Bocchini</p>
+<ol>
+<li>Run <code>pod install</code></li>
+</ol>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<p>You can also use the <a href="https://swift.org/package-manager/">Swift Package Manager</a>.</p>
+
+<p>Instructions on how to add a Swift Package dependency to your project can be found <a href="https://developer.apple.com/documentation/xcode/swift-packages">here</a>.</p>
+<h3 id='trying-it-out' class='heading'>Trying it out</h3>
+<h5 id='personal-api-access-token' class='heading'>Personal API access token</h5>
+
+<p>The project comes with a small iOS demo that shows you how to use the framework.  If you want to try that out, or if you want to write your own code, you will need a personal API access token.</p>
+
+<p>Make sure you go here and get one:</p>
+
+<p><a href="https://api.youneedabudget.com/#personal-access-tokens">https://api.youneedabudget.com/#personal-access-tokens</a></p>
+<h5 id='sample-code' class='heading'>Sample code</h5>
+
+<p>Once you have your personal access token, you can use it to try out the framework. Start by creating a new project and at the top of the file where you plan to use SwiftYNAB, add:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">SwiftYNAB</span>
+</code></pre>
+
+<p>Then, you can try it out by writing something like:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ynab</span> <span class="o">=</span> <span class="kt">YNAB</span><span class="p">(</span><span class="nv">accessToken</span><span class="p">:</span> <span class="s">"TOKEN_GOES_HERE"</span><span class="p">)</span>
+
+<span class="kt">Task</span> <span class="p">{</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">budgets</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">ynab</span><span class="o">.</span><span class="n">budgets</span><span class="o">.</span><span class="nf">getBudgets</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">budget</span> <span class="k">in</span> <span class="n">budgets</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">budget</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Uh oh, something went wrong"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external">Andre Bocchini</a>. All rights reserved. (Last updated: 2020-08-20)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2022 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2022-08-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>

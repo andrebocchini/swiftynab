@@ -18,7 +18,7 @@ You can browse the online documentation [here](https://andrebocchini.github.io/s
 ```
 use_frameworks!
   
-target :'Test' do
+target :'YourTargetName' do
         pod 'SwiftYNAB', :git => 'https://github.com/andrebocchini/swiftynab.git'
 end
 ```
@@ -26,7 +26,9 @@ end
 
 ### Swift Package Manager
 
-You can also use the [Swift Package Manager](https://swift.org/package-manager/).  It's especially easy with Xcode 11 where adding a package dependency is as simple as choosing *File > Swift Packages > Add Package Dependency*.
+You can also use the [Swift Package Manager](https://swift.org/package-manager/).
+
+Instructions on how to add a Swift Package dependency to your project can be found [here](https://developer.apple.com/documentation/xcode/swift-packages).
 
 ### Trying it out
 
@@ -40,7 +42,7 @@ https://api.youneedabudget.com/#personal-access-tokens
 
 ##### Sample code
 
-Once you have your personal access token, you can use it to try out the framework. Start by creating a new project and at the top of the file where you plan to use SwiftYNAB, add:
+Once you have your personal access token, you can use it to try out the framework in your app. Start by creating a new project and at the top of the file where you plan to use SwiftYNAB, add:
 
 ```swift
 import SwiftYNAB
@@ -50,14 +52,15 @@ Then, you can try it out by writing something like:
 
 ```swift
 let ynab = YNAB(accessToken: "TOKEN_GOES_HERE")
-ynab.budgets.getBudgets() {
-    (budgets, error) in
-            
-    if let budgets = budgets {
+
+Task {
+    do {
+        let budgets = try await ynab.budgets.getBudgets()
+
         for budget in budgets {
             print(budget.name)
         }
-    } else {
+    } catch {
         print("Uh oh, something went wrong")
     }
 }

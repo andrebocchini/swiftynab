@@ -9,9 +9,7 @@
 import Foundation
 
 /// Authenticate user information
-public struct User: Codable {
-    
+public struct User: Codable, Equatable {
     /// User id
     public let id: String
-    
 }

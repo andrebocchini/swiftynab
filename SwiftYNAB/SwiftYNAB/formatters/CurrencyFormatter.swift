@@ -10,19 +10,9 @@ import Foundation
 
 /// Converts currency data from API responses into displayeable strings
 public class CurrencyFormatter {
-    
-    private let numberFormatter: NumberFormatter
     private let currencyFormat: CurrencyFormat
-    
-    /**
-     Initializes the formatter using format information from a budget
-    
-     - Parameters:
-     - currencyFormat: Currency format obtained from a budget
-     */
-    public init(currencyFormat: CurrencyFormat) {
-        self.currencyFormat = currencyFormat
-        
+
+    private lazy var numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.generatesDecimalNumbers = true
@@ -33,34 +23,38 @@ public class CurrencyFormatter {
         formatter.alwaysShowsDecimalSeparator = true
         formatter.minimumFractionDigits = currencyFormat.decimalDigits
         formatter.maximumFractionDigits = currencyFormat.decimalDigits
-        self.numberFormatter = formatter
+        return formatter
+    }()
+
+    /// Initializes the formatter using format information from a budget
+    ///
+    /// - Parameters:
+    ///    - currencyFormat: Currency format obtained from a budget
+    public init(currencyFormat: CurrencyFormat) {
+        self.currencyFormat = currencyFormat
     }
-    
-    /**
-     Converts milliunit amounts into a budget format currency string
-     
-     - Parameters:
-     - from: Amount in milliunits
-     
-     - Returns: Budget format currency string if conversion is successful, nil otherwise
-    */
+
+    ///  Converts milliunit amounts into a budget format currency string
+    ///
+    ///  - Parameters:
+    ///     - from: Amount in milliunits
+    ///
+    ///  - Returns: Budget format currency string if conversion is successful, nil otherwise
     public func currencyString(from amount: Int) -> String? {
-        let amountAsNumber = NSNumber(floatLiteral: Double(amount)/1000)
-        
-        guard let formattedCurrencyString = self.numberFormatter.string(from: amountAsNumber) else {
+        let amountAsNumber = NSNumber(floatLiteral: Double(amount) / 1000)
+
+        guard let formattedCurrencyString = numberFormatter.string(from: amountAsNumber) else {
             return nil
         }
-        
-        guard self.currencyFormat.displaySymbol else {
+
+        guard currencyFormat.displaySymbol else {
             return "\(formattedCurrencyString)"
         }
-        
-        if self.currencyFormat.symbolFirst {
-            return "\(self.currencyFormat.currencySymbol)\(formattedCurrencyString)"
-        }
-        else {
-            return "\(formattedCurrencyString)\(self.currencyFormat.currencySymbol)"
+
+        if currencyFormat.symbolFirst {
+            return "\(currencyFormat.currencySymbol)\(formattedCurrencyString)"
+        } else {
+            return "\(formattedCurrencyString)\(currencyFormat.currencySymbol)"
         }
     }
-    
 }

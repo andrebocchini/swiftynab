@@ -10,11 +10,9 @@ import Foundation
 
 /// Supported transaction types by the API
 public enum TransactionType: String {
-    
     /// Unapproved transaction
-    case unapproved = "unapproved"
-    
+    case unapproved
+
     /// Uncategorized transaction
-    case uncategorized = "uncategorized"
-    
+    case uncategorized
 }

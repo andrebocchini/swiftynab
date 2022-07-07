@@ -7,13 +7,10 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class CurrencyFormatTests: XCTestCase {
-    
     func testCurrencyFormatDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(CurrencyFormat.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: CurrencyFormat.self))
     }
-    
 }

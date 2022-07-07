@@ -7,13 +7,10 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class DateFormatTests: XCTestCase {
-    
     func testDateFormatDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(DateFormat.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: DateFormat.self))
     }
-    
 }

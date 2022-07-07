@@ -1,173 +1,171 @@
 {
-    "data": {
-        "budget": {
-            "id": "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
-            "name": "Budget",
-            "last_modified_on": "2019-05-02T12:58:18+00:00",
-            "date_format": {
-                "format": "MM/DD/YYYY"
-            },
-            "currency_format": {
-                "iso_code": "USD",
-                "example_format": "123,456.78",
-                "decimal_digits": 2,
-                "decimal_separator": ".",
-                "symbol_first": true,
-                "group_separator": ",",
-                "currency_symbol": "$",
-                "display_symbol": true
-            },
-            "first_month": "2015-01-01",
-            "last_month": "2019-07-01",
-            "accounts": [
-                {
-                    "id": "f9574c30-0614-7880-e926-0ae2c2f6d990",
-                    "name": "Chase",
-                    "type": "checking",
-                    "on_budget": true,
-                    "closed": true,
-                    "note": null,
-                    "balance": 0,
-                    "cleared_balance": 0,
-                    "uncleared_balance": 0,
-                    "transfer_payee_id": "0bfe752a-89e1-65d4-73d4-0ae2c2f71d54",
-                    "deleted": false
-                }
-            ],
-            "payees": [
-                {
-                    "id": "e379b298-ec3f-74ce-5638-0ae2c2f74465",
-                    "name": "Starting Balance",
-                    "transfer_account_id": null,
-                    "deleted": false
-                }
-            ],
-            "payee_locations": [
-                {
-                    "id": "1fa5db3b-8338-c91d-7bf2-0ae2c2f774d6",
-                    "payee_id": "0bfe752a-89e1-65d4-73d4-0ae2c2f71d54",
-                    "latitude": "41.72825999",
-                    "longitude": "-87.70034126",
-                    "deleted": false
-                }
-            ],
-            "category_groups": [
-                {
-                    "id": "856a745a-6a1c-484b-8e72-0ae2c2f55a45",
-                    "name": "Internal Master Category",
-                    "hidden": false,
-                    "deleted": false
-                }
-            ],
-            "categories": [
-                {
-                    "id": "9b6ff04f-b123-d126-4605-0ae2c2f5e3ba",
-                    "category_group_id": "856a745a-6a1c-484b-8e72-0ae2c2f55a45",
-                    "name": "To be Budgeted",
-                    "hidden": false,
-                    "original_category_group_id": null,
-                    "note": null,
-                    "budgeted": -381750,
-                    "activity": 1793000,
-                    "balance": 502239480,
-                    "goal_type": null,
-                    "goal_creation_month": null,
-                    "goal_target": 0,
-                    "goal_target_month": null,
-                    "goal_percentage_complete": null,
-                    "deleted": false
-                }
-            ],
-            "months": [
-                {
-                    "month": "2019-08-01",
-                    "note": null,
-                    "income": 0,
-                    "budgeted": 0,
-                    "activity": 0,
-                    "to_be_budgeted": 0,
-                    "age_of_money": 48,
-                    "deleted": false,
-                    "categories": [
-                        {
-                            "id": "e7d71940-5f38-5646-e885-0ae2c2f6af57",
-                            "category_group_id": "fa816772-b5c9-d7a8-98df-0ae2c2f6a718",
-                            "name": "🛒 Groceries",
-                            "hidden": false,
-                            "original_category_group_id": null,
-                            "note": null,
-                            "budgeted": 0,
-                            "activity": 0,
-                            "balance": 359270,
-                            "goal_type": "MF",
-                            "goal_creation_month": "2018-11-01",
-                            "goal_target": 350000,
-                            "goal_target_month": null,
-                            "goal_percentage_complete": 0,
-                            "deleted": false
-                        }
-                    ]
-                }
-            ],
-            "transactions": [
-                {
-                    "id": "c36fbd68-131e-4ea8-b30f-94f43423021c",
-                    "date": "2019-05-02",
-                    "amount": -195750,
-                    "memo": "Train",
-                    "cleared": "uncleared",
-                    "approved": true,
-                    "flag_color": null,
-                    "account_id": "c7b07ca4-a629-d0bb-b9b5-0ae2c2f7ea45",
-                    "payee_id": "00bc79a3-f1ee-24ae-9d17-0ae2c2ffe6b4",
-                    "category_id": "cb6d13fc-dc85-f567-4e1f-0ae2c2f6d7bc",
-                    "transfer_account_id": null,
-                    "transfer_transaction_id": null,
-                    "matched_transaction_id": null,
-                    "import_id": null,
-                    "deleted": false
-                }
-            ],
-            "subtransactions": [
-                {
-                    "id": "5c126b8e-e0d1-1590-a570-0ae2c31c9c5a",
-                    "transaction_id": "bd323219-63ea-8ffb-4101-0ae2c31c3461",
-                    "amount": 24370,
-                    "memo": null,
-                    "payee_id": null,
-                    "category_id": "37a2a0fc-f978-1a9c-4756-0ae2c2f6832d",
-                    "transfer_account_id": null,
-                    "deleted": false
-                }
-            ],
-            "scheduled_transactions": [
-                {
-                    "id": "e24753b1-5da2-7070-a8e2-0ae2c35ecb3a",
-                    "date_first": "2019-02-13",
-                    "date_next": "2019-05-13",
-                    "frequency": "monthly",
-                    "amount": 25000,
-                    "memo": null,
-                    "flag_color": null,
-                    "account_id": "0cc17faa-16e0-031c-a867-0ae2c2f7a27c",
-                    "payee_id": "bbe9d88f-09e4-59f3-7b07-0ae2c2fc411f",
-                    "category_id": null,
-                    "transfer_account_id": null,
-                    "deleted": false
-                }
-            ],
-            "scheduled_subtransactions": [
-                {
-                    "id": "5c74ce7b-a6cd-3c60-e06f-0ae2c30337fd",
-                    "scheduled_transaction_id": "5c74ce7b-a6cd-3c60-e06f-0ae2c30337fd",
-                    "amount": 0,
-                    "memo": "Import Warning: This transaction was previously categorized as \"Pre-YNAB Debt: Mastercard\" -- ",
-                    "payee_id": "e379b298-ec3f-74ce-5638-0ae2c2f74465",
-                    "category_id": null,
-                    "transfer_account_id": null,
-                    "deleted": false
-                }
-            ]
-        }
+    "budget": {
+        "id": "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+        "name": "Budget",
+        "last_modified_on": "2019-05-02T12:58:18+00:00",
+        "date_format": {
+            "format": "MM/DD/YYYY"
+        },
+        "currency_format": {
+            "iso_code": "USD",
+            "example_format": "123,456.78",
+            "decimal_digits": 2,
+            "decimal_separator": ".",
+            "symbol_first": true,
+            "group_separator": ",",
+            "currency_symbol": "$",
+            "display_symbol": true
+        },
+        "first_month": "2015-01-01",
+        "last_month": "2019-07-01",
+        "accounts": [
+            {
+                "id": "f9574c30-0614-7880-e926-0ae2c2f6d990",
+                "name": "Chase",
+                "type": "checking",
+                "on_budget": true,
+                "closed": true,
+                "note": null,
+                "balance": 0,
+                "cleared_balance": 0,
+                "uncleared_balance": 0,
+                "transfer_payee_id": "0bfe752a-89e1-65d4-73d4-0ae2c2f71d54",
+                "deleted": false
+            }
+        ],
+        "payees": [
+            {
+                "id": "e379b298-ec3f-74ce-5638-0ae2c2f74465",
+                "name": "Starting Balance",
+                "transfer_account_id": null,
+                "deleted": false
+            }
+        ],
+        "payee_locations": [
+            {
+                "id": "1fa5db3b-8338-c91d-7bf2-0ae2c2f774d6",
+                "payee_id": "0bfe752a-89e1-65d4-73d4-0ae2c2f71d54",
+                "latitude": "41.72825999",
+                "longitude": "-87.70034126",
+                "deleted": false
+            }
+        ],
+        "category_groups": [
+            {
+                "id": "856a745a-6a1c-484b-8e72-0ae2c2f55a45",
+                "name": "Internal Master Category",
+                "hidden": false,
+                "deleted": false
+            }
+        ],
+        "categories": [
+            {
+                "id": "9b6ff04f-b123-d126-4605-0ae2c2f5e3ba",
+                "category_group_id": "856a745a-6a1c-484b-8e72-0ae2c2f55a45",
+                "name": "To be Budgeted",
+                "hidden": false,
+                "original_category_group_id": null,
+                "note": null,
+                "budgeted": -381750,
+                "activity": 1793000,
+                "balance": 502239480,
+                "goal_type": null,
+                "goal_creation_month": null,
+                "goal_target": 0,
+                "goal_target_month": null,
+                "goal_percentage_complete": null,
+                "deleted": false
+            }
+        ],
+        "months": [
+            {
+                "month": "2019-08-01",
+                "note": null,
+                "income": 0,
+                "budgeted": 0,
+                "activity": 0,
+                "to_be_budgeted": 0,
+                "age_of_money": 48,
+                "deleted": false,
+                "categories": [
+                    {
+                        "id": "e7d71940-5f38-5646-e885-0ae2c2f6af57",
+                        "category_group_id": "fa816772-b5c9-d7a8-98df-0ae2c2f6a718",
+                        "name": "🛒 Groceries",
+                        "hidden": false,
+                        "original_category_group_id": null,
+                        "note": null,
+                        "budgeted": 0,
+                        "activity": 0,
+                        "balance": 359270,
+                        "goal_type": "MF",
+                        "goal_creation_month": "2018-11-01",
+                        "goal_target": 350000,
+                        "goal_target_month": null,
+                        "goal_percentage_complete": 0,
+                        "deleted": false
+                    }
+                ]
+            }
+        ],
+        "transactions": [
+            {
+                "id": "c36fbd68-131e-4ea8-b30f-94f43423021c",
+                "date": "2019-05-02",
+                "amount": -195750,
+                "memo": "Train",
+                "cleared": "uncleared",
+                "approved": true,
+                "flag_color": null,
+                "account_id": "c7b07ca4-a629-d0bb-b9b5-0ae2c2f7ea45",
+                "payee_id": "00bc79a3-f1ee-24ae-9d17-0ae2c2ffe6b4",
+                "category_id": "cb6d13fc-dc85-f567-4e1f-0ae2c2f6d7bc",
+                "transfer_account_id": null,
+                "transfer_transaction_id": null,
+                "matched_transaction_id": null,
+                "import_id": null,
+                "deleted": false
+            }
+        ],
+        "subtransactions": [
+            {
+                "id": "5c126b8e-e0d1-1590-a570-0ae2c31c9c5a",
+                "transaction_id": "bd323219-63ea-8ffb-4101-0ae2c31c3461",
+                "amount": 24370,
+                "memo": null,
+                "payee_id": null,
+                "category_id": "37a2a0fc-f978-1a9c-4756-0ae2c2f6832d",
+                "transfer_account_id": null,
+                "deleted": false
+            }
+        ],
+        "scheduled_transactions": [
+            {
+                "id": "e24753b1-5da2-7070-a8e2-0ae2c35ecb3a",
+                "date_first": "2019-02-13",
+                "date_next": "2019-05-13",
+                "frequency": "monthly",
+                "amount": 25000,
+                "memo": null,
+                "flag_color": null,
+                "account_id": "0cc17faa-16e0-031c-a867-0ae2c2f7a27c",
+                "payee_id": "bbe9d88f-09e4-59f3-7b07-0ae2c2fc411f",
+                "category_id": null,
+                "transfer_account_id": null,
+                "deleted": false
+            }
+        ],
+        "scheduled_subtransactions": [
+            {
+                "id": "5c74ce7b-a6cd-3c60-e06f-0ae2c30337fd",
+                "scheduled_transaction_id": "5c74ce7b-a6cd-3c60-e06f-0ae2c30337fd",
+                "amount": 0,
+                "memo": "Import Warning: This transaction was previously categorized as \"Pre-YNAB Debt: Mastercard\" -- ",
+                "payee_id": "e379b298-ec3f-74ce-5638-0ae2c2f74465",
+                "category_id": null,
+                "transfer_account_id": null,
+                "deleted": false
+            }
+        ]
     }
 }

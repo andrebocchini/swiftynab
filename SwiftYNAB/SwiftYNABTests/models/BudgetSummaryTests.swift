@@ -7,13 +7,10 @@
 //
 
 import XCTest
-
 @testable import SwiftYNAB
 
 class BudgetSummaryTests: XCTestCase {
-
     func testBudgetSummaryDecoding() {
-        XCTAssertNoThrow(try TestingTools.testDecoding(BudgetSummary.self))
+        XCTAssertNoThrow(try JSONTools.testDecoding(type: BudgetSummary.self))
     }
-
 }
