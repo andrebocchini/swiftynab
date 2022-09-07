@@ -19,8 +19,8 @@ let package = Package(
         ),
         .testTarget(
             name: "SwiftYNABTests",
-            dependencies: ["SwiftYNAB"]),
-            path: "SwiftYNAB/SwiftYNABTests"
+            dependencies: ["SwiftYNAB"],
+            path: "SwiftYNAB/SwiftYNABTests")
     ],
     swiftLanguageVersions: [.v5]
 )
