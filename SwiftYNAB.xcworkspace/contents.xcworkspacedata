@@ -7,4 +7,7 @@
    <FileRef
       location = "group:SwiftYNAB-demo/SwiftYNAB-demo.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SwiftYNAB-SwiftUI-demo/SwiftYNAB-SwiftUI-demo.xcodeproj">
+   </FileRef>
 </Workspace>
