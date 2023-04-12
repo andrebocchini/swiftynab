@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/andrebocchini/swiftynab/actions/workflows/build.yml/badge.svg?branch=master)]
+![Build Status](https://github.com/andrebocchini/swiftynab/actions/workflows/build.yml/badge.svg?branch=master)
 
 
 # SwiftYNAB
