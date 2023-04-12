@@ -25,11 +25,20 @@ public struct SubTransaction: Codable, Equatable {
     /// Payee id
     public let payeeId: String?
 
+    /// Payee name
+    public let payeeName: String?
+
     /// Category id
     public let categoryId: String?
 
+    /// Category name
+    public let categoryName: String?
+
     /// If it's a transfer transaction, the transfer account id
     public let transferAccountId: String?
+
+    /// If a transfer, the id of transaction on the other side of the transfer
+    public let transferTransactionId: String?
 
     /// Whether or not the transaction has been deleted
     public let deleted: Bool

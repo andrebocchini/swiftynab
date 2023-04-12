@@ -11,7 +11,12 @@
         "cleared_balance": 0,
         "uncleared_balance": 0,
         "transfer_payee_id": "47c0ff92-43rd-47da-1234-13d9e16cb394",
-        "deleted": false
+        "deleted": false,
+        "direct_import_linked": false,
+        "direct_import_in_error": false,
+        "debt_interest_rates": {},
+        "debt_minimum_payments": {},
+        "debt_escrow_amounts": {}
     },
     "server_knowledge": 36971
 }

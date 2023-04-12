@@ -40,6 +40,27 @@ public struct Account: Codable, Equatable {
     /// Payee id for transfers
     public let transferPayeeId: String
 
+    /// Indicates whether the account is linked via direct import
+    public let directImportLinked: Bool
+
+    /// Indicates whether direct import is in an error state
+    public let directImportInError: Bool
+
+    /// Date when account was last reconciled
+    public let lastReconciledAt: String?
+
+    /// Original balance for a debt account
+    public let debtOriginalBalance: Int?
+
+    /// Interest rate at different points in time
+    public let debtInterestRates: [String: Int]
+
+    /// Minimum payment at different points in time
+    public let debtMinimumPayments: [String: Int]
+
+    /// Escrow amount at different points in time
+    public let debtEscrowAmounts: [String: Int]
+
     /// Deleted account or not
     public let deleted: Bool
 }

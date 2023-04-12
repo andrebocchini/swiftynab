@@ -14,7 +14,7 @@ class Client {
     private let serializer: SerializerType
 
     init(accessToken: String, urlSession: URLSessionType, serializer: SerializerType) {
-        self.authorizationHeader = "Bearer \(accessToken)"
+        authorizationHeader = "Bearer \(accessToken)"
         self.urlSession = urlSession
         self.serializer = serializer
     }

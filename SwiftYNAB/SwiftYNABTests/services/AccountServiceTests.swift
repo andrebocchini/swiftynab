@@ -23,6 +23,13 @@ class AccountServiceTests: XCTestCase {
             clearedBalance: 0,
             unclearedBalance: 0,
             transferPayeeId: "payeed_id",
+            directImportLinked: false,
+            directImportInError: false,
+            lastReconciledAt: nil,
+            debtOriginalBalance: nil,
+            debtInterestRates: [:],
+            debtMinimumPayments: [:],
+            debtEscrowAmounts: [:],
             deleted: false
         )
         let expectedResponse = AccountResponse(account: expectedAccount)
@@ -61,6 +68,13 @@ class AccountServiceTests: XCTestCase {
             clearedBalance: 0,
             unclearedBalance: 0,
             transferPayeeId: "payeed_id",
+            directImportLinked: false,
+            directImportInError: false,
+            lastReconciledAt: nil,
+            debtOriginalBalance: nil,
+            debtInterestRates: [:],
+            debtMinimumPayments: [:],
+            debtEscrowAmounts: [:],
             deleted: false
         )
         let expectedResponse = AccountsResponse(accounts: [expectedAccount], serverKnowledge: 2)
@@ -100,6 +114,13 @@ class AccountServiceTests: XCTestCase {
             clearedBalance: 0,
             unclearedBalance: 0,
             transferPayeeId: "payeed_id",
+            directImportLinked: false,
+            directImportInError: false,
+            lastReconciledAt: nil,
+            debtOriginalBalance: nil,
+            debtInterestRates: [:],
+            debtMinimumPayments: [:],
+            debtEscrowAmounts: [:],
             deleted: false
         )
         let expectedResponse = AccountResponse(account: expectedAccount)

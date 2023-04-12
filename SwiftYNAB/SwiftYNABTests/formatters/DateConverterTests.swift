@@ -52,7 +52,7 @@ class DateConverterTests: XCTestCase {
         XCTAssertEqual("2015.02.25", converter.budgetFormatDateString(from: "2015-02-25"))
     }
 
-    func testBudgetFormatDateStringIsNilWithInvalidDateString () {
+    func testBudgetFormatDateStringIsNilWithInvalidDateString() {
         let format = DateFormat(format: "YYY.MM.DD")
         let converter = DateConverter(dateFormat: format)
         XCTAssertNil(converter.budgetFormatDateString(from: "i am not a date"))

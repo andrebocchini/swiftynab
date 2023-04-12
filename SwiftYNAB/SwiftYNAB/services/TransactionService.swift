@@ -193,7 +193,7 @@ extension TransactionService: TransactionServiceType {
         )
     }
 
-    /// Updates a single transactions.
+    /// Updates a single transaction.
     ///
     /// - Parameters:
     ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
@@ -241,5 +241,24 @@ extension TransactionService: TransactionServiceType {
             response.transactionIds,
             response.duplicateImportIds
         )
+    }
+
+    /// Delete a single transaction.
+    ///
+    /// - Parameters:
+    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used budget)
+    ///    - transactionId: Id of the rransaction to be deleted
+    ///
+    /// - Returns: The updated transaction
+    public func deleteTransaction(
+        budgetId: String,
+        transactionId: String
+    ) async throws -> TransactionDetail {
+        let request = DeleteTransactionRequest(
+            budgetId: budgetId,
+            transactionId: transactionId
+        )
+        let response: DeleteTransactionResponse = try await client.request(request)
+        return response.transaction
     }
 }

@@ -9,5 +9,10 @@
     "cleared_balance": 0,
     "uncleared_balance": 0,
     "transfer_payee_id": "0bfe752a-89e1-65d4-73d4-0ae2c2f71d54",
-    "deleted": false
+    "deleted": false,
+    "direct_import_linked": false,
+    "direct_import_in_error": false,
+    "debt_interest_rates": {},
+    "debt_minimum_payments": {},
+    "debt_escrow_amounts": {}
 }

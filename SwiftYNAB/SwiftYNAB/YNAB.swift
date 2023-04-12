@@ -45,7 +45,7 @@ public class YNAB {
     ///    - accessToken: Personal API access token, or token obtained via OAuth login
     ///    - urlSession: By default, it uses the default `URLSession.shared`, but allows the injection of a custom session
     public init(accessToken: String, urlSession: URLSession = .shared) {
-        self.client = Client(
+        client = Client(
             accessToken: accessToken,
             urlSession: urlSession,
             serializer: Serializer.shared

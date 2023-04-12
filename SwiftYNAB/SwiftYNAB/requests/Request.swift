@@ -54,7 +54,7 @@ extension Request {
         case .patch, .post, .put:
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = body
-        case .get:
+        case .delete, .get:
             break
         }
 

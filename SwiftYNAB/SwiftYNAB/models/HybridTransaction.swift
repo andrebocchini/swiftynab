@@ -52,6 +52,9 @@ public struct HybridTransaction: Codable, Equatable {
     /// Category id
     public let categoryId: String
 
+    /// Category name
+    public let categoryName: String
+
     /// Transfer account id
     public let transferAccountId: String?
 
@@ -63,6 +66,15 @@ public struct HybridTransaction: Codable, Equatable {
 
     /// Import id
     public let importId: String?
+
+    /// If the transaction was imported, the payee name that was used when importing and before applying any payee rename rules
+    public let importPayeeName: String?
+
+    /// If the transaction was imported, the original payee name as it appeared on the statement
+    public let importPayeeOriginal: String?
+
+    /// If the transaction is a debt/loan account transaction, the type of transaction
+    public let debtTransactionType: DebtTransactionType?
 
     /// Whether or not the transaction is deleted
     public let deleted: Bool

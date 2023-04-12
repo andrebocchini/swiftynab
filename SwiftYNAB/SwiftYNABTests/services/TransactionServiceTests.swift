@@ -170,10 +170,14 @@ class TransactionServiceTests: XCTestCase {
             payeeId: nil,
             payeeName: nil,
             categoryId: "category_id",
+            categoryName: "",
             transferAccountId: nil,
             transferTransactionId: nil,
             matchedTransactionId: nil,
             importId: nil,
+            importPayeeName: nil,
+            importPayeeOriginal: nil,
+            debtTransactionType: .charge,
             deleted: false
         )
         let expectedResponse = HybridTransactionsResponse(transactions: [expectedTransaction])
@@ -217,10 +221,14 @@ class TransactionServiceTests: XCTestCase {
             payeeId: "payee_id",
             payeeName: nil,
             categoryId: "category_id",
+            categoryName: "",
             transferAccountId: nil,
             transferTransactionId: nil,
             matchedTransactionId: nil,
             importId: nil,
+            importPayeeName: nil,
+            importPayeeOriginal: nil,
+            debtTransactionType: .charge,
             deleted: false
         )
         let expectedResponse = HybridTransactionsResponse(transactions: [expectedTransaction])
@@ -511,6 +519,56 @@ class TransactionServiceTests: XCTestCase {
             _ = try await service.updateTransactions(
                 budgetId: "budget_id",
                 transactions: [updateTransaction]
+            )
+            XCTFail("Expected error to be thrown")
+        } catch {
+            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        }
+    }
+
+    func testDeleteTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+        let expectedTransaction = TransactionDetail(
+            id: "transaction_id",
+            date: "2022-07-07",
+            amount: 0,
+            memo: nil,
+            cleared: "cleared",
+            approved: false,
+            flagColor: nil,
+            accountId: "account_id",
+            accountName: "account_name",
+            payeeId: "payee_id",
+            payeeName: nil,
+            categoryId: nil,
+            categoryName: nil,
+            transferAccountId: nil,
+            transferTransactionId: nil,
+            matchedTransactionId: nil,
+            importId: nil,
+            deleted: false,
+            subtransactions: []
+        )
+        let expectedResponse = DeleteTransactionResponse(transaction: expectedTransaction)
+
+        let client = MockSuccessClient(expectedResponse: expectedResponse)
+        let service = TransactionService(client: client)
+        let actualResponse = try await service.deleteTransaction(
+            budgetId: "budget_id",
+            transactionId: "transaction_id"
+        )
+
+        XCTAssertEqual(actualResponse, expectedTransaction)
+    }
+
+    func testDeleteTransactionsThrowsErrorWhenRequestFails() async throws {
+        let expectedError = SwiftYNABError.httpError(statusCode: 500)
+        let client = MockFailureClient(expectedError: expectedError)
+        let service = TransactionService(client: client)
+
+        do {
+            _ = try await service.deleteTransaction(
+                budgetId: "budget_id",
+                transactionId: "transaction_id"
             )
             XCTFail("Expected error to be thrown")
         } catch {

@@ -40,6 +40,15 @@ public struct Category: Codable, Equatable {
     /// Type of goal associated with this category
     public let goalType: String?
 
+    /// The day of the goal
+    public let goalDay: Int?
+
+    /// The goal cadence
+    public let goalCadence: Int?
+
+    /// The goal cadence frequency
+    public let goalCadenceFrequency: Int?
+
     /// Goal creation month
     public let goalCreationMonth: String?
 
@@ -51,6 +60,21 @@ public struct Category: Codable, Equatable {
 
     /// Goal percentage complete
     public let goalPercentageComplete: Int?
+
+    /// The number of months, including the current month, left in the current goal period.
+    public let goalMonthsToBudget: Int?
+
+    /// The amount of funding still needed in the current month to stay on track towards completing the goal within the current
+    /// goal period. This amount will generally correspond to the ‘Underfunded’ amount in the web and mobile clients except when
+    /// viewing a category with a Needed for Spending Goal in a future month. The web and mobile clients will ignore any funding
+    ///  from a prior goal period when viewing category with a Needed for Spending Goal in a future month.
+    public let goalUnderFunded: Int?
+
+    /// The total amount funded towards the goal within the current goal period.
+    public let goalOverallFunded: Int?
+
+    /// The amount of funding still needed to complete the goal within the current goal period.
+    public let goalOverallLeft: Int?
 
     /// Whether or not the goal is deleted
     public let deleted: Bool

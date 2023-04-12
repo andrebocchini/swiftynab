@@ -81,6 +81,9 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/DebtTransactionType.html">DebtTransactionType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/TransactionType.html">TransactionType</a>
               </li>
             </ul>
@@ -516,6 +519,33 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB18TransactionSummaryV07matchedC2IdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/matchedTransactionId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionSummaryV07matchedC2IdSSSgvp">matchedTransactionId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If transaction is matched, the id of the matched transaction</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">matchedTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB18TransactionSummaryV8importIdSSSgvp"></a>
                     <a name="//apple_ref/swift/Property/importId" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB18TransactionSummaryV8importIdSSSgvp">importId</a>
@@ -526,7 +556,11 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Import id</p>
+                        <p>If the transaction was imported, this field is a unique (by account) import identifier. If this transaction was imported through
+File Based Import or Direct Import and not through the API, the import_id will have the
+format: &lsquo;YNAB:[milliunit_amount]:[iso_date]:[occurrence]&rsquo;. For example, a transaction dated 2015-12-30 in the amount
+of -$294.23 USD would have an import_id of &lsquo;YNAB:-294230:2015-12-30:1’. If a second transaction on the same
+account was imported and had the same date and same amount, its import_id would be &#39;YNAB:-294230:2015-12-30:2’.</p>
 
                       </div>
                       <div class="declaration">
@@ -534,6 +568,87 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">importId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB18TransactionSummaryV15importPayeeNameSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/importPayeeName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionSummaryV15importPayeeNameSSSgvp">importPayeeName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If the transaction was imported, the payee name that was used when importing and before applying any payee rename rules</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">importPayeeName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB18TransactionSummaryV23importPayeeNameOriginalSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/importPayeeNameOriginal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionSummaryV23importPayeeNameOriginalSSSgvp">importPayeeNameOriginal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If the transaction was imported, the original payee name as it appeared on the statement</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">importPayeeNameOriginal</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB18TransactionSummaryV04debtC4TypeAA04DebtcF0OSgvp"></a>
+                    <a name="//apple_ref/swift/Property/debtTransactionType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionSummaryV04debtC4TypeAA04DebtcF0OSgvp">debtTransactionType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If the transaction was imported, the original payee name as it appeared on the statement</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">debtTransactionType</span><span class="p">:</span> <span class="kt"><a href="../Enums/DebtTransactionType.html">DebtTransactionType</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -572,8 +687,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2022 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2022-08-28)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>&copy; 2023 <a class="link" href="http://github.com/andrebocchini/swiftynab" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2023-04-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

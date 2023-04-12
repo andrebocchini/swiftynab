@@ -53,10 +53,17 @@ class CategoryServiceTests: XCTestCase {
             activity: 0,
             balance: 0,
             goalType: nil,
+            goalDay: nil,
+            goalCadence: nil,
+            goalCadenceFrequency: nil,
             goalCreationMonth: nil,
             goalTarget: nil,
             goalTargetMonth: nil,
             goalPercentageComplete: nil,
+            goalMonthsToBudget: nil,
+            goalUnderFunded: nil,
+            goalOverallFunded: nil,
+            goalOverallLeft: nil,
             deleted: false
         )
         let expectedResponse = CategoryResponse(category: expectedCategory)
@@ -92,10 +99,17 @@ class CategoryServiceTests: XCTestCase {
             activity: 0,
             balance: 0,
             goalType: nil,
+            goalDay: nil,
+            goalCadence: nil,
+            goalCadenceFrequency: nil,
             goalCreationMonth: nil,
             goalTarget: nil,
             goalTargetMonth: nil,
             goalPercentageComplete: nil,
+            goalMonthsToBudget: nil,
+            goalUnderFunded: nil,
+            goalOverallFunded: nil,
+            goalOverallLeft: nil,
             deleted: false
         )
         let expectedResponse = CategoryResponse(category: expectedCategory)
@@ -139,10 +153,17 @@ class CategoryServiceTests: XCTestCase {
             activity: 0,
             balance: 0,
             goalType: nil,
+            goalDay: nil,
+            goalCadence: nil,
+            goalCadenceFrequency: nil,
             goalCreationMonth: nil,
             goalTarget: nil,
             goalTargetMonth: nil,
             goalPercentageComplete: nil,
+            goalMonthsToBudget: nil,
+            goalUnderFunded: nil,
+            goalOverallFunded: nil,
+            goalOverallLeft: nil,
             deleted: false
         )
         let expectedResponse = CategoryResponse(category: expectedCategory)

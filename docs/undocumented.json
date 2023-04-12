@@ -1,6 +1,68 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 11,
+      "symbol": "DebtTransactionType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 12,
+      "symbol": "DebtTransactionType.payment",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 13,
+      "symbol": "DebtTransactionType.refund",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 14,
+      "symbol": "DebtTransactionType.fee",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 15,
+      "symbol": "DebtTransactionType.interest",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 16,
+      "symbol": "DebtTransactionType.escrow",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 17,
+      "symbol": "DebtTransactionType.balancedAdjustment",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 18,
+      "symbol": "DebtTransactionType.credit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "line": 19,
+      "symbol": "DebtTransactionType.charge",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
   ],
-  "source_directory": "/Users/andre.bocchini/Downloads/silent-development-2.0.0/SwiftYNAB"
+  "source_directory": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB"
 }

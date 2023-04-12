@@ -1,0 +1,30 @@
+{
+    "transaction_ids": [
+        "8c203ffc-d0d0-44b3-8ab4-5aae9901b928"
+    ],
+    "transaction": {
+        "id": "8f203c6c-d1d0-42b3-82d4-5aae9900b928",
+        "date": "2020-06-24",
+        "amount": 10000,
+        "memo": null,
+        "cleared": "cleared",
+        "approved": true,
+        "flag_color": null,
+        "account_id": "7099375a-7905-46c5-b6ff-edef5676da96",
+        "account_name": "BofA",
+        "payee_id": "d76a5430-cbbb-482d-a22a-6c8cfcc198a6",
+        "payee_name": "Starting Balance",
+        "category_id": "5b88038c-7d15-48c4-8aa3-98c9774f1275",
+        "category_name": "Inflow: Ready to Assign",
+        "transfer_account_id": null,
+        "transfer_transaction_id": null,
+        "matched_transaction_id": null,
+        "import_id": null,
+        "import_payee_name": null,
+        "import_payee_name_original": null,
+        "debt_transaction_type": null,
+        "deleted": true,
+        "subtransactions": []
+    },
+    "server_knowledge": 1010
+}

@@ -233,6 +233,7 @@
 		307350F82278CE8500456287 /* TransactionDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 307350F72278CE8500456287 /* TransactionDetail.json */; };
 		307350FC2278D22100456287 /* TransactionsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 307350FB2278D22100456287 /* TransactionsResponse.json */; };
 		307350FE2278D27500456287 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307350FD2278D27500456287 /* Serializer.swift */; };
+		3074C81529D3E0450068F00B /* DebtTransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074C81429D3E0450068F00B /* DebtTransactionType.swift */; };
 		3076E6AA28B9C8A6006BAADC /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076E6A928B9C8A6006BAADC /* RequestMethod.swift */; };
 		3076E6AC28B9CC13006BAADC /* RequestMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076E6AB28B9CC13006BAADC /* RequestMethodTests.swift */; };
 		307EA3B12878794A00E380E7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3B02878794A00E380E7 /* Response.swift */; };
@@ -257,6 +258,11 @@
 		307EA3D728788EB300E380E7 /* SaveTransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3D628788EB300E380E7 /* SaveTransactionsResponse.swift */; };
 		307EA3D928788ECE00E380E7 /* HybridTransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3D828788ECE00E380E7 /* HybridTransactionsResponse.swift */; };
 		307EA3DB2878A13C00E380E7 /* SerializerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA3DA2878A13C00E380E7 /* SerializerType.swift */; };
+		3083131C29E6DB3700C33A45 /* DeleteTransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083131B29E6DB3700C33A45 /* DeleteTransactionRequest.swift */; };
+		3083131E29E6DD4200C33A45 /* DeleteTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083131D29E6DD4200C33A45 /* DeleteTransactionResponse.swift */; };
+		3083132029E6E08D00C33A45 /* DeleteTransactionResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3083131F29E6E08D00C33A45 /* DeleteTransactionResponse.json */; };
+		3083132229E6E1B000C33A45 /* DeleteTransactionResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083132129E6E1B000C33A45 /* DeleteTransactionResponseTests.swift */; };
+		3083132429E6E22200C33A45 /* DeleteTransactionRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083132329E6E22200C33A45 /* DeleteTransactionRequestTests.swift */; };
 		308C2B42227B8377005C5477 /* ScheduledTransactionDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 308C2B41227B8377005C5477 /* ScheduledTransactionDetail.json */; };
 		308C2B48227B85B6005C5477 /* ScheduledTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */; };
 		308C2B4A227B85EB005C5477 /* ScheduledTransactionDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B49227B85EB005C5477 /* ScheduledTransactionDetailTests.swift */; };
@@ -553,6 +559,7 @@
 		307350F72278CE8500456287 /* TransactionDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TransactionDetail.json; sourceTree = "<group>"; };
 		307350FB2278D22100456287 /* TransactionsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TransactionsResponse.json; sourceTree = "<group>"; };
 		307350FD2278D27500456287 /* Serializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		3074C81429D3E0450068F00B /* DebtTransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtTransactionType.swift; sourceTree = "<group>"; };
 		3076E6A928B9C8A6006BAADC /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		3076E6AB28B9CC13006BAADC /* RequestMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethodTests.swift; sourceTree = "<group>"; };
 		307EA3B02878794A00E380E7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -577,6 +584,11 @@
 		307EA3D628788EB300E380E7 /* SaveTransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionsResponse.swift; sourceTree = "<group>"; };
 		307EA3D828788ECE00E380E7 /* HybridTransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridTransactionsResponse.swift; sourceTree = "<group>"; };
 		307EA3DA2878A13C00E380E7 /* SerializerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializerType.swift; sourceTree = "<group>"; };
+		3083131B29E6DB3700C33A45 /* DeleteTransactionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionRequest.swift; sourceTree = "<group>"; };
+		3083131D29E6DD4200C33A45 /* DeleteTransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionResponse.swift; sourceTree = "<group>"; };
+		3083131F29E6E08D00C33A45 /* DeleteTransactionResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DeleteTransactionResponse.json; sourceTree = "<group>"; };
+		3083132129E6E1B000C33A45 /* DeleteTransactionResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionResponseTests.swift; sourceTree = "<group>"; };
+		3083132329E6E22200C33A45 /* DeleteTransactionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionRequestTests.swift; sourceTree = "<group>"; };
 		308C2B41227B8377005C5477 /* ScheduledTransactionDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduledTransactionDetail.json; sourceTree = "<group>"; };
 		308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionDetail.swift; sourceTree = "<group>"; };
 		308C2B49227B85EB005C5477 /* ScheduledTransactionDetailTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionDetailTests.swift; sourceTree = "<group>"; };
@@ -767,6 +779,7 @@
 				302F16C728793D6A00A336AD /* TransactionsByCategoryRequestTests.swift */,
 				302F16CB28793E3100A336AD /* TransactionsByPayeeRequestTests.swift */,
 				30EBB51822791C18000FE07D /* UserRequestTests.swift */,
+				3083132329E6E22200C33A45 /* DeleteTransactionRequestTests.swift */,
 			);
 			path = requests;
 			sourceTree = "<group>";
@@ -817,6 +830,7 @@
 				30EBB567227BC629000FE07D /* CategoryResponse.json */,
 				307350E92278CA5F00456287 /* CurrencyFormat.json */,
 				307350ED2278CCE500456287 /* DateFormat.json */,
+				3083131F29E6E08D00C33A45 /* DeleteTransactionResponse.json */,
 				307350F12278CDF800456287 /* ErrorDetail.json */,
 				307350F22278CDF800456287 /* ErrorResponse.json */,
 				308C2B4B227B870D005C5477 /* HybridTransaction.json */,
@@ -971,6 +985,7 @@
 				308C2B59227B8B82005C5477 /* TransactionSummary.swift */,
 				30DA1CA3227A27690005E34E /* TransactionType.swift */,
 				30EBB50A22791929000FE07D /* User.swift */,
+				3074C81429D3E0450068F00B /* DebtTransactionType.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -999,6 +1014,7 @@
 				302F16952879306A00A336AD /* CategoriesRequest.swift */,
 				302F1699287930F800A336AD /* CategoryByMonthRequest.swift */,
 				30EBB563227BC32C000FE07D /* CategoryRequest.swift */,
+				3083131B29E6DB3700C33A45 /* DeleteTransactionRequest.swift */,
 				302F16A92879359A00A336AD /* LocationsForPayeeRequest.swift */,
 				302F16A12879332100A336AD /* MonthRequest.swift */,
 				30BA9B6E227C962100BD4281 /* MonthsRequest.swift */,
@@ -1087,6 +1103,7 @@
 				307EA3B62878854100E380E7 /* BudgetSummaryResponse.swift */,
 				307EA3BC28788A7800E380E7 /* CategoriesResponse.swift */,
 				307EA3BE28788A9B00E380E7 /* CategoryResponse.swift */,
+				3083131D29E6DD4200C33A45 /* DeleteTransactionResponse.swift */,
 				30E1633D2277ED8D00A1222B /* ErrorResponse.swift */,
 				307EA3D828788ECE00E380E7 /* HybridTransactionsResponse.swift */,
 				307EA3C228788B3D00E380E7 /* MonthResponse.swift */,
@@ -1117,6 +1134,7 @@
 				3008B4492878AD420025034C /* BudgetSummaryResponseTests.swift */,
 				3008B44D2878AD9F0025034C /* CategoriesResponseTests.swift */,
 				30EBB55D227BC104000FE07D /* CategoryResponseTests.swift */,
+				3083132129E6E1B000C33A45 /* DeleteTransactionResponseTests.swift */,
 				30DA1CC3227A50AC0005E34E /* ErrorResponseTests.swift */,
 				3008B45D2878AF150025034C /* HybridTransactionsResponseTests.swift */,
 				30BA9B64227C94C600BD4281 /* MonthResponseTests.swift */,
@@ -1393,6 +1411,7 @@
 				30BA9B7F227CCB6C00BD4281 /* HybridTransactionsResponse.json in Resources */,
 				307350F82278CE8500456287 /* TransactionDetail.json in Resources */,
 				30307FB1227B50F600CBF404 /* Payee.json in Resources */,
+				3083132029E6E08D00C33A45 /* DeleteTransactionResponse.json in Resources */,
 				308C2B5C227B8CB1005C5477 /* TransactionSummary.json in Resources */,
 				30EBB56A227BC629000FE07D /* CategoryResponse.json in Resources */,
 				30EBB569227BC629000FE07D /* Category.json in Resources */,
@@ -1622,6 +1641,7 @@
 				302F16B62879392700A336AD /* SaveTransactionRequest.swift in Sources */,
 				3046F3DD227B6613007778A1 /* PayeeRequest.swift in Sources */,
 				3046A4EF2876A098006CB35A /* ClientType.swift in Sources */,
+				3083131C29E6DB3700C33A45 /* DeleteTransactionRequest.swift in Sources */,
 				307EA3D728788EB300E380E7 /* SaveTransactionsResponse.swift in Sources */,
 				302F16C628793D4900A336AD /* TransactionsByCategoryRequest.swift in Sources */,
 				3046F3EF227B7281007778A1 /* Category.swift in Sources */,
@@ -1647,7 +1667,9 @@
 				30E1633E2277ED8D00A1222B /* ErrorResponse.swift in Sources */,
 				302F169A287930F800A336AD /* CategoryByMonthRequest.swift in Sources */,
 				307EA3C128788B1C00E380E7 /* MonthsResponse.swift in Sources */,
+				3083131E29E6DD4200C33A45 /* DeleteTransactionResponse.swift in Sources */,
 				307EA3CB28788D1300E380E7 /* PayeesResponse.swift in Sources */,
+				3074C81529D3E0450068F00B /* DebtTransactionType.swift in Sources */,
 				307EA3C328788B3D00E380E7 /* MonthResponse.swift in Sources */,
 				307350CC2278A0D200456287 /* SaveTransaction.swift in Sources */,
 				307EA3D128788E4700E380E7 /* TransactionResponse.swift in Sources */,
@@ -1720,6 +1742,7 @@
 				302F169C2879311500A336AD /* CategoryByMonthRequestTests.swift in Sources */,
 				3046F3F1227B73DD007778A1 /* PayeeLocationTests.swift in Sources */,
 				308F59A328B8DBF500445343 /* MonthServiceTests.swift in Sources */,
+				3083132229E6E1B000C33A45 /* DeleteTransactionResponseTests.swift in Sources */,
 				307350DC2278BF8A00456287 /* BudgetSummaryTests.swift in Sources */,
 				308C2B4A227B85EB005C5477 /* ScheduledTransactionDetailTests.swift in Sources */,
 				302F16BC28793B3600A336AD /* SaveTransactionsRequestTests.swift in Sources */,
@@ -1740,6 +1763,7 @@
 				307350DE2278BFB600456287 /* JSONTools.swift in Sources */,
 				302F16B42879371E00A336AD /* ScheduledTransactionsRequestTests.swift in Sources */,
 				308F59A528B93ECF00445343 /* PayeeLocationServiceTests.swift in Sources */,
+				3083132429E6E22200C33A45 /* DeleteTransactionRequestTests.swift in Sources */,
 				30BA9B51227C84BE00BD4281 /* PayeeLocationResponseTests.swift in Sources */,
 				308F599F28B86D3C00445343 /* BudgetServiceTests.swift in Sources */,
 				30DA1CC4227A50AC0005E34E /* ErrorResponseTests.swift in Sources */,
