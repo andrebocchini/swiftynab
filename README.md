@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.com/andrebocchini/swiftynab.svg?branch=master)](https://travis-ci.com/andrebocchini/swiftynab)  [![codecov](https://codecov.io/gh/andrebocchini/swiftynab/branch/master/graph/badge.svg)](https://codecov.io/gh/andrebocchini/swiftynab)
-
+[![Build Status](https://github.com/andrebocchini/swiftynab/actions/workflows/build.yml/badge.svg?branch=master)]
 
 
 # SwiftYNAB

@@ -1,7 +1,0 @@
-language: swift
-xcode_workspace: SwiftYNAB.xcworkspace
-xcode_scheme: SwiftYNAB
-xcode_destination: platform=iOS Simulator,OS=15.0,name=iPhone 13
-osx_image: xcode13.4
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
