@@ -40,7 +40,11 @@ extension Client: ClientType {
 
         try Task.checkCancellation()
 
-        if isHTTPError(response: urlResponse) {
+       if isHTTPError(response: urlResponse) {
+           if let errorDetails = try? serializer.decode(ErrorDetail.self, from: data) {
+               throw SwiftYNABError.apiError(detail: errorDetails)
+           }
+
             guard let httpURLResponse = urlResponse as? HTTPURLResponse else {
                 throw SwiftYNABError.unknown
             }

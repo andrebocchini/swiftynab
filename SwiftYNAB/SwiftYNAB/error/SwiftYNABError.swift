@@ -9,7 +9,7 @@
 import Foundation
 
 /// Errors that occur during encoding or decoding of JSON requests and responses
-enum SwiftYNABError: Error {
+public enum SwiftYNABError: Error {
     /// Failure decoding JSON
     case decodingFailure(message: String)
     /// Failure encoding JSON
@@ -23,7 +23,7 @@ enum SwiftYNABError: Error {
 }
 
 extension SwiftYNABError: Equatable {
-    static func == (lhs: SwiftYNABError, rhs: SwiftYNABError) -> Bool {
+    public static func == (lhs: SwiftYNABError, rhs: SwiftYNABError) -> Bool {
         switch (lhs, rhs) {
         case (.decodingFailure, .decodingFailure):
             return true
