@@ -89,7 +89,7 @@ class AccountServiceTests: XCTestCase {
         XCTAssertEqual(expectedAccount, actualResponse[0])
     }
 
-    func testGeAccountsThrowsErrorWhenRequestFails() async throws {
+    func testGeAccountsThrowsHttpErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)
@@ -99,6 +99,24 @@ class AccountServiceTests: XCTestCase {
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        }
+    }
+
+    func testGeAccountsThrowsApiErrorWhenRequestFails() async throws {
+        let errorDetails = ErrorDetail(
+            id: "403.2",
+            name: "trial_expired",
+            detail: "The trial for this account has expired"
+        )
+        let expectedError = SwiftYNABError.apiError(detail: errorDetails)
+        let client = MockFailureClient(expectedError: expectedError)
+        let service = AccountService(client: client)
+
+        do {
+            _ = try await service.getAccounts(budgetId: "budget_id", lastKnowledgeOfServer: 1)
+            XCTFail("Expected error to be thrown")
+        } catch {
+            XCTAssertEqual(error as? SwiftYNABError, .apiError(detail: errorDetails))
         }
     }
 
