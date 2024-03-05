@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name  = "SwiftYNAB"
-  s.version = "2.1.0"
+  s.version = "2.1.1"
   s.summary = "YNAB API Framework"
   s.description = "SwiftYNAB is an iOS/macOS/tvOS/WatchOS framework for the You Need a Budget API"
   s.homepage = "http://github.com/andrebocchini/swiftynab"
