@@ -1,9 +1,0 @@
-{
-  "amount" : -25000,
-  "approved" : false,
-  "date" : "2019-04-30",
-  "payee_id" : "3c296a94-aed1-7a26-93cb-0ae2c2f82363",
-  "payee_name" : "University of Illinois at Chicago",
-  "cleared" : "uncleared",
-  "account_id" : "f9574c30-0614-7880-e926-0ae2c2f6d990"
-}

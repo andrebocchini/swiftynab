@@ -1,0 +1,42 @@
+disabled_rules:
+  - opening_brace
+
+opt_in_rules: 
+  - empty_count
+
+analyzer_rules:
+  - explicit_self
+
+included: 
+  - Sources
+  - Tests
+  - demo
+
+# If true, SwiftLint will not fail if no lintable files are found.
+allow_zero_lintable_files: false
+
+# If true, SwiftLint will treat all warnings as errors.
+strict: false
+
+# If true, SwiftLint will treat all errors as warnings.
+lenient: false
+
+force_cast: warning
+force_try:
+  severity: warning
+line_length: 100
+type_name:
+  min_length: 4
+  max_length:
+    warning: 40
+    error: 50
+  excluded: iPhone
+  allowed_symbols: ["_"]
+identifier_name:
+  min_length:
+    error: 4
+  excluded:
+    - id
+    - URL
+    - GlobalAPIKey
+reporter: "xcode"

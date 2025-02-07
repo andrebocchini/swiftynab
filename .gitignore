@@ -85,3 +85,13 @@ iOSInjectionProject/
 
 # User-specific stuff
 .idea
+
+# Xcode build server
+buildServer.json
+
+# VSCode
+.vscode
+
+# Claude
+Claude.md
+.claude
