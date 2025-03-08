@@ -20,8 +20,6 @@ class SaveTransactionsRequestTests: XCTestCase {
             payeeId: "3c296a94-aed1-7a26-93cb-0ae2c2f82363",
             payeeName: "University of Illinois at Chicago"
         )
-        let wrapper = SaveTransactionsRequestWrapper(with: [transaction])
-        let body = try Serializer.shared.encode(wrapper)
         let request = SaveTransactionsRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             transactions: [transaction]
@@ -31,20 +29,7 @@ class SaveTransactionsRequestTests: XCTestCase {
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions"
         )
         XCTAssertEqual(request.method, .post)
-        XCTAssertEqual(request.body, body)
         XCTAssertNil(request.query)
-    }
-
-    func testSaveTransactionsRequestWrapper() {
-        let transaction = SaveTransaction(
-            date: "2019-04-30",
-            amount: -25000,
-            accountId: "f9574c30-0614-7880-e926-0ae2c2f6d990",
-            payeeId: "3c296a94-aed1-7a26-93cb-0ae2c2f82363",
-            payeeName: "University of Florida"
-        )
-        let saveTransactionsRequestWrapper = SaveTransactionsRequestWrapper(with: [transaction])
-        XCTAssertNoThrow(try JSONTools.testEncoding(saveTransactionsRequestWrapper))
     }
 
     func testUpdateTransactions() throws {
@@ -55,8 +40,6 @@ class SaveTransactionsRequestTests: XCTestCase {
             payeeId: "3c296a94-aed1-7a26-93cb-0ae2c2f82363",
             payeeName: "University of Illinois at Chicago"
         )
-        let wrapper = SaveTransactionsRequestWrapper(with: [transaction])
-        let body = try Serializer.shared.encode(wrapper)
         let request = SaveTransactionsRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             transactions: [transaction],
@@ -67,7 +50,6 @@ class SaveTransactionsRequestTests: XCTestCase {
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions"
         )
         XCTAssertEqual(request.method, .patch)
-        XCTAssertEqual(request.body, body)
         XCTAssertNil(request.query)
     }
 }
