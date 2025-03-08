@@ -31,7 +31,7 @@ extension CategoryService: CategoryServiceType {
     /// - Returns: A list of category groups
     public func getCategories(
         budgetId: String,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [CategoryGroupWithCategories] {
         let request = CategoriesRequest(
             budgetId: budgetId,

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PayeeServiceType {
-    func getPayees(budgetId: String, lastKnowledgeOfServer: Int?) async throws -> [Payee]
+    func getPayees(budgetId: String, lastKnowledgeOfServer: ServerKnowledge?) async throws -> [Payee]
 
     func getPayee(budgetId: String, payeeId: String) async throws -> Payee
 }

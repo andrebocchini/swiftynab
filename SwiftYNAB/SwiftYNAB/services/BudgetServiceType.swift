@@ -11,7 +11,7 @@ import Foundation
 protocol BudgetServiceType {
     func getBudgets() async throws -> [BudgetSummary]
 
-    func getBudget(budgetId: String, lastKnowledgeOfServer: Int?) async throws -> BudgetDetail
+    func getBudget(budgetId: String, lastKnowledgeOfServer: ServerKnowledge?) async throws -> BudgetDetail
 
     func getBudgetSettings(budgetId: String) async throws -> BudgetSettings
 }

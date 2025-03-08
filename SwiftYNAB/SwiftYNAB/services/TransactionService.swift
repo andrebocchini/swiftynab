@@ -49,7 +49,7 @@ extension TransactionService: TransactionServiceType {
         budgetId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [TransactionDetail] {
         let request = TransactionsByBudgetRequest(
             budgetId: budgetId,
@@ -78,7 +78,7 @@ extension TransactionService: TransactionServiceType {
         accountId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [TransactionDetail] {
         let request = TransactionsByAccountRequest(
             budgetId: budgetId,
@@ -108,7 +108,7 @@ extension TransactionService: TransactionServiceType {
         categoryId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [HybridTransaction] {
         let request = TransactionsByCategoryRequest(
             budgetId: budgetId,
@@ -138,7 +138,7 @@ extension TransactionService: TransactionServiceType {
         payeeId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [HybridTransaction] {
         let request = TransactionsByPayeeRequest(
             budgetId: budgetId,

@@ -12,13 +12,13 @@ struct TransactionsByBudgetRequest {
     let budgetId: String
     let sinceDate: Date?
     let type: TransactionType?
-    let lastKnowledgeOfServer: Int?
+    let lastKnowledgeOfServer: ServerKnowledge?
 
     init(
         budgetId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) {
         self.budgetId = budgetId
         self.sinceDate = sinceDate

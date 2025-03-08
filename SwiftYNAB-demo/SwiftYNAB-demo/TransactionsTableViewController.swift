@@ -14,9 +14,11 @@ class TransactionsTableViewController: UITableViewController {
     var account: Account?
     var budget: BudgetSummary? {
         didSet {
-            if let budget = budget {
-                currencyFormatter = CurrencyFormatter(currencyFormat: budget.currencyFormat)
-                dateFormatter = DateConverter(dateFormat: budget.dateFormat)
+            if let budget = budget,
+               let currencyFormat = budget.currencyFormat,
+               let dateFormat = budget.dateFormat {
+                currencyFormatter = CurrencyFormatter(currencyFormat: currencyFormat)
+                dateFormatter = DateConverter(dateFormat: dateFormat)
             } else {
                 currencyFormatter = nil
                 dateFormatter = nil

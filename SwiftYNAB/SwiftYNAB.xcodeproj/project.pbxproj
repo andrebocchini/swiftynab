@@ -385,6 +385,10 @@
 		30DA1CD8227A54830005E34E /* UserResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1CD7227A54830005E34E /* UserResponseTests.swift */; };
 		30E163302277D7A500A1222B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1632F2277D7A500A1222B /* Account.swift */; };
 		30E1633E2277ED8D00A1222B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1633D2277ED8D00A1222B /* ErrorResponse.swift */; };
+		30EB474D2D7BEDA300CF8F1C /* ServerKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB474C2D7BED9D00CF8F1C /* ServerKnowledge.swift */; };
+		30EB474E2D7BEDA300CF8F1C /* ServerKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB474C2D7BED9D00CF8F1C /* ServerKnowledge.swift */; };
+		30EB474F2D7BEDA300CF8F1C /* ServerKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB474C2D7BED9D00CF8F1C /* ServerKnowledge.swift */; };
+		30EB47502D7BEDA300CF8F1C /* ServerKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB474C2D7BED9D00CF8F1C /* ServerKnowledge.swift */; };
 		30EBB50B22791929000FE07D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB50A22791929000FE07D /* User.swift */; };
 		30EBB50D22791A36000FE07D /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB50C22791A36000FE07D /* User.json */; };
 		30EBB51322791B45000FE07D /* UserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB51222791B45000FE07D /* UserResponse.json */; };
@@ -667,6 +671,7 @@
 		30DA1CD7227A54830005E34E /* UserResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseTests.swift; sourceTree = "<group>"; };
 		30E1632F2277D7A500A1222B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		30E1633D2277ED8D00A1222B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		30EB474C2D7BED9D00CF8F1C /* ServerKnowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerKnowledge.swift; sourceTree = "<group>"; };
 		30EBB50A22791929000FE07D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		30EBB50C22791A36000FE07D /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		30EBB51222791B45000FE07D /* UserResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserResponse.json; sourceTree = "<group>"; };
@@ -969,6 +974,7 @@
 				308C2B6D227B9529005C5477 /* CategoryGroupWithCategories.swift */,
 				30AADF882277CC1400AE95B8 /* CurrencyFormat.swift */,
 				30AADF842277CC1400AE95B8 /* DateFormat.swift */,
+				3074C81429D3E0450068F00B /* DebtTransactionType.swift */,
 				30AADF862277CC1400AE95B8 /* ErrorDetail.swift */,
 				308C2B4F227B875D005C5477 /* HybridTransaction.swift */,
 				3046F400227B76CA007778A1 /* MonthDetail.swift */,
@@ -980,12 +986,12 @@
 				3046F406227B78C6007778A1 /* ScheduledSubTransaction.swift */,
 				308C2B47227B85B6005C5477 /* ScheduledTransactionDetail.swift */,
 				308C2B5F227B8E33005C5477 /* ScheduledTransactionSummary.swift */,
+				30EB474C2D7BED9D00CF8F1C /* ServerKnowledge.swift */,
 				30AADF872277CC1400AE95B8 /* SubTransaction.swift */,
 				30AADF8A2277CC1400AE95B8 /* TransactionDetail.swift */,
 				308C2B59227B8B82005C5477 /* TransactionSummary.swift */,
 				30DA1CA3227A27690005E34E /* TransactionType.swift */,
 				30EBB50A22791929000FE07D /* User.swift */,
-				3074C81429D3E0450068F00B /* DebtTransactionType.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1475,6 +1481,7 @@
 				305EAA63227D1DD2002E3B8F /* CurrencyFormat.swift in Sources */,
 				305EAA64227D1DD2002E3B8F /* DateFormat.swift in Sources */,
 				305EAA65227D1DD2002E3B8F /* ErrorDetail.swift in Sources */,
+				30EB474D2D7BEDA300CF8F1C /* ServerKnowledge.swift in Sources */,
 				305EAA66227D1DD2002E3B8F /* HybridTransaction.swift in Sources */,
 				305EAA67227D1DD2002E3B8F /* MonthDetail.swift in Sources */,
 				305EAA68227D1DD2002E3B8F /* MonthSummary.swift in Sources */,
@@ -1532,6 +1539,7 @@
 				305EAABC227D1E13002E3B8F /* CurrencyFormat.swift in Sources */,
 				305EAABD227D1E13002E3B8F /* DateFormat.swift in Sources */,
 				305EAABE227D1E13002E3B8F /* ErrorDetail.swift in Sources */,
+				30EB474F2D7BEDA300CF8F1C /* ServerKnowledge.swift in Sources */,
 				305EAABF227D1E13002E3B8F /* HybridTransaction.swift in Sources */,
 				305EAAC0227D1E13002E3B8F /* MonthDetail.swift in Sources */,
 				305EAAC1227D1E13002E3B8F /* MonthSummary.swift in Sources */,
@@ -1674,6 +1682,7 @@
 				307EA3C328788B3D00E380E7 /* MonthResponse.swift in Sources */,
 				307350CC2278A0D200456287 /* SaveTransaction.swift in Sources */,
 				307EA3D128788E4700E380E7 /* TransactionResponse.swift in Sources */,
+				30EB474E2D7BEDA300CF8F1C /* ServerKnowledge.swift in Sources */,
 				302F16A22879332100A336AD /* MonthRequest.swift in Sources */,
 				30EBB530227A746F000FE07D /* BudgetService.swift in Sources */,
 				302F16CE28793E7B00A336AD /* TransactionQueryBuilder.swift in Sources */,
@@ -1806,6 +1815,7 @@
 				30CE606D227D1D12000B87BD /* CurrencyFormat.swift in Sources */,
 				30CE606E227D1D12000B87BD /* DateFormat.swift in Sources */,
 				30CE606F227D1D12000B87BD /* ErrorDetail.swift in Sources */,
+				30EB47502D7BEDA300CF8F1C /* ServerKnowledge.swift in Sources */,
 				30CE6070227D1D12000B87BD /* HybridTransaction.swift in Sources */,
 				30CE6071227D1D12000B87BD /* MonthDetail.swift in Sources */,
 				30CE6072227D1D12000B87BD /* MonthSummary.swift in Sources */,

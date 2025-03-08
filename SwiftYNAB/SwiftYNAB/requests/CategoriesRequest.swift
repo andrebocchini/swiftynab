@@ -10,9 +10,9 @@ import Foundation
 
 struct CategoriesRequest {
     let budgetId: String
-    let lastKnowledgeOfServer: Int?
+    let lastKnowledgeOfServer: ServerKnowledge?
 
-    init(budgetId: String, lastKnowledgeOfServer: Int? = nil) {
+    init(budgetId: String, lastKnowledgeOfServer: ServerKnowledge? = nil) {
         self.budgetId = budgetId
         self.lastKnowledgeOfServer = lastKnowledgeOfServer
     }

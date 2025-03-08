@@ -20,10 +20,10 @@ public struct BudgetDetail: Codable, Equatable {
     public let lastModifiedOn: String
 
     /// Date formatting settings
-    public let dateFormat: DateFormat
+    public let dateFormat: DateFormat?
 
     /// Currency formatting settings
-    public let currencyFormat: CurrencyFormat
+    public let currencyFormat: CurrencyFormat?
 
     /// Budget's first month
     public let firstMonth: String

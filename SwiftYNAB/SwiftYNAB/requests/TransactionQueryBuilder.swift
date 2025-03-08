@@ -12,7 +12,7 @@ enum TransactionQueryBuilder {
     static func buildQuery(
         sinceDate: Date?,
         type: TransactionType?,
-        lastKnowledgeOfServer: Int?
+        lastKnowledgeOfServer: ServerKnowledge?
     ) -> [URLQueryItem]? {
         var queryItems = [URLQueryItem]()
 

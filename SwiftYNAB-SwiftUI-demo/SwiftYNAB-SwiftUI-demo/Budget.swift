@@ -11,7 +11,7 @@ import SwiftYNAB
 struct Budget: Identifiable {
     let id: String
     let name: String
-    let currencyFormat: CurrencyFormat
+    let currencyFormat: CurrencyFormat?
 }
 
 extension Budget {

@@ -13,14 +13,14 @@ struct TransactionsByPayeeRequest {
     let payeeId: String
     let sinceDate: Date?
     let type: TransactionType?
-    let lastKnowledgeOfServer: Int?
+    let lastKnowledgeOfServer: ServerKnowledge?
 
     init(
         budgetId: String,
         payeeId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) {
         self.budgetId = budgetId
         self.payeeId = payeeId

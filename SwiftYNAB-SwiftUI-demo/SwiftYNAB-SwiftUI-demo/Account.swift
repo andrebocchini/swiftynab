@@ -60,8 +60,12 @@ extension Account {
             self.kind = .unknown
         }
 
-        let currencyFormatter = CurrencyFormatter(currencyFormat: budget.currencyFormat)
-        self.balance = currencyFormatter.currencyString(from: account.balance) ?? ""
+        if let currencyFormat = budget.currencyFormat {
+            let currencyFormatter = CurrencyFormatter(currencyFormat: currencyFormat)
+            self.balance = currencyFormatter.currencyString(from: account.balance) ?? ""
+        } else {
+            self.balance = ""
+        }
 
         self.closed = account.closed
     }

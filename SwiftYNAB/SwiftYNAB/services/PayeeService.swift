@@ -28,7 +28,7 @@ extension PayeeService: PayeeServiceType {
     /// - Returns: A list of payees
     public func getPayees(
         budgetId: String,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [Payee] {
         let request = PayeesRequest(
             budgetId: budgetId,

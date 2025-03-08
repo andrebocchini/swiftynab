@@ -46,9 +46,14 @@ extension TransactionsViewModel {
                     budgetId: budget.id,
                     accountId: account.id
                 )
-                transactions = result
-                    .map({ Transaction(transaction: $0, currencyFormat: budget.currencyFormat) })
-                    .reversed()
+                transactions = result.compactMap { transaction in
+                    guard let currencyFormat = budget.currencyFormat else {
+                        return nil
+                    }
+
+                    return Transaction(transaction: transaction, currencyFormat: currencyFormat)
+                }
+                .reversed()
 
                 isError = false
             } catch {

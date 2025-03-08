@@ -41,7 +41,7 @@ extension AccountService: AccountServiceType {
     /// - Returns: A list of accounts
     public func getAccounts(
         budgetId: String,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [Account] {
         let request = AccountsRequest(
             budgetId: budgetId,

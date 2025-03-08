@@ -28,7 +28,7 @@ extension MonthService: MonthServiceType {
     /// - Returns: A list of months
     public func getMonths(
         budgetId: String,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [MonthSummary] {
         let request = MonthsRequest(
             budgetId: budgetId,
