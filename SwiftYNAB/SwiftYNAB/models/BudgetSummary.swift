@@ -26,8 +26,8 @@ public struct BudgetSummary: Codable, Equatable {
     public let lastMonth: String
 
     /// Date formatting settings
-    public let dateFormat: DateFormat
+    public let dateFormat: DateFormat?
 
     /// Currency formatting settings
-    public let currencyFormat: CurrencyFormat
+    public let currencyFormat: CurrencyFormat?
 }
