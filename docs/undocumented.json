@@ -62,6 +62,13 @@
       "symbol": "DebtTransactionType.charge",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/ServerKnowledge.swift",
+      "line": 9,
+      "symbol": "ServerKnowledge",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB"
