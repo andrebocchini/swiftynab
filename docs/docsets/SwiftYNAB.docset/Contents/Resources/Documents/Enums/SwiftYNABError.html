@@ -28,7 +28,9 @@
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../index.html">SwiftYNAB Reference</a>
+        <a href="../index.html">SwiftYNAB</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        <a href="../Enums.html">Enumerations</a>
         <img id="carat" src="../img/carat.png" alt=""/>
         SwiftYNABError Enumeration Reference
       </p>
@@ -37,51 +39,19 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="../Classes.html">Classes</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Classes/AccountService.html">AccountService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/BudgetService.html">BudgetService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/CategoryService.html">CategoryService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/CurrencyFormatter.html">CurrencyFormatter</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/DateConverter.html">DateConverter</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/MonthService.html">MonthService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/PayeeLocationService.html">PayeeLocationService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/PayeeService.html">PayeeService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/ScheduledTransactionService.html">ScheduledTransactionService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/TransactionService.html">TransactionService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/UserService.html">UserService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/YNAB.html">YNAB</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/AccountType.html">AccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ClearedStatus.html">ClearedStatus</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/DebtTransactionType.html">DebtTransactionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/FlagColor.html">FlagColor</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/SwiftYNABError.html">SwiftYNABError</a>
@@ -98,7 +68,13 @@
                 <a href="../Structs/Account.html">Account</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/AccountService.html">AccountService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BudgetService.html">BudgetService</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
@@ -116,7 +92,22 @@
                 <a href="../Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/CategoryService.html">CategoryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CreateTransactionRequest.html">CreateTransactionRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CreateTransactionsRequest.html">CreateTransactionsRequest</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/CurrencyFormat.html">CurrencyFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CurrencyFormatter.html">CurrencyFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DateConverter.html">DateConverter</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/DateFormat.html">DateFormat</a>
@@ -131,6 +122,9 @@
                 <a href="../Structs/MonthDetail.html">MonthDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/MonthService.html">MonthService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/MonthSummary.html">MonthSummary</a>
               </li>
               <li class="nav-group-task">
@@ -140,13 +134,40 @@
                 <a href="../Structs/PayeeLocation.html">PayeeLocation</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/PayeeLocationService.html">PayeeLocationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveCategory.html">SaveCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveMonthCategory.html">SaveMonthCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SavePayee.html">SavePayee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveScheduledTransaction.html">SaveScheduledTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveSubTransaction.html">SaveSubTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/SaveTransaction.html">SaveTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveTransactionWithIdOrImportId.html">SaveTransactionWithIdOrImportId</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/ScheduledSubTransaction.html">ScheduledSubTransaction</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/ScheduledTransactionDetail.html">ScheduledTransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionService.html">ScheduledTransactionService</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/ScheduledTransactionSummary.html">ScheduledTransactionSummary</a>
@@ -158,10 +179,22 @@
                 <a href="../Structs/TransactionDetail.html">TransactionDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/TransactionService.html">TransactionService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/TransactionSummary.html">TransactionSummary</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/UpdateTransactionsRequest.html">UpdateTransactionsRequest</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/User.html">User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserService.html">UserService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/YNAB.html">YNAB</a>
               </li>
             </ul>
           </li>
@@ -188,7 +221,7 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SwiftYNABError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SwiftYNABError</span> <span class="p">:</span> <span class="kt">Error</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">SwiftYNABError</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                 </div>
@@ -365,8 +398,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2025-03-07)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2025-06-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
