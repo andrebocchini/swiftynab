@@ -10,8 +10,6 @@ You can browse the online documentation [here](https://andrebocchini.github.io/s
 
 ### Swift Package Manager
 
-You can also use the [Swift Package Manager](https://swift.org/package-manager/).
-
 Instructions on how to add a Swift Package dependency to your project can be found [here](https://developer.apple.com/documentation/xcode/swift-packages).
 
 ### Trying it out
@@ -49,3 +47,4 @@ Task {
     }
 }
 ```
+ 
