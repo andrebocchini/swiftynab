@@ -1,75 +1,425 @@
 {
   "warnings": [
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 8,
+      "symbol": "AccountType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 9,
+      "symbol": "AccountType.checking",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 10,
+      "symbol": "AccountType.savings",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 11,
+      "symbol": "AccountType.cash",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 12,
+      "symbol": "AccountType.creditCard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 13,
+      "symbol": "AccountType.lineOfCredit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 14,
+      "symbol": "AccountType.otherAsset",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 15,
+      "symbol": "AccountType.otherLiability",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 16,
+      "symbol": "AccountType.mortgage",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 17,
+      "symbol": "AccountType.autoLoan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 18,
+      "symbol": "AccountType.studentLoan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 19,
+      "symbol": "AccountType.personalLoan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 20,
+      "symbol": "AccountType.medicalDebt",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
+      "line": 21,
+      "symbol": "AccountType.otherDebt",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ClearedStatus.swift",
+      "line": 8,
+      "symbol": "ClearedStatus",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ClearedStatus.swift",
+      "line": 9,
+      "symbol": "ClearedStatus.cleared",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ClearedStatus.swift",
+      "line": 10,
+      "symbol": "ClearedStatus.uncleared",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ClearedStatus.swift",
+      "line": 11,
+      "symbol": "ClearedStatus.reconciled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 11,
       "symbol": "DebtTransactionType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 12,
       "symbol": "DebtTransactionType.payment",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 13,
       "symbol": "DebtTransactionType.refund",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 14,
       "symbol": "DebtTransactionType.fee",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 15,
       "symbol": "DebtTransactionType.interest",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 16,
       "symbol": "DebtTransactionType.escrow",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 17,
       "symbol": "DebtTransactionType.balancedAdjustment",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 18,
       "symbol": "DebtTransactionType.credit",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/DebtTransactionType.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DebtTransactionType.swift",
       "line": 19,
       "symbol": "DebtTransactionType.charge",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB/SwiftYNAB/models/ServerKnowledge.swift",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/FlagColor.swift",
+      "line": 8,
+      "symbol": "FlagColor",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/FlagColor.swift",
+      "line": 9,
+      "symbol": "FlagColor.red",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/FlagColor.swift",
+      "line": 10,
+      "symbol": "FlagColor.orange",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/FlagColor.swift",
+      "line": 11,
+      "symbol": "FlagColor.yellow",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/FlagColor.swift",
+      "line": 12,
+      "symbol": "FlagColor.green",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/FlagColor.swift",
+      "line": 13,
+      "symbol": "FlagColor.blue",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/FlagColor.swift",
+      "line": 14,
+      "symbol": "FlagColor.purple",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/HybridTransaction.swift",
+      "line": 11,
+      "symbol": "HybridTransaction",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 8,
+      "symbol": "SaveTransactionWithIdOrImportId",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 10,
+      "symbol": "SaveTransactionWithIdOrImportId.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 11,
+      "symbol": "SaveTransactionWithIdOrImportId.importId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 14,
+      "symbol": "SaveTransactionWithIdOrImportId.accountId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 15,
+      "symbol": "SaveTransactionWithIdOrImportId.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 16,
+      "symbol": "SaveTransactionWithIdOrImportId.amount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 17,
+      "symbol": "SaveTransactionWithIdOrImportId.payeeId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 18,
+      "symbol": "SaveTransactionWithIdOrImportId.payeeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 19,
+      "symbol": "SaveTransactionWithIdOrImportId.categoryId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 20,
+      "symbol": "SaveTransactionWithIdOrImportId.memo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 21,
+      "symbol": "SaveTransactionWithIdOrImportId.cleared",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 22,
+      "symbol": "SaveTransactionWithIdOrImportId.approved",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 23,
+      "symbol": "SaveTransactionWithIdOrImportId.flagColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 24,
+      "symbol": "SaveTransactionWithIdOrImportId.subtransactions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SaveTransactionWithIdOrImportId.swift",
+      "line": 26,
+      "symbol": "SaveTransactionWithIdOrImportId.init(id:importId:accountId:date:amount:payeeId:payeeName:categoryId:memo:cleared:approved:flagColor:subtransactions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ServerKnowledge.swift",
       "line": 9,
       "symbol": "ServerKnowledge",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionRequest.swift",
+      "line": 11,
+      "symbol": "CreateTransactionRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionRequest.swift",
+      "line": 12,
+      "symbol": "CreateTransactionRequest.budgetId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionRequest.swift",
+      "line": 13,
+      "symbol": "CreateTransactionRequest.transaction",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionsRequest.swift",
+      "line": 11,
+      "symbol": "CreateTransactionsRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionsRequest.swift",
+      "line": 12,
+      "symbol": "CreateTransactionsRequest.budgetId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionsRequest.swift",
+      "line": 13,
+      "symbol": "CreateTransactionsRequest.transactions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/UpdateTransactionsRequest.swift",
+      "line": 11,
+      "symbol": "UpdateTransactionsRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/UpdateTransactionsRequest.swift",
+      "line": 12,
+      "symbol": "UpdateTransactionsRequest.budgetId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/UpdateTransactionsRequest.swift",
+      "line": 13,
+      "symbol": "UpdateTransactionsRequest.transactions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/andrebocchini/Developer/swiftynab/SwiftYNAB"
+  "source_directory": "/Users/andrebocchini/Developer/swiftynab"
 }
