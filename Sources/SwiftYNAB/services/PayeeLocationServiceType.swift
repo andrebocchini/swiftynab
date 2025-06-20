@@ -9,9 +9,9 @@
 import Foundation
 
 protocol PayeeLocationServiceType: Sendable {
-    func getPayeeLocations(budgetId: String) async throws -> [PayeeLocation]
+    func payeeLocations(budgetId: String) async throws -> [PayeeLocation]
 
-    func getPayeeLocation(budgetId: String, payeeId: String) async throws -> PayeeLocation
+    func payeeLocation(budgetId: String, payeeId: String) async throws -> PayeeLocation
 
-    func getLocationsForPayee(budgetId: String, payeeId: String) async throws -> [PayeeLocation]
+    func locationsForPayee(budgetId: String, payeeId: String) async throws -> [PayeeLocation]
 }

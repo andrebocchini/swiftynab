@@ -21,7 +21,7 @@ extension UserService: UserServiceType {
     /// Returns authenticated user information
     ///
     /// - Returns: A single user
-    public func getUser() async throws -> User {
+    public func user() async throws -> User {
         let request = UserRequest()
         let response = try await client.perform(request)
         return response.user

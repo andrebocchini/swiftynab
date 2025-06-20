@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftYNAB
 
 class PayeeLocationServiceTests: XCTestCase {
-    func testGetPayeeLocationsReturnsLocationsWhenRequestSucceeds() async throws {
+    func testPayeeLocationsReturnsLocationsWhenRequestSucceeds() async throws {
         let expectedLocation = PayeeLocation(
             id: "id",
             payeeId: "payee_id",
@@ -22,26 +22,26 @@ class PayeeLocationServiceTests: XCTestCase {
         let expectedResponse = PayeeLocationsRequest.Response(payeeLocations: [expectedLocation])
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeLocationService(client: client)
-        let actualResponse = try await service.getPayeeLocations(budgetId: "budget_id")
+        let actualResponse = try await service.payeeLocations(budgetId: "budget_id")
 
         XCTAssertEqual(actualResponse.count, 1)
         XCTAssertEqual(expectedLocation, actualResponse[0])
     }
 
-    func testGetPayeeLocationsThrowsErrorWhenRequestFails() async throws {
+    func testPayeeLocationsThrowsErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = PayeeLocationService(client: client)
 
         do {
-            _ = try await service.getPayeeLocations(budgetId: "budget_id")
+            _ = try await service.payeeLocations(budgetId: "budget_id")
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testGetPayeeLocationReturnsLocationWhenRequestSucceeds() async throws {
+    func testPayeeLocationReturnsLocationWhenRequestSucceeds() async throws {
         let expectedLocation = PayeeLocation(
             id: "id",
             payeeId: "payee_id",
@@ -52,7 +52,7 @@ class PayeeLocationServiceTests: XCTestCase {
         let expectedResponse = PayeeLocationRequest.Response(payeeLocation: expectedLocation)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeLocationService(client: client)
-        let actualResponse = try await service.getPayeeLocation(
+        let actualResponse = try await service.payeeLocation(
             budgetId: "budget_id",
             payeeId: "payee_id"
         )
@@ -60,13 +60,13 @@ class PayeeLocationServiceTests: XCTestCase {
         XCTAssertEqual(expectedLocation, actualResponse)
     }
 
-    func testGetPayeeLocationThrowsErrorWhenRequestFails() async throws {
+    func testPayeeLocationThrowsErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = PayeeLocationService(client: client)
 
         do {
-            _ = try await service.getPayeeLocation(budgetId: "budget_id", payeeId: "payee_id")
+            _ = try await service.payeeLocation(budgetId: "budget_id", payeeId: "payee_id")
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
@@ -84,7 +84,7 @@ class PayeeLocationServiceTests: XCTestCase {
         let expectedResponse = LocationsForPayeeRequest.Response(payeeLocations: [expectedLocation])
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeLocationService(client: client)
-        let actualResponse = try await service.getLocationsForPayee(
+        let actualResponse = try await service.locationsForPayee(
             budgetId: "budget_id",
             payeeId: "payee_id"
         )
@@ -93,13 +93,13 @@ class PayeeLocationServiceTests: XCTestCase {
         XCTAssertEqual(expectedLocation, actualResponse[0])
     }
 
-    func testGetLocationsForPayeeThrowsErrorWhenRequestFails() async throws {
+    func testLocationsForPayeeThrowsErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = PayeeLocationService(client: client)
 
         do {
-            _ = try await service.getLocationsForPayee(budgetId: "budget_id", payeeId: "payee_id")
+            _ = try await service.locationsForPayee(budgetId: "budget_id", payeeId: "payee_id")
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))

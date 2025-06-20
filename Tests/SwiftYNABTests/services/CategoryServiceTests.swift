@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftYNAB
 
 class CategoryServiceTests: XCTestCase {
-    func testGetCategoriesReturnsCategoriesWhenRequestSucceeds() async throws {
+    func testCategoriesReturnsCategoriesWhenRequestSucceeds() async throws {
         let expectedCategoryGroup = CategoryGroupWithCategories(
             id: "id",
             name: "name",
@@ -25,27 +25,27 @@ class CategoryServiceTests: XCTestCase {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
-        let actualResponse = try await service.getCategories(budgetId: "budget_id")
+        let actualResponse = try await service.categories(budgetId: "budget_id")
 
         XCTAssertEqual(actualResponse.0.count, 1)
         XCTAssertEqual(expectedCategoryGroup, actualResponse.0[0])
         XCTAssertEqual(200, actualResponse.1)
     }
 
-    func testGetCategoriesThrowsErrorWhenRequestFails() async throws {
+    func testCategoriesThrowsErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
 
         do {
-            _ = try await service.getCategories(budgetId: "budget_id", lastKnowledgeOfServer: nil)
+            _ = try await service.categories(budgetId: "budget_id", lastKnowledgeOfServer: nil)
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testGetCategoryReturnsCategoryWhenRequestSucceeds() async throws {
+    func testCategoryReturnsCategoryWhenRequestSucceeds() async throws {
         let expectedCategory = Category(
             id: "id",
             categoryGroupId: "group_id",
@@ -75,25 +75,25 @@ class CategoryServiceTests: XCTestCase {
         let expectedResponse = CategoryRequest.Response(category: expectedCategory)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
-        let actualResponse = try await service.getCategory(budgetId: "budget_id", categoryId: "id")
+        let actualResponse = try await service.category(budgetId: "budget_id", categoryId: "id")
 
         XCTAssertEqual(expectedCategory, actualResponse)
     }
 
-    func testGetCategoryThrowsErrorWhenRequestFails() async throws {
+    func testCategoryThrowsErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
 
         do {
-            _ = try await service.getCategory(budgetId: "budget_id", categoryId: "month_id")
+            _ = try await service.category(budgetId: "budget_id", categoryId: "month_id")
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testGetCategoryWithMonthReturnsCategoryWhenRequestSucceeds() async throws {
+    func testCategoryWithMonthReturnsCategoryWhenRequestSucceeds() async throws {
         let expectedCategory = Category(
             id: "id",
             categoryGroupId: "group_id",
@@ -123,7 +123,7 @@ class CategoryServiceTests: XCTestCase {
         let expectedResponse = CategoryByMonthRequest.Response(category: expectedCategory)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
-        let actualResponse = try await service.getCategory(
+        let actualResponse = try await service.category(
             budgetId: "budget_id",
             month: "april",
             categoryId: "id"
@@ -132,13 +132,13 @@ class CategoryServiceTests: XCTestCase {
         XCTAssertEqual(expectedCategory, actualResponse)
     }
 
-    func testGetCategoryWithMonthThrowsErrorWhenRequestFails() async throws {
+    func testCategoryWithMonthThrowsErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
 
         do {
-            _ = try await service.getCategory(
+            _ = try await service.category(
                 budgetId: "budget_id",
                 month: "april",
                 categoryId: "id"

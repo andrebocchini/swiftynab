@@ -11,47 +11,47 @@ import XCTest
 @testable import SwiftYNAB
 
 class PayeeServiceTests: XCTestCase {
-    func testGetPayeesReturnsPayeesWhenRequestSucceeds() async throws {
+    func testPayeesReturnsPayeesWhenRequestSucceeds() async throws {
         let expectedPayee = Payee(id: "id", name: "name", transferAccountId: nil, deleted: false)
         let expectedResponse = PayeesRequest.Response(payees: [expectedPayee], serverKnowledge: 1)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeService(client: client)
-        let actualResponse = try await service.getPayees(budgetId: "budget_id")
+        let actualResponse = try await service.payees(budgetId: "budget_id")
 
         XCTAssertEqual(actualResponse.count, 1)
         XCTAssertEqual(expectedPayee, actualResponse[0])
     }
 
-    func testGetPayeesThrowsErrorWhenRequestFails() async throws {
+    func testPayeesThrowsErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = PayeeService(client: client)
 
         do {
-            _ = try await service.getPayees(budgetId: "budget_id")
+            _ = try await service.payees(budgetId: "budget_id")
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testGetPayeeReturnsPayeeWhenRequestSucceeds() async throws {
+    func testPayeeReturnsPayeeWhenRequestSucceeds() async throws {
         let expectedPayee = Payee(id: "id", name: "name", transferAccountId: nil, deleted: false)
         let expectedResponse = PayeeRequest.Response(payee: expectedPayee)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeService(client: client)
-        let actualResponse = try await service.getPayee(budgetId: "budget_id", payeeId: "payee_id")
+        let actualResponse = try await service.payee(budgetId: "budget_id", payeeId: "payee_id")
 
         XCTAssertEqual(expectedPayee, actualResponse)
     }
 
-    func testGetPayeeThrowsErrorWhenRequestFails() async throws {
+    func testPayeeThrowsErrorWhenRequestFails() async throws {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = PayeeService(client: client)
 
         do {
-            _ = try await service.getPayee(budgetId: "budget_id", payeeId: "payee_id")
+            _ = try await service.payee(budgetId: "budget_id", payeeId: "payee_id")
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))

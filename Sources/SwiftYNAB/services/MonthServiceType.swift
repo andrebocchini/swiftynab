@@ -9,10 +9,10 @@
 import Foundation
 
 protocol MonthServiceType: Sendable {
-    func getMonths(
+    func months(
         budgetId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> ([MonthSummary], ServerKnowledge)
 
-    func getMonth(budgetId: String, month: String) async throws -> MonthDetail
+    func month(budgetId: String, month: String) async throws -> MonthDetail
 }

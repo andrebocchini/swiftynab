@@ -32,7 +32,7 @@ extension CategoryService: CategoryServiceType {
     ///    will be included.
     ///
     /// - Returns: A list of category groups
-    public func getCategories(
+    public func categories(
         budgetId: String,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([CategoryGroupWithCategories], ServerKnowledge) {
@@ -54,7 +54,7 @@ extension CategoryService: CategoryServiceType {
     ///    - categoryId: The id of the category
     ///
     /// - Returns: A single category
-    public func getCategory(budgetId: String, categoryId: String) async throws -> Category {
+    public func category(budgetId: String, categoryId: String) async throws -> Category {
         let request = CategoryRequest(budgetId: budgetId, categoryId: categoryId)
         let response = try await client.perform(request)
         return response.category
@@ -71,7 +71,7 @@ extension CategoryService: CategoryServiceType {
     ///    - categoryId: The id of the category
     ///
     /// - Returns: A single category
-    public func getCategory(
+    public func category(
         budgetId: String,
         month: String,
         categoryId: String

@@ -9,13 +9,13 @@
 import Foundation
 
 protocol PayeeServiceType: Sendable {
-    func getPayees(
+    func payees(
         budgetId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws
         -> [Payee]
 
-    func getPayee(budgetId: String, payeeId: String) async throws -> Payee
+    func payee(budgetId: String, payeeId: String) async throws -> Payee
 
     func updatePayee(
         budgetId: String,

@@ -28,7 +28,7 @@ extension PayeeService: PayeeServiceType {
     ///    will be included.
     ///
     /// - Returns: A list of payees
-    public func getPayees(
+    public func payees(
         budgetId: String,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [Payee] {
@@ -50,7 +50,7 @@ extension PayeeService: PayeeServiceType {
     ///    will be included.
     ///
     /// - Returns: A single payee
-    public func getPayee(budgetId: String, payeeId: String) async throws -> Payee {
+    public func payee(budgetId: String, payeeId: String) async throws -> Payee {
         let request = PayeeRequest(budgetId: budgetId, payeeId: payeeId)
         let response = try await client.perform(request)
         return response.payee

@@ -9,14 +9,14 @@
 import Foundation
 
 protocol CategoryServiceType: Sendable {
-    func getCategories(
+    func categories(
         budgetId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> ([CategoryGroupWithCategories], ServerKnowledge)
 
-    func getCategory(budgetId: String, categoryId: String) async throws -> Category
+    func category(budgetId: String, categoryId: String) async throws -> Category
 
-    func getCategory(budgetId: String, month: String, categoryId: String) async throws -> Category
+    func category(budgetId: String, month: String, categoryId: String) async throws -> Category
 
     func updateCategory(
         budgetId: String,

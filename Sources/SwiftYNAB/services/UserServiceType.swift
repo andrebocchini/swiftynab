@@ -9,5 +9,5 @@
 import Foundation
 
 protocol UserServiceType: Sendable {
-    func getUser() async throws -> User
+    func user() async throws -> User
 }

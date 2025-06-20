@@ -28,7 +28,7 @@ extension MonthService: MonthServiceType {
     ///    will be included.
     ///
     /// - Returns: A list of months and the last knowledge of the server
-    func getMonths(
+    func months(
         budgetId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> ([MonthSummary], ServerKnowledge) {
@@ -50,7 +50,7 @@ extension MonthService: MonthServiceType {
     ///    the current calendar month (UTC))
     ///
     /// - Returns: A single month
-    public func getMonth(budgetId: String, month: String) async throws -> MonthDetail {
+    public func month(budgetId: String, month: String) async throws -> MonthDetail {
         let request = MonthRequest(budgetId: budgetId, month: month)
         let response = try await client.perform(request)
         return response.month

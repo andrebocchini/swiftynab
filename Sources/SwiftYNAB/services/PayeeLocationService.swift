@@ -25,7 +25,7 @@ extension PayeeLocationService: PayeeLocationServiceType {
     /// budget)
     ///
     /// - Returns: A list of payee locations
-    public func getPayeeLocations(budgetId: String) async throws -> [PayeeLocation] {
+    public func payeeLocations(budgetId: String) async throws -> [PayeeLocation] {
         let request = PayeeLocationsRequest(budgetId: budgetId)
         let response = try await client.perform(request)
         return response.payeeLocations
@@ -39,7 +39,7 @@ extension PayeeLocationService: PayeeLocationServiceType {
     ///    - payeeId: The id of the payee
     ///
     /// - Returns: A single payee location
-    public func getPayeeLocation(budgetId: String, payeeId: String) async throws -> PayeeLocation {
+    public func payeeLocation(budgetId: String, payeeId: String) async throws -> PayeeLocation {
         let request = PayeeLocationRequest(budgetId: budgetId, payeeId: payeeId)
         let response = try await client.perform(request)
         return response.payeeLocation
@@ -53,7 +53,7 @@ extension PayeeLocationService: PayeeLocationServiceType {
     ///    - payeeId: The id of the payee
     ///
     /// - Returns: A list of payee locations
-    public func getLocationsForPayee(
+    public func locationsForPayee(
         budgetId: String,
         payeeId: String
     ) async throws -> [PayeeLocation] {
