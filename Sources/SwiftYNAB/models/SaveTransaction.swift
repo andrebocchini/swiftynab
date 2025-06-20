@@ -8,14 +8,6 @@
 
 import Foundation
 
-/// YNAB calls the model SaveTransaction, but this name might be clearer when being passed as
-/// a parameter to a transaction creation method.
-public typealias NewTransaction = SaveTransaction
-
-/// YNAB calls the model SaveTransaction, but this name might be clearer when being passed as
-/// a parameter to a transaction update method.
-public typealias UpdateTransaction = SaveTransaction
-
 /// A model representing a transaction to be saved or updated
 public struct SaveTransaction: Codable, Equatable, Sendable {
     /// The ID of the transaction (only used when updating an existing transaction)
