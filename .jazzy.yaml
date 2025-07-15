@@ -1,7 +1,7 @@
 author: Andre Bocchini
 github_url: https://github.com/andrebocchini/swiftynab
 source_directory: .
-module_version: 3.0.0
+module_version: 3.0.1
 module: SwiftYNAB
 hide_documentation_coverage: true
 theme: apple
