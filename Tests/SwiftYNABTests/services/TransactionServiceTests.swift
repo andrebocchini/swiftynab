@@ -602,7 +602,6 @@ class TransactionServiceTests: XCTestCase {
             subtransactions: []
         )
         let expectedResponse = CreateTransactionRequest.Response(
-            duplicateImportIds: [],
             serverKnowledge: 200,
             transaction: expectedTransaction,
             transactionIds: ["transaction_id"]
@@ -616,7 +615,6 @@ class TransactionServiceTests: XCTestCase {
 
         XCTAssertEqual(actualResponse.0, expectedTransaction)
         XCTAssertEqual(actualResponse.1, 200)
-        XCTAssertEqual(actualResponse.2, [])
     }
 
     func testCreateTransactionThrowsErrorWhenRequestFails() async throws {

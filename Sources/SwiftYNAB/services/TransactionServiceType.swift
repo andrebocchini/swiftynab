@@ -53,7 +53,7 @@ protocol TransactionServiceType: Sendable {
     func createTransaction(
         budgetId: String,
         transaction: SaveTransactionWithIdOrImportId
-    ) async throws -> (TransactionDetail, ServerKnowledge, [String])
+    ) async throws -> (TransactionDetail, ServerKnowledge)
 
     func createTransactions(
         budgetId: String,

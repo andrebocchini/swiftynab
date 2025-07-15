@@ -204,10 +204,10 @@ extension TransactionService: TransactionServiceType {
     public func createTransaction(
         budgetId: String,
         transaction: SaveTransactionWithIdOrImportId
-    ) async throws -> (TransactionDetail, ServerKnowledge, [String]) {
+    ) async throws -> (TransactionDetail, ServerKnowledge) {
         let request = CreateTransactionRequest(budgetId: budgetId, transaction: transaction)
         let response = try await client.perform(request)
-        return (response.transaction, response.serverKnowledge, response.duplicateImportIds)
+        return (response.transaction, response.serverKnowledge)
     }
 
     /// Creates multiple transactions.
