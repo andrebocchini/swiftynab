@@ -39,5 +39,21 @@ class CreateTransactionRequestTests: XCTestCase {
         XCTAssertEqual(request.method, .post)
         XCTAssertNil(request.query)
         XCTAssertNotNil(request.body)
+        
+        // Verify the body contains the wrapper with transaction field
+        if let body = request.body {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                let wrapper = try decoder.decode(CreateTransactionRequestWrapper.self, from: body)
+                XCTAssertEqual(wrapper.transaction.accountId, "account_id")
+                XCTAssertEqual(wrapper.transaction.payeeName, "Test Payee")
+                XCTAssertEqual(wrapper.transaction.amount, 1000)
+            } catch {
+                XCTFail("Failed to decode wrapper: \(error)")
+            }
+        } else {
+            XCTFail("Request body should not be nil")
+        }
     }
 }

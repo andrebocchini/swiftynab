@@ -24,7 +24,7 @@ extension CreateTransactionRequest: Request {
 
     var body: Data? {
         let serializer = Serializer()
-        return try? serializer.encode(transaction)
+        return try? serializer.encode(CreateTransactionRequestWrapper(transaction: transaction))
     }
 
     struct Response: Decodable {
@@ -33,4 +33,8 @@ extension CreateTransactionRequest: Request {
         let transaction: TransactionDetail
         let transactionIds: [String]
     }
+}
+
+struct CreateTransactionRequestWrapper: Codable {
+    let transaction: SaveTransactionWithIdOrImportId
 }
