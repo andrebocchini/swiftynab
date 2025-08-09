@@ -39,7 +39,7 @@ class CreateTransactionRequestTests: XCTestCase {
         XCTAssertEqual(request.method, .post)
         XCTAssertNil(request.query)
         XCTAssertNotNil(request.body)
-        
+
         // Verify the body contains the wrapper with transaction field
         if let body = request.body {
             let decoder = JSONDecoder()

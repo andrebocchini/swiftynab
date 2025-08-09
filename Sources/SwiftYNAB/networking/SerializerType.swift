@@ -10,5 +10,5 @@ import Foundation
 
 protocol SerializerType: Sendable {
     func decode<T: Decodable>(_: T.Type, from data: Data) throws -> T
-    func encode<T: Encodable>(_ model: T) throws -> Data
+    func encode(_ model: some Encodable) throws -> Data
 }
