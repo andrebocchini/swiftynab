@@ -239,6 +239,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/FlagColor.swift",
+      "line": 15,
+      "symbol": "FlagColor.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/HybridTransaction.swift",
       "line": 11,
       "symbol": "HybridTransaction",
