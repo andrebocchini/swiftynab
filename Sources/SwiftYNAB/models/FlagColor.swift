@@ -12,4 +12,5 @@ public enum FlagColor: String, Codable, Sendable {
     case green
     case blue
     case purple
+    case none = ""
 }
