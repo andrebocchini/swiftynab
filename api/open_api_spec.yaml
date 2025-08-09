@@ -6,7 +6,7 @@ info:
     upon HTTPS for transport. We respond with meaningful HTTP response codes and
     if an error occurs, we include error details in the response body.  API
     Documentation is at https://api.ynab.com
-  version: 1.74.0
+  version: 1.77.0
 servers:
   - url: https://api.ynab.com/v1
 security:
@@ -25,7 +25,7 @@ tags:
       When you enter a transaction and specify a payee on the YNAB mobile apps,
       the GPS coordinates for that location are stored, with your permission, so
       that the next time you are in the same place (like the Grocery store) we
-      can pre-populate nearby payees for you!  It’s handy and saves you time.
+      can pre-populate nearby payees for you!  Itâ€™s handy and saves you time.
       This resource makes these locations available.  Locations will not be
       available for all payees.
   - name: Months
@@ -1482,7 +1482,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HybridTransactionsResponse"
+                $ref: "#/components/schemas/TransactionsResponse"
         "404":
           description: No transactions were found
           content:
@@ -1580,6 +1580,48 @@ paths:
               schema:
                 $ref: "#/components/schemas/ErrorResponse"
       x-codegen-request-body-name: data
+  /budgets/{budget_id}/scheduled_transactions/{scheduled_transaction_id}:
+    get:
+      tags:
+        - Scheduled Transactions
+      summary: Single scheduled transaction
+      description: Returns a single scheduled transaction
+      operationId: getScheduledTransactionById
+      parameters:
+        - name: budget_id
+          in: path
+          description: >-
+            The id of the budget. "last-used" can be used to specify the last
+            used budget and "default" can be used if default budget selection is
+            enabled (see: https://api.ynab.com/#oauth-default-budget).
+          required: true
+          schema:
+            type: string
+        - name: scheduled_transaction_id
+          in: path
+          description: The id of the scheduled transaction
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The requested Scheduled Transaction
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScheduledTransactionResponse"
+        "404":
+          description: The scheduled transaction was not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        default:
+          description: An error occurred
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
     put:
       tags:
         - Scheduled Transactions
@@ -1655,48 +1697,6 @@ paths:
                 $ref: "#/components/schemas/ScheduledTransactionResponse"
         "404":
           description: The scheduled transaction was not found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ErrorResponse"
-  /budgets/{budget_id}/scheduled_transactions/{scheduled_transaction_id}:
-    get:
-      tags:
-        - Scheduled Transactions
-      summary: Single scheduled transaction
-      description: Returns a single scheduled transaction
-      operationId: getScheduledTransactionById
-      parameters:
-        - name: budget_id
-          in: path
-          description: >-
-            The id of the budget. "last-used" can be used to specify the last
-            used budget and "default" can be used if default budget selection is
-            enabled (see: https://api.ynab.com/#oauth-default-budget).
-          required: true
-          schema:
-            type: string
-        - name: scheduled_transaction_id
-          in: path
-          description: The id of the scheduled transaction
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: The requested Scheduled Transaction
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ScheduledTransactionResponse"
-        "404":
-          description: The scheduled transaction was not found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ErrorResponse"
-        default:
-          description: An error occurred
           content:
             application/json:
               schema:
@@ -2021,8 +2021,7 @@ components:
           type: integer
           nullable: true
           description: >-
-            The original debt/loan account balance, specified in milliunits
-            format.
+            This field is deprecated and will always be null.
           format: int64
         debt_interest_rates:
           $ref: "#/components/schemas/LoanAccountPeriodicValue"
@@ -2303,6 +2302,13 @@ components:
             The amount of funding still needed to complete the goal within the
             current goal period.
           format: int64
+          nullable: true
+        goal_snoozed_at:
+          type: string
+          description: >-
+            The date/time the goal was snoozed.  If the goal is not snoozed, this
+            will be null.
+          format: date-time
           nullable: true
         deleted:
           type: boolean
@@ -2715,10 +2721,15 @@ components:
         data:
           required:
             - transaction
+            - server_knowledge
           type: object
           properties:
             transaction:
               $ref: "#/components/schemas/TransactionDetail"
+            server_knowledge:
+              type: integer
+              description: The knowledge of the server
+              format: int64
     TransactionSummary:
       required:
         - account_id
@@ -3380,6 +3391,7 @@ components:
         - green
         - blue
         - purple
+        - ""
         - null
       nullable: true
     TransactionFlagName:
