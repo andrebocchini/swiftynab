@@ -70,6 +70,7 @@ class CategoryServiceTests: XCTestCase {
             goalUnderFunded: nil,
             goalOverallFunded: nil,
             goalOverallLeft: nil,
+            goalSnoozedAt: nil,
             deleted: false
         )
         let expectedResponse = CategoryRequest.Response(category: expectedCategory)
@@ -118,6 +119,7 @@ class CategoryServiceTests: XCTestCase {
             goalUnderFunded: nil,
             goalOverallFunded: nil,
             goalOverallLeft: nil,
+            goalSnoozedAt: nil,
             deleted: false
         )
         let expectedResponse = CategoryByMonthRequest.Response(category: expectedCategory)
@@ -174,6 +176,7 @@ class CategoryServiceTests: XCTestCase {
             goalUnderFunded: nil,
             goalOverallFunded: nil,
             goalOverallLeft: nil,
+            goalSnoozedAt: nil,
             deleted: false
         )
         let expectedResponse = UpdateCategoryRequest.Response(
@@ -234,6 +237,7 @@ class CategoryServiceTests: XCTestCase {
             goalUnderFunded: nil,
             goalOverallFunded: nil,
             goalOverallLeft: nil,
+            goalSnoozedAt: nil,
             deleted: false
         )
         let expectedResponse = SaveMonthCategoryRequest.Response(category: expectedCategory)

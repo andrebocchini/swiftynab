@@ -109,6 +109,9 @@ public struct Category: Codable, Equatable, Sendable {
     /// milliunits
     public let goalOverallLeft: Int?
 
+    /// The date/time the goal was snoozed. If the goal is not snoozed, this will be null.
+    public let goalSnoozedAt: String?
+
     /// Whether or not the category has been deleted
     public let deleted: Bool
 }
