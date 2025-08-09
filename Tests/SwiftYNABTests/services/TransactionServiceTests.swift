@@ -37,7 +37,10 @@ class TransactionServiceTests: XCTestCase {
             deleted: false,
             subtransactions: []
         )
-        let expectedResponse = TransactionRequest.Response(transaction: expectedTransaction)
+        let expectedResponse = TransactionRequest.Response(
+            transaction: expectedTransaction,
+            serverKnowledge: 200
+        )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let actualResponse = try await service.transaction(
@@ -45,7 +48,8 @@ class TransactionServiceTests: XCTestCase {
             transactionId: "id"
         )
 
-        XCTAssertEqual(expectedTransaction, actualResponse)
+        XCTAssertEqual(expectedTransaction, actualResponse.0)
+        XCTAssertEqual(200, actualResponse.1)
     }
 
     func testGetTransactionThrowsErrorWhenRequestFails() async throws {

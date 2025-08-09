@@ -25,14 +25,14 @@ extension TransactionService: TransactionServiceType {
     /// budget).
     ///    - transactionId: Id of the transaction.
     ///
-    /// - Returns: A single transaction
+    /// - Returns: A tuple containing a single transaction and server knowledge
     public func transaction(
         budgetId: String,
         transactionId: String
-    ) async throws -> TransactionDetail {
+    ) async throws -> (TransactionDetail, ServerKnowledge) {
         let request = TransactionRequest(budgetId: budgetId, transactionId: transactionId)
         let respose = try await client.perform(request)
-        return respose.transaction
+        return (respose.transaction, respose.serverKnowledge)
     }
 
     /// Returns all transactions for a budget.
