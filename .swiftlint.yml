@@ -1,5 +1,6 @@
 disabled_rules:
   - opening_brace
+  - file_length
 
 opt_in_rules: 
   - empty_count
@@ -34,9 +35,14 @@ type_name:
   allowed_symbols: ["_"]
 identifier_name:
   min_length:
-    error: 4
+    error: 3
   excluded:
     - id
     - URL
     - GlobalAPIKey
+large_tuple:
+  warning: 3
+  error: 4
+nesting:
+  type_level: 2
 reporter: "xcode"

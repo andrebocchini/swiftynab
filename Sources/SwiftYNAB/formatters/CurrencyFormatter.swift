@@ -27,6 +27,7 @@ public struct CurrencyFormatter: Sendable {
     ///
     ///  - Returns: Budget format currency string if conversion is successful, nil otherwise
     public func currencyString(from amount: Int) -> String? {
+        // swiftlint:disable:next compiler_protocol_init
         let amountAsNumber = NSNumber(floatLiteral: Double(amount) / 1000)
 
         let formatter = NumberFormatter()

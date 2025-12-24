@@ -17,6 +17,7 @@ class TransactionsByPayeeRequestTests: XCTestCase {
         )
         XCTAssertEqual(
             request.path,
+            // swiftlint:disable:next line_length
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/payees/63509599-7805-4f30-24bf-0ae2c2f967f0/transactions"
         )
         XCTAssertEqual(request.method, .get)
@@ -35,6 +36,7 @@ class TransactionsByPayeeRequestTests: XCTestCase {
         )
         XCTAssertEqual(
             request.path,
+            // swiftlint:disable:next line_length
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/payees/63509599-7805-4f30-24bf-0ae2c2f967f0/transactions"
         )
         XCTAssertEqual(request.method, .get)

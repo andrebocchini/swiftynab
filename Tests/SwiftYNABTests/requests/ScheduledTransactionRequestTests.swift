@@ -17,6 +17,7 @@ class ScheduledTransactionRequestTests: XCTestCase {
         )
         XCTAssertEqual(
             request.path,
+            // swiftlint:disable:next line_length
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions/6aa65ae8-919d-481b-8bd0-6d125dc97016"
         )
         XCTAssertEqual(request.method, .get)

@@ -17,6 +17,7 @@ class TransactionsByCategoryRequestTests: XCTestCase {
         )
         XCTAssertEqual(
             request.path,
+            // swiftlint:disable:next line_length
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/categories/cb6d13fc-dc85-f567-4e1f-0ae2c2f6d7bc/transactions"
         )
         XCTAssertEqual(request.method, .get)
@@ -35,6 +36,7 @@ class TransactionsByCategoryRequestTests: XCTestCase {
         )
         XCTAssertEqual(
             request.path,
+            // swiftlint:disable:next line_length
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/categories/cb6d13fc-dc85-f567-4e1f-0ae2c2f6d7bc/transactions"
         )
         XCTAssertEqual(request.method, .get)

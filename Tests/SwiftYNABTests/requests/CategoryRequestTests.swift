@@ -17,6 +17,7 @@ class CategoryRequestTests: XCTestCase {
         )
         XCTAssertEqual(
             request.path,
+            // swiftlint:disable:next line_length
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/categories/9b6ff04f-b123-d126-4605-0ae2c2f5e3ba"
         )
         XCTAssertEqual(request.method, .get)

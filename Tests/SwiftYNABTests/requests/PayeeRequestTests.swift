@@ -17,6 +17,7 @@ class PayeeRequestTests: XCTestCase {
         )
         XCTAssertEqual(
             request.path,
+            // swiftlint:disable:next line_length
             "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/payees/e379b298-ec3f-74ce-5248-0ae2c2f74465"
         )
         XCTAssertEqual(request.method, .get)

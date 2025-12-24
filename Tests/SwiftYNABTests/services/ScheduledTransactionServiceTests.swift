@@ -10,6 +10,7 @@ import Foundation
 import XCTest
 @testable import SwiftYNAB
 
+// swiftlint:disable:next type_body_length
 class ScheduledTransactionServiceTests: XCTestCase {
     func testGetScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let expectedTransaction = ScheduledTransactionDetail(

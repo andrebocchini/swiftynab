@@ -10,6 +10,7 @@ import Foundation
 import XCTest
 @testable import SwiftYNAB
 
+// swiftlint:disable:next type_body_length
 class TransactionServiceTests: XCTestCase {
     func testGetTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
@@ -419,6 +420,7 @@ class TransactionServiceTests: XCTestCase {
         }
     }
 
+    // swiftlint:disable:next function_body_length
     func testUpdateTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
@@ -564,6 +566,7 @@ class TransactionServiceTests: XCTestCase {
         }
     }
 
+    // swiftlint:disable:next function_body_length
     func testCreateTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let newTransaction = SaveTransactionWithIdOrImportId(
             id: nil,
@@ -652,6 +655,7 @@ class TransactionServiceTests: XCTestCase {
         }
     }
 
+    // swiftlint:disable:next function_body_length
     func testCreateTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let newTransaction1 = SaveTransactionWithIdOrImportId(
             id: nil,

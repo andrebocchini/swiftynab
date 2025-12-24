@@ -100,6 +100,7 @@ struct MockPostRequest: Request {
 
     var path = "/testpath"
     var method: RequestMethod = .post
+    // swiftlint:disable:next non_optional_string_data_conversion
     var body = "test".data(using: .utf8)!
 }
 
@@ -108,6 +109,7 @@ struct MockPatchRequest: Request {
 
     var path = "/testpath"
     var method: RequestMethod = .patch
+    // swiftlint:disable:next non_optional_string_data_conversion
     var body = "test".data(using: .utf8)!
 }
 
@@ -116,5 +118,6 @@ struct MockPutRequest: Request {
 
     var path = "/testpath"
     var method: RequestMethod = .put
+    // swiftlint:disable:next non_optional_string_data_conversion
     var body = "test".data(using: .utf8)!
 }

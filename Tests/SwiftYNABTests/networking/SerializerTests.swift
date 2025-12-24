@@ -29,6 +29,7 @@ final class SerializerTests: XCTestCase {
             let testVariable: String
         }
 
+        // swiftlint:disable:next non_optional_string_data_conversion
         let input = try XCTUnwrap("{\"test_variable\":\"test\"}".data(using: .utf8))
         let serializer = Serializer()
         let result = try serializer.decode(Test.self, from: input)

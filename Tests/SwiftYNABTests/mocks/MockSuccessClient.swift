@@ -13,6 +13,7 @@ struct MockSuccessClient<T>: ClientType where T: Decodable, T: Sendable {
     let expectedResponse: T
 
     func perform<R: Request>(_: R) async throws -> R.Response {
+        // swiftlint:disable:next force_cast
         expectedResponse as! R.Response
     }
 }
