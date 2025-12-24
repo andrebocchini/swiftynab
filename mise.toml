@@ -1,5 +1,5 @@
 [tools]
-ruby = "3.4.5"
+ruby = "3.4.8"
 swiftformat = "0.58.7"
 swiftlint = "0.62.2"
 
