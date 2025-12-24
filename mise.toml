@@ -2,6 +2,7 @@
 ruby = "3.4.8"
 swiftformat = "0.58.7"
 swiftlint = "0.62.2"
+pre-commit = "4.4.0"
 
 [tasks.lint]
 description = "Run linters"
@@ -24,3 +25,7 @@ run = """
 bundle install
 bundle exec jazzy
 """
+
+[tasks.install-pre-commit-hooks]
+description = "Install pre-commit hooks"
+run = "pre-commit install"

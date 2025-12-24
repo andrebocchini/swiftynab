@@ -1,0 +1,16 @@
+repos:
+  - repo: local
+    hooks:
+      - id: swiftformat
+        name: SwiftFormat
+        entry: swiftformat --lint .
+        language: system
+        types: [swift]
+        pass_filenames: false
+
+      - id: swiftlint
+        name: SwiftLint
+        entry: swiftlint lint
+        language: system
+        types: [swift]
+        pass_filenames: false
