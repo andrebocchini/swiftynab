@@ -25,7 +25,7 @@ tags:
       When you enter a transaction and specify a payee on the YNAB mobile apps,
       the GPS coordinates for that location are stored, with your permission, so
       that the next time you are in the same place (like the Grocery store) we
-      can pre-populate nearby payees for you!  Itâ€™s handy and saves you time.
+      can pre-populate nearby payees for you!  It’s handy and saves you time.
       This resource makes these locations available.  Locations will not be
       available for all payees.
   - name: Months
@@ -1802,7 +1802,9 @@ components:
               items:
                 $ref: "#/components/schemas/BudgetSummary"
             default_budget:
-              $ref: "#/components/schemas/BudgetSummary"
+              allOf:
+                - $ref: "#/components/schemas/BudgetSummary"
+              nullable: true
     BudgetSummary:
       required:
         - id
