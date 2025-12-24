@@ -1,6 +1,6 @@
 [tools]
 ruby = "3.4.5"
-swiftformat = "0.57.2"
+swiftformat = "0.58.7"
 swiftlint = "0.62.2"
 
 [tasks.lint]
