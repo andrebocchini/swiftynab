@@ -26,6 +26,6 @@ bundle install
 bundle exec jazzy
 """
 
-[tasks.install-pre-commit-hooks]
-description = "Install pre-commit hooks"
+[tasks.bootstrap]
+description = "Sets up the project for development"
 run = "pre-commit install"

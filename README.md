@@ -48,3 +48,17 @@ Task {
 }
 ```
  
+ ## Contributing
+
+ If you want to build and test the code yourself, you can check out this repository and open is directly in Xcode. From there, you can edit the source code and run the tests.
+
+ In order to run the built-in demo app, make sure you **don't** have the SwiftYNAB package open in Xcode, then open the demo app in Xcode from the `demo` directory. You should be able to run it in your simulator and take it for a spin.
+
+ ### Recommended
+
+In order to run the linters, or generate documentation, and to take advantage of the pre-commit hooks, you should:
+
+1. Install [`mise`](https://mise.jdx.dev/getting-started.html)
+2. Once `mise` is installed successfully, run `mise install` to install all of the project dependencies
+3. Run `mise run bootstrap` to setup the project for development
+3. Run `mise run` to see the available, pre-configured tasks
