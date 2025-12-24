@@ -6,7 +6,6 @@
 
 --allman false
 --binarygrouping 4,8
---commas always
 --comments indent
 --decimalgrouping 3,6
 --elseposition same-line
@@ -33,6 +32,7 @@
 --trimwhitespace always
 --wraparguments before-first
 --wrapcollections before-first
+--trailing-commas never
 
 # rules
 
