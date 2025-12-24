@@ -28,7 +28,7 @@ extension MonthService: MonthServiceType {
     ///    will be included.
     ///
     /// - Returns: A list of months and the last knowledge of the server
-    func months(
+    public func months(
         budgetId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> ([MonthSummary], ServerKnowledge) {
