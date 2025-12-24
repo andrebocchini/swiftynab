@@ -17,7 +17,7 @@
     <a title="MonthService Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 3.1.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 3.1.1 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -225,6 +225,77 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB12MonthServiceV6months8budgetId21lastKnowledgeOfServerSayAA0C7SummaryVG_SitSS_SiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/months(budgetId:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12MonthServiceV6months8budgetId21lastKnowledgeOfServerSayAA0C7SummaryVG_SitSS_SiSgtYaKF">months(budgetId:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a list of budget months.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">months</span><span class="p">(</span>
+    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/MonthSummary.html">MonthSummary</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budgetId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
+budget)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastKnowledgeOfServer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If provided, only entities that have changed since
+<code>lastKnowledgeOfServer</code>
+will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A list of months and the last knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB12MonthServiceV5month8budgetIdAdA0C6DetailVSS_SStYaKF"></a>
                     <a name="//apple_ref/swift/Method/month(budgetId:month:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB12MonthServiceV5month8budgetIdAdA0C6DetailVSS_SStYaKF">month(budgetId:<wbr>month:<wbr>)</a>
@@ -295,7 +366,7 @@ the current calendar month (UTC))</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2025-08-09)</p>
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2025-12-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
