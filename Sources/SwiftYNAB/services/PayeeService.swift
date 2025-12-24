@@ -65,7 +65,7 @@ extension PayeeService: PayeeServiceType {
     ///    - payee: The details of the payee that need to be updated
     ///
     /// - Returns: A single payee and the last server knowledge
-    func updatePayee(
+    public func updatePayee(
         budgetId: String,
         payeeId: String,
         payee: SavePayee

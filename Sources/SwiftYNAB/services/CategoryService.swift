@@ -94,7 +94,7 @@ extension CategoryService: CategoryServiceType {
     ///    - category: The category details to be saved
     ///
     /// - Returns: A single category
-    func updateCategory(
+    public func updateCategory(
         budgetId: String,
         categoryId: String,
         category: SaveCategory
