@@ -1,7 +1,7 @@
 [tools]
 ruby = "3.4.5"
 swiftformat = "0.57.2"
-swiftlint = "0.59.1"
+swiftlint = "0.62.2"
 
 [tasks.lint]
 description = "Run linters"
