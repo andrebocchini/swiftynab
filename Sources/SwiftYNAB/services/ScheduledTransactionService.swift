@@ -53,7 +53,7 @@ extension ScheduledTransactionService: ScheduledTransactionServiceType {
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
-        return (response.scheduledTransactions, response.serverKnowlege)
+        return (response.scheduledTransactions, response.serverKnowledge)
     }
 
     /// Creates a new scheduled transaction.

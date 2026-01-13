@@ -80,7 +80,7 @@ class ScheduledTransactionServiceTests: XCTestCase {
         )
         let expectedResponse = ScheduledTransactionsRequest.Response(
             scheduledTransactions: [expectedTransaction],
-            serverKnowlege: 1
+            serverKnowledge: 1
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = ScheduledTransactionService(client: client)

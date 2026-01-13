@@ -30,6 +30,6 @@ extension ScheduledTransactionsRequest: Request {
 extension ScheduledTransactionsRequest {
     struct Response: Decodable {
         let scheduledTransactions: [ScheduledTransactionDetail]
-        let serverKnowlege: ServerKnowledge
+        let serverKnowledge: ServerKnowledge
     }
 }
