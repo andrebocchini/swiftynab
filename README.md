@@ -2,7 +2,7 @@
 
 ![Build Status](https://github.com/andrebocchini/swiftynab/actions/workflows/build.yml/badge.svg?branch=master)
 
-SwiftYNAB is a Swift framework for iOS/macOS/WatchOS/tvOS for accessing the [You Need a Budget](https://www.youneedabudget.com) [API](https://api.youneedabudget.com).  It currently supports all [endpoints](https://api.youneedabudget.com/v1) made available by the API.
+SwiftYNAB is a Swift framework for iOS/macOS/watchOS/tvOS/Linux for accessing the [You Need a Budget](https://www.youneedabudget.com) [API](https://api.youneedabudget.com).  It currently supports all [endpoints](https://api.youneedabudget.com/v1) made available by the API.
 
 You can browse the online documentation [here](https://andrebocchini.github.io/swiftynab) to see what features this framework offers.
 
