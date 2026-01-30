@@ -13,13 +13,6 @@ struct DeleteTransactionRequest {
     let transactionId: String
 }
 
-extension DeleteTransactionRequest {
-    struct Body: Codable {
-        let budgetId: String
-        let transactionId: String
-    }
-}
-
 extension DeleteTransactionRequest: Request {
     var path: String {
         "/v1/budgets/\(budgetId)/transactions/\(transactionId)"
@@ -27,12 +20,6 @@ extension DeleteTransactionRequest: Request {
 
     var method: RequestMethod {
         .delete
-    }
-
-    var body: Data? {
-        let body = Body(budgetId: budgetId, transactionId: transactionId)
-        let serializer = Serializer()
-        return try? serializer.encode(body)
     }
 }
 
