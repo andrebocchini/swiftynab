@@ -50,7 +50,7 @@ extension BudgetService: BudgetServiceType {
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
-        return (response.budget, response.lastKnowledgeOfServer)
+        return (response.budget, response.serverKnowledge)
     }
 
     /// Returns settings for a budget.

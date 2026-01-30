@@ -91,14 +91,14 @@ class BudgetServiceTests: XCTestCase {
         )
         let expectedResponse = BudgetDetailRequest.Response(
             budget: expectedBudget,
-            lastKnowledgeOfServer: 200
+            serverKnowledge: 200
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = BudgetService(client: client)
         let actualResponse = try await service.budget(budgetId: "budget_id")
 
         XCTAssertEqual(expectedResponse.budget, actualResponse.0)
-        XCTAssertEqual(expectedResponse.lastKnowledgeOfServer, actualResponse.1)
+        XCTAssertEqual(expectedResponse.serverKnowledge, actualResponse.1)
     }
 
     func testGetBudgetThrowsErrorWhenRequestFails() async throws {

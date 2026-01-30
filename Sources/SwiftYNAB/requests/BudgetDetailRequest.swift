@@ -39,6 +39,6 @@ extension BudgetDetailRequest: Request {
 extension BudgetDetailRequest {
     struct Response: Decodable {
         let budget: BudgetDetail
-        let lastKnowledgeOfServer: ServerKnowledge
+        let serverKnowledge: ServerKnowledge
     }
 }
