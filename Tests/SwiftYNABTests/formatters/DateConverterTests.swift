@@ -69,7 +69,7 @@ class DateConverterTests: XCTestCase {
         expectedDateComponents.month = 05
         expectedDateComponents.day = 01
         expectedDateComponents.year = 2019
-        expectedDateComponents.timeZone = NSTimeZone.local
+        expectedDateComponents.timeZone = TimeZone.current
         expectedDateComponents.calendar = Calendar.current
         let expectedDate = expectedDateComponents.date!
 

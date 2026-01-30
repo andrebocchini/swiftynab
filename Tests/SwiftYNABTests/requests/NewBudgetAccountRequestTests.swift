@@ -28,7 +28,8 @@ class NewBudgetAccountRequestTests: XCTestCase {
             balance: 0
         )
         let serializer = Serializer()
-        let expectedEncodedBody = try serializer.encode(expectedBody)
-        XCTAssertEqual(request.body, expectedEncodedBody)
+        let body = try XCTUnwrap(request.body)
+        let decodedBody = try serializer.decode(NewBudgetAccountRequest.PostAccountWrapper.self, from: body)
+        XCTAssertEqual(decodedBody, expectedBody)
     }
 }

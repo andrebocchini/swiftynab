@@ -47,7 +47,7 @@ public struct DateConverter: Sendable {
         budgetDateFormat = budgetDateFormat.replacingOccurrences(of: "D", with: "d")
 
         let formatter = DateFormatter()
-        formatter.timeZone = NSTimeZone.local
+        formatter.timeZone = TimeZone.current
         formatter.dateFormat = budgetDateFormat
 
         return formatter.string(from: inputDate)

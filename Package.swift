@@ -2,11 +2,17 @@
 
 import PackageDescription
 
+#if os(Linux)
+let platforms: [SupportedPlatform]? = nil
+#else
+let platforms: [SupportedPlatform]? = [
+    .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)
+]
+#endif
+
 let package = Package(
     name: "SwiftYNAB",
-    platforms: [
-        .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)
-    ],
+    platforms: platforms,
     products: [
         .library(name: "SwiftYNAB", targets: ["SwiftYNAB"])
     ],
@@ -14,8 +20,7 @@ let package = Package(
     targets: [
         .target(
             name: "SwiftYNAB",
-            dependencies: [],
-            exclude: ["../../demo"]
+            dependencies: []
         ),
         .testTarget(
             name: "SwiftYNABTests",

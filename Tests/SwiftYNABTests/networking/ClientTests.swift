@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 import XCTest
 @testable import SwiftYNAB
 
@@ -37,7 +40,12 @@ class ClientTests: XCTestCase {
     }
 
     func testNonParseableResponseThrowsDecodingError() async throws {
-        let mockURLResponse = URLResponse()
+        let mockURLResponse = URLResponse(
+            url: URL(string: "https://www.youneedabudget.com")!,
+            mimeType: nil,
+            expectedContentLength: 0,
+            textEncodingName: nil
+        )
         let mockData = Data()
         let mockURLSession = MockURLSession(data: mockData, response: mockURLResponse)
         let mockRequest = MockRequest()

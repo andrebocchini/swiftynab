@@ -16,8 +16,8 @@ struct NewBudgetAccountRequest {
 }
 
 extension NewBudgetAccountRequest {
-    struct PostAccountWrapper: Codable {
-        struct Account: Codable {
+    struct PostAccountWrapper: Codable, Equatable {
+        struct Account: Codable, Equatable {
             let name: String
             let type: AccountType
             let balance: Int
