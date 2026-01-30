@@ -16,7 +16,7 @@ struct NewBudgetAccountRequest {
 }
 
 extension NewBudgetAccountRequest {
-    struct Body: Codable {
+    struct PostAccountWrapper: Codable {
         struct Account: Codable {
             let name: String
             let type: AccountType
@@ -41,7 +41,7 @@ extension NewBudgetAccountRequest: Request {
     }
 
     var body: Data? {
-        let body = Body(name: name, type: type, balance: balance)
+        let body = PostAccountWrapper(name: name, type: type, balance: balance)
         let serializer = Serializer()
         return try? serializer.encode(body)
     }

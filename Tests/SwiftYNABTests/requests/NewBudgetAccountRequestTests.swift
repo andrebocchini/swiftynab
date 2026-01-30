@@ -22,7 +22,11 @@ class NewBudgetAccountRequestTests: XCTestCase {
         XCTAssertEqual(request.method, .post)
         XCTAssertNil(request.query)
 
-        let expectedBody = NewBudgetAccountRequest.Body(name: "name", type: .checking, balance: 0)
+        let expectedBody = NewBudgetAccountRequest.PostAccountWrapper(
+            name: "name",
+            type: .checking,
+            balance: 0
+        )
         let serializer = Serializer()
         let expectedEncodedBody = try serializer.encode(expectedBody)
         XCTAssertEqual(request.body, expectedEncodedBody)
