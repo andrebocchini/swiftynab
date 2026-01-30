@@ -68,6 +68,7 @@ protocol TransactionServiceType: Sendable {
 
     func updateTransaction(
         budgetId: String,
+        transactionId: String,
         transaction: SaveTransactionWithIdOrImportId
     ) async throws -> TransactionDetail
 

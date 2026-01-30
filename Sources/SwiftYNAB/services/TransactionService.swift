@@ -256,9 +256,14 @@ extension TransactionService: TransactionServiceType {
     /// - Returns: The updated transaction
     public func updateTransaction(
         budgetId: String,
+        transactionId: String,
         transaction: SaveTransactionWithIdOrImportId
     ) async throws -> TransactionDetail {
-        let request = UpdateTransactionRequest(budgetId: budgetId, transaction: transaction)
+        let request = UpdateTransactionRequest(
+            budgetId: budgetId,
+            transactionId: transactionId,
+            transaction: transaction
+        )
         let response = try await client.perform(request)
         return response.transaction
     }

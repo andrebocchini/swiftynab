@@ -383,6 +383,7 @@ class TransactionServiceTests: XCTestCase {
         let service = TransactionService(client: client)
         let actualResponse = try await service.updateTransaction(
             budgetId: "budget_id",
+            transactionId: "transaction_id",
             transaction: updateTransaction
         )
 
@@ -412,6 +413,7 @@ class TransactionServiceTests: XCTestCase {
         do {
             _ = try await service.updateTransaction(
                 budgetId: "budget_id",
+                transactionId: "transaction_id",
                 transaction: updateTransaction
             )
             XCTFail("Expected error to be thrown")

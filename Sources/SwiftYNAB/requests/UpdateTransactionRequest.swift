@@ -10,16 +10,13 @@ import Foundation
 
 struct UpdateTransactionRequest {
     let budgetId: String
+    let transactionId: String
     let transaction: SaveTransactionWithIdOrImportId
 }
 
 extension UpdateTransactionRequest: Request {
     var path: String {
-        if let id = transaction.id {
-            "/v1/budgets/\(budgetId)/transactions/\(id)"
-        } else {
-            "/v1/budgets/\(budgetId)/transactions"
-        }
+        "/v1/budgets/\(budgetId)/transactions/\(transactionId)"
     }
 
     var method: RequestMethod {
