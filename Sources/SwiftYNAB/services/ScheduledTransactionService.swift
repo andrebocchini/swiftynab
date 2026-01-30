@@ -84,13 +84,14 @@ extension ScheduledTransactionService: ScheduledTransactionServiceType {
     /// - Returns: The updated scheduled transaction
     public func updateScheduledTransaction(
         budgetId: String,
-        transactionId _: String,
+        transactionId: String,
         transaction: SaveScheduledTransaction
     ) async throws -> ScheduledTransactionDetail {
         let request = SaveScheduledTransactionRequest(
             budgetId: budgetId,
             transaction: transaction,
-            update: true
+            update: true,
+            scheduledTransactionId: transactionId
         )
         let response = try await client.perform(request)
         return response.scheduledTransaction

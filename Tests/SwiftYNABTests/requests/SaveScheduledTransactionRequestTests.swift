@@ -54,12 +54,14 @@ class SaveScheduledTransactionRequestTests: XCTestCase {
         let request = SaveScheduledTransactionRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             transaction: transaction,
-            update: true
+            update: true,
+            scheduledTransactionId: "scheduled_tx_id"
         )
 
         XCTAssertEqual(
             request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions"
+            // swiftlint:disable:next line_length
+            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions/scheduled_tx_id"
         )
         XCTAssertEqual(request.method, .put)
         XCTAssertNil(request.query)
