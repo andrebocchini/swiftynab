@@ -54,7 +54,7 @@ class PayeeLocationServiceTests: XCTestCase {
         let service = PayeeLocationService(client: client)
         let actualResponse = try await service.payeeLocation(
             budgetId: "budget_id",
-            payeeId: "payee_id"
+            payeeLocationId: "payee_id"
         )
 
         XCTAssertEqual(expectedLocation, actualResponse)
@@ -66,7 +66,7 @@ class PayeeLocationServiceTests: XCTestCase {
         let service = PayeeLocationService(client: client)
 
         do {
-            _ = try await service.payeeLocation(budgetId: "budget_id", payeeId: "payee_id")
+            _ = try await service.payeeLocation(budgetId: "budget_id", payeeLocationId: "payee_id")
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))

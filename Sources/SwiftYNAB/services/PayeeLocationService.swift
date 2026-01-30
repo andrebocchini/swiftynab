@@ -36,11 +36,11 @@ extension PayeeLocationService: PayeeLocationServiceType {
     /// - Parameters:
     ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
     /// budget)
-    ///    - payeeId: The id of the payee
+    ///    - payeeLocationId: The id of the payee location
     ///
     /// - Returns: A single payee location
-    public func payeeLocation(budgetId: String, payeeId: String) async throws -> PayeeLocation {
-        let request = PayeeLocationRequest(budgetId: budgetId, payeeId: payeeId)
+    public func payeeLocation(budgetId: String, payeeLocationId: String) async throws -> PayeeLocation {
+        let request = PayeeLocationRequest(budgetId: budgetId, payeeLocationId: payeeLocationId)
         let response = try await client.perform(request)
         return response.payeeLocation
     }
