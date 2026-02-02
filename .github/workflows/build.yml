@@ -9,14 +9,14 @@ on:
 jobs:
   build:
     name: Build and Test Swift Package
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       
       - name: Select Xcode version
-        run: sudo xcode-select -s /Applications/Xcode_16.1.app
+        run: sudo xcode-select -s /Applications/Xcode_26.2.app
       
       - name: Build
         run: swift build
