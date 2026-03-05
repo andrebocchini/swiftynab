@@ -84,7 +84,11 @@ public struct Category: Codable, Equatable, Sendable {
     public let goalTarget: Int?
 
     /// The original target month for the goal to be completed in ISO date format
+    @available(*, deprecated, message: "Use goalTargetDate instead.")
     public let goalTargetMonth: String?
+
+    /// The target date for the goal to be completed. Only some goal types specify this date.
+    public let goalTargetDate: String?
 
     /// Goal percentage complete
     public let goalPercentageComplete: Int?
