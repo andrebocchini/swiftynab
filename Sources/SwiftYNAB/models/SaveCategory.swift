@@ -23,6 +23,9 @@ public struct SaveCategory: Codable, Equatable, Sendable {
     /// already has a configured goal
     public let goalTarget: Int64?
 
+    /// The goal target date in ISO format (e.g. 2016-12-01)
+    public let goalTargetDate: String?
+
     /// Creates a new SaveCategory instance
     /// - Parameters:
     ///   - name: The name of the category
@@ -30,15 +33,18 @@ public struct SaveCategory: Codable, Equatable, Sendable {
     ///   - categoryGroupId: The ID of the category group this category belongs to
     ///   - goalTarget: The goal target amount in milliunits format (only for categories with
     /// existing goals)
+    ///   - goalTargetDate: The goal target date in ISO format (e.g. 2016-12-01)
     public init(
         name: String? = nil,
         note: String? = nil,
         categoryGroupId: String? = nil,
-        goalTarget: Int64? = nil
+        goalTarget: Int64? = nil,
+        goalTargetDate: String? = nil
     ) {
         self.name = name
         self.note = note
         self.categoryGroupId = categoryGroupId
         self.goalTarget = goalTarget
+        self.goalTargetDate = goalTargetDate
     }
 }
