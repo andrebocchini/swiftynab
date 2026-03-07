@@ -6,11 +6,12 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
+import Foundation
 @testable import SwiftYNAB
 
-class SaveScheduledTransactionRequestTests: XCTestCase {
-    func testSaveScheduledTransactionRequestCreate() {
+@Suite("Save Scheduled Transaction Request") struct SaveScheduledTransactionRequestTests {
+    @Test("Creating a scheduled transaction uses POST method") func saveScheduledTransactionRequestCreate() {
         let transaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -29,16 +30,13 @@ class SaveScheduledTransactionRequestTests: XCTestCase {
             update: false
         )
 
-        XCTAssertEqual(
-            request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions"
-        )
-        XCTAssertEqual(request.method, .post)
-        XCTAssertNil(request.query)
-        XCTAssertNotNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions")
+        #expect(request.method == .post)
+        #expect(request.query == nil)
+        #expect(request.body != nil)
     }
 
-    func testSaveScheduledTransactionRequestUpdate() {
+    @Test("Updating a scheduled transaction uses PUT method with transaction ID in path") func saveScheduledTransactionRequestUpdate() {
         let transaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -58,13 +56,12 @@ class SaveScheduledTransactionRequestTests: XCTestCase {
             scheduledTransactionId: "scheduled_tx_id"
         )
 
-        XCTAssertEqual(
-            request.path,
-            // swiftlint:disable:next line_length
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions/scheduled_tx_id"
-        )
-        XCTAssertEqual(request.method, .put)
-        XCTAssertNil(request.query)
-        XCTAssertNotNil(request.body)
+        // swiftlint:disable:next line_length
+
+        #expect(request.path ==
+            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions/scheduled_tx_id")
+        #expect(request.method == .put)
+        #expect(request.query == nil)
+        #expect(request.body != nil)
     }
 }

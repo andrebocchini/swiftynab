@@ -7,30 +7,27 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class UserServiceTests: XCTestCase {
-    func testUserReturnsUserWhenRequestSucceeds() async throws {
+@Suite("User Service") struct UserServiceTests {
+    @Test("Returns user when request succeeds") func userReturnsUserWhenRequestSucceeds() async throws {
         let expectedUser = User(id: "123")
         let expectedResponse = UserRequest.Response(user: expectedUser)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = UserService(client: client)
         let actualResponse = try await service.user()
 
-        XCTAssertEqual(expectedUser, actualResponse)
+        #expect(expectedUser == actualResponse)
     }
 
-    func testUserThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when user request fails") func userThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = UserService(client: client)
 
-        do {
-            _ = try await service.user()
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.user()
         }
     }
 }

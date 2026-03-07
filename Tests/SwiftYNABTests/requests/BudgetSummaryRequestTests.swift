@@ -6,15 +6,16 @@
 //  Copyright © 2022 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
+import Foundation
 @testable import SwiftYNAB
 
-class BudgetsSummaryRequestTests: XCTestCase {
-    func testBudgetSummaryRequest() {
+@Suite("Budgets Summary Request") struct BudgetsSummaryRequestTests {
+    @Test("Request includes include_accounts query parameter") func budgetSummaryRequest() {
         let request = BudgetSummaryRequest(includeAccounts: false)
-        XCTAssertEqual(request.path, "/v1/budgets")
-        XCTAssertEqual(request.method, .get)
-        XCTAssertEqual(request.query, [URLQueryItem(name: "include_accounts", value: "false")])
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets")
+        #expect(request.method == .get)
+        #expect(request.query == [URLQueryItem(name: "include_accounts", value: "false")])
+        #expect(request.body == nil)
     }
 }

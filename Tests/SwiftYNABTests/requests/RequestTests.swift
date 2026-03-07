@@ -6,84 +6,87 @@
 //  Copyright © 2019 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class RequestTests: XCTestCase {
-    func testPath() {
+@Suite("Request") struct RequestTests {
+    @Test("Default path returns the configured path value") func path() {
         let request = MockGetRequest()
-        XCTAssertEqual(request.path, "/testpath")
+        #expect(request.path == "/testpath")
     }
 
-    func testMethod() {
+    @Test("Default method is GET") func method() {
         let request = MockGetRequest()
-        XCTAssertEqual(request.method, .get)
+        #expect(request.method == .get)
     }
 
-    func testRequiresAuthentication() {
+    @Test("Request requires authentication by default") func requiresAuthentication() {
         let request = MockGetRequest()
-        XCTAssertTrue(request.requiresAuthentication)
+        #expect(request.requiresAuthentication)
     }
 
-    func testQuery() {
+    @Test("Default query is nil") func query() {
         let request = MockGetRequest()
-        XCTAssertNil(request.query)
+        #expect(request.query == nil)
     }
 
-    func testBody() {
+    @Test("Default body is nil") func body() {
         let request = MockGetRequest()
-        XCTAssertNil(request.body)
+        #expect(request.body == nil)
     }
 
-    func testTimeout() {
+    @Test("Default timeout is 60 seconds") func timeout() {
         let request = MockGetRequest()
-        XCTAssertEqual(request.timeout, 60)
+        #expect(request.timeout == 60)
     }
 
-    func testGetRequest() {
+    @Test("GET request builds URL with correct base URL, method, and timeout") func getRequest() {
         let mockRequest = MockGetRequest()
         let request = mockRequest.request
 
-        XCTAssertEqual(request.url?.absoluteString, "https://api.youneedabudget.com/testpath")
-        XCTAssertEqual(request.httpMethod, mockRequest.method.rawValue)
-        XCTAssertEqual(request.timeoutInterval, mockRequest.timeout)
-        XCTAssertNil(request.url?.query)
+        #expect(request.url?.absoluteString == "https://api.youneedabudget.com/testpath")
+        #expect(request.httpMethod == mockRequest.method.rawValue)
+        #expect(request.timeoutInterval == mockRequest.timeout)
+        #expect(request.url?.query == nil)
     }
 
-    func testPostRequest() {
+    @Test("POST request includes body and Content-Type header") func postRequest() throws {
         let mockRequest = MockPostRequest()
         let request = mockRequest.request
 
-        XCTAssertEqual(request.url?.absoluteString, "https://api.youneedabudget.com/testpath")
-        XCTAssertEqual(request.httpMethod, mockRequest.method.rawValue)
-        XCTAssertEqual(request.timeoutInterval, mockRequest.timeout)
-        XCTAssertEqual(request.httpBody, mockRequest.body)
-        XCTAssertEqual(request.allHTTPHeaderFields!["Content-Type"], "application/json")
-        XCTAssertNil(request.url?.query)
+        #expect(request.url?.absoluteString == "https://api.youneedabudget.com/testpath")
+        #expect(request.httpMethod == mockRequest.method.rawValue)
+        #expect(request.timeoutInterval == mockRequest.timeout)
+        #expect(request.httpBody == mockRequest.body)
+        let postHeaders = try #require(request.allHTTPHeaderFields)
+        #expect(postHeaders["Content-Type"] == "application/json")
+        #expect(request.url?.query == nil)
     }
 
-    func testPatchRequest() {
+    @Test("PATCH request includes body and Content-Type header") func patchRequest() throws {
         let mockRequest = MockPatchRequest()
         let request = mockRequest.request
 
-        XCTAssertEqual(request.url?.absoluteString, "https://api.youneedabudget.com/testpath")
-        XCTAssertEqual(request.httpMethod, mockRequest.method.rawValue)
-        XCTAssertEqual(request.timeoutInterval, mockRequest.timeout)
-        XCTAssertEqual(request.httpBody, mockRequest.body)
-        XCTAssertEqual(request.allHTTPHeaderFields!["Content-Type"], "application/json")
-        XCTAssertNil(request.url?.query)
+        #expect(request.url?.absoluteString == "https://api.youneedabudget.com/testpath")
+        #expect(request.httpMethod == mockRequest.method.rawValue)
+        #expect(request.timeoutInterval == mockRequest.timeout)
+        #expect(request.httpBody == mockRequest.body)
+        let patchHeaders = try #require(request.allHTTPHeaderFields)
+        #expect(patchHeaders["Content-Type"] == "application/json")
+        #expect(request.url?.query == nil)
     }
 
-    func testPutRequest() {
+    @Test("PUT request includes body and Content-Type header") func putRequest() throws {
         let mockRequest = MockPutRequest()
         let request = mockRequest.request
 
-        XCTAssertEqual(request.url?.absoluteString, "https://api.youneedabudget.com/testpath")
-        XCTAssertEqual(request.httpMethod, mockRequest.method.rawValue)
-        XCTAssertEqual(request.timeoutInterval, mockRequest.timeout)
-        XCTAssertEqual(request.httpBody, mockRequest.body)
-        XCTAssertEqual(request.allHTTPHeaderFields!["Content-Type"], "application/json")
-        XCTAssertNil(request.url?.query)
+        #expect(request.url?.absoluteString == "https://api.youneedabudget.com/testpath")
+        #expect(request.httpMethod == mockRequest.method.rawValue)
+        #expect(request.timeoutInterval == mockRequest.timeout)
+        #expect(request.httpBody == mockRequest.body)
+        let putHeaders = try #require(request.allHTTPHeaderFields)
+        #expect(putHeaders["Content-Type"] == "application/json")
+        #expect(request.url?.query == nil)
     }
 }
 

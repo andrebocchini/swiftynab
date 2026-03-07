@@ -1,21 +1,21 @@
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class SaveCategoryGroupTests: XCTestCase {
-    func testNameUnderLimit() {
+@Suite("Save Category Group") struct SaveCategoryGroupTests {
+    @Test("Name under the character limit is preserved as-is") func nameUnderLimit() {
         let group = SaveCategoryGroup(name: "Groceries")
-        XCTAssertEqual(group.name, "Groceries")
+        #expect(group.name == "Groceries")
     }
 
-    func testNameAtLimit() {
+    @Test("Name exactly at the character limit is preserved as-is") func nameAtLimit() {
         let name = String(repeating: "a", count: 50)
         let group = SaveCategoryGroup(name: name)
-        XCTAssertEqual(group.name, name)
+        #expect(group.name == name)
     }
 
-    func testNameOverLimitIsTruncated() {
+    @Test("Name exceeding the character limit is truncated to 50 characters") func nameOverLimitIsTruncated() {
         let name = String(repeating: "a", count: 51)
         let group = SaveCategoryGroup(name: name)
-        XCTAssertEqual(group.name.count, 50)
+        #expect(group.name.count == 50)
     }
 }

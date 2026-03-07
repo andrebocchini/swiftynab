@@ -7,23 +7,23 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class RequestMethodTests: XCTestCase {
-    func testGet() {
-        XCTAssertEqual(RequestMethod.get.rawValue, "GET")
+@Suite("Request Method") struct RequestMethodTests {
+    @Test("GET method has correct raw value") func get() {
+        #expect(RequestMethod.get.rawValue == "GET")
     }
 
-    func testPatch() {
-        XCTAssertEqual(RequestMethod.patch.rawValue, "PATCH")
+    @Test("PATCH method has correct raw value") func patch() {
+        #expect(RequestMethod.patch.rawValue == "PATCH")
     }
 
-    func testPost() {
-        XCTAssertEqual(RequestMethod.post.rawValue, "POST")
+    @Test("POST method has correct raw value") func post() {
+        #expect(RequestMethod.post.rawValue == "POST")
     }
 
-    func testPut() {
-        XCTAssertEqual(RequestMethod.put.rawValue, "PUT")
+    @Test("PUT method has correct raw value") func put() {
+        #expect(RequestMethod.put.rawValue == "PUT")
     }
 }

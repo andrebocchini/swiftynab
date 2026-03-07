@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class AccountServiceTests: XCTestCase {
-    func testGetAccountReturnsAccountWhenRequestSucceeds() async throws {
+@Suite("Account Service") struct AccountServiceTests {
+    @Test("Returns account when request succeeds") func getAccountReturnsAccountWhenRequestSucceeds() async throws {
         let expectedAccount = Account(
             id: "account_id",
             name: "name",
@@ -40,23 +40,20 @@ class AccountServiceTests: XCTestCase {
             accountId: "account_id"
         )
 
-        XCTAssertEqual(expectedAccount, actualResponse)
+        #expect(expectedAccount == actualResponse)
     }
 
-    func testGeAccountThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching account fails") func geAccountThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)
 
-        do {
-            _ = try await service.account(budgetId: "budget_id", accountId: "account_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.account(budgetId: "budget_id", accountId: "account_id")
         }
     }
 
-    func testAccountsReturnsAccountsWhenRequestSucceeds() async throws {
+    @Test("Returns accounts list when request succeeds") func accountsReturnsAccountsWhenRequestSucceeds() async throws {
         let expectedAccount = Account(
             id: "account_id",
             name: "name",
@@ -88,24 +85,21 @@ class AccountServiceTests: XCTestCase {
             lastKnowledgeOfServer: 1
         )
 
-        XCTAssertEqual(actualResponse.accounts.count, 1)
-        XCTAssertEqual(expectedAccount, actualResponse.accounts[0])
+        #expect(actualResponse.accounts.count == 1)
+        #expect(expectedAccount == actualResponse.accounts[0])
     }
 
-    func testGeAccountsThrowsHttpErrorWhenRequestFails() async throws {
+    @Test("Throws HTTP error when fetching accounts fails") func geAccountsThrowsHttpErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)
 
-        do {
-            _ = try await service.accounts(budgetId: "budget_id", lastKnowledgeOfServer: 1)
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.accounts(budgetId: "budget_id", lastKnowledgeOfServer: 1)
         }
     }
 
-    func testGeAccountsThrowsApiErrorWhenRequestFails() async throws {
+    @Test("Throws API error when fetching accounts fails with expired trial") func geAccountsThrowsApiErrorWhenRequestFails() async {
         let errorDetails = ErrorDetail(
             id: "403.2",
             name: "trial_expired",
@@ -115,15 +109,12 @@ class AccountServiceTests: XCTestCase {
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)
 
-        do {
-            _ = try await service.accounts(budgetId: "budget_id", lastKnowledgeOfServer: 1)
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .apiError(detail: errorDetails))
+        await #expect(throws: SwiftYNABError.apiError(detail: errorDetails)) {
+            try await service.accounts(budgetId: "budget_id", lastKnowledgeOfServer: 1)
         }
     }
 
-    func testNewBudgetAccountsReturnsAccountsWhenRequestSucceeds() async throws {
+    @Test("Returns newly created budget account when request succeeds") func newBudgetAccountsReturnsAccountsWhenRequestSucceeds() async throws {
         let expectedAccount = Account(
             id: "account_id",
             name: "account",
@@ -154,24 +145,21 @@ class AccountServiceTests: XCTestCase {
             balance: 0
         )
 
-        XCTAssertEqual(expectedAccount, actualResponse)
+        #expect(expectedAccount == actualResponse)
     }
 
-    func testNewBudgetAccountThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when creating budget account fails") func newBudgetAccountThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)
 
-        do {
-            _ = try await service.newBudgetAccount(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.newBudgetAccount(
                 budgetId: "budget_id",
                 name: "account",
                 type: .checking,
                 balance: 0
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 }

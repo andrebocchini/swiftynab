@@ -6,11 +6,11 @@
 //  Copyright © 2026 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class UpdateCategoryGroupRequestTests: XCTestCase {
-    func testUpdateCategoryGroupRequest() throws {
+@Suite("Update Category Group Request") struct UpdateCategoryGroupRequestTests {
+    @Test("Request uses PATCH method with category group data in body") func updateCategoryGroupRequest() throws {
         let categoryGroup = SaveCategoryGroup(name: "Updated Group Name")
 
         let request = UpdateCategoryGroupRequest(
@@ -19,18 +19,17 @@ class UpdateCategoryGroupRequestTests: XCTestCase {
             categoryGroup: categoryGroup
         )
 
-        XCTAssertEqual(
-            request.path,
-            // swiftlint:disable:next line_length
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/category_groups/c36fbd68-131e-4ea8-b30f-94f43423021c"
-        )
-        XCTAssertEqual(request.method, .patch)
-        XCTAssertNil(request.query)
+        // swiftlint:disable:next line_length
+
+        #expect(request.path ==
+            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/category_groups/c36fbd68-131e-4ea8-b30f-94f43423021c")
+        #expect(request.method == .patch)
+        #expect(request.query == nil)
 
         let expectedBody = PatchCategoryGroupWrapper(categoryGroup: categoryGroup)
         let serializer = Serializer()
-        let body = try XCTUnwrap(request.body)
+        let body = try #require(request.body)
         let decodedBody = try serializer.decode(PatchCategoryGroupWrapper.self, from: body)
-        XCTAssertEqual(decodedBody, expectedBody)
+        #expect(decodedBody == expectedBody)
     }
 }

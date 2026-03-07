@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class MonthServiceTests: XCTestCase {
-    func testMonthsReturnsMonthsWhenRequestSucceeds() async throws {
+@Suite("Month Service") struct MonthServiceTests {
+    @Test("Returns budget months when request succeeds") func monthsReturnsMonthsWhenRequestSucceeds() async throws {
         let expectedMonth = MonthSummary(
             month: "april",
             note: nil,
@@ -30,25 +30,22 @@ class MonthServiceTests: XCTestCase {
             lastKnowledgeOfServer: 200
         )
 
-        XCTAssertEqual(actualResponse.0.count, 1)
-        XCTAssertEqual(expectedMonth, actualResponse.0[0])
-        XCTAssertEqual(actualResponse.1, 200)
+        #expect(actualResponse.0.count == 1)
+        #expect(expectedMonth == actualResponse.0[0])
+        #expect(actualResponse.1 == 200)
     }
 
-    func testMonthsThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching budget months fails") func monthsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = MonthService(client: client)
 
-        do {
-            _ = try await service.months(budgetId: "budget_id", lastKnowledgeOfServer: 200)
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.months(budgetId: "budget_id", lastKnowledgeOfServer: 200)
         }
     }
 
-    func testMonthReturnsMonthWhenRequestSucceeds() async throws {
+    @Test("Returns month detail when request succeeds") func monthReturnsMonthWhenRequestSucceeds() async throws {
         let expectedMonth = MonthDetail(
             month: "april",
             note: nil,
@@ -65,19 +62,16 @@ class MonthServiceTests: XCTestCase {
         let service = MonthService(client: client)
         let actualResponse = try await service.month(budgetId: "budget_id", month: "april")
 
-        XCTAssertEqual(expectedMonth, actualResponse)
+        #expect(expectedMonth == actualResponse)
     }
 
-    func testMonthThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching month detail fails") func monthThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = MonthService(client: client)
 
-        do {
-            _ = try await service.month(budgetId: "budget_id", month: "april")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.month(budgetId: "budget_id", month: "april")
         }
     }
 }

@@ -6,11 +6,11 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class UpdatePayeeRequestTests: XCTestCase {
-    func testUpdatePayeeRequest() {
+@Suite("Update Payee Request") struct UpdatePayeeRequestTests {
+    @Test("Request uses PATCH method with payee data in body") func updatePayeeRequest() {
         let payee = SavePayee(name: "Updated Payee Name")
 
         let request = UpdatePayeeRequest(
@@ -19,13 +19,12 @@ class UpdatePayeeRequestTests: XCTestCase {
             payee: payee
         )
 
-        XCTAssertEqual(
-            request.path,
-            // swiftlint:disable:next line_length
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/payees/c36fbd68-131e-4ea8-b30f-94f43423021c"
-        )
-        XCTAssertEqual(request.method, .patch)
-        XCTAssertNil(request.query)
-        XCTAssertNotNil(request.body)
+        // swiftlint:disable:next line_length
+
+        #expect(request.path ==
+            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/payees/c36fbd68-131e-4ea8-b30f-94f43423021c")
+        #expect(request.method == .patch)
+        #expect(request.query == nil)
+        #expect(request.body != nil)
     }
 }

@@ -8,21 +8,18 @@
 
 import Foundation
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class MonthRequestTests: XCTestCase {
-    func testMonthRequest() {
+@Suite("Month Request") struct MonthRequestTests {
+    @Test("Path includes budget ID and month") func monthRequest() {
         let request = MonthRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             month: "2019-05-01"
         )
-        XCTAssertEqual(
-            request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2019-05-01"
-        )
-        XCTAssertEqual(request.method, .get)
-        XCTAssertNil(request.query)
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2019-05-01")
+        #expect(request.method == .get)
+        #expect(request.query == nil)
+        #expect(request.body == nil)
     }
 }

@@ -7,18 +7,18 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class DeleteTransactionRequestTests: XCTestCase {
-    func deleteTransactionRequest() throws {
+@Suite("Delete Transaction Request") struct DeleteTransactionRequestTests {
+    @Test("Request uses DELETE method with transaction path") func deleteTransactionRequest() throws {
         let request = DeleteTransactionRequest(
             budgetId: "budget_id",
             transactionId: "transaction_id"
         )
 
-        XCTAssertEqual(request.method, .delete)
-        XCTAssertNil(request.body)
-        XCTAssertEqual(request.path, "/v1/budgets/budget_id/transactions/transaction_id")
+        #expect(request.method == .delete)
+        #expect(request.body == nil)
+        #expect(request.path == "/v1/budgets/budget_id/transactions/transaction_id")
     }
 }

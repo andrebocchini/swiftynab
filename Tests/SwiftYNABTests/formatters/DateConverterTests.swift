@@ -6,65 +6,66 @@
 //  Copyright © 2019 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
+import Foundation
 @testable import SwiftYNAB
 
-class DateConverterTests: XCTestCase {
-    func testDateStringFormat1() {
+@Suite("Date Converter") struct DateConverterTests {
+    @Test("Converts ISO date string to YYYY/MM/DD format") func dateStringFormat1() {
         let format = DateFormat(format: "YYYY/MM/DD")
         let converter = DateConverter(dateFormat: format)
-        XCTAssertEqual("2015/02/25", converter.budgetFormatDateString(from: "2015-02-25"))
+        #expect("2015/02/25" == converter.budgetFormatDateString(from: "2015-02-25"))
     }
 
-    func testDateStringFormat2() {
+    @Test("Converts ISO date string to YYYY-MM-DD format") func dateStringFormat2() {
         let format = DateFormat(format: "YYYY-MM-DD")
         let converter = DateConverter(dateFormat: format)
-        XCTAssertEqual("2015-02-25", converter.budgetFormatDateString(from: "2015-02-25"))
+        #expect("2015-02-25" == converter.budgetFormatDateString(from: "2015-02-25"))
     }
 
-    func testDateStringFormat3() {
+    @Test("Converts ISO date string to DD-MM-YYYY format") func dateStringFormat3() {
         let format = DateFormat(format: "DD-MM-YYYY")
         let converter = DateConverter(dateFormat: format)
-        XCTAssertEqual("25-02-2015", converter.budgetFormatDateString(from: "2015-02-25"))
+        #expect("25-02-2015" == converter.budgetFormatDateString(from: "2015-02-25"))
     }
 
-    func testDateStringFormat4() {
+    @Test("Converts ISO date string to DD/MM/YYYY format") func dateStringFormat4() {
         let format = DateFormat(format: "DD/MM/YYYY")
         let converter = DateConverter(dateFormat: format)
-        XCTAssertEqual("25/02/2015", converter.budgetFormatDateString(from: "2015-02-25"))
+        #expect("25/02/2015" == converter.budgetFormatDateString(from: "2015-02-25"))
     }
 
-    func testDateStringFormat5() {
+    @Test("Converts ISO date string to DD.MM.YYYY format") func dateStringFormat5() {
         let format = DateFormat(format: "DD.MM.YYYY")
         let converter = DateConverter(dateFormat: format)
-        XCTAssertEqual("25.02.2015", converter.budgetFormatDateString(from: "2015-02-25"))
+        #expect("25.02.2015" == converter.budgetFormatDateString(from: "2015-02-25"))
     }
 
-    func testDateStringFormat6() {
+    @Test("Converts ISO date string to MM/DD/YYYY format") func dateStringFormat6() {
         let format = DateFormat(format: "MM/DD/YYYY")
         let converter = DateConverter(dateFormat: format)
-        XCTAssertEqual("02/25/2015", converter.budgetFormatDateString(from: "2015-02-25"))
+        #expect("02/25/2015" == converter.budgetFormatDateString(from: "2015-02-25"))
     }
 
-    func testDateStringFormat7() {
+    @Test("Converts ISO date string to YYY.MM.DD format") func dateStringFormat7() {
         let format = DateFormat(format: "YYY.MM.DD")
         let converter = DateConverter(dateFormat: format)
-        XCTAssertEqual("2015.02.25", converter.budgetFormatDateString(from: "2015-02-25"))
+        #expect("2015.02.25" == converter.budgetFormatDateString(from: "2015-02-25"))
     }
 
-    func testBudgetFormatDateStringIsNilWithInvalidDateString() {
+    @Test("Returns nil when converting an invalid date string to budget format") func budgetFormatDateStringIsNilWithInvalidDateString() {
         let format = DateFormat(format: "YYY.MM.DD")
         let converter = DateConverter(dateFormat: format)
-        XCTAssertNil(converter.budgetFormatDateString(from: "i am not a date"))
+        #expect(converter.budgetFormatDateString(from: "i am not a date") == nil)
     }
 
-    func testApiDateString() {
+    @Test("Converts a Date to an ISO 8601 date string") func apiDateString() {
         let date = Date(timeIntervalSince1970: 1_556_717_342.216656)
         let dateString = DateConverter.iso8601DateString(from: date)
-        XCTAssertEqual("2019-05-01", dateString)
+        #expect("2019-05-01" == dateString)
     }
 
-    func testDate() {
+    @Test("Converts an ISO 8601 date string to a Date") func date() {
         var expectedDateComponents = DateComponents()
         expectedDateComponents.month = 05
         expectedDateComponents.day = 01
@@ -75,6 +76,6 @@ class DateConverterTests: XCTestCase {
 
         let calculatedDate = DateConverter.date(from: "2019-05-01")
 
-        XCTAssertEqual(expectedDate, calculatedDate)
+        #expect(expectedDate == calculatedDate)
     }
 }

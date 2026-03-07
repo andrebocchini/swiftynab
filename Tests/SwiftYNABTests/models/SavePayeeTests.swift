@@ -1,21 +1,21 @@
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class SavePayeeTests: XCTestCase {
-    func testNameUnderLimit() {
+@Suite("Save Payee") struct SavePayeeTests {
+    @Test("Name under the character limit is preserved as-is") func nameUnderLimit() {
         let payee = SavePayee(name: "Coffee Shop")
-        XCTAssertEqual(payee.name, "Coffee Shop")
+        #expect(payee.name == "Coffee Shop")
     }
 
-    func testNameAtLimit() {
+    @Test("Name exactly at the character limit is preserved as-is") func nameAtLimit() {
         let name = String(repeating: "a", count: 500)
         let payee = SavePayee(name: name)
-        XCTAssertEqual(payee.name, name)
+        #expect(payee.name == name)
     }
 
-    func testNameOverLimitIsTruncated() {
+    @Test("Name exceeding the character limit is truncated to 500 characters") func nameOverLimitIsTruncated() {
         let name = String(repeating: "a", count: 501)
         let payee = SavePayee(name: name)
-        XCTAssertEqual(payee.name.count, 500)
+        #expect(payee.name.count == 500)
     }
 }

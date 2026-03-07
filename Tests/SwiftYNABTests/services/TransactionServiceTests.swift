@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
 // swiftlint:disable:next type_body_length
-class TransactionServiceTests: XCTestCase {
-    func testGetTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+@Suite("Transaction Service") struct TransactionServiceTests {
+    @Test("Returns a single transaction when request succeeds") func getTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "id",
             date: "2022-07-07",
@@ -49,24 +49,21 @@ class TransactionServiceTests: XCTestCase {
             transactionId: "id"
         )
 
-        XCTAssertEqual(expectedTransaction, actualResponse.0)
-        XCTAssertEqual(200, actualResponse.1)
+        #expect(expectedTransaction == actualResponse.0)
+        #expect(200 == actualResponse.1)
     }
 
-    func testGetTransactionThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching a single transaction fails") func getTransactionThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.transaction(budgetId: "budget_id", transactionId: "id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.transaction(budgetId: "budget_id", transactionId: "id")
         }
     }
 
-    func testGetTransactionsByBudgetReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a budget when request succeeds") func getTransactionsByBudgetReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "id",
             date: "2022-07-07",
@@ -100,25 +97,22 @@ class TransactionServiceTests: XCTestCase {
         let service = TransactionService(client: client)
         let (transactions, serverKnowledge) = try await service.transactions(budgetId: "budget_id")
 
-        XCTAssertEqual(transactions.count, 1)
-        XCTAssertEqual(expectedTransaction, transactions.first)
-        XCTAssertEqual(serverKnowledge, 1)
+        #expect(transactions.count == 1)
+        #expect(expectedTransaction == transactions.first)
+        #expect(serverKnowledge == 1)
     }
 
-    func testGetTransactionsByBudgetThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching transactions by budget fails") func getTransactionsByBudgetThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.transactions(budgetId: "budget_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.transactions(budgetId: "budget_id")
         }
     }
 
-    func testGetTransactionsByAccountReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for an account when request succeeds") func getTransactionsByAccountReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "id",
             date: "2022-07-07",
@@ -155,25 +149,22 @@ class TransactionServiceTests: XCTestCase {
             accountId: "account_id"
         )
 
-        XCTAssertEqual(transactions.count, 1)
-        XCTAssertEqual(expectedTransaction, transactions.first)
-        XCTAssertEqual(serverKnowledge, 1)
+        #expect(transactions.count == 1)
+        #expect(expectedTransaction == transactions.first)
+        #expect(serverKnowledge == 1)
     }
 
-    func testGetTransactionsByAccountThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching transactions by account fails") func getTransactionsByAccountThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.transactions(budgetId: "budget_id", accountId: "account_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.transactions(budgetId: "budget_id", accountId: "account_id")
         }
     }
 
-    func testGetTransactionsByCategoryReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a category when request succeeds") func getTransactionsByCategoryReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = HybridTransaction(
             type: "type",
             parentTransactionId: nil,
@@ -209,25 +200,22 @@ class TransactionServiceTests: XCTestCase {
             categoryId: "category_id"
         )
 
-        XCTAssertEqual(transactions.count, 1)
-        XCTAssertEqual(expectedTransaction, transactions.first)
-        XCTAssertEqual(serverKnowledge, 1)
+        #expect(transactions.count == 1)
+        #expect(expectedTransaction == transactions.first)
+        #expect(serverKnowledge == 1)
     }
 
-    func testGetTransactionsByCategoryThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching transactions by category fails") func getTransactionsByCategoryThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.transactions(budgetId: "budget_id", categoryId: "category_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.transactions(budgetId: "budget_id", categoryId: "category_id")
         }
     }
 
-    func testGetTransactionsByPayeeReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a payee when request succeeds") func getTransactionsByPayeeReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = HybridTransaction(
             type: "type",
             parentTransactionId: nil,
@@ -263,25 +251,22 @@ class TransactionServiceTests: XCTestCase {
             payeeId: "payee_id"
         )
 
-        XCTAssertEqual(transactions.count, 1)
-        XCTAssertEqual(expectedTransaction, transactions.first)
-        XCTAssertEqual(serverKnowledge, 1)
+        #expect(transactions.count == 1)
+        #expect(expectedTransaction == transactions.first)
+        #expect(serverKnowledge == 1)
     }
 
-    func testGetTransactionsByPayeeThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching transactions by payee fails") func getTransactionsByPayeeThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.transactions(budgetId: "budget_id", payeeId: "payee_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.transactions(budgetId: "budget_id", payeeId: "payee_id")
         }
     }
 
-    func testGetTransactionsByMonthReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a month when request succeeds") func getTransactionsByMonthReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = HybridTransaction(
             type: "type",
             parentTransactionId: nil,
@@ -317,25 +302,22 @@ class TransactionServiceTests: XCTestCase {
             month: Date.now
         )
 
-        XCTAssertEqual(transactions.count, 1)
-        XCTAssertEqual(expectedTransaction, transactions.first)
-        XCTAssertEqual(serverKnowledge, 1)
+        #expect(transactions.count == 1)
+        #expect(expectedTransaction == transactions.first)
+        #expect(serverKnowledge == 1)
     }
 
-    func testGetTransactionsByMonthThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching transactions by month fails") func getTransactionsByMonthThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.transactions(budgetId: "budget_id", month: Date.now)
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.transactions(budgetId: "budget_id", month: Date.now)
         }
     }
 
-    func testUpdateTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns updated transaction when single update request succeeds") func updateTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -387,10 +369,10 @@ class TransactionServiceTests: XCTestCase {
             transaction: updateTransaction
         )
 
-        XCTAssertEqual(expectedTransaction, actualResponse)
+        #expect(expectedTransaction == actualResponse)
     }
 
-    func testUpdateTransactionThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when single transaction update fails") func updateTransactionThrowsErrorWhenRequestFails() async {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -410,20 +392,17 @@ class TransactionServiceTests: XCTestCase {
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.updateTransaction(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.updateTransaction(
                 budgetId: "budget_id",
                 transactionId: "transaction_id",
                 transaction: updateTransaction
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
     // swiftlint:disable:next function_body_length
-    func testUpdateTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns updated transactions when bulk update request succeeds") func updateTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -477,13 +456,13 @@ class TransactionServiceTests: XCTestCase {
             transactions: [updateTransaction]
         )
 
-        XCTAssertEqual(actualResponse.0.count, 1)
-        XCTAssertEqual(actualResponse.0[0], expectedTransaction)
-        XCTAssertEqual(actualResponse.1, 200)
-        XCTAssertEqual(actualResponse.2, [])
+        #expect(actualResponse.0.count == 1)
+        #expect(actualResponse.0[0] == expectedTransaction)
+        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.2 == [])
     }
 
-    func testUpdateTransactionsThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when bulk transaction update fails") func updateTransactionsThrowsErrorWhenRequestFails() async {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -503,18 +482,15 @@ class TransactionServiceTests: XCTestCase {
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.updateTransactions(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.updateTransactions(
                 budgetId: "budget_id",
                 transactions: [updateTransaction]
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testDeleteTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns deleted transaction when delete request succeeds") func deleteTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "transaction_id",
             date: "2022-07-07",
@@ -549,27 +525,24 @@ class TransactionServiceTests: XCTestCase {
             transactionId: "transaction_id"
         )
 
-        XCTAssertEqual(actualResponse, expectedTransaction)
+        #expect(actualResponse == expectedTransaction)
     }
 
-    func testDeleteTransactionsThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when deleting a transaction fails") func deleteTransactionsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.deleteTransaction(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.deleteTransaction(
                 budgetId: "budget_id",
                 transactionId: "transaction_id"
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
     // swiftlint:disable:next function_body_length
-    func testCreateTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns created transaction when single create request succeeds") func createTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let newTransaction = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -622,11 +595,11 @@ class TransactionServiceTests: XCTestCase {
             transaction: newTransaction
         )
 
-        XCTAssertEqual(actualResponse.0, expectedTransaction)
-        XCTAssertEqual(actualResponse.1, 200)
+        #expect(actualResponse.0 == expectedTransaction)
+        #expect(actualResponse.1 == 200)
     }
 
-    func testCreateTransactionThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when single transaction creation fails") func createTransactionThrowsErrorWhenRequestFails() async {
         let newTransaction = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -646,19 +619,16 @@ class TransactionServiceTests: XCTestCase {
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.createTransaction(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.createTransaction(
                 budgetId: "budget_id",
                 transaction: newTransaction
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
     // swiftlint:disable:next function_body_length
-    func testCreateTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns created transactions when bulk create request succeeds") func createTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let newTransaction1 = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -752,14 +722,14 @@ class TransactionServiceTests: XCTestCase {
             transactions: [newTransaction1, newTransaction2]
         )
 
-        XCTAssertEqual(actualResponse.0.count, 2)
-        XCTAssertEqual(actualResponse.0[0], expectedTransaction1)
-        XCTAssertEqual(actualResponse.0[1], expectedTransaction2)
-        XCTAssertEqual(actualResponse.1, 200)
-        XCTAssertEqual(actualResponse.2, [])
+        #expect(actualResponse.0.count == 2)
+        #expect(actualResponse.0[0] == expectedTransaction1)
+        #expect(actualResponse.0[1] == expectedTransaction2)
+        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.2 == [])
     }
 
-    func testCreateTransactionsThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when bulk transaction creation fails") func createTransactionsThrowsErrorWhenRequestFails() async {
         let newTransaction = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -779,18 +749,15 @@ class TransactionServiceTests: XCTestCase {
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.createTransactions(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.createTransactions(
                 budgetId: "budget_id",
                 transactions: [newTransaction]
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testImportTransactionsReturnsIdsWhenRequestSucceeds() async throws {
+    @Test("Returns transaction IDs when import request succeeds") func importTransactionsReturnsIdsWhenRequestSucceeds() async throws {
         let expectedResponse = ImportTransactionsRequest.Response(
             transactionIds: ["transaction_id_1", "transaction_id_2"]
         )
@@ -798,19 +765,16 @@ class TransactionServiceTests: XCTestCase {
         let service = TransactionService(client: client)
         let actualResponse = try await service.importTransactions(budgetId: "budget_id")
 
-        XCTAssertEqual(actualResponse, ["transaction_id_1", "transaction_id_2"])
+        #expect(actualResponse == ["transaction_id_1", "transaction_id_2"])
     }
 
-    func testImportTransactionsThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when importing transactions fails") func importTransactionsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
-        do {
-            _ = try await service.importTransactions(budgetId: "budget_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.importTransactions(budgetId: "budget_id")
         }
     }
 }

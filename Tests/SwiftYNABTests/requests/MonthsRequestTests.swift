@@ -8,30 +8,27 @@
 
 import Foundation
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class MonthsRequestTests: XCTestCase {
-    func testMonthsRequestNoLastKnowledge() {
+@Suite("Months Request") struct MonthsRequestTests {
+    @Test("Request has no query parameters without last knowledge of server") func monthsRequestNoLastKnowledge() {
         let request = MonthsRequest(budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
-        XCTAssertEqual(request.path, "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months")
-        XCTAssertEqual(request.method, .get)
-        XCTAssertNil(request.query)
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months")
+        #expect(request.method == .get)
+        #expect(request.query == nil)
+        #expect(request.body == nil)
     }
 
-    func testMonthsRequestWithLastKnowledge() {
+    @Test("Request includes last knowledge of server as query parameter") func monthsRequestWithLastKnowledge() {
         let request = MonthsRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             lastKnowledgeOfServer: 100
         )
-        XCTAssertEqual(request.path, "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months")
-        XCTAssertEqual(request.method, .get)
-        XCTAssertEqual(request.query?.count, 1)
-        XCTAssertEqual(
-            request.query?[0],
-            URLQueryItem(name: "last_knowledge_of_server", value: "100")
-        )
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months")
+        #expect(request.method == .get)
+        #expect(request.query?.count == 1)
+        #expect(request.query?[0] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
+        #expect(request.body == nil)
     }
 }

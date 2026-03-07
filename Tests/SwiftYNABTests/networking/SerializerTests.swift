@@ -6,11 +6,11 @@
 //  Copyright © 2022 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-final class SerializerTests: XCTestCase {
-    func testEncodingConvertsCamelCaseToSnakeCase() throws {
+@Suite("Serializer") struct SerializerTests {
+    @Test("Encoding converts camelCase property names to snake_case JSON keys") func encodingConvertsCamelCaseToSnakeCase() throws {
         struct Test: Codable {
             let testVariable: String
         }
@@ -21,20 +21,20 @@ final class SerializerTests: XCTestCase {
         let resultJson = String(data: result, encoding: .utf8)
         let expectedJson = "{\n  \"test_variable\" : \"test\"\n}"
 
-        XCTAssertEqual(resultJson, expectedJson)
+        #expect(resultJson == expectedJson)
     }
 
-    func testDecodingConvertsSnakeCasetoCamelCase() throws {
+    @Test("Decoding converts snake_case JSON keys to camelCase property names") func decodingConvertsSnakeCasetoCamelCase() throws {
         struct Test: Codable {
             let testVariable: String
         }
 
         // swiftlint:disable:next non_optional_string_data_conversion
-        let input = try XCTUnwrap("{\"test_variable\":\"test\"}".data(using: .utf8))
+        let input = try #require("{\"test_variable\":\"test\"}".data(using: .utf8))
         let serializer = Serializer()
         let result = try serializer.decode(Test.self, from: input)
         let expected = Test(testVariable: "test")
 
-        XCTAssertEqual(result.testVariable, expected.testVariable)
+        #expect(result.testVariable == expected.testVariable)
     }
 }

@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
 // swiftlint:disable:next type_body_length
-class ScheduledTransactionServiceTests: XCTestCase {
-    func testGetScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+@Suite("Scheduled Transaction Service") struct ScheduledTransactionServiceTests {
+    @Test("Returns a single scheduled transaction when request succeeds") func getScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let expectedTransaction = ScheduledTransactionDetail(
             id: "id",
             dateFirst: "2022-07-07",
@@ -40,26 +40,23 @@ class ScheduledTransactionServiceTests: XCTestCase {
             transactionId: "id"
         )
 
-        XCTAssertEqual(expectedTransaction, actualResponse)
+        #expect(expectedTransaction == actualResponse)
     }
 
-    func testGetScheduledTransactionThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching a single scheduled transaction fails") func getScheduledTransactionThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = ScheduledTransactionService(client: client)
 
-        do {
-            _ = try await service.scheduledTransaction(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.scheduledTransaction(
                 budgetId: "budget_id",
                 transactionId: "1234"
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testGetScheduledTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns all scheduled transactions for a budget when request succeeds") func getScheduledTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = ScheduledTransactionDetail(
             id: "id",
             dateFirst: "2022-07-07",
@@ -87,25 +84,22 @@ class ScheduledTransactionServiceTests: XCTestCase {
         let (transactions, serverKnowledge) = try await service
             .scheduledTransactions(budgetId: "budget_id")
 
-        XCTAssertEqual(transactions.count, 1)
-        XCTAssertEqual(expectedTransaction, transactions.first)
-        XCTAssertEqual(serverKnowledge, 1)
+        #expect(transactions.count == 1)
+        #expect(expectedTransaction == transactions.first)
+        #expect(serverKnowledge == 1)
     }
 
-    func testGetScheduledTransactionsThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching all scheduled transactions fails") func getScheduledTransactionsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = ScheduledTransactionService(client: client)
 
-        do {
-            _ = try await service.scheduledTransactions(budgetId: "budget_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.scheduledTransactions(budgetId: "budget_id")
         }
     }
 
-    func testCreateScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns created scheduled transaction when request succeeds") func createScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let newScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -145,10 +139,10 @@ class ScheduledTransactionServiceTests: XCTestCase {
             transaction: newScheduledTransaction
         )
 
-        XCTAssertEqual(expectedScheduledTransaction, actualResponse)
+        #expect(expectedScheduledTransaction == actualResponse)
     }
 
-    func testCreateScheduledTransactionThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when creating a scheduled transaction fails") func createScheduledTransactionThrowsErrorWhenRequestFails() async {
         let newScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -164,18 +158,15 @@ class ScheduledTransactionServiceTests: XCTestCase {
         let client = MockFailureClient(expectedError: expectedError)
         let service = ScheduledTransactionService(client: client)
 
-        do {
-            _ = try await service.createScheduledTransaction(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.createScheduledTransaction(
                 budgetId: "budget_id",
                 transaction: newScheduledTransaction
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testUpdateScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns updated scheduled transaction when request succeeds") func updateScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let updateScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -216,10 +207,10 @@ class ScheduledTransactionServiceTests: XCTestCase {
             transaction: updateScheduledTransaction
         )
 
-        XCTAssertEqual(expectedScheduledTransaction, actualResponse)
+        #expect(expectedScheduledTransaction == actualResponse)
     }
 
-    func testUpdateScheduledTransactionThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when updating a scheduled transaction fails") func updateScheduledTransactionThrowsErrorWhenRequestFails() async {
         let updateScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -235,19 +226,16 @@ class ScheduledTransactionServiceTests: XCTestCase {
         let client = MockFailureClient(expectedError: expectedError)
         let service = ScheduledTransactionService(client: client)
 
-        do {
-            _ = try await service.updateScheduledTransaction(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.updateScheduledTransaction(
                 budgetId: "budget_id",
                 transactionId: "scheduled_transaction_id",
                 transaction: updateScheduledTransaction
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 
-    func testDeleteScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns deleted scheduled transaction when request succeeds") func deleteScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let expectedScheduledTransaction = ScheduledTransactionDetail(
             id: "scheduled_transaction_id",
             dateFirst: "2022-07-07",
@@ -276,22 +264,19 @@ class ScheduledTransactionServiceTests: XCTestCase {
             transactionId: "scheduled_transaction_id"
         )
 
-        XCTAssertEqual(expectedScheduledTransaction, actualResponse)
+        #expect(expectedScheduledTransaction == actualResponse)
     }
 
-    func testDeleteScheduledTransactionThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when deleting a scheduled transaction fails") func deleteScheduledTransactionThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = ScheduledTransactionService(client: client)
 
-        do {
-            _ = try await service.deleteScheduledTransaction(
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.deleteScheduledTransaction(
                 budgetId: "budget_id",
                 transactionId: "scheduled_transaction_id"
             )
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
         }
     }
 }

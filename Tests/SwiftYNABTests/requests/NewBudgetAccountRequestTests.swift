@@ -6,11 +6,11 @@
 //  Copyright © 2022 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class NewBudgetAccountRequestTests: XCTestCase {
-    func testNewBudgetAccountRequest() throws {
+@Suite("New Budget Account Request") struct NewBudgetAccountRequestTests {
+    @Test("Request uses POST method with account details in body") func newBudgetAccountRequest() throws {
         let request = NewBudgetAccountRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             name: "name",
@@ -18,9 +18,9 @@ class NewBudgetAccountRequestTests: XCTestCase {
             balance: 0
         )
 
-        XCTAssertEqual(request.path, "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/accounts")
-        XCTAssertEqual(request.method, .post)
-        XCTAssertNil(request.query)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/accounts")
+        #expect(request.method == .post)
+        #expect(request.query == nil)
 
         let expectedBody = NewBudgetAccountRequest.PostAccountWrapper(
             name: "name",
@@ -28,8 +28,8 @@ class NewBudgetAccountRequestTests: XCTestCase {
             balance: 0
         )
         let serializer = Serializer()
-        let body = try XCTUnwrap(request.body)
+        let body = try #require(request.body)
         let decodedBody = try serializer.decode(NewBudgetAccountRequest.PostAccountWrapper.self, from: body)
-        XCTAssertEqual(decodedBody, expectedBody)
+        #expect(decodedBody == expectedBody)
     }
 }

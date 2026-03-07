@@ -6,22 +6,19 @@
 //  Copyright © 2022 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class ScheduledTransactionsRequestTests: XCTestCase {
-    func testScheduledTransactionsRequest() {
+@Suite("Scheduled Transactions Request") struct ScheduledTransactionsRequestTests {
+    @Test("Request targets scheduled transactions endpoint with GET method") func scheduledTransactionsRequest() {
         let request = ScheduledTransactionsRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             lastKnowledgeOfServer: nil
         )
 
-        XCTAssertEqual(
-            request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions"
-        )
-        XCTAssertEqual(request.method, .get)
-        XCTAssertNil(request.query)
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions")
+        #expect(request.method == .get)
+        #expect(request.query == nil)
+        #expect(request.body == nil)
     }
 }

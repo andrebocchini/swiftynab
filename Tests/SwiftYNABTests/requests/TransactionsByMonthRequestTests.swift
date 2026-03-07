@@ -6,11 +6,12 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
+import Foundation
 @testable import SwiftYNAB
 
-class TransactionsByMonthRequestTests: XCTestCase {
-    func testTransactionsByMonthRequestNoQuery() {
+@Suite("Transactions By Month Request") struct TransactionsByMonthRequestTests {
+    @Test("Path includes budget ID and month with no query parameters") func transactionsByMonthRequestNoQuery() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let month = dateFormatter.date(from: "2025-01-01")!
@@ -19,16 +20,13 @@ class TransactionsByMonthRequestTests: XCTestCase {
             month: month
         )
 
-        XCTAssertEqual(
-            request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions"
-        )
-        XCTAssertEqual(request.method, .get)
-        XCTAssertNil(request.query)
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
+        #expect(request.method == .get)
+        #expect(request.query == nil)
+        #expect(request.body == nil)
     }
 
-    func testTransactionsByMonthRequestWithQuery() {
+    @Test("Request includes since date, type, and last knowledge as query parameters") func transactionsByMonthRequestWithQuery() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let month = dateFormatter.date(from: "2025-01-01")!
@@ -41,17 +39,14 @@ class TransactionsByMonthRequestTests: XCTestCase {
             lastKnowledgeOfServer: 123
         )
 
-        XCTAssertEqual(
-            request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions"
-        )
-        XCTAssertEqual(request.method, .get)
-        XCTAssertNotNil(request.query)
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
+        #expect(request.method == .get)
+        #expect(request.query != nil)
+        #expect(request.body == nil)
 
         let query = request.query!
-        XCTAssertTrue(query.contains { $0.name == "since_date" && $0.value == "2025-01-15" })
-        XCTAssertTrue(query.contains { $0.name == "type" && $0.value == "uncategorized" })
-        XCTAssertTrue(query.contains { $0.name == "last_knowledge_of_server" && $0.value == "123" })
+        #expect(query.contains { $0.name == "since_date" && $0.value == "2025-01-15" })
+        #expect(query.contains { $0.name == "type" && $0.value == "uncategorized" })
+        #expect(query.contains { $0.name == "last_knowledge_of_server" && $0.value == "123" })
     }
 }

@@ -10,11 +10,11 @@ import Foundation
 #if canImport(FoundationNetworking)
 import FoundationNetworking
 #endif
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class ClientTests: XCTestCase {
-    func testHttpErrorThrowsHTTPError() async throws {
+@Suite("Client") struct ClientTests {
+    @Test("Throws an HTTP error when the response has a non-success status code") func httpErrorThrowsHTTPError() async {
         let mockURLResponse = HTTPURLResponse(
             url: URL(string: "https://www.youneedabudget.com")!,
             statusCode: 400,
@@ -31,15 +31,12 @@ class ClientTests: XCTestCase {
             serializer: Serializer()
         )
 
-        do {
-            _ = try await client.perform(mockRequest)
-            XCTFail("Expected exception to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 400))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 400)) {
+            try await client.perform(mockRequest)
         }
     }
 
-    func testNonParseableResponseThrowsDecodingError() async throws {
+    @Test("Throws a decoding error when the response cannot be parsed") func nonParseableResponseThrowsDecodingError() async {
         let mockURLResponse = URLResponse(
             url: URL(string: "https://www.youneedabudget.com")!,
             mimeType: nil,
@@ -56,11 +53,8 @@ class ClientTests: XCTestCase {
             serializer: Serializer()
         )
 
-        do {
-            _ = try await client.perform(mockRequest)
-            XCTFail("Expected exception to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .decodingFailure(message: "test"))
+        await #expect(throws: SwiftYNABError.decodingFailure(message: "test")) {
+            try await client.perform(mockRequest)
         }
     }
 }

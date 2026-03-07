@@ -6,11 +6,11 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class CreateTransactionsRequestTests: XCTestCase {
-    func testCreateTransactionsRequest() {
+@Suite("Create Transactions Request") struct CreateTransactionsRequestTests {
+    @Test("Request uses POST method with multiple transactions in body") func createTransactionsRequest() {
         let transaction1 = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -48,12 +48,9 @@ class CreateTransactionsRequestTests: XCTestCase {
             transactions: [transaction1, transaction2]
         )
 
-        XCTAssertEqual(
-            request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions"
-        )
-        XCTAssertEqual(request.method, .post)
-        XCTAssertNil(request.query)
-        XCTAssertNotNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
+        #expect(request.method == .post)
+        #expect(request.query == nil)
+        #expect(request.body != nil)
     }
 }

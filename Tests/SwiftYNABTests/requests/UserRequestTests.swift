@@ -6,15 +6,15 @@
 //  Copyright © 2019 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class UserRequestTests: XCTestCase {
-    func testUserRequest() {
+@Suite("User Request") struct UserRequestTests {
+    @Test("Request targets user endpoint with GET method") func userRequest() {
         let request = UserRequest()
-        XCTAssertEqual(request.path, "/v1/user")
-        XCTAssertEqual(request.method, .get)
-        XCTAssertNil(request.query)
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/user")
+        #expect(request.method == .get)
+        #expect(request.query == nil)
+        #expect(request.body == nil)
     }
 }

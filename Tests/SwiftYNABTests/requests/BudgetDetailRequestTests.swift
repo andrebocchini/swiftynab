@@ -6,30 +6,28 @@
 //  Copyright © 2019 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
+import Foundation
 @testable import SwiftYNAB
 
-class BudgetDetailRequestTests: XCTestCase {
-    func testBudgetDetailRequestWithLastKnowledge() {
+@Suite("Budget Detail Request") struct BudgetDetailRequestTests {
+    @Test("Request includes last knowledge of server query parameter") func budgetDetailRequestWithLastKnowledge() {
         let request = BudgetDetailRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             lastKnowledgeOfServer: 100
         )
-        XCTAssertEqual(request.path, "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
-        XCTAssertEqual(request.method, .get)
-        XCTAssertEqual(request.query?.count, 1)
-        XCTAssertEqual(
-            request.query?[0],
-            URLQueryItem(name: "last_knowledge_of_server", value: "100")
-        )
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
+        #expect(request.method == .get)
+        #expect(request.query?.count == 1)
+        #expect(request.query?[0] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
+        #expect(request.body == nil)
     }
 
-    func testBudgetDetailRequest() {
+    @Test("Request omits query when no server knowledge provided") func budgetDetailRequest() {
         let request = BudgetDetailRequest(budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
-        XCTAssertEqual(request.path, "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
-        XCTAssertEqual(request.method, .get)
-        XCTAssertNil(request.query)
-        XCTAssertNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
+        #expect(request.method == .get)
+        #expect(request.query == nil)
+        #expect(request.body == nil)
     }
 }

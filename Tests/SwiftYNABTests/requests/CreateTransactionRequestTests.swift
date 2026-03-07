@@ -6,11 +6,12 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
+import Foundation
 @testable import SwiftYNAB
 
-class CreateTransactionRequestTests: XCTestCase {
-    func testCreateTransactionRequest() {
+@Suite("Create Transaction Request") struct CreateTransactionRequestTests {
+    @Test("Request body contains transaction data and uses POST method") func createTransactionRequest() throws {
         let transaction = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -32,28 +33,17 @@ class CreateTransactionRequestTests: XCTestCase {
             transaction: transaction
         )
 
-        XCTAssertEqual(
-            request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions"
-        )
-        XCTAssertEqual(request.method, .post)
-        XCTAssertNil(request.query)
-        XCTAssertNotNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
+        #expect(request.method == .post)
+        #expect(request.query == nil)
 
-        // Verify the body contains the wrapper with transaction field
-        if let body = request.body {
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            do {
-                let wrapper = try decoder.decode(CreateTransactionRequestWrapper.self, from: body)
-                XCTAssertEqual(wrapper.transaction.accountId, "account_id")
-                XCTAssertEqual(wrapper.transaction.payeeName, "Test Payee")
-                XCTAssertEqual(wrapper.transaction.amount, 1000)
-            } catch {
-                XCTFail("Failed to decode wrapper: \(error)")
-            }
-        } else {
-            XCTFail("Request body should not be nil")
-        }
+        let body = try #require(request.body)
+
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let wrapper = try decoder.decode(CreateTransactionRequestWrapper.self, from: body)
+        #expect(wrapper.transaction.accountId == "account_id")
+        #expect(wrapper.transaction.payeeName == "Test Payee")
+        #expect(wrapper.transaction.amount == 1000)
     }
 }

@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class BudgetServiceTests: XCTestCase {
-    func testGetBudgetsReturnsBudgetsWhenRequestSucceeds() async throws {
+@Suite("Budget Service") struct BudgetServiceTests {
+    @Test("Returns budget summaries when request succeeds") func getBudgetsReturnsBudgetsWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -41,24 +41,21 @@ class BudgetServiceTests: XCTestCase {
         let service = BudgetService(client: client)
         let actualResponse = try await service.budgets(includeAccounts: false)
 
-        XCTAssertEqual(actualResponse.count, 1)
-        XCTAssertEqual(expectedBudget, actualResponse[0])
+        #expect(actualResponse.count == 1)
+        #expect(expectedBudget == actualResponse[0])
     }
 
-    func testGetBudgetsThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching budget summaries fails") func getBudgetsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = BudgetService(client: client)
 
-        do {
-            _ = try await service.budgets(includeAccounts: false)
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.budgets(includeAccounts: false)
         }
     }
 
-    func testGetBudgetReturnsBudgetWhenRequestSucceeds() async throws {
+    @Test("Returns budget detail when request succeeds") func getBudgetReturnsBudgetWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -97,24 +94,21 @@ class BudgetServiceTests: XCTestCase {
         let service = BudgetService(client: client)
         let actualResponse = try await service.budget(budgetId: "budget_id")
 
-        XCTAssertEqual(expectedResponse.budget, actualResponse.0)
-        XCTAssertEqual(expectedResponse.serverKnowledge, actualResponse.1)
+        #expect(expectedResponse.budget == actualResponse.0)
+        #expect(expectedResponse.serverKnowledge == actualResponse.1)
     }
 
-    func testGetBudgetThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching budget detail fails") func getBudgetThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = BudgetService(client: client)
 
-        do {
-            _ = try await service.budget(budgetId: "budget_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.budget(budgetId: "budget_id")
         }
     }
 
-    func testGetBudgetSettingsReturnsBudgetSettingsWhenRequestSucceeds() async throws {
+    @Test("Returns budget settings when request succeeds") func getBudgetSettingsReturnsBudgetSettingsWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -135,19 +129,16 @@ class BudgetServiceTests: XCTestCase {
         let service = BudgetService(client: client)
         let actualResponse = try await service.budgetSettings(budgetId: "budget_id")
 
-        XCTAssertEqual(expectedSettings, actualResponse)
+        #expect(expectedSettings == actualResponse)
     }
 
-    func testGetBudgetSettingsThrowsErrorWhenRequestFails() async throws {
+    @Test("Throws error when fetching budget settings fails") func getBudgetSettingsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = BudgetService(client: client)
 
-        do {
-            _ = try await service.budgetSettings(budgetId: "budget_id")
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertEqual(error as? SwiftYNABError, .httpError(statusCode: 500))
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.budgetSettings(budgetId: "budget_id")
         }
     }
 }

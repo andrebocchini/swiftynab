@@ -6,11 +6,11 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import SwiftYNAB
 
-class UpdateTransactionsRequestTests: XCTestCase {
-    func testUpdateTransactionsRequest() {
+@Suite("Update Transactions Request") struct UpdateTransactionsRequestTests {
+    @Test("Request uses PATCH method with transaction body for bulk update") func updateTransactionsRequest() {
         let transaction1 = SaveTransactionWithIdOrImportId(
             id: "transaction_id_1",
             importId: nil,
@@ -48,12 +48,9 @@ class UpdateTransactionsRequestTests: XCTestCase {
             transactions: [transaction1, transaction2]
         )
 
-        XCTAssertEqual(
-            request.path,
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions"
-        )
-        XCTAssertEqual(request.method, .patch)
-        XCTAssertNil(request.query)
-        XCTAssertNotNil(request.body)
+        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
+        #expect(request.method == .patch)
+        #expect(request.query == nil)
+        #expect(request.body != nil)
     }
 }
