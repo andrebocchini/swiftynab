@@ -17,7 +17,7 @@
     <a title="SaveCategory Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 3.1.4 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 3.2.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -119,6 +119,15 @@
                 <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/MoneyMovement.html">MoneyMovement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MoneyMovementGroup.html">MoneyMovementGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MoneyMovementService.html">MoneyMovementService</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/MonthDetail.html">MonthDetail</a>
               </li>
               <li class="nav-group-task">
@@ -141,6 +150,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaveCategory.html">SaveCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveCategoryGroup.html">SaveCategoryGroup</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaveMonthCategory.html">SaveMonthCategory</a>
@@ -334,9 +346,36 @@ already has a configured goal</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB12SaveCategoryV4name4note15categoryGroupId10goalTargetACSSSg_A2Hs5Int64VSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(name:note:categoryGroupId:goalTarget:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB12SaveCategoryV4name4note15categoryGroupId10goalTargetACSSSg_A2Hs5Int64VSgtcfc">init(name:<wbr>note:<wbr>categoryGroupId:<wbr>goalTarget:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB12SaveCategoryV14goalTargetDateSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalTargetDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12SaveCategoryV14goalTargetDateSSSgvp">goalTargetDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The goal target date in ISO format (e.g. 2016-12-01)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalTargetDate</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12SaveCategoryV4name4note15categoryGroupId10goalTarget0jK4DateACSSSg_A2Is5Int64VSgAItcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(name:note:categoryGroupId:goalTarget:goalTargetDate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12SaveCategoryV4name4note15categoryGroupId10goalTarget0jK4DateACSSSg_A2Is5Int64VSgAItcfc">init(name:<wbr>note:<wbr>categoryGroupId:<wbr>goalTarget:<wbr>goalTargetDate:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -355,7 +394,8 @@ already has a configured goal</p>
     <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">note</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">categoryGroupId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-    <span class="nv">goalTarget</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="nv">goalTarget</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">goalTargetDate</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="p">)</span></code></pre>
 
                         </div>
@@ -413,6 +453,18 @@ existing goals)</p>
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>goalTargetDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The goal target date in ISO format (e.g. 2016-12-01)</p>
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -424,7 +476,7 @@ existing goals)</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-01-29)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-03-07)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
