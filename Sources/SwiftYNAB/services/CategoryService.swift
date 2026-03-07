@@ -135,4 +135,67 @@ extension CategoryService: CategoryServiceType {
         let response = try await client.perform(request)
         return response.category
     }
+
+    /// Create a new category
+    ///
+    /// - Parameters:
+    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
+    /// budget)
+    ///    - category: The category to create. Must include `name` and `categoryGroupId`.
+    ///
+    /// - Returns: The created category and the server knowledge
+    public func createCategory(
+        budgetId: String,
+        category: SaveCategory
+    ) async throws -> (Category, ServerKnowledge) {
+        let request = CreateCategoryRequest(
+            budgetId: budgetId,
+            category: category
+        )
+        let response = try await client.perform(request)
+        return (response.category, response.serverKnowledge)
+    }
+
+    /// Create a new category group
+    ///
+    /// - Parameters:
+    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
+    /// budget)
+    ///    - categoryGroup: The category group to create
+    ///
+    /// - Returns: The created category group and the server knowledge
+    public func createCategoryGroup(
+        budgetId: String,
+        categoryGroup: SaveCategoryGroup
+    ) async throws -> (CategoryGroup, ServerKnowledge) {
+        let request = CreateCategoryGroupRequest(
+            budgetId: budgetId,
+            categoryGroup: categoryGroup
+        )
+        let response = try await client.perform(request)
+        return (response.categoryGroup, response.serverKnowledge)
+    }
+
+    /// Update a category group
+    ///
+    /// - Parameters:
+    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
+    /// budget)
+    ///    - categoryGroupId: The id of the category group
+    ///    - categoryGroup: The category group details to be saved
+    ///
+    /// - Returns: The updated category group and the server knowledge
+    public func updateCategoryGroup(
+        budgetId: String,
+        categoryGroupId: String,
+        categoryGroup: SaveCategoryGroup
+    ) async throws -> (CategoryGroup, ServerKnowledge) {
+        let request = UpdateCategoryGroupRequest(
+            budgetId: budgetId,
+            categoryGroupId: categoryGroupId,
+            categoryGroup: categoryGroup
+        )
+        let response = try await client.perform(request)
+        return (response.categoryGroup, response.serverKnowledge)
+    }
 }
