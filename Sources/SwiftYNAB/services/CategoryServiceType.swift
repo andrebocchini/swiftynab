@@ -30,4 +30,20 @@ protocol CategoryServiceType: Sendable {
         categoryId: String,
         budgeted: Int
     ) async throws -> Category
+
+    func createCategory(
+        budgetId: String,
+        category: SaveCategory
+    ) async throws -> (Category, ServerKnowledge)
+
+    func createCategoryGroup(
+        budgetId: String,
+        categoryGroup: SaveCategoryGroup
+    ) async throws -> (CategoryGroup, ServerKnowledge)
+
+    func updateCategoryGroup(
+        budgetId: String,
+        categoryGroupId: String,
+        categoryGroup: SaveCategoryGroup
+    ) async throws -> (CategoryGroup, ServerKnowledge)
 }
