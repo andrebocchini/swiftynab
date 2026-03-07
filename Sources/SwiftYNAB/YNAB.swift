@@ -42,6 +42,9 @@ public struct YNAB {
     /// Provides access to scheduled transaction operations
     public let scheduledTransactions: ScheduledTransactionService
 
+    /// Provides access to money movement operations
+    public let moneyMovements: MoneyMovementService
+
     /// Initializes the YNAB API client
     ///
     /// - Parameters:
@@ -64,5 +67,6 @@ public struct YNAB {
         months = MonthService(client: client)
         transactions = TransactionService(client: client)
         scheduledTransactions = ScheduledTransactionService(client: client)
+        moneyMovements = MoneyMovementService(client: client)
     }
 }
