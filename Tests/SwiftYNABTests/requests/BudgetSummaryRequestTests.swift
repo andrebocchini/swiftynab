@@ -6,12 +6,14 @@
 //  Copyright © 2022 Andre Bocchini. All rights reserved.
 //
 
-import Testing
 import Foundation
+import Testing
 @testable import SwiftYNAB
 
-@Suite("Budgets Summary Request") struct BudgetsSummaryRequestTests {
-    @Test("Request includes include_accounts query parameter") func budgetSummaryRequest() {
+@Suite("Budgets Summary Request")
+struct BudgetsSummaryRequestTests {
+    @Test("Request includes include_accounts query parameter")
+    func budgetSummaryRequest() {
         let request = BudgetSummaryRequest(includeAccounts: false)
         #expect(request.path == "/v1/budgets")
         #expect(request.method == .get)

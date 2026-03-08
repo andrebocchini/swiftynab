@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Update Transaction Request") struct UpdateTransactionRequestTests {
-    @Test("Request uses PUT method with transaction data in body") func updateTransactionRequest() {
+@Suite("Update Transaction Request")
+struct UpdateTransactionRequestTests {
+    @Test("Request uses PUT method with transaction data in body")
+    func updateTransactionRequest() {
         let transaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -33,7 +35,8 @@ import Testing
             transaction: transaction
         )
 
-        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions/transaction_id")
+        #expect(request
+            .path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions/transaction_id")
         #expect(request.method == .put)
         #expect(request.query == nil)
         #expect(request.body != nil)

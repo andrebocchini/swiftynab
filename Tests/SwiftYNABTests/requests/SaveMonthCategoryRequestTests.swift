@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Save Month Category Request") struct SaveMonthCategoryRequestTests {
-    @Test("Request uses PATCH method with budgeted amount in body") func saveMonthCategoryRequest() throws {
+@Suite("Save Month Category Request")
+struct SaveMonthCategoryRequestTests {
+    @Test("Request uses PATCH method with budgeted amount in body")
+    func saveMonthCategoryRequest() throws {
         let request = SaveMonthCategoryRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             month: "2019-08-01",

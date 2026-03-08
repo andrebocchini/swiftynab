@@ -6,12 +6,14 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import Testing
 import Foundation
+import Testing
 @testable import SwiftYNAB
 
-@Suite("Save Scheduled Transaction Request") struct SaveScheduledTransactionRequestTests {
-    @Test("Creating a scheduled transaction uses POST method") func saveScheduledTransactionRequestCreate() {
+@Suite("Save Scheduled Transaction Request")
+struct SaveScheduledTransactionRequestTests {
+    @Test("Creating a scheduled transaction uses POST method")
+    func saveScheduledTransactionRequestCreate() {
         let transaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -30,13 +32,15 @@ import Foundation
             update: false
         )
 
-        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions")
+        #expect(request
+            .path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions")
         #expect(request.method == .post)
         #expect(request.query == nil)
         #expect(request.body != nil)
     }
 
-    @Test("Updating a scheduled transaction uses PUT method with transaction ID in path") func saveScheduledTransactionRequestUpdate() {
+    @Test("Updating a scheduled transaction uses PUT method with transaction ID in path")
+    func saveScheduledTransactionRequestUpdate() {
         let transaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),

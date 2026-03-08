@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Serializer") struct SerializerTests {
-    @Test("Encoding converts camelCase property names to snake_case JSON keys") func encodingConvertsCamelCaseToSnakeCase() throws {
+@Suite("Serializer")
+struct SerializerTests {
+    @Test("Encoding converts camelCase property names to snake_case JSON keys")
+    func encodingConvertsCamelCaseToSnakeCase() throws {
         struct Test: Codable {
             let testVariable: String
         }
@@ -24,7 +26,8 @@ import Testing
         #expect(resultJson == expectedJson)
     }
 
-    @Test("Decoding converts snake_case JSON keys to camelCase property names") func decodingConvertsSnakeCasetoCamelCase() throws {
+    @Test("Decoding converts snake_case JSON keys to camelCase property names")
+    func decodingConvertsSnakeCasetoCamelCase() throws {
         struct Test: Codable {
             let testVariable: String
         }

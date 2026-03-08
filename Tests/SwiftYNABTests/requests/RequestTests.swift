@@ -9,38 +9,46 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Request") struct RequestTests {
-    @Test("Default path returns the configured path value") func path() {
+@Suite("Request")
+struct RequestTests {
+    @Test("Default path returns the configured path value")
+    func path() {
         let request = MockGetRequest()
         #expect(request.path == "/testpath")
     }
 
-    @Test("Default method is GET") func method() {
+    @Test("Default method is GET")
+    func method() {
         let request = MockGetRequest()
         #expect(request.method == .get)
     }
 
-    @Test("Request requires authentication by default") func requiresAuthentication() {
+    @Test("Request requires authentication by default")
+    func requiresAuthentication() {
         let request = MockGetRequest()
         #expect(request.requiresAuthentication)
     }
 
-    @Test("Default query is nil") func query() {
+    @Test("Default query is nil")
+    func query() {
         let request = MockGetRequest()
         #expect(request.query == nil)
     }
 
-    @Test("Default body is nil") func body() {
+    @Test("Default body is nil")
+    func body() {
         let request = MockGetRequest()
         #expect(request.body == nil)
     }
 
-    @Test("Default timeout is 60 seconds") func timeout() {
+    @Test("Default timeout is 60 seconds")
+    func timeout() {
         let request = MockGetRequest()
         #expect(request.timeout == 60)
     }
 
-    @Test("GET request builds URL with correct base URL, method, and timeout") func getRequest() {
+    @Test("GET request builds URL with correct base URL, method, and timeout")
+    func getRequest() {
         let mockRequest = MockGetRequest()
         let request = mockRequest.request
 
@@ -50,7 +58,8 @@ import Testing
         #expect(request.url?.query == nil)
     }
 
-    @Test("POST request includes body and Content-Type header") func postRequest() throws {
+    @Test("POST request includes body and Content-Type header")
+    func postRequest() throws {
         let mockRequest = MockPostRequest()
         let request = mockRequest.request
 
@@ -63,7 +72,8 @@ import Testing
         #expect(request.url?.query == nil)
     }
 
-    @Test("PATCH request includes body and Content-Type header") func patchRequest() throws {
+    @Test("PATCH request includes body and Content-Type header")
+    func patchRequest() throws {
         let mockRequest = MockPatchRequest()
         let request = mockRequest.request
 
@@ -76,7 +86,8 @@ import Testing
         #expect(request.url?.query == nil)
     }
 
-    @Test("PUT request includes body and Content-Type header") func putRequest() throws {
+    @Test("PUT request includes body and Content-Type header")
+    func putRequest() throws {
         let mockRequest = MockPutRequest()
         let request = mockRequest.request
 

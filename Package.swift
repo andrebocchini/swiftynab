@@ -3,11 +3,11 @@
 import PackageDescription
 
 #if os(Linux)
-let platforms: [SupportedPlatform]? = nil
+    let platforms: [SupportedPlatform]? = nil
 #else
-let platforms: [SupportedPlatform]? = [
-    .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)
-]
+    let platforms: [SupportedPlatform]? = [
+        .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)
+    ]
 #endif
 
 let package = Package(

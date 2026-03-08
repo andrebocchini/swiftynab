@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Update Transactions Request") struct UpdateTransactionsRequestTests {
-    @Test("Request uses PATCH method with transaction body for bulk update") func updateTransactionsRequest() {
+@Suite("Update Transactions Request")
+struct UpdateTransactionsRequestTests {
+    @Test("Request uses PATCH method with transaction body for bulk update")
+    func updateTransactionsRequest() {
         let transaction1 = SaveTransactionWithIdOrImportId(
             id: "transaction_id_1",
             importId: nil,

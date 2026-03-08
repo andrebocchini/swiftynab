@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Update Category Request") struct UpdateCategoryRequestTests {
-    @Test("Request uses PATCH method with category data in body") func updateCategoryRequest() {
+@Suite("Update Category Request")
+struct UpdateCategoryRequestTests {
+    @Test("Request uses PATCH method with category data in body")
+    func updateCategoryRequest() {
         let category = SaveCategory(name: "Updated Category Name")
 
         let request = UpdateCategoryRequest(

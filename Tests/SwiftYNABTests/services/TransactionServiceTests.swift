@@ -10,9 +10,11 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
+@Suite("Transaction Service")
 // swiftlint:disable:next type_body_length
-@Suite("Transaction Service") struct TransactionServiceTests {
-    @Test("Returns a single transaction when request succeeds") func getTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+struct TransactionServiceTests {
+    @Test("Returns a single transaction when request succeeds")
+    func getTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "id",
             date: "2022-07-07",
@@ -50,10 +52,11 @@ import Testing
         )
 
         #expect(expectedTransaction == actualResponse.0)
-        #expect(200 == actualResponse.1)
+        #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when fetching a single transaction fails") func getTransactionThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching a single transaction fails")
+    func getTransactionThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
@@ -63,7 +66,8 @@ import Testing
         }
     }
 
-    @Test("Returns transactions for a budget when request succeeds") func getTransactionsByBudgetReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a budget when request succeeds")
+    func getTransactionsByBudgetReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "id",
             date: "2022-07-07",
@@ -102,7 +106,8 @@ import Testing
         #expect(serverKnowledge == 1)
     }
 
-    @Test("Throws error when fetching transactions by budget fails") func getTransactionsByBudgetThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching transactions by budget fails")
+    func getTransactionsByBudgetThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
@@ -112,7 +117,8 @@ import Testing
         }
     }
 
-    @Test("Returns transactions for an account when request succeeds") func getTransactionsByAccountReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for an account when request succeeds")
+    func getTransactionsByAccountReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "id",
             date: "2022-07-07",
@@ -154,7 +160,8 @@ import Testing
         #expect(serverKnowledge == 1)
     }
 
-    @Test("Throws error when fetching transactions by account fails") func getTransactionsByAccountThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching transactions by account fails")
+    func getTransactionsByAccountThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
@@ -164,7 +171,8 @@ import Testing
         }
     }
 
-    @Test("Returns transactions for a category when request succeeds") func getTransactionsByCategoryReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a category when request succeeds")
+    func getTransactionsByCategoryReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = HybridTransaction(
             type: "type",
             parentTransactionId: nil,
@@ -205,7 +213,8 @@ import Testing
         #expect(serverKnowledge == 1)
     }
 
-    @Test("Throws error when fetching transactions by category fails") func getTransactionsByCategoryThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching transactions by category fails")
+    func getTransactionsByCategoryThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
@@ -215,7 +224,8 @@ import Testing
         }
     }
 
-    @Test("Returns transactions for a payee when request succeeds") func getTransactionsByPayeeReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a payee when request succeeds")
+    func getTransactionsByPayeeReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = HybridTransaction(
             type: "type",
             parentTransactionId: nil,
@@ -256,7 +266,8 @@ import Testing
         #expect(serverKnowledge == 1)
     }
 
-    @Test("Throws error when fetching transactions by payee fails") func getTransactionsByPayeeThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching transactions by payee fails")
+    func getTransactionsByPayeeThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
@@ -266,7 +277,8 @@ import Testing
         }
     }
 
-    @Test("Returns transactions for a month when request succeeds") func getTransactionsByMonthReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a month when request succeeds")
+    func getTransactionsByMonthReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = HybridTransaction(
             type: "type",
             parentTransactionId: nil,
@@ -307,7 +319,8 @@ import Testing
         #expect(serverKnowledge == 1)
     }
 
-    @Test("Throws error when fetching transactions by month fails") func getTransactionsByMonthThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching transactions by month fails")
+    func getTransactionsByMonthThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
@@ -317,7 +330,8 @@ import Testing
         }
     }
 
-    @Test("Returns updated transaction when single update request succeeds") func updateTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns updated transaction when single update request succeeds")
+    func updateTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -372,7 +386,8 @@ import Testing
         #expect(expectedTransaction == actualResponse)
     }
 
-    @Test("Throws error when single transaction update fails") func updateTransactionThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when single transaction update fails")
+    func updateTransactionThrowsErrorWhenRequestFails() async {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -402,7 +417,8 @@ import Testing
     }
 
     // swiftlint:disable:next function_body_length
-    @Test("Returns updated transactions when bulk update request succeeds") func updateTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns updated transactions when bulk update request succeeds")
+    func updateTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -462,7 +478,8 @@ import Testing
         #expect(actualResponse.2 == [])
     }
 
-    @Test("Throws error when bulk transaction update fails") func updateTransactionsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when bulk transaction update fails")
+    func updateTransactionsThrowsErrorWhenRequestFails() async {
         let updateTransaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
             importId: nil,
@@ -490,7 +507,8 @@ import Testing
         }
     }
 
-    @Test("Returns deleted transaction when delete request succeeds") func deleteTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns deleted transaction when delete request succeeds")
+    func deleteTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "transaction_id",
             date: "2022-07-07",
@@ -528,7 +546,8 @@ import Testing
         #expect(actualResponse == expectedTransaction)
     }
 
-    @Test("Throws error when deleting a transaction fails") func deleteTransactionsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when deleting a transaction fails")
+    func deleteTransactionsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
@@ -542,7 +561,8 @@ import Testing
     }
 
     // swiftlint:disable:next function_body_length
-    @Test("Returns created transaction when single create request succeeds") func createTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns created transaction when single create request succeeds")
+    func createTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let newTransaction = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -599,7 +619,8 @@ import Testing
         #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when single transaction creation fails") func createTransactionThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when single transaction creation fails")
+    func createTransactionThrowsErrorWhenRequestFails() async {
         let newTransaction = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -628,7 +649,8 @@ import Testing
     }
 
     // swiftlint:disable:next function_body_length
-    @Test("Returns created transactions when bulk create request succeeds") func createTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns created transactions when bulk create request succeeds")
+    func createTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let newTransaction1 = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -729,7 +751,8 @@ import Testing
         #expect(actualResponse.2 == [])
     }
 
-    @Test("Throws error when bulk transaction creation fails") func createTransactionsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when bulk transaction creation fails")
+    func createTransactionsThrowsErrorWhenRequestFails() async {
         let newTransaction = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,
@@ -757,7 +780,8 @@ import Testing
         }
     }
 
-    @Test("Returns transaction IDs when import request succeeds") func importTransactionsReturnsIdsWhenRequestSucceeds() async throws {
+    @Test("Returns transaction IDs when import request succeeds")
+    func importTransactionsReturnsIdsWhenRequestSucceeds() async throws {
         let expectedResponse = ImportTransactionsRequest.Response(
             transactionIds: ["transaction_id_1", "transaction_id_2"]
         )
@@ -768,7 +792,8 @@ import Testing
         #expect(actualResponse == ["transaction_id_1", "transaction_id_2"])
     }
 
-    @Test("Throws error when importing transactions fails") func importTransactionsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when importing transactions fails")
+    func importTransactionsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)

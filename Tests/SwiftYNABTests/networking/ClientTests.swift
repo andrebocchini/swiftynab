@@ -8,13 +8,15 @@
 
 import Foundation
 #if canImport(FoundationNetworking)
-import FoundationNetworking
+    import FoundationNetworking
 #endif
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Client") struct ClientTests {
-    @Test("Throws an HTTP error when the response has a non-success status code") func httpErrorThrowsHTTPError() async {
+@Suite("Client")
+struct ClientTests {
+    @Test("Throws an HTTP error when the response has a non-success status code")
+    func httpErrorThrowsHTTPError() async {
         let mockURLResponse = HTTPURLResponse(
             url: URL(string: "https://www.youneedabudget.com")!,
             statusCode: 400,
@@ -36,7 +38,8 @@ import Testing
         }
     }
 
-    @Test("Throws a decoding error when the response cannot be parsed") func nonParseableResponseThrowsDecodingError() async {
+    @Test("Throws a decoding error when the response cannot be parsed")
+    func nonParseableResponseThrowsDecodingError() async {
         let mockURLResponse = URLResponse(
             url: URL(string: "https://www.youneedabudget.com")!,
             mimeType: nil,

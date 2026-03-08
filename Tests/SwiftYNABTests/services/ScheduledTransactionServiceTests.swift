@@ -11,8 +11,10 @@ import Testing
 @testable import SwiftYNAB
 
 // swiftlint:disable:next type_body_length
-@Suite("Scheduled Transaction Service") struct ScheduledTransactionServiceTests {
-    @Test("Returns a single scheduled transaction when request succeeds") func getScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+@Suite("Scheduled Transaction Service")
+struct ScheduledTransactionServiceTests {
+    @Test("Returns a single scheduled transaction when request succeeds")
+    func getScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let expectedTransaction = ScheduledTransactionDetail(
             id: "id",
             dateFirst: "2022-07-07",
@@ -43,7 +45,8 @@ import Testing
         #expect(expectedTransaction == actualResponse)
     }
 
-    @Test("Throws error when fetching a single scheduled transaction fails") func getScheduledTransactionThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching a single scheduled transaction fails")
+    func getScheduledTransactionThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = ScheduledTransactionService(client: client)
@@ -56,7 +59,8 @@ import Testing
         }
     }
 
-    @Test("Returns all scheduled transactions for a budget when request succeeds") func getScheduledTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns all scheduled transactions for a budget when request succeeds")
+    func getScheduledTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = ScheduledTransactionDetail(
             id: "id",
             dateFirst: "2022-07-07",
@@ -89,7 +93,8 @@ import Testing
         #expect(serverKnowledge == 1)
     }
 
-    @Test("Throws error when fetching all scheduled transactions fails") func getScheduledTransactionsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching all scheduled transactions fails")
+    func getScheduledTransactionsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = ScheduledTransactionService(client: client)
@@ -99,7 +104,8 @@ import Testing
         }
     }
 
-    @Test("Returns created scheduled transaction when request succeeds") func createScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns created scheduled transaction when request succeeds")
+    func createScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let newScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -142,7 +148,8 @@ import Testing
         #expect(expectedScheduledTransaction == actualResponse)
     }
 
-    @Test("Throws error when creating a scheduled transaction fails") func createScheduledTransactionThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when creating a scheduled transaction fails")
+    func createScheduledTransactionThrowsErrorWhenRequestFails() async {
         let newScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -166,7 +173,8 @@ import Testing
         }
     }
 
-    @Test("Returns updated scheduled transaction when request succeeds") func updateScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns updated scheduled transaction when request succeeds")
+    func updateScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let updateScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -210,7 +218,8 @@ import Testing
         #expect(expectedScheduledTransaction == actualResponse)
     }
 
-    @Test("Throws error when updating a scheduled transaction fails") func updateScheduledTransactionThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when updating a scheduled transaction fails")
+    func updateScheduledTransactionThrowsErrorWhenRequestFails() async {
         let updateScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
             date: Date(),
@@ -235,7 +244,8 @@ import Testing
         }
     }
 
-    @Test("Returns deleted scheduled transaction when request succeeds") func deleteScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
+    @Test("Returns deleted scheduled transaction when request succeeds")
+    func deleteScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let expectedScheduledTransaction = ScheduledTransactionDetail(
             id: "scheduled_transaction_id",
             dateFirst: "2022-07-07",
@@ -267,7 +277,8 @@ import Testing
         #expect(expectedScheduledTransaction == actualResponse)
     }
 
-    @Test("Throws error when deleting a scheduled transaction fails") func deleteScheduledTransactionThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when deleting a scheduled transaction fails")
+    func deleteScheduledTransactionThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = ScheduledTransactionService(client: client)

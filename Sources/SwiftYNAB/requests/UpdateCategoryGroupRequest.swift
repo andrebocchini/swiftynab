@@ -32,10 +32,6 @@ extension UpdateCategoryGroupRequest: Request {
 
 struct PatchCategoryGroupWrapper: Codable, Equatable {
     let categoryGroup: SaveCategoryGroup
-
-    init(categoryGroup: SaveCategoryGroup) {
-        self.categoryGroup = categoryGroup
-    }
 }
 
 extension UpdateCategoryGroupRequest {

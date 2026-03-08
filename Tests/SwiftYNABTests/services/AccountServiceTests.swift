@@ -10,8 +10,10 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Account Service") struct AccountServiceTests {
-    @Test("Returns account when request succeeds") func getAccountReturnsAccountWhenRequestSucceeds() async throws {
+@Suite("Account Service")
+struct AccountServiceTests {
+    @Test("Returns account when request succeeds")
+    func getAccountReturnsAccountWhenRequestSucceeds() async throws {
         let expectedAccount = Account(
             id: "account_id",
             name: "name",
@@ -43,7 +45,8 @@ import Testing
         #expect(expectedAccount == actualResponse)
     }
 
-    @Test("Throws error when fetching account fails") func geAccountThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching account fails")
+    func geAccountThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)
@@ -53,7 +56,8 @@ import Testing
         }
     }
 
-    @Test("Returns accounts list when request succeeds") func accountsReturnsAccountsWhenRequestSucceeds() async throws {
+    @Test("Returns accounts list when request succeeds")
+    func accountsReturnsAccountsWhenRequestSucceeds() async throws {
         let expectedAccount = Account(
             id: "account_id",
             name: "name",
@@ -89,7 +93,8 @@ import Testing
         #expect(expectedAccount == actualResponse.accounts[0])
     }
 
-    @Test("Throws HTTP error when fetching accounts fails") func geAccountsThrowsHttpErrorWhenRequestFails() async {
+    @Test("Throws HTTP error when fetching accounts fails")
+    func geAccountsThrowsHttpErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)
@@ -99,7 +104,8 @@ import Testing
         }
     }
 
-    @Test("Throws API error when fetching accounts fails with expired trial") func geAccountsThrowsApiErrorWhenRequestFails() async {
+    @Test("Throws API error when fetching accounts fails with expired trial")
+    func geAccountsThrowsApiErrorWhenRequestFails() async {
         let errorDetails = ErrorDetail(
             id: "403.2",
             name: "trial_expired",
@@ -114,7 +120,8 @@ import Testing
         }
     }
 
-    @Test("Returns newly created budget account when request succeeds") func newBudgetAccountsReturnsAccountsWhenRequestSucceeds() async throws {
+    @Test("Returns newly created budget account when request succeeds")
+    func newBudgetAccountsReturnsAccountsWhenRequestSucceeds() async throws {
         let expectedAccount = Account(
             id: "account_id",
             name: "account",
@@ -148,7 +155,8 @@ import Testing
         #expect(expectedAccount == actualResponse)
     }
 
-    @Test("Throws error when creating budget account fails") func newBudgetAccountThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when creating budget account fails")
+    func newBudgetAccountThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)

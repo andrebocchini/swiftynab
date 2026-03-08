@@ -20,8 +20,10 @@ struct SaveScheduledTransactionRequest {
         update: Bool = false,
         scheduledTransactionId: String? = nil
     ) {
-        precondition(!update || scheduledTransactionId != nil,
-                     "scheduledTransactionId is required when update is true")
+        precondition(
+            !update || scheduledTransactionId != nil,
+            "scheduledTransactionId is required when update is true"
+        )
         self.budgetId = budgetId
         self.transaction = transaction
         self.update = update

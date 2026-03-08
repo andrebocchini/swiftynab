@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Money Movements Request") struct MoneyMovementsRequestTests {
-    @Test("Path includes budget ID for listing money movements") func moneyMovementsRequest() {
+@Suite("Money Movements Request")
+struct MoneyMovementsRequestTests {
+    @Test("Path includes budget ID for listing money movements")
+    func moneyMovementsRequest() {
         let request = MoneyMovementsRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99"
         )

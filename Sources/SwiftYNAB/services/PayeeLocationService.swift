@@ -39,7 +39,10 @@ extension PayeeLocationService: PayeeLocationServiceType {
     ///    - payeeLocationId: The id of the payee location
     ///
     /// - Returns: A single payee location
-    public func payeeLocation(budgetId: String, payeeLocationId: String) async throws -> PayeeLocation {
+    public func payeeLocation(
+        budgetId: String,
+        payeeLocationId: String
+    ) async throws -> PayeeLocation {
         let request = PayeeLocationRequest(budgetId: budgetId, payeeLocationId: payeeLocationId)
         let response = try await client.perform(request)
         return response.payeeLocation

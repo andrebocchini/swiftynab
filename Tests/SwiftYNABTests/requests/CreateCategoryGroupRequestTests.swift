@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Create Category Group Request") struct CreateCategoryGroupRequestTests {
-    @Test("Request uses POST method with category group data in body") func createCategoryGroupRequest() throws {
+@Suite("Create Category Group Request")
+struct CreateCategoryGroupRequestTests {
+    @Test("Request uses POST method with category group data in body")
+    func createCategoryGroupRequest() throws {
         let categoryGroup = SaveCategoryGroup(name: "New Group")
 
         let request = CreateCategoryGroupRequest(

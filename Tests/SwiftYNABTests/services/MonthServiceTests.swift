@@ -10,8 +10,10 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Month Service") struct MonthServiceTests {
-    @Test("Returns budget months when request succeeds") func monthsReturnsMonthsWhenRequestSucceeds() async throws {
+@Suite("Month Service")
+struct MonthServiceTests {
+    @Test("Returns budget months when request succeeds")
+    func monthsReturnsMonthsWhenRequestSucceeds() async throws {
         let expectedMonth = MonthSummary(
             month: "april",
             note: nil,
@@ -35,7 +37,8 @@ import Testing
         #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when fetching budget months fails") func monthsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching budget months fails")
+    func monthsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = MonthService(client: client)
@@ -45,7 +48,8 @@ import Testing
         }
     }
 
-    @Test("Returns month detail when request succeeds") func monthReturnsMonthWhenRequestSucceeds() async throws {
+    @Test("Returns month detail when request succeeds")
+    func monthReturnsMonthWhenRequestSucceeds() async throws {
         let expectedMonth = MonthDetail(
             month: "april",
             note: nil,
@@ -65,7 +69,8 @@ import Testing
         #expect(expectedMonth == actualResponse)
     }
 
-    @Test("Throws error when fetching month detail fails") func monthThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching month detail fails")
+    func monthThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = MonthService(client: client)

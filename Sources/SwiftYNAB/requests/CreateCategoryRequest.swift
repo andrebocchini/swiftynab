@@ -31,10 +31,6 @@ extension CreateCategoryRequest: Request {
 
 struct PostCategoryWrapper: Codable, Equatable {
     let category: SaveCategory
-
-    init(category: SaveCategory) {
-        self.category = category
-    }
 }
 
 extension CreateCategoryRequest {

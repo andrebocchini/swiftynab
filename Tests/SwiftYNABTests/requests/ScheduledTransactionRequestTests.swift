@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Scheduled Transaction Request") struct ScheduledTransactionRequestTests {
-    @Test("Path includes budget ID and scheduled transaction ID") func scheduledTransactionRequest() {
+@Suite("Scheduled Transaction Request")
+struct ScheduledTransactionRequestTests {
+    @Test("Path includes budget ID and scheduled transaction ID")
+    func scheduledTransactionRequest() {
         let request = ScheduledTransactionRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             transactionId: "6aa65ae8-919d-481b-8bd0-6d125dc97016"

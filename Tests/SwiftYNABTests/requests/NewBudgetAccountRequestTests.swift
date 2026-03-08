@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("New Budget Account Request") struct NewBudgetAccountRequestTests {
-    @Test("Request uses POST method with account details in body") func newBudgetAccountRequest() throws {
+@Suite("New Budget Account Request")
+struct NewBudgetAccountRequestTests {
+    @Test("Request uses POST method with account details in body")
+    func newBudgetAccountRequest() throws {
         let request = NewBudgetAccountRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             name: "name",
@@ -29,7 +31,10 @@ import Testing
         )
         let serializer = Serializer()
         let body = try #require(request.body)
-        let decodedBody = try serializer.decode(NewBudgetAccountRequest.PostAccountWrapper.self, from: body)
+        let decodedBody = try serializer.decode(
+            NewBudgetAccountRequest.PostAccountWrapper.self,
+            from: body
+        )
         #expect(decodedBody == expectedBody)
     }
 }

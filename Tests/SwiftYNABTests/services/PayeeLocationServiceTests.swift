@@ -10,8 +10,10 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Payee Location Service") struct PayeeLocationServiceTests {
-    @Test("Returns all payee locations when request succeeds") func payeeLocationsReturnsLocationsWhenRequestSucceeds() async throws {
+@Suite("Payee Location Service")
+struct PayeeLocationServiceTests {
+    @Test("Returns all payee locations when request succeeds")
+    func payeeLocationsReturnsLocationsWhenRequestSucceeds() async throws {
         let expectedLocation = PayeeLocation(
             id: "id",
             payeeId: "payee_id",
@@ -28,7 +30,8 @@ import Testing
         #expect(expectedLocation == actualResponse[0])
     }
 
-    @Test("Throws error when fetching all payee locations fails") func payeeLocationsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching all payee locations fails")
+    func payeeLocationsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = PayeeLocationService(client: client)
@@ -38,7 +41,8 @@ import Testing
         }
     }
 
-    @Test("Returns a single payee location when request succeeds") func payeeLocationReturnsLocationWhenRequestSucceeds() async throws {
+    @Test("Returns a single payee location when request succeeds")
+    func payeeLocationReturnsLocationWhenRequestSucceeds() async throws {
         let expectedLocation = PayeeLocation(
             id: "id",
             payeeId: "payee_id",
@@ -57,7 +61,8 @@ import Testing
         #expect(expectedLocation == actualResponse)
     }
 
-    @Test("Throws error when fetching a single payee location fails") func payeeLocationThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching a single payee location fails")
+    func payeeLocationThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = PayeeLocationService(client: client)
@@ -67,7 +72,8 @@ import Testing
         }
     }
 
-    @Test("Returns locations for a specific payee when request succeeds") func locationsForPayeeReturnsLocationsWhenRequestSucceeds() async throws {
+    @Test("Returns locations for a specific payee when request succeeds")
+    func locationsForPayeeReturnsLocationsWhenRequestSucceeds() async throws {
         let expectedLocation = PayeeLocation(
             id: "id",
             payeeId: "payee_id",
@@ -87,7 +93,8 @@ import Testing
         #expect(expectedLocation == actualResponse[0])
     }
 
-    @Test("Throws error when fetching locations for a specific payee fails") func locationsForPayeeThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching locations for a specific payee fails")
+    func locationsForPayeeThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = PayeeLocationService(client: client)

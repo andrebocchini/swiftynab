@@ -6,12 +6,14 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import Testing
 import Foundation
+import Testing
 @testable import SwiftYNAB
 
-@Suite("Create Transaction Request") struct CreateTransactionRequestTests {
-    @Test("Request body contains transaction data and uses POST method") func createTransactionRequest() throws {
+@Suite("Create Transaction Request")
+struct CreateTransactionRequestTests {
+    @Test("Request body contains transaction data and uses POST method")
+    func createTransactionRequest() throws {
         let transaction = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,

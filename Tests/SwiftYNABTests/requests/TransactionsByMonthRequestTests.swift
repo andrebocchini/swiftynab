@@ -6,12 +6,14 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
-import Testing
 import Foundation
+import Testing
 @testable import SwiftYNAB
 
-@Suite("Transactions By Month Request") struct TransactionsByMonthRequestTests {
-    @Test("Path includes budget ID and month with no query parameters") func transactionsByMonthRequestNoQuery() {
+@Suite("Transactions By Month Request")
+struct TransactionsByMonthRequestTests {
+    @Test("Path includes budget ID and month with no query parameters")
+    func transactionsByMonthRequestNoQuery() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let month = dateFormatter.date(from: "2025-01-01")!
@@ -20,13 +22,16 @@ import Foundation
             month: month
         )
 
-        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
+        #expect(request
+            .path ==
+            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
         #expect(request.method == .get)
         #expect(request.query == nil)
         #expect(request.body == nil)
     }
 
-    @Test("Request includes since date, type, and last knowledge as query parameters") func transactionsByMonthRequestWithQuery() {
+    @Test("Request includes since date, type, and last knowledge as query parameters")
+    func transactionsByMonthRequestWithQuery() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let month = dateFormatter.date(from: "2025-01-01")!
@@ -39,7 +44,9 @@ import Foundation
             lastKnowledgeOfServer: 123
         )
 
-        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
+        #expect(request
+            .path ==
+            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
         #expect(request.method == .get)
         #expect(request.query != nil)
         #expect(request.body == nil)

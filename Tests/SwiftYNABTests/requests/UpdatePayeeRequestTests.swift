@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Update Payee Request") struct UpdatePayeeRequestTests {
-    @Test("Request uses PATCH method with payee data in body") func updatePayeeRequest() {
+@Suite("Update Payee Request")
+struct UpdatePayeeRequestTests {
+    @Test("Request uses PATCH method with payee data in body")
+    func updatePayeeRequest() {
         let payee = SavePayee(name: "Updated Payee Name")
 
         let request = UpdatePayeeRequest(

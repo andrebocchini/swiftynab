@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Create Transactions Request") struct CreateTransactionsRequestTests {
-    @Test("Request uses POST method with multiple transactions in body") func createTransactionsRequest() {
+@Suite("Create Transactions Request")
+struct CreateTransactionsRequestTests {
+    @Test("Request uses POST method with multiple transactions in body")
+    func createTransactionsRequest() {
         let transaction1 = SaveTransactionWithIdOrImportId(
             id: nil,
             importId: nil,

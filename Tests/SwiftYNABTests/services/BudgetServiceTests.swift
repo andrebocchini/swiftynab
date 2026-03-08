@@ -10,8 +10,10 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Budget Service") struct BudgetServiceTests {
-    @Test("Returns budget summaries when request succeeds") func getBudgetsReturnsBudgetsWhenRequestSucceeds() async throws {
+@Suite("Budget Service")
+struct BudgetServiceTests {
+    @Test("Returns budget summaries when request succeeds")
+    func getBudgetsReturnsBudgetsWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -45,7 +47,8 @@ import Testing
         #expect(expectedBudget == actualResponse[0])
     }
 
-    @Test("Throws error when fetching budget summaries fails") func getBudgetsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching budget summaries fails")
+    func getBudgetsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = BudgetService(client: client)
@@ -55,7 +58,8 @@ import Testing
         }
     }
 
-    @Test("Returns budget detail when request succeeds") func getBudgetReturnsBudgetWhenRequestSucceeds() async throws {
+    @Test("Returns budget detail when request succeeds")
+    func getBudgetReturnsBudgetWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -98,7 +102,8 @@ import Testing
         #expect(expectedResponse.serverKnowledge == actualResponse.1)
     }
 
-    @Test("Throws error when fetching budget detail fails") func getBudgetThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching budget detail fails")
+    func getBudgetThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = BudgetService(client: client)
@@ -108,7 +113,8 @@ import Testing
         }
     }
 
-    @Test("Returns budget settings when request succeeds") func getBudgetSettingsReturnsBudgetSettingsWhenRequestSucceeds() async throws {
+    @Test("Returns budget settings when request succeeds")
+    func getBudgetSettingsReturnsBudgetSettingsWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -132,7 +138,8 @@ import Testing
         #expect(expectedSettings == actualResponse)
     }
 
-    @Test("Throws error when fetching budget settings fails") func getBudgetSettingsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching budget settings fails")
+    func getBudgetSettingsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = BudgetService(client: client)

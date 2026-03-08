@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Category By Month Request") struct CategoryByMonthRequestTests {
-    @Test("Path includes budget ID, month, and category ID") func categoryByMonthRequest() {
+@Suite("Category By Month Request")
+struct CategoryByMonthRequestTests {
+    @Test("Path includes budget ID, month, and category ID")
+    func categoryByMonthRequest() {
         let request = CategoryByMonthRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             month: "2019-08-01",

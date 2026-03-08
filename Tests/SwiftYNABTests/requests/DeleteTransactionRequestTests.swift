@@ -10,8 +10,10 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Delete Transaction Request") struct DeleteTransactionRequestTests {
-    @Test("Request uses DELETE method with transaction path") func deleteTransactionRequest() throws {
+@Suite("Delete Transaction Request")
+struct DeleteTransactionRequestTests {
+    @Test("Request uses DELETE method with transaction path")
+    func deleteTransactionRequest() throws {
         let request = DeleteTransactionRequest(
             budgetId: "budget_id",
             transactionId: "transaction_id"

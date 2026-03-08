@@ -9,8 +9,10 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("User Request") struct UserRequestTests {
-    @Test("Request targets user endpoint with GET method") func userRequest() {
+@Suite("User Request")
+struct UserRequestTests {
+    @Test("Request targets user endpoint with GET method")
+    func userRequest() {
         let request = UserRequest()
         #expect(request.path == "/v1/user")
         #expect(request.method == .get)

@@ -10,20 +10,25 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Request Method") struct RequestMethodTests {
-    @Test("GET method has correct raw value") func get() {
+@Suite("Request Method")
+struct RequestMethodTests {
+    @Test("GET method has correct raw value")
+    func get() {
         #expect(RequestMethod.get.rawValue == "GET")
     }
 
-    @Test("PATCH method has correct raw value") func patch() {
+    @Test("PATCH method has correct raw value")
+    func patch() {
         #expect(RequestMethod.patch.rawValue == "PATCH")
     }
 
-    @Test("POST method has correct raw value") func post() {
+    @Test("POST method has correct raw value")
+    func post() {
         #expect(RequestMethod.post.rawValue == "POST")
     }
 
-    @Test("PUT method has correct raw value") func put() {
+    @Test("PUT method has correct raw value")
+    func put() {
         #expect(RequestMethod.put.rawValue == "PUT")
     }
 }

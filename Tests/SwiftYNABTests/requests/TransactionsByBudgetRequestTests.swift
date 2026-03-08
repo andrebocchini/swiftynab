@@ -6,12 +6,14 @@
 //  Copyright © 2022 Andre Bocchini. All rights reserved.
 //
 
-import Testing
 import Foundation
+import Testing
 @testable import SwiftYNAB
 
-@Suite("Transactions By Budget Request") struct TransactionsByBudgetRequestTests {
-    @Test("Path includes budget ID with no query parameters") func budgetTransactionsNoQuery() {
+@Suite("Transactions By Budget Request")
+struct TransactionsByBudgetRequestTests {
+    @Test("Path includes budget ID with no query parameters")
+    func budgetTransactionsNoQuery() {
         let request = TransactionsByBudgetRequest(budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
         #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
         #expect(request.method == .get)
@@ -19,7 +21,8 @@ import Foundation
         #expect(request.body == nil)
     }
 
-    @Test("Request includes since date, type, and last knowledge as query parameters") func budgetTransactionsWithQuery() {
+    @Test("Request includes since date, type, and last knowledge as query parameters")
+    func budgetTransactionsWithQuery() {
         let date = Date(timeIntervalSince1970: 1_556_717_342.216656)
         let request = TransactionsByBudgetRequest(
             budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

@@ -10,8 +10,11 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Category Service") struct CategoryServiceTests {
-    @Test("Returns category groups with categories when request succeeds") func categoriesReturnsCategoriesWhenRequestSucceeds() async throws {
+@Suite("Category Service")
+// swiftlint:disable:next type_body_length
+struct CategoryServiceTests {
+    @Test("Returns category groups with categories when request succeeds")
+    func categoriesReturnsCategoriesWhenRequestSucceeds() async throws {
         let expectedCategoryGroup = CategoryGroupWithCategories(
             id: "id",
             name: "name",
@@ -29,10 +32,11 @@ import Testing
 
         #expect(actualResponse.0.count == 1)
         #expect(expectedCategoryGroup == actualResponse.0[0])
-        #expect(200 == actualResponse.1)
+        #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when fetching categories fails") func categoriesThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching categories fails")
+    func categoriesThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
@@ -42,7 +46,8 @@ import Testing
         }
     }
 
-    @Test("Returns a single category when request succeeds") func categoryReturnsCategoryWhenRequestSucceeds() async throws {
+    @Test("Returns a single category when request succeeds")
+    func categoryReturnsCategoryWhenRequestSucceeds() async throws {
         let expectedCategory = Category(
             id: "id",
             categoryGroupId: "group_id",
@@ -79,7 +84,8 @@ import Testing
         #expect(expectedCategory == actualResponse)
     }
 
-    @Test("Throws error when fetching a single category fails") func categoryThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching a single category fails")
+    func categoryThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
@@ -89,7 +95,8 @@ import Testing
         }
     }
 
-    @Test("Returns category for a specific month when request succeeds") func categoryWithMonthReturnsCategoryWhenRequestSucceeds() async throws {
+    @Test("Returns category for a specific month when request succeeds")
+    func categoryWithMonthReturnsCategoryWhenRequestSucceeds() async throws {
         let expectedCategory = Category(
             id: "id",
             categoryGroupId: "group_id",
@@ -130,7 +137,8 @@ import Testing
         #expect(expectedCategory == actualResponse)
     }
 
-    @Test("Throws error when fetching category by month fails") func categoryWithMonthThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching category by month fails")
+    func categoryWithMonthThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
@@ -144,7 +152,8 @@ import Testing
         }
     }
 
-    @Test("Returns updated category when update request succeeds") func updateCategoryReturnsCategoryWhenRequestSucceeds() async throws {
+    @Test("Returns updated category when update request succeeds")
+    func updateCategoryReturnsCategoryWhenRequestSucceeds() async throws {
         let expectedCategory = Category(
             id: "id",
             categoryGroupId: "group_id",
@@ -186,10 +195,11 @@ import Testing
         )
 
         #expect(expectedCategory == actualResponse.0)
-        #expect(200 == actualResponse.1)
+        #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when updating category fails") func updateCategoryThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when updating category fails")
+    func updateCategoryThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
@@ -203,7 +213,8 @@ import Testing
         }
     }
 
-    @Test("Returns updated category when updating by month succeeds") func updateCategoryByMonthReturnsCategoryWhenRequestSucceeds() async throws {
+    @Test("Returns updated category when updating by month succeeds")
+    func updateCategoryByMonthReturnsCategoryWhenRequestSucceeds() async throws {
         let expectedCategory = Category(
             id: "id",
             categoryGroupId: "group_id",
@@ -245,7 +256,8 @@ import Testing
         #expect(expectedCategory == actualResponse)
     }
 
-    @Test("Throws error when updating category by month fails") func updateCategoryByMonthThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when updating category by month fails")
+    func updateCategoryByMonthThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
@@ -262,7 +274,8 @@ import Testing
 
     // MARK: - Create Category
 
-    @Test("Returns created category when create request succeeds") func createCategoryReturnsCategoryWhenRequestSucceeds() async throws {
+    @Test("Returns created category when create request succeeds")
+    func createCategoryReturnsCategoryWhenRequestSucceeds() async throws {
         let expectedCategory = Category(
             id: "id",
             categoryGroupId: "group_id",
@@ -303,10 +316,11 @@ import Testing
         )
 
         #expect(expectedCategory == actualResponse.0)
-        #expect(200 == actualResponse.1)
+        #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when creating category fails") func createCategoryThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when creating category fails")
+    func createCategoryThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
@@ -321,7 +335,8 @@ import Testing
 
     // MARK: - Create Category Group
 
-    @Test("Returns created category group when create request succeeds") func createCategoryGroupReturnsCategoryGroupWhenRequestSucceeds() async throws {
+    @Test("Returns created category group when create request succeeds")
+    func createCategoryGroupReturnsCategoryGroupWhenRequestSucceeds() async throws {
         let expectedCategoryGroup = CategoryGroup(
             id: "id",
             name: "name",
@@ -340,10 +355,11 @@ import Testing
         )
 
         #expect(expectedCategoryGroup == actualResponse.0)
-        #expect(200 == actualResponse.1)
+        #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when creating category group fails") func createCategoryGroupThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when creating category group fails")
+    func createCategoryGroupThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
@@ -358,7 +374,8 @@ import Testing
 
     // MARK: - Update Category Group
 
-    @Test("Returns updated category group when update request succeeds") func updateCategoryGroupReturnsCategoryGroupWhenRequestSucceeds() async throws {
+    @Test("Returns updated category group when update request succeeds")
+    func updateCategoryGroupReturnsCategoryGroupWhenRequestSucceeds() async throws {
         let expectedCategoryGroup = CategoryGroup(
             id: "id",
             name: "updated name",
@@ -378,10 +395,11 @@ import Testing
         )
 
         #expect(expectedCategoryGroup == actualResponse.0)
-        #expect(200 == actualResponse.1)
+        #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when updating category group fails") func updateCategoryGroupThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when updating category group fails")
+    func updateCategoryGroupThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = CategoryService(client: client)
