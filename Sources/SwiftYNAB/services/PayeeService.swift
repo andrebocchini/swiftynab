@@ -21,19 +21,19 @@ extension PayeeService: PayeeServiceType {
     /// Returns all payees
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - lastKnowledgeOfServer: If provided, only entities that have changed since
     /// `lastKnowledgeOfServer`
     ///    will be included.
     ///
     /// - Returns: A list of payees
     public func payees(
-        budgetId: String,
+        planId: String,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [Payee] {
         let request = PayeesRequest(
-            planId: budgetId,
+            planId: planId,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
@@ -43,15 +43,15 @@ extension PayeeService: PayeeServiceType {
     /// Returns a single payee.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - lastKnowledgeOfServer: If provided, only entities that have changed since
     /// `lastKnowledgeOfServer`
     ///    will be included.
     ///
     /// - Returns: A single payee
-    public func payee(budgetId: String, payeeId: String) async throws -> Payee {
-        let request = PayeeRequest(planId: budgetId, payeeId: payeeId)
+    public func payee(planId: String, payeeId: String) async throws -> Payee {
+        let request = PayeeRequest(planId: planId, payeeId: payeeId)
         let response = try await client.perform(request)
         return response.payee
     }
@@ -59,19 +59,19 @@ extension PayeeService: PayeeServiceType {
     /// Updates a single payee.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - payeeId: The id of the payee being update
     ///    - payee: The details of the payee that need to be updated
     ///
     /// - Returns: A single payee and the last server knowledge
     public func updatePayee(
-        budgetId: String,
+        planId: String,
         payeeId: String,
         payee: SavePayee
     ) async throws -> (Payee, ServerKnowledge) {
         let request = UpdatePayeeRequest(
-            planId: budgetId,
+            planId: planId,
             payeeId: payeeId,
             payee: payee
         )

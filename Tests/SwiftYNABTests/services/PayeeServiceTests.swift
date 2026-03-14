@@ -18,7 +18,7 @@ struct PayeeServiceTests {
         let expectedResponse = PayeesRequest.Response(payees: [expectedPayee], serverKnowledge: 1)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeService(client: client)
-        let actualResponse = try await service.payees(budgetId: "budget_id")
+        let actualResponse = try await service.payees(planId: "budget_id")
 
         #expect(actualResponse.count == 1)
         #expect(expectedPayee == actualResponse[0])
@@ -31,7 +31,7 @@ struct PayeeServiceTests {
         let service = PayeeService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.payees(budgetId: "budget_id")
+            try await service.payees(planId: "budget_id")
         }
     }
 
@@ -41,7 +41,7 @@ struct PayeeServiceTests {
         let expectedResponse = PayeeRequest.Response(payee: expectedPayee)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeService(client: client)
-        let actualResponse = try await service.payee(budgetId: "budget_id", payeeId: "payee_id")
+        let actualResponse = try await service.payee(planId: "budget_id", payeeId: "payee_id")
 
         #expect(expectedPayee == actualResponse)
     }
@@ -53,7 +53,7 @@ struct PayeeServiceTests {
         let service = PayeeService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.payee(budgetId: "budget_id", payeeId: "payee_id")
+            try await service.payee(planId: "budget_id", payeeId: "payee_id")
         }
     }
 
@@ -67,7 +67,7 @@ struct PayeeServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeService(client: client)
         let actualResponse = try await service.updatePayee(
-            budgetId: "budget_id",
+            planId: "budget_id",
             payeeId: "payee_id",
             payee: SavePayee(name: "name")
         )
@@ -84,7 +84,7 @@ struct PayeeServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.updatePayee(
-                budgetId: "id",
+                planId: "id",
                 payeeId: "name",
                 payee: SavePayee(name: "name")
             )

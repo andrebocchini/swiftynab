@@ -38,7 +38,7 @@ struct ScheduledTransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = ScheduledTransactionService(client: client)
         let actualResponse = try await service.scheduledTransaction(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactionId: "id"
         )
 
@@ -53,7 +53,7 @@ struct ScheduledTransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.scheduledTransaction(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transactionId: "1234"
             )
         }
@@ -86,7 +86,7 @@ struct ScheduledTransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = ScheduledTransactionService(client: client)
         let (transactions, serverKnowledge) = try await service
-            .scheduledTransactions(budgetId: "budget_id")
+            .scheduledTransactions(planId: "budget_id")
 
         #expect(transactions.count == 1)
         #expect(expectedTransaction == transactions.first)
@@ -100,7 +100,7 @@ struct ScheduledTransactionServiceTests {
         let service = ScheduledTransactionService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.scheduledTransactions(budgetId: "budget_id")
+            try await service.scheduledTransactions(planId: "budget_id")
         }
     }
 
@@ -141,7 +141,7 @@ struct ScheduledTransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = ScheduledTransactionService(client: client)
         let actualResponse = try await service.createScheduledTransaction(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transaction: newScheduledTransaction
         )
 
@@ -167,7 +167,7 @@ struct ScheduledTransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.createScheduledTransaction(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transaction: newScheduledTransaction
             )
         }
@@ -210,7 +210,7 @@ struct ScheduledTransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = ScheduledTransactionService(client: client)
         let actualResponse = try await service.updateScheduledTransaction(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactionId: "scheduled_transaction_id",
             transaction: updateScheduledTransaction
         )
@@ -237,7 +237,7 @@ struct ScheduledTransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.updateScheduledTransaction(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transactionId: "scheduled_transaction_id",
                 transaction: updateScheduledTransaction
             )
@@ -270,7 +270,7 @@ struct ScheduledTransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = ScheduledTransactionService(client: client)
         let actualResponse = try await service.deleteScheduledTransaction(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactionId: "scheduled_transaction_id"
         )
 
@@ -285,7 +285,7 @@ struct ScheduledTransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.deleteScheduledTransaction(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transactionId: "scheduled_transaction_id"
             )
         }

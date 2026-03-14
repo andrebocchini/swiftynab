@@ -33,7 +33,7 @@ struct MoneyMovementServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = MoneyMovementService(client: client)
-        let actualResponse = try await service.moneyMovements(budgetId: "budget_id")
+        let actualResponse = try await service.moneyMovements(planId: "budget_id")
 
         #expect(actualResponse.0.count == 1)
         #expect(expectedMovement == actualResponse.0[0])
@@ -47,7 +47,7 @@ struct MoneyMovementServiceTests {
         let service = MoneyMovementService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.moneyMovements(budgetId: "budget_id")
+            try await service.moneyMovements(planId: "budget_id")
         }
     }
 
@@ -73,7 +73,7 @@ struct MoneyMovementServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = MoneyMovementService(client: client)
         let actualResponse = try await service.moneyMovements(
-            budgetId: "budget_id",
+            planId: "budget_id",
             month: "2024-01-01"
         )
 
@@ -89,7 +89,7 @@ struct MoneyMovementServiceTests {
         let service = MoneyMovementService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.moneyMovements(budgetId: "budget_id", month: "2024-01-01")
+            try await service.moneyMovements(planId: "budget_id", month: "2024-01-01")
         }
     }
 
@@ -110,7 +110,7 @@ struct MoneyMovementServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = MoneyMovementService(client: client)
-        let actualResponse = try await service.moneyMovementGroups(budgetId: "budget_id")
+        let actualResponse = try await service.moneyMovementGroups(planId: "budget_id")
 
         #expect(actualResponse.0.count == 1)
         #expect(expectedGroup == actualResponse.0[0])
@@ -124,7 +124,7 @@ struct MoneyMovementServiceTests {
         let service = MoneyMovementService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.moneyMovementGroups(budgetId: "budget_id")
+            try await service.moneyMovementGroups(planId: "budget_id")
         }
     }
 
@@ -146,7 +146,7 @@ struct MoneyMovementServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = MoneyMovementService(client: client)
         let actualResponse = try await service.moneyMovementGroups(
-            budgetId: "budget_id",
+            planId: "budget_id",
             month: "2024-01-01"
         )
 
@@ -162,7 +162,7 @@ struct MoneyMovementServiceTests {
         let service = MoneyMovementService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.moneyMovementGroups(budgetId: "budget_id", month: "2024-01-01")
+            try await service.moneyMovementGroups(planId: "budget_id", month: "2024-01-01")
         }
     }
 }

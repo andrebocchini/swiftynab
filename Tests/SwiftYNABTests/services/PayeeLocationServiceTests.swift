@@ -24,7 +24,7 @@ struct PayeeLocationServiceTests {
         let expectedResponse = PayeeLocationsRequest.Response(payeeLocations: [expectedLocation])
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeLocationService(client: client)
-        let actualResponse = try await service.payeeLocations(budgetId: "budget_id")
+        let actualResponse = try await service.payeeLocations(planId: "budget_id")
 
         #expect(actualResponse.count == 1)
         #expect(expectedLocation == actualResponse[0])
@@ -37,7 +37,7 @@ struct PayeeLocationServiceTests {
         let service = PayeeLocationService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.payeeLocations(budgetId: "budget_id")
+            try await service.payeeLocations(planId: "budget_id")
         }
     }
 
@@ -54,7 +54,7 @@ struct PayeeLocationServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeLocationService(client: client)
         let actualResponse = try await service.payeeLocation(
-            budgetId: "budget_id",
+            planId: "budget_id",
             payeeLocationId: "payee_id"
         )
 
@@ -68,7 +68,7 @@ struct PayeeLocationServiceTests {
         let service = PayeeLocationService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.payeeLocation(budgetId: "budget_id", payeeLocationId: "payee_id")
+            try await service.payeeLocation(planId: "budget_id", payeeLocationId: "payee_id")
         }
     }
 
@@ -85,7 +85,7 @@ struct PayeeLocationServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeLocationService(client: client)
         let actualResponse = try await service.locationsForPayee(
-            budgetId: "budget_id",
+            planId: "budget_id",
             payeeId: "payee_id"
         )
 
@@ -100,7 +100,7 @@ struct PayeeLocationServiceTests {
         let service = PayeeLocationService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.locationsForPayee(budgetId: "budget_id", payeeId: "payee_id")
+            try await service.locationsForPayee(planId: "budget_id", payeeId: "payee_id")
         }
     }
 }

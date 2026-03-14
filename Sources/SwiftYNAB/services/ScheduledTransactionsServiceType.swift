@@ -9,27 +9,27 @@
 import Foundation
 
 protocol ScheduledTransactionServiceType: Sendable {
-    func scheduledTransaction(budgetId: String, transactionId: String) async throws
+    func scheduledTransaction(planId: String, transactionId: String) async throws
         -> ScheduledTransactionDetail
 
     func scheduledTransactions(
-        budgetId: String,
+        planId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> ([ScheduledTransactionDetail], ServerKnowledge)
 
     func createScheduledTransaction(
-        budgetId: String,
+        planId: String,
         transaction: SaveScheduledTransaction
     ) async throws -> ScheduledTransactionDetail
 
     func updateScheduledTransaction(
-        budgetId: String,
+        planId: String,
         transactionId: String,
         transaction: SaveScheduledTransaction
     ) async throws -> ScheduledTransactionDetail
 
     func deleteScheduledTransaction(
-        budgetId: String,
+        planId: String,
         transactionId: String
     ) async throws -> ScheduledTransactionDetail
 }

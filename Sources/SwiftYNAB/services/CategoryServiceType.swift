@@ -10,39 +10,39 @@ import Foundation
 
 protocol CategoryServiceType: Sendable {
     func categories(
-        budgetId: String,
+        planId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> ([CategoryGroupWithCategories], ServerKnowledge)
 
-    func category(budgetId: String, categoryId: String) async throws -> Category
+    func category(planId: String, categoryId: String) async throws -> Category
 
-    func category(budgetId: String, month: String, categoryId: String) async throws -> Category
+    func category(planId: String, month: String, categoryId: String) async throws -> Category
 
     func updateCategory(
-        budgetId: String,
+        planId: String,
         categoryId: String,
         category: SaveCategory
     ) async throws -> (Category, ServerKnowledge)
 
     func updateCategory(
-        budgetId: String,
+        planId: String,
         month: String,
         categoryId: String,
         budgeted: Int
     ) async throws -> Category
 
     func createCategory(
-        budgetId: String,
+        planId: String,
         category: SaveCategory
     ) async throws -> (Category, ServerKnowledge)
 
     func createCategoryGroup(
-        budgetId: String,
+        planId: String,
         categoryGroup: SaveCategoryGroup
     ) async throws -> (CategoryGroup, ServerKnowledge)
 
     func updateCategoryGroup(
-        budgetId: String,
+        planId: String,
         categoryGroupId: String,
         categoryGroup: SaveCategoryGroup
     ) async throws -> (CategoryGroup, ServerKnowledge)

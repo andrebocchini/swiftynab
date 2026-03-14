@@ -1,5 +1,5 @@
 //
-//  BudgetServiceTests.swift
+//  PlanServiceTests.swift
 //  SwiftYNABTests
 //
 //  Created by Andre Bocchini on 8/25/22.
@@ -10,10 +10,10 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Budget Service")
-struct BudgetServiceTests {
-    @Test("Returns budget summaries when request succeeds")
-    func getBudgetsReturnsBudgetsWhenRequestSucceeds() async throws {
+@Suite("Plan Service")
+struct PlanServiceTests {
+    @Test("Returns plan summaries when request succeeds")
+    func getPlansReturnsPlansWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -25,7 +25,7 @@ struct BudgetServiceTests {
             currencySymbol: "$",
             displaySymbol: true
         )
-        let expectedBudget = PlanSummary(
+        let expectedPlan = PlanSummary(
             id: "budget_id",
             name: "budget",
             lastModifiedOn: "2012-09-27",
@@ -35,31 +35,31 @@ struct BudgetServiceTests {
             currencyFormat: currencyFormat,
             accounts: []
         )
-        let expectedResponse = BudgetSummaryRequest.Response(
-            budgets: [expectedBudget],
-            defaultBudget: nil
+        let expectedResponse = PlanSummaryRequest.Response(
+            plans: [expectedPlan],
+            defaultPlan: nil
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
-        let service = BudgetService(client: client)
-        let actualResponse = try await service.budgets(includeAccounts: false)
+        let service = PlanService(client: client)
+        let actualResponse = try await service.plans(includeAccounts: false)
 
         #expect(actualResponse.count == 1)
-        #expect(expectedBudget == actualResponse[0])
+        #expect(expectedPlan == actualResponse[0])
     }
 
-    @Test("Throws error when fetching budget summaries fails")
-    func getBudgetsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching plan summaries fails")
+    func getPlansThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
-        let service = BudgetService(client: client)
+        let service = PlanService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.budgets(includeAccounts: false)
+            try await service.plans(includeAccounts: false)
         }
     }
 
-    @Test("Returns budget detail when request succeeds")
-    func getBudgetReturnsBudgetWhenRequestSucceeds() async throws {
+    @Test("Returns plan detail when request succeeds")
+    func getPlanReturnsPlanWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -71,7 +71,7 @@ struct BudgetServiceTests {
             currencySymbol: "$",
             displaySymbol: true
         )
-        let expectedBudget = PlanDetail(
+        let expectedPlan = PlanDetail(
             id: "budget_id",
             name: "budget_name",
             lastModifiedOn: "2012-09-27",
@@ -90,31 +90,31 @@ struct BudgetServiceTests {
             scheduledTransactions: [],
             scheduledSubtransactions: []
         )
-        let expectedResponse = BudgetDetailRequest.Response(
-            budget: expectedBudget,
+        let expectedResponse = PlanDetailRequest.Response(
+            plan: expectedPlan,
             serverKnowledge: 200
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
-        let service = BudgetService(client: client)
-        let actualResponse = try await service.budget(budgetId: "budget_id")
+        let service = PlanService(client: client)
+        let actualResponse = try await service.plan(planId: "budget_id")
 
-        #expect(expectedResponse.budget == actualResponse.0)
+        #expect(expectedResponse.plan == actualResponse.0)
         #expect(expectedResponse.serverKnowledge == actualResponse.1)
     }
 
-    @Test("Throws error when fetching budget detail fails")
-    func getBudgetThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching plan detail fails")
+    func getPlanThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
-        let service = BudgetService(client: client)
+        let service = PlanService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.budget(budgetId: "budget_id")
+            try await service.plan(planId: "budget_id")
         }
     }
 
-    @Test("Returns budget settings when request succeeds")
-    func getBudgetSettingsReturnsBudgetSettingsWhenRequestSucceeds() async throws {
+    @Test("Returns plan settings when request succeeds")
+    func getPlanSettingsReturnsPlanSettingsWhenRequestSucceeds() async throws {
         let dateFormat = DateFormat(format: "XXXX-XX-XX")
         let currencyFormat = CurrencyFormat(
             isoCode: "USD",
@@ -130,22 +130,22 @@ struct BudgetServiceTests {
             dateFormat: dateFormat,
             currencyFormat: currencyFormat
         )
-        let expectedResponse = BudgetSettingsRequest.Response(settings: expectedSettings)
+        let expectedResponse = PlanSettingsRequest.Response(settings: expectedSettings)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
-        let service = BudgetService(client: client)
-        let actualResponse = try await service.budgetSettings(budgetId: "budget_id")
+        let service = PlanService(client: client)
+        let actualResponse = try await service.planSettings(planId: "budget_id")
 
         #expect(expectedSettings == actualResponse)
     }
 
-    @Test("Throws error when fetching budget settings fails")
-    func getBudgetSettingsThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching plan settings fails")
+    func getPlanSettingsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
-        let service = BudgetService(client: client)
+        let service = PlanService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.budgetSettings(budgetId: "budget_id")
+            try await service.planSettings(planId: "budget_id")
         }
     }
 }

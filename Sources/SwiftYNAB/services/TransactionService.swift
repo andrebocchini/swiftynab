@@ -21,25 +21,25 @@ extension TransactionService: TransactionServiceType {
     /// Returns a single transaction.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget).
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan).
     ///    - transactionId: Id of the transaction.
     ///
     /// - Returns: A tuple containing a single transaction and server knowledge
     public func transaction(
-        budgetId: String,
+        planId: String,
         transactionId: String
     ) async throws -> (TransactionDetail, ServerKnowledge) {
-        let request = TransactionRequest(planId: budgetId, transactionId: transactionId)
+        let request = TransactionRequest(planId: planId, transactionId: transactionId)
         let respose = try await client.perform(request)
         return (respose.transaction, respose.serverKnowledge)
     }
 
-    /// Returns all transactions for a budget.
+    /// Returns all transactions for a plan.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - sinceDate: If specified, only transactions on or after this date will be included. The
     /// date should be ISO formatted
     ///    (e.g. 2016-12-30).
@@ -49,13 +49,13 @@ extension TransactionService: TransactionServiceType {
     ///
     /// - Returns: A tuple containing a list of transactions and server knowledge
     public func transactions(
-        budgetId: String,
+        planId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([TransactionDetail], ServerKnowledge) {
         let request = TransactionsByPlanRequest(
-            planId: budgetId,
+            planId: planId,
             sinceDate: sinceDate,
             type: type,
             lastKnowledgeOfServer: lastKnowledgeOfServer
@@ -64,11 +64,11 @@ extension TransactionService: TransactionServiceType {
         return (response.transactions, response.serverKnowledge)
     }
 
-    /// Returns all transactions for an account.
+    /// Returns all transactions for an account in a plan.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - accountId: The id of the account.
     ///    - sinceDate: If specified, only transactions on or after this date will be included. The
     /// date should be ISO formatted
@@ -79,14 +79,14 @@ extension TransactionService: TransactionServiceType {
     ///
     /// - Returns: A tuple containing a list of transactions and server knowledge
     public func transactions(
-        budgetId: String,
+        planId: String,
         accountId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([TransactionDetail], ServerKnowledge) {
         let request = TransactionsByAccountRequest(
-            planId: budgetId,
+            planId: planId,
             accountId: accountId,
             sinceDate: sinceDate,
             type: type,
@@ -96,11 +96,11 @@ extension TransactionService: TransactionServiceType {
         return (response.transactions, response.serverKnowledge)
     }
 
-    /// Returns all transactions for a category.
+    /// Returns all transactions for a category in a plan.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - categoryId: The id of the category.
     ///    - sinceDate: If specified, only transactions on or after this date will be included. The
     /// date should be ISO formatted
@@ -111,14 +111,14 @@ extension TransactionService: TransactionServiceType {
     ///
     /// - Returns: A tuple containing a list of hybrid transactions and server knowledge
     public func transactions(
-        budgetId: String,
+        planId: String,
         categoryId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([HybridTransaction], ServerKnowledge) {
         let request = TransactionsByCategoryRequest(
-            planId: budgetId,
+            planId: planId,
             categoryId: categoryId,
             sinceDate: sinceDate,
             type: type,
@@ -128,11 +128,11 @@ extension TransactionService: TransactionServiceType {
         return (response.transactions, response.serverKnowledge)
     }
 
-    /// Returns all transactions for a payee.
+    /// Returns all transactions for a payee in a plan.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - payeeId: The id of the payee.
     ///    - sinceDate: If specified, only transactions on or after this date will be included. The
     /// date should be ISO formatted
@@ -143,14 +143,14 @@ extension TransactionService: TransactionServiceType {
     ///
     /// - Returns: A tuple containing a list of hybrid transactions and server knowledge
     public func transactions(
-        budgetId: String,
+        planId: String,
         payeeId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([HybridTransaction], ServerKnowledge) {
         let request = TransactionsByPayeeRequest(
-            planId: budgetId,
+            planId: planId,
             payeeId: payeeId,
             sinceDate: sinceDate,
             type: type,
@@ -163,8 +163,8 @@ extension TransactionService: TransactionServiceType {
     /// Returns all transactions for a specific month.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - month: The month to filter transactions by.
     ///    - sinceDate: If specified, only transactions on or after this date will be included. The
     /// date should be ISO formatted
@@ -175,14 +175,14 @@ extension TransactionService: TransactionServiceType {
     ///
     /// - Returns: A tuple containing a list of hybrid transactions and server knowledge
     public func transactions(
-        budgetId: String,
+        planId: String,
         month: Date,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([HybridTransaction], ServerKnowledge) {
         let request = TransactionsByMonthRequest(
-            planId: budgetId,
+            planId: planId,
             month: month,
             sinceDate: sinceDate,
             type: type,
@@ -195,17 +195,17 @@ extension TransactionService: TransactionServiceType {
     /// Creates a single transaction.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - transaction: The transaction data to create
     ///
     /// - Returns: A tuple containing the created transaction, server knowledge, and duplicate
     /// import IDs
     public func createTransaction(
-        budgetId: String,
+        planId: String,
         transaction: SaveTransactionWithIdOrImportId
     ) async throws -> (TransactionDetail, ServerKnowledge) {
-        let request = CreateTransactionRequest(planId: budgetId, transaction: transaction)
+        let request = CreateTransactionRequest(planId: planId, transaction: transaction)
         let response = try await client.perform(request)
         return (response.transaction, response.serverKnowledge)
     }
@@ -213,17 +213,17 @@ extension TransactionService: TransactionServiceType {
     /// Creates multiple transactions.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - transactions: An array of transaction data to create
     ///
     /// - Returns: A tuple containing the created transactions, server knowledge, and duplicate
     /// import IDs
     public func createTransactions(
-        budgetId: String,
+        planId: String,
         transactions: [SaveTransactionWithIdOrImportId]
     ) async throws -> ([TransactionDetail], ServerKnowledge, [String]) {
-        let request = CreateTransactionsRequest(planId: budgetId, transactions: transactions)
+        let request = CreateTransactionsRequest(planId: planId, transactions: transactions)
         let response = try await client.perform(request)
         return (response.transactions, response.serverKnowledge, response.duplicateImportIds)
     }
@@ -231,17 +231,17 @@ extension TransactionService: TransactionServiceType {
     /// Updates multiple transactions.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - transactions: An array of transaction data to update
     ///
     /// - Returns: A tuple containing the updated transactions, server knowledge, and duplicate
     /// import IDs
     public func updateTransactions(
-        budgetId: String,
+        planId: String,
         transactions: [SaveTransactionWithIdOrImportId]
     ) async throws -> ([TransactionDetail], ServerKnowledge, [String]) {
-        let request = UpdateTransactionsRequest(planId: budgetId, transactions: transactions)
+        let request = UpdateTransactionsRequest(planId: planId, transactions: transactions)
         let response = try await client.perform(request)
         return (response.transactions, response.serverKnowledge, response.duplicateImportIds)
     }
@@ -249,18 +249,18 @@ extension TransactionService: TransactionServiceType {
     /// Updates a single transaction.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - transaction: The transaction data to update
     ///
     /// - Returns: The updated transaction
     public func updateTransaction(
-        budgetId: String,
+        planId: String,
         transactionId: String,
         transaction: SaveTransactionWithIdOrImportId
     ) async throws -> TransactionDetail {
         let request = UpdateTransactionRequest(
-            planId: budgetId,
+            planId: planId,
             transactionId: transactionId,
             transaction: transaction
         )
@@ -271,14 +271,14 @@ extension TransactionService: TransactionServiceType {
     /// Imports transactions that have been uploaded via file-based import.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///
     /// - Returns: An array of transaction IDs for the imported transactions
     public func importTransactions(
-        budgetId: String
+        planId: String
     ) async throws -> [String] {
-        let request = ImportTransactionsRequest(planId: budgetId)
+        let request = ImportTransactionsRequest(planId: planId)
         let response = try await client.perform(request)
         return response.transactionIds
     }
@@ -286,16 +286,16 @@ extension TransactionService: TransactionServiceType {
     /// Deletes a transaction.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - transactionId: The id of the transaction to delete
     ///
     /// - Returns: The deleted transaction
     public func deleteTransaction(
-        budgetId: String,
+        planId: String,
         transactionId: String
     ) async throws -> TransactionDetail {
-        let request = DeleteTransactionRequest(planId: budgetId, transactionId: transactionId)
+        let request = DeleteTransactionRequest(planId: planId, transactionId: transactionId)
         let response = try await client.perform(request)
         return response.transaction
     }

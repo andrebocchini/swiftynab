@@ -28,7 +28,7 @@ struct MonthServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = MonthService(client: client)
         let actualResponse = try await service.months(
-            budgetId: "budget_id",
+            planId: "budget_id",
             lastKnowledgeOfServer: 200
         )
 
@@ -44,7 +44,7 @@ struct MonthServiceTests {
         let service = MonthService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.months(budgetId: "budget_id", lastKnowledgeOfServer: 200)
+            try await service.months(planId: "budget_id", lastKnowledgeOfServer: 200)
         }
     }
 
@@ -64,7 +64,7 @@ struct MonthServiceTests {
         let expectedResponse = MonthRequest.Response(month: expectedMonth)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = MonthService(client: client)
-        let actualResponse = try await service.month(budgetId: "budget_id", month: "april")
+        let actualResponse = try await service.month(planId: "budget_id", month: "april")
 
         #expect(expectedMonth == actualResponse)
     }
@@ -76,7 +76,7 @@ struct MonthServiceTests {
         let service = MonthService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.month(budgetId: "budget_id", month: "april")
+            try await service.month(planId: "budget_id", month: "april")
         }
     }
 }

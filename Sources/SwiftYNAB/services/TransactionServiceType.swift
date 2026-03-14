@@ -9,18 +9,18 @@
 import Foundation
 
 protocol TransactionServiceType: Sendable {
-    func transaction(budgetId: String, transactionId: String) async throws
+    func transaction(planId: String, transactionId: String) async throws
         -> (TransactionDetail, ServerKnowledge)
 
     func transactions(
-        budgetId: String,
+        planId: String,
         sinceDate: Date?,
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> ([TransactionDetail], ServerKnowledge)
 
     func transactions(
-        budgetId: String,
+        planId: String,
         accountId: String,
         sinceDate: Date?,
         type: TransactionType?,
@@ -28,7 +28,7 @@ protocol TransactionServiceType: Sendable {
     ) async throws -> ([TransactionDetail], ServerKnowledge)
 
     func transactions(
-        budgetId: String,
+        planId: String,
         categoryId: String,
         sinceDate: Date?,
         type: TransactionType?,
@@ -36,7 +36,7 @@ protocol TransactionServiceType: Sendable {
     ) async throws -> ([HybridTransaction], ServerKnowledge)
 
     func transactions(
-        budgetId: String,
+        planId: String,
         payeeId: String,
         sinceDate: Date?,
         type: TransactionType?,
@@ -44,7 +44,7 @@ protocol TransactionServiceType: Sendable {
     ) async throws -> ([HybridTransaction], ServerKnowledge)
 
     func transactions(
-        budgetId: String,
+        planId: String,
         month: Date,
         sinceDate: Date?,
         type: TransactionType?,
@@ -52,32 +52,32 @@ protocol TransactionServiceType: Sendable {
     ) async throws -> ([HybridTransaction], ServerKnowledge)
 
     func createTransaction(
-        budgetId: String,
+        planId: String,
         transaction: SaveTransactionWithIdOrImportId
     ) async throws -> (TransactionDetail, ServerKnowledge)
 
     func createTransactions(
-        budgetId: String,
+        planId: String,
         transactions: [SaveTransactionWithIdOrImportId]
     ) async throws -> ([TransactionDetail], ServerKnowledge, [String])
 
     func updateTransactions(
-        budgetId: String,
+        planId: String,
         transactions: [SaveTransactionWithIdOrImportId]
     ) async throws -> ([TransactionDetail], ServerKnowledge, [String])
 
     func updateTransaction(
-        budgetId: String,
+        planId: String,
         transactionId: String,
         transaction: SaveTransactionWithIdOrImportId
     ) async throws -> TransactionDetail
 
     func importTransactions(
-        budgetId: String
+        planId: String
     ) async throws -> [String]
 
     func deleteTransaction(
-        budgetId: String,
+        planId: String,
         transactionId: String
     ) async throws -> TransactionDetail
 }

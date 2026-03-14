@@ -18,8 +18,8 @@ public struct YNAB {
     /// Provides access to user operations
     public let users: UserService
 
-    /// Provides access to budget operations
-    public let budgets: BudgetService
+    /// Provides access to plan operations
+    public let budgets: PlanService
 
     /// Provides access to account operations
     public let accounts: AccountService
@@ -59,7 +59,7 @@ public struct YNAB {
         )
         self.client = client
         users = UserService(client: client)
-        budgets = BudgetService(client: client)
+        budgets = PlanService(client: client)
         accounts = AccountService(client: client)
         categories = CategoryService(client: client)
         payees = PayeeService(client: client)

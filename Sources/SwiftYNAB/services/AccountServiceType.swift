@@ -9,15 +9,15 @@
 import Foundation
 
 protocol AccountServiceType: Sendable {
-    func account(budgetId: String, accountId: String) async throws -> Account
+    func account(planId: String, accountId: String) async throws -> Account
 
     func accounts(
-        budgetId: String,
+        planId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> (accounts: [Account], lastKnowledgeOfServer: ServerKnowledge)
 
-    func newBudgetAccount(
-        budgetId: String,
+    func newPlanAccount(
+        planId: String,
         name: String,
         type: AccountType,
         balance: Int

@@ -38,7 +38,7 @@ struct AccountServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = AccountService(client: client)
         let actualResponse = try await service.account(
-            budgetId: "budget_id",
+            planId: "budget_id",
             accountId: "account_id"
         )
 
@@ -52,7 +52,7 @@ struct AccountServiceTests {
         let service = AccountService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.account(budgetId: "budget_id", accountId: "account_id")
+            try await service.account(planId: "budget_id", accountId: "account_id")
         }
     }
 
@@ -85,7 +85,7 @@ struct AccountServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = AccountService(client: client)
         let actualResponse = try await service.accounts(
-            budgetId: "budget_id",
+            planId: "budget_id",
             lastKnowledgeOfServer: 1
         )
 
@@ -100,7 +100,7 @@ struct AccountServiceTests {
         let service = AccountService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.accounts(budgetId: "budget_id", lastKnowledgeOfServer: 1)
+            try await service.accounts(planId: "budget_id", lastKnowledgeOfServer: 1)
         }
     }
 
@@ -116,12 +116,12 @@ struct AccountServiceTests {
         let service = AccountService(client: client)
 
         await #expect(throws: SwiftYNABError.apiError(detail: errorDetails)) {
-            try await service.accounts(budgetId: "budget_id", lastKnowledgeOfServer: 1)
+            try await service.accounts(planId: "budget_id", lastKnowledgeOfServer: 1)
         }
     }
 
-    @Test("Returns newly created budget account when request succeeds")
-    func newBudgetAccountsReturnsAccountsWhenRequestSucceeds() async throws {
+    @Test("Returns newly created plan account when request succeeds")
+    func newPlanAccountsReturnsAccountsWhenRequestSucceeds() async throws {
         let expectedAccount = Account(
             id: "account_id",
             name: "account",
@@ -142,11 +142,11 @@ struct AccountServiceTests {
             debtEscrowAmounts: [:],
             deleted: false
         )
-        let expectedResponse = NewBudgetAccountRequest.Response(account: expectedAccount)
+        let expectedResponse = NewPlanAccountRequest.Response(account: expectedAccount)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = AccountService(client: client)
-        let actualResponse = try await service.newBudgetAccount(
-            budgetId: "budget_id",
+        let actualResponse = try await service.newPlanAccount(
+            planId: "budget_id",
             name: "account",
             type: .checking,
             balance: 0
@@ -155,15 +155,15 @@ struct AccountServiceTests {
         #expect(expectedAccount == actualResponse)
     }
 
-    @Test("Throws error when creating budget account fails")
-    func newBudgetAccountThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when creating plan account fails")
+    func newPlanAccountThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = AccountService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.newBudgetAccount(
-                budgetId: "budget_id",
+            try await service.newPlanAccount(
+                planId: "budget_id",
                 name: "account",
                 type: .checking,
                 balance: 0

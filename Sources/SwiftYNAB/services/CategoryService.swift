@@ -18,26 +18,26 @@ public struct CategoryService {
 }
 
 extension CategoryService: CategoryServiceType {
-    /// Returns a list of budget categories.
+    /// Returns a list of plan categories.
     ///
     /// Returns all categories grouped by category group. Amounts (budgeted, activity, balance,
     /// etc.)
-    /// are specific to the current budget month (UTC).
+    /// are specific to the current plan month (UTC).
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - lastKnowledgeOfServer: If provided, only entities that have changed since
     /// `lastKnowledgeOfServer`
     ///    will be included.
     ///
     /// - Returns: A list of category groups
     public func categories(
-        budgetId: String,
+        planId: String,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([CategoryGroupWithCategories], ServerKnowledge) {
         let request = CategoriesRequest(
-            planId: budgetId,
+            planId: planId,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
@@ -46,38 +46,38 @@ extension CategoryService: CategoryServiceType {
 
     /// Returns a single category.
     ///
-    /// Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC).
+    /// Amounts (budgeted, activity, balance, etc.) are specific to the current plan month (UTC).
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - categoryId: The id of the category
     ///
     /// - Returns: A single category
-    public func category(budgetId: String, categoryId: String) async throws -> Category {
-        let request = CategoryRequest(planId: budgetId, categoryId: categoryId)
+    public func category(planId: String, categoryId: String) async throws -> Category {
+        let request = CategoryRequest(planId: planId, categoryId: categoryId)
         let response = try await client.perform(request)
         return response.category
     }
 
-    /// Returns a single category for a specific budget month.
+    /// Returns a single category for a specific plan month.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
-    ///    - month: The budget month in ISO format (e.g. 2016-12-01) (“current” can also be used to
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
+    ///    - month: The plan month in ISO format (e.g. 2016-12-01) (“current” can also be used to
     /// specify the current
     ///    calendar month (UTC))
     ///    - categoryId: The id of the category
     ///
     /// - Returns: A single category
     public func category(
-        budgetId: String,
+        planId: String,
         month: String,
         categoryId: String
     ) async throws -> Category {
         let request = CategoryByMonthRequest(
-            planId: budgetId,
+            planId: planId,
             month: month,
             categoryId: categoryId
         )
@@ -88,19 +88,19 @@ extension CategoryService: CategoryServiceType {
     /// Update a category
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - categoryId: The id of the category
     ///    - category: The category details to be saved
     ///
     /// - Returns: A single category
     public func updateCategory(
-        budgetId: String,
+        planId: String,
         categoryId: String,
         category: SaveCategory
     ) async throws -> (Category, ServerKnowledge) {
         let request = UpdateCategoryRequest(
-            planId: budgetId,
+            planId: planId,
             categoryId: categoryId,
             category: category
         )
@@ -111,9 +111,9 @@ extension CategoryService: CategoryServiceType {
     /// Update a category for a specific month.
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
-    ///    - month: The budget month in ISO format (e.g. 2016-12-01) (“current” can also be used to
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
+    ///    - month: The plan month in ISO format (e.g. 2016-12-01) (“current” can also be used to
     /// specify the current
     ///    calendar month (UTC))
     ///    - categoryId: The id of the category
@@ -121,13 +121,13 @@ extension CategoryService: CategoryServiceType {
     ///
     /// - Returns: A single category
     public func updateCategory(
-        budgetId: String,
+        planId: String,
         month: String,
         categoryId: String,
         budgeted: Int
     ) async throws -> Category {
         let request = SaveMonthCategoryRequest(
-            planId: budgetId,
+            planId: planId,
             month: month,
             categoryId: categoryId,
             budgeted: budgeted
@@ -139,17 +139,17 @@ extension CategoryService: CategoryServiceType {
     /// Create a new category
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - category: The category to create. Must include `name` and `categoryGroupId`.
     ///
     /// - Returns: The created category and the server knowledge
     public func createCategory(
-        budgetId: String,
+        planId: String,
         category: SaveCategory
     ) async throws -> (Category, ServerKnowledge) {
         let request = CreateCategoryRequest(
-            planId: budgetId,
+            planId: planId,
             category: category
         )
         let response = try await client.perform(request)
@@ -159,17 +159,17 @@ extension CategoryService: CategoryServiceType {
     /// Create a new category group
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - categoryGroup: The category group to create
     ///
     /// - Returns: The created category group and the server knowledge
     public func createCategoryGroup(
-        budgetId: String,
+        planId: String,
         categoryGroup: SaveCategoryGroup
     ) async throws -> (CategoryGroup, ServerKnowledge) {
         let request = CreateCategoryGroupRequest(
-            planId: budgetId,
+            planId: planId,
             categoryGroup: categoryGroup
         )
         let response = try await client.perform(request)
@@ -179,19 +179,19 @@ extension CategoryService: CategoryServiceType {
     /// Update a category group
     ///
     /// - Parameters:
-    ///    - budgetId: The id of the budget (*last_used* can also be used to specify the last used
-    /// budget)
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
     ///    - categoryGroupId: The id of the category group
     ///    - categoryGroup: The category group details to be saved
     ///
     /// - Returns: The updated category group and the server knowledge
     public func updateCategoryGroup(
-        budgetId: String,
+        planId: String,
         categoryGroupId: String,
         categoryGroup: SaveCategoryGroup
     ) async throws -> (CategoryGroup, ServerKnowledge) {
         let request = UpdateCategoryGroupRequest(
-            planId: budgetId,
+            planId: planId,
             categoryGroupId: categoryGroupId,
             categoryGroup: categoryGroup
         )

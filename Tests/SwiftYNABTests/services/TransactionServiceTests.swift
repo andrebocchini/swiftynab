@@ -47,7 +47,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let actualResponse = try await service.transaction(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactionId: "id"
         )
 
@@ -62,12 +62,12 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.transaction(budgetId: "budget_id", transactionId: "id")
+            try await service.transaction(planId: "budget_id", transactionId: "id")
         }
     }
 
-    @Test("Returns transactions for a budget when request succeeds")
-    func getTransactionsByBudgetReturnsTransactionsWhenRequestSucceeds() async throws {
+    @Test("Returns transactions for a plan when request succeeds")
+    func getTransactionsByPlanReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = TransactionDetail(
             id: "id",
             date: "2022-07-07",
@@ -93,27 +93,27 @@ struct TransactionServiceTests {
             deleted: false,
             subtransactions: []
         )
-        let expectedResponse = TransactionsByBudgetRequest.Response(
+        let expectedResponse = TransactionsByPlanRequest.Response(
             transactions: [expectedTransaction],
             serverKnowledge: 1
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let (transactions, serverKnowledge) = try await service.transactions(budgetId: "budget_id")
+        let (transactions, serverKnowledge) = try await service.transactions(planId: "budget_id")
 
         #expect(transactions.count == 1)
         #expect(expectedTransaction == transactions.first)
         #expect(serverKnowledge == 1)
     }
 
-    @Test("Throws error when fetching transactions by budget fails")
-    func getTransactionsByBudgetThrowsErrorWhenRequestFails() async {
+    @Test("Throws error when fetching transactions by plan fails")
+    func getTransactionsByPlanThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
         let service = TransactionService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.transactions(budgetId: "budget_id")
+            try await service.transactions(planId: "budget_id")
         }
     }
 
@@ -151,7 +151,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let (transactions, serverKnowledge) = try await service.transactions(
-            budgetId: "budget_id",
+            planId: "budget_id",
             accountId: "account_id"
         )
 
@@ -167,7 +167,7 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.transactions(budgetId: "budget_id", accountId: "account_id")
+            try await service.transactions(planId: "budget_id", accountId: "account_id")
         }
     }
 
@@ -204,7 +204,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let (transactions, serverKnowledge) = try await service.transactions(
-            budgetId: "budget_id",
+            planId: "budget_id",
             categoryId: "category_id"
         )
 
@@ -220,7 +220,7 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.transactions(budgetId: "budget_id", categoryId: "category_id")
+            try await service.transactions(planId: "budget_id", categoryId: "category_id")
         }
     }
 
@@ -257,7 +257,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let (transactions, serverKnowledge) = try await service.transactions(
-            budgetId: "budget_id",
+            planId: "budget_id",
             payeeId: "payee_id"
         )
 
@@ -273,7 +273,7 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.transactions(budgetId: "budget_id", payeeId: "payee_id")
+            try await service.transactions(planId: "budget_id", payeeId: "payee_id")
         }
     }
 
@@ -310,7 +310,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let (transactions, serverKnowledge) = try await service.transactions(
-            budgetId: "budget_id",
+            planId: "budget_id",
             month: Date.now
         )
 
@@ -326,7 +326,7 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.transactions(budgetId: "budget_id", month: Date.now)
+            try await service.transactions(planId: "budget_id", month: Date.now)
         }
     }
 
@@ -378,7 +378,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let actualResponse = try await service.updateTransaction(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactionId: "transaction_id",
             transaction: updateTransaction
         )
@@ -409,7 +409,7 @@ struct TransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.updateTransaction(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transactionId: "transaction_id",
                 transaction: updateTransaction
             )
@@ -468,7 +468,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let actualResponse = try await service.updateTransactions(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactions: [updateTransaction]
         )
 
@@ -501,7 +501,7 @@ struct TransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.updateTransactions(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transactions: [updateTransaction]
             )
         }
@@ -539,7 +539,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let actualResponse = try await service.deleteTransaction(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactionId: "transaction_id"
         )
 
@@ -554,7 +554,7 @@ struct TransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.deleteTransaction(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transactionId: "transaction_id"
             )
         }
@@ -611,7 +611,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let actualResponse = try await service.createTransaction(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transaction: newTransaction
         )
 
@@ -642,7 +642,7 @@ struct TransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.createTransaction(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transaction: newTransaction
             )
         }
@@ -740,7 +740,7 @@ struct TransactionServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
         let actualResponse = try await service.createTransactions(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactions: [newTransaction1, newTransaction2]
         )
 
@@ -774,7 +774,7 @@ struct TransactionServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.createTransactions(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 transactions: [newTransaction]
             )
         }
@@ -787,7 +787,7 @@ struct TransactionServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let actualResponse = try await service.importTransactions(budgetId: "budget_id")
+        let actualResponse = try await service.importTransactions(planId: "budget_id")
 
         #expect(actualResponse == ["transaction_id_1", "transaction_id_2"])
     }
@@ -799,7 +799,7 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.importTransactions(budgetId: "budget_id")
+            try await service.importTransactions(planId: "budget_id")
         }
     }
 }

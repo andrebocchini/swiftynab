@@ -10,20 +10,20 @@ import Foundation
 
 protocol MoneyMovementServiceType: Sendable {
     func moneyMovements(
-        budgetId: String
+        planId: String
     ) async throws -> ([MoneyMovement], ServerKnowledge)
 
     func moneyMovements(
-        budgetId: String,
+        planId: String,
         month: String
     ) async throws -> ([MoneyMovement], ServerKnowledge)
 
     func moneyMovementGroups(
-        budgetId: String
+        planId: String
     ) async throws -> ([MoneyMovementGroup], ServerKnowledge)
 
     func moneyMovementGroups(
-        budgetId: String,
+        planId: String,
         month: String
     ) async throws -> ([MoneyMovementGroup], ServerKnowledge)
 }

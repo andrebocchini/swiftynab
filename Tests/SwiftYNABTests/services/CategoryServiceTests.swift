@@ -28,7 +28,7 @@ struct CategoryServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
-        let actualResponse = try await service.categories(budgetId: "budget_id")
+        let actualResponse = try await service.categories(planId: "budget_id")
 
         #expect(actualResponse.0.count == 1)
         #expect(expectedCategoryGroup == actualResponse.0[0])
@@ -42,7 +42,7 @@ struct CategoryServiceTests {
         let service = CategoryService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.categories(budgetId: "budget_id", lastKnowledgeOfServer: nil)
+            try await service.categories(planId: "budget_id", lastKnowledgeOfServer: nil)
         }
     }
 
@@ -79,7 +79,7 @@ struct CategoryServiceTests {
         let expectedResponse = CategoryRequest.Response(category: expectedCategory)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
-        let actualResponse = try await service.category(budgetId: "budget_id", categoryId: "id")
+        let actualResponse = try await service.category(planId: "budget_id", categoryId: "id")
 
         #expect(expectedCategory == actualResponse)
     }
@@ -91,7 +91,7 @@ struct CategoryServiceTests {
         let service = CategoryService(client: client)
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
-            try await service.category(budgetId: "budget_id", categoryId: "month_id")
+            try await service.category(planId: "budget_id", categoryId: "month_id")
         }
     }
 
@@ -129,7 +129,7 @@ struct CategoryServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
         let actualResponse = try await service.category(
-            budgetId: "budget_id",
+            planId: "budget_id",
             month: "april",
             categoryId: "id"
         )
@@ -145,7 +145,7 @@ struct CategoryServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.category(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 month: "april",
                 categoryId: "id"
             )
@@ -189,7 +189,7 @@ struct CategoryServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
         let actualResponse = try await service.updateCategory(
-            budgetId: "budget_id",
+            planId: "budget_id",
             categoryId: "id",
             category: SaveCategory()
         )
@@ -206,7 +206,7 @@ struct CategoryServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.updateCategory(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 categoryId: "id",
                 category: SaveCategory()
             )
@@ -247,7 +247,7 @@ struct CategoryServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
         let actualResponse = try await service.updateCategory(
-            budgetId: "budget_id",
+            planId: "budget_id",
             month: "april",
             categoryId: "id",
             budgeted: 0
@@ -264,7 +264,7 @@ struct CategoryServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.updateCategory(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 month: "april",
                 categoryId: "id",
                 budgeted: 0
@@ -311,7 +311,7 @@ struct CategoryServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
         let actualResponse = try await service.createCategory(
-            budgetId: "budget_id",
+            planId: "budget_id",
             category: SaveCategory(name: "name", categoryGroupId: "group_id")
         )
 
@@ -327,7 +327,7 @@ struct CategoryServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.createCategory(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 category: SaveCategory(name: "name", categoryGroupId: "group_id")
             )
         }
@@ -350,7 +350,7 @@ struct CategoryServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
         let actualResponse = try await service.createCategoryGroup(
-            budgetId: "budget_id",
+            planId: "budget_id",
             categoryGroup: SaveCategoryGroup(name: "name")
         )
 
@@ -366,7 +366,7 @@ struct CategoryServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.createCategoryGroup(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 categoryGroup: SaveCategoryGroup(name: "name")
             )
         }
@@ -389,7 +389,7 @@ struct CategoryServiceTests {
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = CategoryService(client: client)
         let actualResponse = try await service.updateCategoryGroup(
-            budgetId: "budget_id",
+            planId: "budget_id",
             categoryGroupId: "id",
             categoryGroup: SaveCategoryGroup(name: "updated name")
         )
@@ -406,7 +406,7 @@ struct CategoryServiceTests {
 
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.updateCategoryGroup(
-                budgetId: "budget_id",
+                planId: "budget_id",
                 categoryGroupId: "id",
                 categoryGroup: SaveCategoryGroup(name: "updated name")
             )
