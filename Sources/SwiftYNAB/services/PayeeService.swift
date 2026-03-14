@@ -33,7 +33,7 @@ extension PayeeService: PayeeServiceType {
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> [Payee] {
         let request = PayeesRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
@@ -51,7 +51,7 @@ extension PayeeService: PayeeServiceType {
     ///
     /// - Returns: A single payee
     public func payee(budgetId: String, payeeId: String) async throws -> Payee {
-        let request = PayeeRequest(budgetId: budgetId, payeeId: payeeId)
+        let request = PayeeRequest(planId: budgetId, payeeId: payeeId)
         let response = try await client.perform(request)
         return response.payee
     }
@@ -71,7 +71,7 @@ extension PayeeService: PayeeServiceType {
         payee: SavePayee
     ) async throws -> (Payee, ServerKnowledge) {
         let request = UpdatePayeeRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             payeeId: payeeId,
             payee: payee
         )

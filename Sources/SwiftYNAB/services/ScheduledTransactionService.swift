@@ -30,7 +30,7 @@ extension ScheduledTransactionService: ScheduledTransactionServiceType {
         budgetId: String,
         transactionId: String
     ) async throws -> ScheduledTransactionDetail {
-        let request = ScheduledTransactionRequest(budgetId: budgetId, transactionId: transactionId)
+        let request = ScheduledTransactionRequest(planId: budgetId, transactionId: transactionId)
         let response = try await client.perform(request)
         return response.scheduledTransaction
     }
@@ -49,7 +49,7 @@ extension ScheduledTransactionService: ScheduledTransactionServiceType {
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([ScheduledTransactionDetail], ServerKnowledge) {
         let request = ScheduledTransactionsRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
@@ -68,7 +68,7 @@ extension ScheduledTransactionService: ScheduledTransactionServiceType {
         budgetId: String,
         transaction: SaveScheduledTransaction
     ) async throws -> ScheduledTransactionDetail {
-        let request = SaveScheduledTransactionRequest(budgetId: budgetId, transaction: transaction)
+        let request = SaveScheduledTransactionRequest(planId: budgetId, transaction: transaction)
         let response = try await client.perform(request)
         return response.scheduledTransaction
     }
@@ -88,7 +88,7 @@ extension ScheduledTransactionService: ScheduledTransactionServiceType {
         transaction: SaveScheduledTransaction
     ) async throws -> ScheduledTransactionDetail {
         let request = SaveScheduledTransactionRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             transaction: transaction,
             update: true,
             scheduledTransactionId: transactionId
@@ -110,7 +110,7 @@ extension ScheduledTransactionService: ScheduledTransactionServiceType {
         transactionId: String
     ) async throws -> ScheduledTransactionDetail {
         let request = DeleteScheduledTransactionRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             scheduledTransactionId: transactionId
         )
         let response = try await client.perform(request)

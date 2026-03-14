@@ -1,5 +1,5 @@
 //
-//  TransactionsByBudgetRequestTests.swift
+//  TransactionsByPlanRequestTests.swift
 //  SwiftYNABTests
 //
 //  Created by Andre Bocchini on 7/9/22.
@@ -10,12 +10,12 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Transactions By Budget Request")
-struct TransactionsByBudgetRequestTests {
+@Suite("Transactions By Plan Request")
+struct TransactionsByPlanRequestTests {
     @Test("Path includes budget ID with no query parameters")
     func budgetTransactionsNoQuery() {
-        let request = TransactionsByBudgetRequest(budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
-        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
+        let request = TransactionsByPlanRequest(planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
+        #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
         #expect(request.method == .get)
         #expect(request.query == nil)
         #expect(request.body == nil)
@@ -24,13 +24,13 @@ struct TransactionsByBudgetRequestTests {
     @Test("Request includes since date, type, and last knowledge as query parameters")
     func budgetTransactionsWithQuery() {
         let date = Date(timeIntervalSince1970: 1_556_717_342.216656)
-        let request = TransactionsByBudgetRequest(
-            budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+        let request = TransactionsByPlanRequest(
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             sinceDate: date,
             type: .uncategorized,
             lastKnowledgeOfServer: 100
         )
-        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
+        #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
         #expect(request.method == .get)
         #expect(request.query?.count == 3)
         #expect(request.query?[0] == URLQueryItem(name: "since_date", value: "2019-05-01"))

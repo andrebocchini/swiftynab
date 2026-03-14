@@ -9,13 +9,13 @@
 import Foundation
 
 struct MoneyMovementGroupsByMonthRequest {
-    let budgetId: String
+    let planId: String
     let month: String
 }
 
 extension MoneyMovementGroupsByMonthRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/months/\(month)/money_movement_groups"
+        "/v1/plans/\(planId)/months/\(month)/money_movement_groups"
     }
 }
 

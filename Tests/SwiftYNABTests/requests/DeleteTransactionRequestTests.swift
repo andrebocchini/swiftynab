@@ -15,12 +15,12 @@ struct DeleteTransactionRequestTests {
     @Test("Request uses DELETE method with transaction path")
     func deleteTransactionRequest() throws {
         let request = DeleteTransactionRequest(
-            budgetId: "budget_id",
+            planId: "budget_id",
             transactionId: "transaction_id"
         )
 
         #expect(request.method == .delete)
         #expect(request.body == nil)
-        #expect(request.path == "/v1/budgets/budget_id/transactions/transaction_id")
+        #expect(request.path == "/v1/plans/budget_id/transactions/transaction_id")
     }
 }

@@ -14,12 +14,12 @@ struct MoneyMovementsByMonthRequestTests {
     @Test("Path includes budget ID and month for listing money movements")
     func moneyMovementsByMonthRequest() {
         let request = MoneyMovementsByMonthRequest(
-            budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             month: "2024-01-01"
         )
         #expect(request
             .path ==
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2024-01-01/money_movements")
+            "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2024-01-01/money_movements")
         #expect(request.method == .get)
         #expect(request.query == nil)
         #expect(request.body == nil)

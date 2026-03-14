@@ -9,14 +9,14 @@
 import Foundation
 
 struct UpdateCategoryGroupRequest {
-    let budgetId: String
+    let planId: String
     let categoryGroupId: String
     let categoryGroup: SaveCategoryGroup
 }
 
 extension UpdateCategoryGroupRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/category_groups/\(categoryGroupId)"
+        "/v1/plans/\(planId)/category_groups/\(categoryGroupId)"
     }
 
     var method: RequestMethod {

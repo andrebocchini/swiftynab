@@ -28,7 +28,7 @@ extension MoneyMovementService: MoneyMovementServiceType {
     public func moneyMovements(
         budgetId: String
     ) async throws -> ([MoneyMovement], ServerKnowledge) {
-        let request = MoneyMovementsRequest(budgetId: budgetId)
+        let request = MoneyMovementsRequest(planId: budgetId)
         let response = try await client.perform(request)
         return (response.moneyMovements, response.serverKnowledge)
     }
@@ -46,7 +46,7 @@ extension MoneyMovementService: MoneyMovementServiceType {
         budgetId: String,
         month: String
     ) async throws -> ([MoneyMovement], ServerKnowledge) {
-        let request = MoneyMovementsByMonthRequest(budgetId: budgetId, month: month)
+        let request = MoneyMovementsByMonthRequest(planId: budgetId, month: month)
         let response = try await client.perform(request)
         return (response.moneyMovements, response.serverKnowledge)
     }
@@ -61,7 +61,7 @@ extension MoneyMovementService: MoneyMovementServiceType {
     public func moneyMovementGroups(
         budgetId: String
     ) async throws -> ([MoneyMovementGroup], ServerKnowledge) {
-        let request = MoneyMovementGroupsRequest(budgetId: budgetId)
+        let request = MoneyMovementGroupsRequest(planId: budgetId)
         let response = try await client.perform(request)
         return (response.moneyMovementGroups, response.serverKnowledge)
     }
@@ -79,7 +79,7 @@ extension MoneyMovementService: MoneyMovementServiceType {
         budgetId: String,
         month: String
     ) async throws -> ([MoneyMovementGroup], ServerKnowledge) {
-        let request = MoneyMovementGroupsByMonthRequest(budgetId: budgetId, month: month)
+        let request = MoneyMovementGroupsByMonthRequest(planId: budgetId, month: month)
         let response = try await client.perform(request)
         return (response.moneyMovementGroups, response.serverKnowledge)
     }

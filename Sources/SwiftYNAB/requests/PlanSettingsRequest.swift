@@ -1,5 +1,5 @@
 //
-//  BudgetSettingsRequest.swift
+//  PlanSettingsRequest.swift
 //  SwiftYNAB
 //
 //  Created by Andre Bocchini on 7/8/22.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct BudgetSettingsRequest {
-    let budgetId: String
+struct PlanSettingsRequest {
+    let planId: String
 }
 
-extension BudgetSettingsRequest: Request {
+extension PlanSettingsRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/settings"
+        "/v1/plans/\(planId)/settings"
     }
 }
 
-extension BudgetSettingsRequest {
+extension PlanSettingsRequest {
     struct Response: Decodable {
         let settings: PlanSettings
     }

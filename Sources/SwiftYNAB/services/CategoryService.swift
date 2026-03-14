@@ -37,7 +37,7 @@ extension CategoryService: CategoryServiceType {
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([CategoryGroupWithCategories], ServerKnowledge) {
         let request = CategoriesRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
@@ -55,7 +55,7 @@ extension CategoryService: CategoryServiceType {
     ///
     /// - Returns: A single category
     public func category(budgetId: String, categoryId: String) async throws -> Category {
-        let request = CategoryRequest(budgetId: budgetId, categoryId: categoryId)
+        let request = CategoryRequest(planId: budgetId, categoryId: categoryId)
         let response = try await client.perform(request)
         return response.category
     }
@@ -77,7 +77,7 @@ extension CategoryService: CategoryServiceType {
         categoryId: String
     ) async throws -> Category {
         let request = CategoryByMonthRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             month: month,
             categoryId: categoryId
         )
@@ -100,7 +100,7 @@ extension CategoryService: CategoryServiceType {
         category: SaveCategory
     ) async throws -> (Category, ServerKnowledge) {
         let request = UpdateCategoryRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             categoryId: categoryId,
             category: category
         )
@@ -127,7 +127,7 @@ extension CategoryService: CategoryServiceType {
         budgeted: Int
     ) async throws -> Category {
         let request = SaveMonthCategoryRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             month: month,
             categoryId: categoryId,
             budgeted: budgeted
@@ -149,7 +149,7 @@ extension CategoryService: CategoryServiceType {
         category: SaveCategory
     ) async throws -> (Category, ServerKnowledge) {
         let request = CreateCategoryRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             category: category
         )
         let response = try await client.perform(request)
@@ -169,7 +169,7 @@ extension CategoryService: CategoryServiceType {
         categoryGroup: SaveCategoryGroup
     ) async throws -> (CategoryGroup, ServerKnowledge) {
         let request = CreateCategoryGroupRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             categoryGroup: categoryGroup
         )
         let response = try await client.perform(request)
@@ -191,7 +191,7 @@ extension CategoryService: CategoryServiceType {
         categoryGroup: SaveCategoryGroup
     ) async throws -> (CategoryGroup, ServerKnowledge) {
         let request = UpdateCategoryGroupRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             categoryGroupId: categoryGroupId,
             categoryGroup: categoryGroup
         )

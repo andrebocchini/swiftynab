@@ -9,13 +9,13 @@
 import Foundation
 
 struct SaveScheduledTransactionRequest {
-    let budgetId: String
+    let planId: String
     let transaction: SaveScheduledTransaction
     let update: Bool
     let scheduledTransactionId: String?
 
     init(
-        budgetId: String,
+        planId: String,
         transaction: SaveScheduledTransaction,
         update: Bool = false,
         scheduledTransactionId: String? = nil
@@ -24,7 +24,7 @@ struct SaveScheduledTransactionRequest {
             !update || scheduledTransactionId != nil,
             "scheduledTransactionId is required when update is true"
         )
-        self.budgetId = budgetId
+        self.planId = planId
         self.transaction = transaction
         self.update = update
         self.scheduledTransactionId = scheduledTransactionId
@@ -34,9 +34,9 @@ struct SaveScheduledTransactionRequest {
 extension SaveScheduledTransactionRequest: Request {
     var path: String {
         if update, let scheduledTransactionId {
-            "/v1/budgets/\(budgetId)/scheduled_transactions/\(scheduledTransactionId)"
+            "/v1/plans/\(planId)/scheduled_transactions/\(scheduledTransactionId)"
         } else {
-            "/v1/budgets/\(budgetId)/scheduled_transactions"
+            "/v1/plans/\(planId)/scheduled_transactions"
         }
     }
 

@@ -19,11 +19,11 @@ struct CreateCategoryRequestTests {
         )
 
         let request = CreateCategoryRequest(
-            budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             category: category
         )
 
-        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/categories")
+        #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/categories")
         #expect(request.method == .post)
         #expect(request.query == nil)
 

@@ -26,7 +26,7 @@ extension AccountService: AccountServiceType {
     ///
     /// - Returns: A single account
     public func account(budgetId: String, accountId: String) async throws -> Account {
-        let request = AccountRequest(budgetId: budgetId, accountId: accountId)
+        let request = AccountRequest(planId: budgetId, accountId: accountId)
         let response = try await client.perform(request)
         return response.account
     }
@@ -45,7 +45,7 @@ extension AccountService: AccountServiceType {
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> (accounts: [Account], lastKnowledgeOfServer: ServerKnowledge) {
         let request = AccountsRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
@@ -68,8 +68,8 @@ extension AccountService: AccountServiceType {
         type: AccountType,
         balance: Int
     ) async throws -> Account {
-        let request = NewBudgetAccountRequest(
-            budgetId: budgetId,
+        let request = NewPlanAccountRequest(
+            planId: budgetId,
             name: name,
             type: type,
             balance: balance

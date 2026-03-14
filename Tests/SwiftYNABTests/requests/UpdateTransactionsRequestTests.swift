@@ -46,11 +46,11 @@ struct UpdateTransactionsRequestTests {
         )
 
         let request = UpdateTransactionsRequest(
-            budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             transactions: [transaction1, transaction2]
         )
 
-        #expect(request.path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
+        #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
         #expect(request.method == .patch)
         #expect(request.query == nil)
         #expect(request.body != nil)

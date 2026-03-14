@@ -9,13 +9,13 @@
 import Foundation
 
 struct CreateCategoryRequest {
-    let budgetId: String
+    let planId: String
     let category: SaveCategory
 }
 
 extension CreateCategoryRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/categories"
+        "/v1/plans/\(planId)/categories"
     }
 
     var method: RequestMethod {

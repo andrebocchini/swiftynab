@@ -18,13 +18,13 @@ struct TransactionsByMonthRequestTests {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let month = dateFormatter.date(from: "2025-01-01")!
         let request = TransactionsByMonthRequest(
-            budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             month: month
         )
 
         #expect(request
             .path ==
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
+            "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
         #expect(request.method == .get)
         #expect(request.query == nil)
         #expect(request.body == nil)
@@ -37,7 +37,7 @@ struct TransactionsByMonthRequestTests {
         let month = dateFormatter.date(from: "2025-01-01")!
         let sinceDate = dateFormatter.date(from: "2025-01-15")!
         let request = TransactionsByMonthRequest(
-            budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             month: month,
             sinceDate: sinceDate,
             type: .uncategorized,
@@ -46,7 +46,7 @@ struct TransactionsByMonthRequestTests {
 
         #expect(request
             .path ==
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
+            "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
         #expect(request.method == .get)
         #expect(request.query != nil)
         #expect(request.body == nil)

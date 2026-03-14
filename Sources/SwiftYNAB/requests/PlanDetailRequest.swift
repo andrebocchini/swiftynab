@@ -1,5 +1,5 @@
 //
-//  CategoriesRequest.swift
+//  PlanDetailRequest.swift
 //  SwiftYNAB
 //
 //  Created by Andre Bocchini on 7/8/22.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CategoriesRequest {
+struct PlanDetailRequest {
     let planId: String
     let lastKnowledgeOfServer: ServerKnowledge?
 
@@ -18,9 +18,9 @@ struct CategoriesRequest {
     }
 }
 
-extension CategoriesRequest: Request {
+extension PlanDetailRequest: Request {
     var path: String {
-        "/v1/plans/\(planId)/categories"
+        "/v1/plans/\(planId)"
     }
 
     var query: [URLQueryItem]? {
@@ -36,9 +36,24 @@ extension CategoriesRequest: Request {
     }
 }
 
-extension CategoriesRequest {
+extension PlanDetailRequest {
     struct Response: Decodable {
-        let categoryGroups: [CategoryGroupWithCategories]
+        let plan: PlanDetail
         let serverKnowledge: ServerKnowledge
+
+        init(plan: PlanDetail, serverKnowledge: ServerKnowledge) {
+            self.plan = plan
+            self.serverKnowledge = serverKnowledge
+        }
+
+        @available(*, deprecated, renamed: "plan")
+        var budget: PlanDetail {
+            plan
+        }
+
+        @available(*, deprecated, renamed: "init(plan:serverKnowledge:)")
+        init(budget: PlanDetail, serverKnowledge: ServerKnowledge) {
+            self.init(plan: budget, serverKnowledge: serverKnowledge)
+        }
     }
 }

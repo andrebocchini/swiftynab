@@ -1,5 +1,5 @@
 //
-//  NewBudgetAccountRequest.swift
+//  NewPlanAccountRequest.swift
 //  SwiftYNAB
 //
 //  Created by Andre Bocchini on 7/8/22.
@@ -8,14 +8,26 @@
 
 import Foundation
 
-struct NewBudgetAccountRequest {
-    let budgetId: String
+struct NewPlanAccountRequest {
+    let planId: String
     let name: String
     let type: AccountType
     let balance: Int
+
+    init(planId: String, name: String, type: AccountType, balance: Int) {
+        self.planId = planId
+        self.name = name
+        self.type = type
+        self.balance = balance
+    }
+
+    @available(*, deprecated, renamed: "init(planId:name:type:balance:)")
+    init(budgetId: String, name: String, type: AccountType, balance: Int) {
+        self.init(planId: budgetId, name: name, type: type, balance: balance)
+    }
 }
 
-extension NewBudgetAccountRequest {
+extension NewPlanAccountRequest {
     struct PostAccountWrapper: Codable, Equatable {
         struct Account: Codable, Equatable {
             let name: String
@@ -31,13 +43,13 @@ extension NewBudgetAccountRequest {
     }
 }
 
-extension NewBudgetAccountRequest: Request {
+extension NewPlanAccountRequest: Request {
     var method: RequestMethod {
         .post
     }
 
     var path: String {
-        "/v1/budgets/\(budgetId)/accounts"
+        "/v1/plans/\(planId)/accounts"
     }
 
     var body: Data? {
@@ -47,7 +59,7 @@ extension NewBudgetAccountRequest: Request {
     }
 }
 
-extension NewBudgetAccountRequest {
+extension NewPlanAccountRequest {
     struct Response: Decodable {
         let account: Account
     }

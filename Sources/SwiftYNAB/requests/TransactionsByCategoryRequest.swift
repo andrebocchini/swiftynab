@@ -9,20 +9,20 @@
 import Foundation
 
 struct TransactionsByCategoryRequest {
-    let budgetId: String
+    let planId: String
     let categoryId: String
     let sinceDate: Date?
     let type: TransactionType?
     let lastKnowledgeOfServer: ServerKnowledge?
 
     init(
-        budgetId: String,
+        planId: String,
         categoryId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) {
-        self.budgetId = budgetId
+        self.planId = planId
         self.categoryId = categoryId
         self.sinceDate = sinceDate
         self.type = type
@@ -32,7 +32,7 @@ struct TransactionsByCategoryRequest {
 
 extension TransactionsByCategoryRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/categories/\(categoryId)/transactions"
+        "/v1/plans/\(planId)/categories/\(categoryId)/transactions"
     }
 
     var query: [URLQueryItem]? {

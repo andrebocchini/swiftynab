@@ -9,20 +9,20 @@
 import Foundation
 
 struct TransactionsByMonthRequest {
-    let budgetId: String
+    let planId: String
     let month: Date
     let sinceDate: Date?
     let type: TransactionType?
     let lastKnowledgeOfServer: ServerKnowledge?
 
     init(
-        budgetId: String,
+        planId: String,
         month: Date,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) {
-        self.budgetId = budgetId
+        self.planId = planId
         self.month = month
         self.sinceDate = sinceDate
         self.type = type
@@ -35,7 +35,7 @@ extension TransactionsByMonthRequest: Request {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let monthString = dateFormatter.string(from: month)
-        return "/v1/budgets/\(budgetId)/months/\(monthString)/transactions"
+        return "/v1/plans/\(planId)/months/\(monthString)/transactions"
     }
 
     var query: [URLQueryItem]? {

@@ -27,13 +27,13 @@ struct SaveScheduledTransactionRequestTests {
         )
 
         let request = SaveScheduledTransactionRequest(
-            budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             transaction: transaction,
             update: false
         )
 
         #expect(request
-            .path == "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions")
+            .path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions")
         #expect(request.method == .post)
         #expect(request.query == nil)
         #expect(request.body != nil)
@@ -54,7 +54,7 @@ struct SaveScheduledTransactionRequestTests {
         )
 
         let request = SaveScheduledTransactionRequest(
-            budgetId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             transaction: transaction,
             update: true,
             scheduledTransactionId: "scheduled_tx_id"
@@ -63,7 +63,7 @@ struct SaveScheduledTransactionRequestTests {
         // swiftlint:disable:next line_length
 
         #expect(request.path ==
-            "/v1/budgets/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions/scheduled_tx_id")
+            "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions/scheduled_tx_id")
         #expect(request.method == .put)
         #expect(request.query == nil)
         #expect(request.body != nil)

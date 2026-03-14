@@ -33,7 +33,7 @@ extension MonthService: MonthServiceType {
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> ([MonthSummary], ServerKnowledge) {
         let request = MonthsRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
@@ -51,7 +51,7 @@ extension MonthService: MonthServiceType {
     ///
     /// - Returns: A single month
     public func month(budgetId: String, month: String) async throws -> MonthDetail {
-        let request = MonthRequest(budgetId: budgetId, month: month)
+        let request = MonthRequest(planId: budgetId, month: month)
         let response = try await client.perform(request)
         return response.month
     }

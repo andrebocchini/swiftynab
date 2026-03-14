@@ -9,18 +9,18 @@
 import Foundation
 
 struct MonthsRequest {
-    let budgetId: String
+    let planId: String
     let lastKnowledgeOfServer: ServerKnowledge?
 
-    init(budgetId: String, lastKnowledgeOfServer: ServerKnowledge? = nil) {
-        self.budgetId = budgetId
+    init(planId: String, lastKnowledgeOfServer: ServerKnowledge? = nil) {
+        self.planId = planId
         self.lastKnowledgeOfServer = lastKnowledgeOfServer
     }
 }
 
 extension MonthsRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/months"
+        "/v1/plans/\(planId)/months"
     }
 
     var query: [URLQueryItem]? {

@@ -30,7 +30,7 @@ extension TransactionService: TransactionServiceType {
         budgetId: String,
         transactionId: String
     ) async throws -> (TransactionDetail, ServerKnowledge) {
-        let request = TransactionRequest(budgetId: budgetId, transactionId: transactionId)
+        let request = TransactionRequest(planId: budgetId, transactionId: transactionId)
         let respose = try await client.perform(request)
         return (respose.transaction, respose.serverKnowledge)
     }
@@ -54,8 +54,8 @@ extension TransactionService: TransactionServiceType {
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([TransactionDetail], ServerKnowledge) {
-        let request = TransactionsByBudgetRequest(
-            budgetId: budgetId,
+        let request = TransactionsByPlanRequest(
+            planId: budgetId,
             sinceDate: sinceDate,
             type: type,
             lastKnowledgeOfServer: lastKnowledgeOfServer
@@ -86,7 +86,7 @@ extension TransactionService: TransactionServiceType {
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([TransactionDetail], ServerKnowledge) {
         let request = TransactionsByAccountRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             accountId: accountId,
             sinceDate: sinceDate,
             type: type,
@@ -118,7 +118,7 @@ extension TransactionService: TransactionServiceType {
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([HybridTransaction], ServerKnowledge) {
         let request = TransactionsByCategoryRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             categoryId: categoryId,
             sinceDate: sinceDate,
             type: type,
@@ -150,7 +150,7 @@ extension TransactionService: TransactionServiceType {
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([HybridTransaction], ServerKnowledge) {
         let request = TransactionsByPayeeRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             payeeId: payeeId,
             sinceDate: sinceDate,
             type: type,
@@ -182,7 +182,7 @@ extension TransactionService: TransactionServiceType {
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> ([HybridTransaction], ServerKnowledge) {
         let request = TransactionsByMonthRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             month: month,
             sinceDate: sinceDate,
             type: type,
@@ -205,7 +205,7 @@ extension TransactionService: TransactionServiceType {
         budgetId: String,
         transaction: SaveTransactionWithIdOrImportId
     ) async throws -> (TransactionDetail, ServerKnowledge) {
-        let request = CreateTransactionRequest(budgetId: budgetId, transaction: transaction)
+        let request = CreateTransactionRequest(planId: budgetId, transaction: transaction)
         let response = try await client.perform(request)
         return (response.transaction, response.serverKnowledge)
     }
@@ -223,7 +223,7 @@ extension TransactionService: TransactionServiceType {
         budgetId: String,
         transactions: [SaveTransactionWithIdOrImportId]
     ) async throws -> ([TransactionDetail], ServerKnowledge, [String]) {
-        let request = CreateTransactionsRequest(budgetId: budgetId, transactions: transactions)
+        let request = CreateTransactionsRequest(planId: budgetId, transactions: transactions)
         let response = try await client.perform(request)
         return (response.transactions, response.serverKnowledge, response.duplicateImportIds)
     }
@@ -241,7 +241,7 @@ extension TransactionService: TransactionServiceType {
         budgetId: String,
         transactions: [SaveTransactionWithIdOrImportId]
     ) async throws -> ([TransactionDetail], ServerKnowledge, [String]) {
-        let request = UpdateTransactionsRequest(budgetId: budgetId, transactions: transactions)
+        let request = UpdateTransactionsRequest(planId: budgetId, transactions: transactions)
         let response = try await client.perform(request)
         return (response.transactions, response.serverKnowledge, response.duplicateImportIds)
     }
@@ -260,7 +260,7 @@ extension TransactionService: TransactionServiceType {
         transaction: SaveTransactionWithIdOrImportId
     ) async throws -> TransactionDetail {
         let request = UpdateTransactionRequest(
-            budgetId: budgetId,
+            planId: budgetId,
             transactionId: transactionId,
             transaction: transaction
         )
@@ -278,7 +278,7 @@ extension TransactionService: TransactionServiceType {
     public func importTransactions(
         budgetId: String
     ) async throws -> [String] {
-        let request = ImportTransactionsRequest(budgetId: budgetId)
+        let request = ImportTransactionsRequest(planId: budgetId)
         let response = try await client.perform(request)
         return response.transactionIds
     }
@@ -295,7 +295,7 @@ extension TransactionService: TransactionServiceType {
         budgetId: String,
         transactionId: String
     ) async throws -> TransactionDetail {
-        let request = DeleteTransactionRequest(budgetId: budgetId, transactionId: transactionId)
+        let request = DeleteTransactionRequest(planId: budgetId, transactionId: transactionId)
         let response = try await client.perform(request)
         return response.transaction
     }

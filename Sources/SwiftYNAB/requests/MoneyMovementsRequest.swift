@@ -9,12 +9,12 @@
 import Foundation
 
 struct MoneyMovementsRequest {
-    let budgetId: String
+    let planId: String
 }
 
 extension MoneyMovementsRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/money_movements"
+        "/v1/plans/\(planId)/money_movements"
     }
 }
 

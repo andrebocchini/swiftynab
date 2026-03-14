@@ -9,13 +9,13 @@
 import Foundation
 
 struct ScheduledTransactionsRequest {
-    let budgetId: String
+    let planId: String
     let lastKnowledgeOfServer: ServerKnowledge?
 }
 
 extension ScheduledTransactionsRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/scheduled_transactions"
+        "/v1/plans/\(planId)/scheduled_transactions"
     }
 
     var query: [URLQueryItem]? {

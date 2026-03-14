@@ -9,7 +9,7 @@
 import Foundation
 
 struct SaveMonthCategoryRequest {
-    let budgetId: String
+    let planId: String
     let month: String
     let categoryId: String
     let budgeted: Int
@@ -17,7 +17,7 @@ struct SaveMonthCategoryRequest {
 
 extension SaveMonthCategoryRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/months/\(month)/categories/\(categoryId)"
+        "/v1/plans/\(planId)/months/\(month)/categories/\(categoryId)"
     }
 
     var method: RequestMethod {

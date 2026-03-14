@@ -9,13 +9,13 @@
 import Foundation
 
 struct TransactionRequest {
-    let budgetId: String
+    let planId: String
     let transactionId: String
 }
 
 extension TransactionRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/transactions/\(transactionId)"
+        "/v1/plans/\(planId)/transactions/\(transactionId)"
     }
 }
 

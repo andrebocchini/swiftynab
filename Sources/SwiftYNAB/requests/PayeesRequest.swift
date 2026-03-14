@@ -9,18 +9,18 @@
 import Foundation
 
 struct PayeesRequest {
-    let budgetId: String
+    let planId: String
     let lastKnowledgeOfServer: ServerKnowledge?
 
-    init(budgetId: String, lastKnowledgeOfServer: ServerKnowledge? = nil) {
-        self.budgetId = budgetId
+    init(planId: String, lastKnowledgeOfServer: ServerKnowledge? = nil) {
+        self.planId = planId
         self.lastKnowledgeOfServer = lastKnowledgeOfServer
     }
 }
 
 extension PayeesRequest: Request {
     var path: String {
-        "/v1/budgets/\(budgetId)/payees"
+        "/v1/plans/\(planId)/payees"
     }
 
     var query: [URLQueryItem]? {
