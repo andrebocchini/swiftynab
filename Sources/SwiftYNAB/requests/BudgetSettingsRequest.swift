@@ -20,6 +20,6 @@ extension BudgetSettingsRequest: Request {
 
 extension BudgetSettingsRequest {
     struct Response: Decodable {
-        let settings: BudgetSettings
+        let settings: PlanSettings
     }
 }

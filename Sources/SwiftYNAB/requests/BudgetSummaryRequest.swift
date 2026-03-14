@@ -26,7 +26,7 @@ extension BudgetSummaryRequest: Request {
 
 extension BudgetSummaryRequest {
     struct Response: Decodable {
-        let budgets: [BudgetSummary]
-        let defaultBudget: BudgetSummary?
+        let budgets: [PlanSummary]
+        let defaultBudget: PlanSummary?
     }
 }

@@ -9,12 +9,12 @@
 import Foundation
 
 protocol BudgetServiceType: Sendable {
-    func budgets(includeAccounts: Bool) async throws -> [BudgetSummary]
+    func budgets(includeAccounts: Bool) async throws -> [PlanSummary]
 
     func budget(
         budgetId: String,
         lastKnowledgeOfServer: ServerKnowledge?
-    ) async throws -> (BudgetDetail, ServerKnowledge)
+    ) async throws -> (PlanDetail, ServerKnowledge)
 
-    func budgetSettings(budgetId: String) async throws -> BudgetSettings
+    func budgetSettings(budgetId: String) async throws -> PlanSettings
 }

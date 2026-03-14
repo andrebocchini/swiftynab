@@ -23,7 +23,7 @@ extension BudgetService: BudgetServiceType {
     /// - Parameters:
     ///     - includeAccounts: Includes budget accounts in the response
     /// - Returns: A list of budgets
-    public func budgets(includeAccounts: Bool) async throws -> [BudgetSummary] {
+    public func budgets(includeAccounts: Bool) async throws -> [PlanSummary] {
         let request = BudgetSummaryRequest(includeAccounts: includeAccounts)
         let response = try await client.perform(request)
         return response.budgets
@@ -44,7 +44,7 @@ extension BudgetService: BudgetServiceType {
     public func budget(
         budgetId: String,
         lastKnowledgeOfServer: Int? = nil
-    ) async throws -> (BudgetDetail, ServerKnowledge) {
+    ) async throws -> (PlanDetail, ServerKnowledge) {
         let request = BudgetDetailRequest(
             budgetId: budgetId,
             lastKnowledgeOfServer: lastKnowledgeOfServer
@@ -60,7 +60,7 @@ extension BudgetService: BudgetServiceType {
     /// budget)
     ///
     /// - Returns: Settings for a specific budget
-    public func budgetSettings(budgetId: String) async throws -> BudgetSettings {
+    public func budgetSettings(budgetId: String) async throws -> PlanSettings {
         let request = BudgetSettingsRequest(budgetId: budgetId)
         let response = try await client.perform(request)
         return response.settings

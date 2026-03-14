@@ -1,5 +1,5 @@
 //
-//  BudgetSettings.swift
+//  PlanSettings.swift
 //  SwiftYNAB
 //
 //  Created by Andre Bocchini on 5/4/19.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// Budget settings model
-public struct BudgetSettings: Codable, Equatable, Sendable {
+/// Plan settings model
+public struct PlanSettings: Codable, Equatable, Sendable {
     /// Date formatting settings
     public let dateFormat: DateFormat?
 

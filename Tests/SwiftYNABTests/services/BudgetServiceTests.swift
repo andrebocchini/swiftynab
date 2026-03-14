@@ -25,7 +25,7 @@ struct BudgetServiceTests {
             currencySymbol: "$",
             displaySymbol: true
         )
-        let expectedBudget = BudgetSummary(
+        let expectedBudget = PlanSummary(
             id: "budget_id",
             name: "budget",
             lastModifiedOn: "2012-09-27",
@@ -71,7 +71,7 @@ struct BudgetServiceTests {
             currencySymbol: "$",
             displaySymbol: true
         )
-        let expectedBudget = BudgetDetail(
+        let expectedBudget = PlanDetail(
             id: "budget_id",
             name: "budget_name",
             lastModifiedOn: "2012-09-27",
@@ -126,7 +126,7 @@ struct BudgetServiceTests {
             currencySymbol: "$",
             displaySymbol: true
         )
-        let expectedSettings = BudgetSettings(
+        let expectedSettings = PlanSettings(
             dateFormat: dateFormat,
             currencyFormat: currencyFormat
         )
