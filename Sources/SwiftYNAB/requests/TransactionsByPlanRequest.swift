@@ -25,21 +25,6 @@ struct TransactionsByPlanRequest {
         self.type = type
         self.lastKnowledgeOfServer = lastKnowledgeOfServer
     }
-
-    @available(*, deprecated, renamed: "init(planId:sinceDate:type:lastKnowledgeOfServer:)")
-    init(
-        budgetId: String,
-        sinceDate: Date? = nil,
-        type: TransactionType? = nil,
-        lastKnowledgeOfServer: ServerKnowledge? = nil
-    ) {
-        self.init(
-            planId: budgetId,
-            sinceDate: sinceDate,
-            type: type,
-            lastKnowledgeOfServer: lastKnowledgeOfServer
-        )
-    }
 }
 
 extension TransactionsByPlanRequest: Request {

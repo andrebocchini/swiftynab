@@ -20,11 +20,6 @@ struct NewPlanAccountRequest {
         self.type = type
         self.balance = balance
     }
-
-    @available(*, deprecated, renamed: "init(planId:name:type:balance:)")
-    init(budgetId: String, name: String, type: AccountType, balance: Int) {
-        self.init(planId: budgetId, name: name, type: type, balance: balance)
-    }
 }
 
 extension NewPlanAccountRequest {
