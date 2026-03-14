@@ -11,7 +11,7 @@ import Testing
 
 @Suite("Account Request")
 struct AccountRequestTests {
-    @Test("Path includes budget ID and account ID")
+    @Test("Path includes plan ID and account ID")
     func account() {
         let request = AccountRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

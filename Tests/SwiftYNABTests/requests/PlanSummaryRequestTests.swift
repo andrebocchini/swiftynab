@@ -10,7 +10,7 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Budgets Summary Request")
+@Suite("Plans Summary Request")
 struct BudgetsSummaryRequestTests {
     @Test("Request includes include_accounts query parameter")
     func budgetSummaryRequest() {

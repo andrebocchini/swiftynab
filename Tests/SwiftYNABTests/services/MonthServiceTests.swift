@@ -12,7 +12,7 @@ import Testing
 
 @Suite("Month Service")
 struct MonthServiceTests {
-    @Test("Returns budget months when request succeeds")
+    @Test("Returns plan months when request succeeds")
     func monthsReturnsMonthsWhenRequestSucceeds() async throws {
         let expectedMonth = MonthSummary(
             month: "april",
@@ -37,7 +37,7 @@ struct MonthServiceTests {
         #expect(actualResponse.1 == 200)
     }
 
-    @Test("Throws error when fetching budget months fails")
+    @Test("Throws error when fetching plan months fails")
     func monthsThrowsErrorWhenRequestFails() async {
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)

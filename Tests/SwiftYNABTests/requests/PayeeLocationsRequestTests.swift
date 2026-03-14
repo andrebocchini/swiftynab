@@ -11,7 +11,7 @@ import Testing
 
 @Suite("Payee Locations Request")
 struct PayeeLocationsRequestTests {
-    @Test("Path includes budget ID for listing payee locations")
+    @Test("Path includes plan ID for listing payee locations")
     func payeeLocationsRequest() {
         let request = PayeeLocationsRequest(planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/payee_locations")

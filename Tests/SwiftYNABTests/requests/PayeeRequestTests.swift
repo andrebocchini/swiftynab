@@ -11,7 +11,7 @@ import Testing
 
 @Suite("Payee Request")
 struct PayeeRequestTests {
-    @Test("Path includes budget ID and payee ID")
+    @Test("Path includes plan ID and payee ID")
     func payeeRequest() {
         let request = PayeeRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

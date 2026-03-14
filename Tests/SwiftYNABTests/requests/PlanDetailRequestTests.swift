@@ -10,7 +10,7 @@ import Foundation
 import Testing
 @testable import SwiftYNAB
 
-@Suite("Budget Detail Request")
+@Suite("Plan Detail Request")
 struct PlanDetailRequestTests {
     @Test("Request includes last knowledge of server query parameter")
     func budgetDetailRequestWithLastKnowledge() {

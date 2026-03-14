@@ -59,7 +59,7 @@ struct ScheduledTransactionServiceTests {
         }
     }
 
-    @Test("Returns all scheduled transactions for a budget when request succeeds")
+    @Test("Returns all scheduled transactions for a plan when request succeeds")
     func getScheduledTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let expectedTransaction = ScheduledTransactionDetail(
             id: "id",

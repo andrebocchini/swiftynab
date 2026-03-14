@@ -9,7 +9,7 @@
 import Testing
 @testable import SwiftYNAB
 
-@Suite("New Budget Account Request")
+@Suite("New Plan Account Request")
 struct NewPlanAccountRequestTests {
     @Test("Request uses POST method with account details in body")
     func newBudgetAccountRequest() throws {

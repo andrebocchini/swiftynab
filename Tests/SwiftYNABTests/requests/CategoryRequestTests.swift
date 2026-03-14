@@ -11,7 +11,7 @@ import Testing
 
 @Suite("Category Request")
 struct CategoryRequestTests {
-    @Test("Path includes budget ID and category ID")
+    @Test("Path includes plan ID and category ID")
     func categoryRequest() {
         let request = CategoryRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

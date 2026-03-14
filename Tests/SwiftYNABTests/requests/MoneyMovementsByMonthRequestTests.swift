@@ -11,7 +11,7 @@ import Testing
 
 @Suite("Money Movements By Month Request")
 struct MoneyMovementsByMonthRequestTests {
-    @Test("Path includes budget ID and month for listing money movements")
+    @Test("Path includes plan ID and month for listing money movements")
     func moneyMovementsByMonthRequest() {
         let request = MoneyMovementsByMonthRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

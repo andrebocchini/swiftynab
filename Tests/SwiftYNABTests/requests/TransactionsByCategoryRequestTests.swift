@@ -12,7 +12,7 @@ import Testing
 
 @Suite("Transactions By Category Request")
 struct TransactionsByCategoryRequestTests {
-    @Test("Path includes budget ID and category ID with no query parameters")
+    @Test("Path includes plan ID and category ID with no query parameters")
     func categoryTransactionsNoQuery() {
         let request = TransactionsByCategoryRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

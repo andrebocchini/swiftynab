@@ -12,7 +12,7 @@ import Testing
 
 @Suite("Transactions By Payee Request")
 struct TransactionsByPayeeRequestTests {
-    @Test("Path includes budget ID and payee ID with no query parameters")
+    @Test("Path includes plan ID and payee ID with no query parameters")
     func payeeTransactionsNoQuery() {
         let request = TransactionsByPayeeRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

@@ -13,7 +13,7 @@ import Testing
 
 @Suite("Month Request")
 struct MonthRequestTests {
-    @Test("Path includes budget ID and month")
+    @Test("Path includes plan ID and month")
     func monthRequest() {
         let request = MonthRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

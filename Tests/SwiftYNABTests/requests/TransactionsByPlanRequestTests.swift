@@ -12,7 +12,7 @@ import Testing
 
 @Suite("Transactions By Plan Request")
 struct TransactionsByPlanRequestTests {
-    @Test("Path includes budget ID with no query parameters")
+    @Test("Path includes plan ID with no query parameters")
     func budgetTransactionsNoQuery() {
         let request = TransactionsByPlanRequest(planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")

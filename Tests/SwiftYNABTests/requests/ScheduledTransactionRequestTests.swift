@@ -11,7 +11,7 @@ import Testing
 
 @Suite("Scheduled Transaction Request")
 struct ScheduledTransactionRequestTests {
-    @Test("Path includes budget ID and scheduled transaction ID")
+    @Test("Path includes plan ID and scheduled transaction ID")
     func scheduledTransactionRequest() {
         let request = ScheduledTransactionRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

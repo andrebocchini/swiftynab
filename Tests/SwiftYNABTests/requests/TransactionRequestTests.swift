@@ -11,7 +11,7 @@ import Testing
 
 @Suite("Transaction Request")
 struct TransactionRequestTests {
-    @Test("Path includes budget ID and transaction ID")
+    @Test("Path includes plan ID and transaction ID")
     func transactionRequest() {
         let request = TransactionRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",

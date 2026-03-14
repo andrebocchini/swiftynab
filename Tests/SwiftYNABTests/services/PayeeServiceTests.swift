@@ -12,7 +12,7 @@ import Testing
 
 @Suite("Payee Service")
 struct PayeeServiceTests {
-    @Test("Returns all payees for a budget when request succeeds")
+    @Test("Returns all payees for a plan when request succeeds")
     func payeesReturnsPayeesWhenRequestSucceeds() async throws {
         let expectedPayee = Payee(id: "id", name: "name", transferAccountId: nil, deleted: false)
         let expectedResponse = PayeesRequest.Response(payees: [expectedPayee], serverKnowledge: 1)

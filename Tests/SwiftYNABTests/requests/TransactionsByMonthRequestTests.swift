@@ -12,7 +12,7 @@ import Testing
 
 @Suite("Transactions By Month Request")
 struct TransactionsByMonthRequestTests {
-    @Test("Path includes budget ID and month with no query parameters")
+    @Test("Path includes plan ID and month with no query parameters")
     func transactionsByMonthRequestNoQuery() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
