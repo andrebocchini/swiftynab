@@ -36,4 +36,10 @@ public struct MoneyMovement: Codable, Equatable, Sendable {
 
     /// The amount of the money movement in milliunits format
     public let amount: Int
+
+    /// The amount of the money movement formatted in the plan currency
+    public let amountFormatted: String?
+
+    /// The amount of the money movement as a decimal currency amount
+    public let amountCurrency: Decimal?
 }

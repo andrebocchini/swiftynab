@@ -12,6 +12,38 @@ import Testing
 
 @Suite("Payee Service")
 struct PayeeServiceTests {
+    @Test("Returns created payee when create request succeeds")
+    func createPayeeReturnsPayeeWhenRequestSucceeds() async throws {
+        let expectedPayee = Payee(id: "id", name: "name", transferAccountId: nil, deleted: false)
+        let expectedResponse = CreatePayeeRequest.Response(
+            payee: expectedPayee,
+            serverKnowledge: 200
+        )
+        let client = MockSuccessClient(expectedResponse: expectedResponse)
+        let service = PayeeService(client: client)
+        let actualResponse = try await service.createPayee(
+            planId: "budget_id",
+            payee: SavePayee(name: "name")
+        )
+
+        #expect(actualResponse.0 == expectedPayee)
+        #expect(actualResponse.1 == 200)
+    }
+
+    @Test("Throws error when creating a payee fails")
+    func createPayeeThrowsErrorWhenRequestFails() async {
+        let expectedError = SwiftYNABError.httpError(statusCode: 500)
+        let client = MockFailureClient(expectedError: expectedError)
+        let service = PayeeService(client: client)
+
+        await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
+            try await service.createPayee(
+                planId: "budget_id",
+                payee: SavePayee(name: "name")
+            )
+        }
+    }
+
     @Test("Returns all payees for a plan when request succeeds")
     func payeesReturnsPayeesWhenRequestSucceeds() async throws {
         let expectedPayee = Payee(id: "id", name: "name", transferAccountId: nil, deleted: false)

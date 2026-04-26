@@ -1,21 +1,21 @@
 //
-//  CreateCategoryRequest.swift
+//  CreatePayeeRequest.swift
 //  SwiftYNAB
 //
-//  Created by Andre Bocchini on 3/5/26.
+//  Created by Andre Bocchini on 4/24/26.
 //  Copyright © 2026 Andre Bocchini. All rights reserved.
 //
 
 import Foundation
 
-struct CreateCategoryRequest {
+struct CreatePayeeRequest {
     let planId: String
-    let category: SaveCategory
+    let payee: SavePayee
 }
 
-extension CreateCategoryRequest: Request {
+extension CreatePayeeRequest: Request {
     var path: String {
-        "/v1/plans/\(planId)/categories"
+        "/v1/plans/\(planId)/payees"
     }
 
     var method: RequestMethod {
@@ -23,15 +23,15 @@ extension CreateCategoryRequest: Request {
     }
 
     var body: Data? {
-        let wrapper = SaveCategoryWrapper(with: category)
+        let wrapper = SavePayeeWrapper(with: payee)
         let serializer = Serializer()
         return try? serializer.encode(wrapper)
     }
 }
 
-extension CreateCategoryRequest {
+extension CreatePayeeRequest {
     struct Response: Decodable {
-        let category: Category
+        let payee: Payee
         let serverKnowledge: ServerKnowledge
     }
 }

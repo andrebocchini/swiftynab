@@ -9,6 +9,11 @@
 import Foundation
 
 protocol PayeeServiceType: Sendable {
+    func createPayee(
+        planId: String,
+        payee: SavePayee
+    ) async throws -> (Payee, ServerKnowledge)
+
     func payees(
         planId: String,
         lastKnowledgeOfServer: ServerKnowledge?

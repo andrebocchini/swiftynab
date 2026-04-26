@@ -19,6 +19,8 @@ struct TransactionServiceTests {
             id: "id",
             date: "2022-07-07",
             amount: 0,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: nil,
             cleared: .cleared,
             approved: false,
@@ -72,6 +74,8 @@ struct TransactionServiceTests {
             id: "id",
             date: "2022-07-07",
             amount: 0,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: nil,
             cleared: .cleared,
             approved: false,
@@ -123,6 +127,8 @@ struct TransactionServiceTests {
             id: "id",
             date: "2022-07-07",
             amount: 0,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: nil,
             cleared: .cleared,
             approved: false,
@@ -179,6 +185,8 @@ struct TransactionServiceTests {
             id: "id",
             date: "2022-07-07",
             amount: 0,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: nil,
             cleared: .cleared,
             approved: false,
@@ -232,6 +240,8 @@ struct TransactionServiceTests {
             id: "id",
             date: "2022-07-07",
             amount: 0,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: nil,
             cleared: .cleared,
             approved: false,
@@ -285,6 +295,8 @@ struct TransactionServiceTests {
             id: "id",
             date: "2022-07-07",
             amount: 0,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: nil,
             cleared: .cleared,
             approved: false,
@@ -351,6 +363,8 @@ struct TransactionServiceTests {
             id: "transaction_id",
             date: "2022-07-07",
             amount: 150,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: "updated memo",
             cleared: .cleared,
             approved: false,
@@ -438,6 +452,8 @@ struct TransactionServiceTests {
             id: "transaction_id",
             date: "2022-07-07",
             amount: 150,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: "updated memo",
             cleared: .cleared,
             approved: false,
@@ -513,6 +529,8 @@ struct TransactionServiceTests {
             id: "transaction_id",
             date: "2022-07-07",
             amount: 0,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: nil,
             cleared: .cleared,
             approved: false,
@@ -582,6 +600,8 @@ struct TransactionServiceTests {
             id: "transaction_id",
             date: "2022-07-07",
             amount: 100,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: "test memo",
             cleared: .cleared,
             approved: false,
@@ -648,7 +668,7 @@ struct TransactionServiceTests {
         }
     }
 
-    // swiftlint:disable:next function_body_length
+    // swiftlint:disable function_body_length
     @Test("Returns created transactions when bulk create request succeeds")
     func createTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
         let newTransaction1 = SaveTransactionWithIdOrImportId(
@@ -685,6 +705,8 @@ struct TransactionServiceTests {
             id: "transaction_id_1",
             date: "2022-07-07",
             amount: 100,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: "test memo 1",
             cleared: .cleared,
             approved: false,
@@ -710,6 +732,8 @@ struct TransactionServiceTests {
             id: "transaction_id_2",
             date: "2022-07-08",
             amount: 200,
+            amountFormatted: nil,
+            amountCurrency: nil,
             memo: "test memo 2",
             cleared: .cleared,
             approved: false,
@@ -750,6 +774,8 @@ struct TransactionServiceTests {
         #expect(actualResponse.1 == 200)
         #expect(actualResponse.2 == [])
     }
+
+    // swiftlint:enable function_body_length
 
     @Test("Throws error when bulk transaction creation fails")
     func createTransactionsThrowsErrorWhenRequestFails() async {

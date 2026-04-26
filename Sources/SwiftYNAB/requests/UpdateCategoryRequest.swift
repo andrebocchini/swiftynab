@@ -30,7 +30,7 @@ extension UpdateCategoryRequest: Request {
     }
 }
 
-struct SaveCategoryWrapper: Codable {
+struct SaveCategoryWrapper: Codable, Equatable {
     var category: SaveCategory
 
     init(with category: SaveCategory) {

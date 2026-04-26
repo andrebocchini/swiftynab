@@ -25,6 +25,12 @@ public struct ScheduledTransactionDetail: Codable, Equatable, Sendable {
     /// Amount of the transaction in milliunits
     public let amount: Int
 
+    /// Amount of the transaction formatted in the plan currency
+    public let amountFormatted: String?
+
+    /// Amount of the transaction as a decimal currency amount
+    public let amountCurrency: Decimal?
+
     /// Transaction memo
     public let memo: String?
 
@@ -38,10 +44,10 @@ public struct ScheduledTransactionDetail: Codable, Equatable, Sendable {
     public let accountName: String
 
     /// Payee id
-    public let payeeId: String
+    public let payeeId: String?
 
     /// Payee name
-    public let payeeName: String
+    public let payeeName: String?
 
     /// Category id
     public let categoryId: String?

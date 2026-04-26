@@ -11,10 +11,10 @@ import Foundation
 struct NewPlanAccountRequest {
     let planId: String
     let name: String
-    let type: AccountType
+    let type: SaveAccountType
     let balance: Int
 
-    init(planId: String, name: String, type: AccountType, balance: Int) {
+    init(planId: String, name: String, type: SaveAccountType, balance: Int) {
         self.planId = planId
         self.name = name
         self.type = type
@@ -26,13 +26,13 @@ extension NewPlanAccountRequest {
     struct PostAccountWrapper: Codable, Equatable {
         struct Account: Codable, Equatable {
             let name: String
-            let type: AccountType
+            let type: SaveAccountType
             let balance: Int
         }
 
         let account: Account
 
-        init(name: String, type: AccountType, balance: Int) {
+        init(name: String, type: SaveAccountType, balance: Int) {
             account = Account(name: name, type: type, balance: balance)
         }
     }

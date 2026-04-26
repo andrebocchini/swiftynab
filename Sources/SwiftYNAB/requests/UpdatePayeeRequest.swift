@@ -30,7 +30,7 @@ extension UpdatePayeeRequest: Request {
     }
 }
 
-struct SavePayeeWrapper: Codable {
+struct SavePayeeWrapper: Codable, Equatable {
     var payee: SavePayee
 
     init(with payee: SavePayee) {

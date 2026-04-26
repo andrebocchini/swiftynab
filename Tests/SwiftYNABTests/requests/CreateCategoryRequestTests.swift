@@ -15,7 +15,8 @@ struct CreateCategoryRequestTests {
     func createCategoryRequest() throws {
         let category = SaveCategory(
             name: "New Category",
-            categoryGroupId: "c36fbd68-131e-4ea8-b30f-94f43423021c"
+            categoryGroupId: "c36fbd68-131e-4ea8-b30f-94f43423021c",
+            goalNeedsWholeAmount: true
         )
 
         let request = CreateCategoryRequest(
@@ -27,10 +28,10 @@ struct CreateCategoryRequestTests {
         #expect(request.method == .post)
         #expect(request.query == nil)
 
-        let expectedBody = PostCategoryWrapper(category: category)
+        let expectedBody = SaveCategoryWrapper(with: category)
         let serializer = Serializer()
         let body = try #require(request.body)
-        let decodedBody = try serializer.decode(PostCategoryWrapper.self, from: body)
+        let decodedBody = try serializer.decode(SaveCategoryWrapper.self, from: body)
         #expect(decodedBody == expectedBody)
     }
 }

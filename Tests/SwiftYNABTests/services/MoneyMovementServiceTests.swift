@@ -25,7 +25,9 @@ struct MoneyMovementServiceTests {
             performedByUserId: nil,
             fromCategoryId: nil,
             toCategoryId: nil,
-            amount: 1000
+            amount: 1000,
+            amountFormatted: nil,
+            amountCurrency: nil
         )
         let expectedResponse = MoneyMovementsRequest.Response(
             moneyMovements: [expectedMovement],
@@ -64,7 +66,9 @@ struct MoneyMovementServiceTests {
             performedByUserId: nil,
             fromCategoryId: nil,
             toCategoryId: nil,
-            amount: 1000
+            amount: 1000,
+            amountFormatted: nil,
+            amountCurrency: nil
         )
         let expectedResponse = MoneyMovementsByMonthRequest.Response(
             moneyMovements: [expectedMovement],

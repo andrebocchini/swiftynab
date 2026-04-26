@@ -65,7 +65,7 @@ extension AccountService: AccountServiceType {
     public func newPlanAccount(
         planId: String,
         name: String,
-        type: AccountType,
+        type: SaveAccountType,
         balance: Int
     ) async throws -> Account {
         let request = NewPlanAccountRequest(

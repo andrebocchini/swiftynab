@@ -24,6 +24,12 @@ public struct HybridTransaction: Codable, Equatable, Sendable {
     /// Transaction amount
     public let amount: Int
 
+    /// Transaction amount formatted in the plan currency
+    public let amountFormatted: String?
+
+    /// Transaction amount as a decimal currency amount
+    public let amountCurrency: Decimal?
+
     /// Transaction memo
     public let memo: String?
 

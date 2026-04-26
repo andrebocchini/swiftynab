@@ -40,6 +40,24 @@ public struct Category: Codable, Equatable, Sendable {
     /// Current balance on this category in milliunits format
     public let balance: Int
 
+    /// Current balance on this category formatted in the plan currency
+    public let balanceFormatted: String?
+
+    /// Current balance on this category as a decimal currency amount
+    public let balanceCurrency: Decimal?
+
+    /// Activity on this category formatted in the plan currency
+    public let activityFormatted: String?
+
+    /// Activity on this category as a decimal currency amount
+    public let activityCurrency: Decimal?
+
+    /// Amount budgeted to this category formatted in the plan currency
+    public let budgetedFormatted: String?
+
+    /// Amount budgeted to this category as a decimal currency amount
+    public let budgetedCurrency: Decimal?
+
     /// Type of goal associated with this category
     /// Possible values: TB (Target Category Balance), TBD (Target Category Balance by Date),
     /// MF (Monthly Funding), NEED (Plan Your Spending), DEBT, or null
@@ -83,6 +101,12 @@ public struct Category: Codable, Equatable, Sendable {
     /// Goal target amount in milliunits
     public let goalTarget: Int?
 
+    /// Goal target amount formatted in the plan currency
+    public let goalTargetFormatted: String?
+
+    /// Goal target amount as a decimal currency amount
+    public let goalTargetCurrency: Decimal?
+
     /// The original target month for the goal to be completed in ISO date format
     @available(*, deprecated, message: "Use goalTargetDate instead.")
     public let goalTargetMonth: String?
@@ -106,12 +130,32 @@ public struct Category: Codable, Equatable, Sendable {
     /// Spending Goal in a future month.
     public let goalUnderFunded: Int?
 
+    /// The amount still needed this month formatted in the plan currency
+    public let goalUnderFundedFormatted: String?
+
+    /// The amount still needed this month as a decimal currency amount
+    public let goalUnderFundedCurrency: Decimal?
+
     /// The total amount funded towards the goal within the current goal period in milliunits
     public let goalOverallFunded: Int?
+
+    /// The total amount funded towards the goal within the current goal period formatted in the
+    /// plan currency
+    public let goalOverallFundedFormatted: String?
+
+    /// The total amount funded towards the goal within the current goal period as a decimal
+    /// currency amount
+    public let goalOverallFundedCurrency: Decimal?
 
     /// The amount of funding still needed to complete the goal within the current goal period in
     /// milliunits
     public let goalOverallLeft: Int?
+
+    /// The amount still needed to complete the goal formatted in the plan currency
+    public let goalOverallLeftFormatted: String?
+
+    /// The amount still needed to complete the goal as a decimal currency amount
+    public let goalOverallLeftCurrency: Decimal?
 
     /// The date/time the goal was snoozed. If the goal is not snoozed, this will be null.
     public let goalSnoozedAt: String?

@@ -37,4 +37,22 @@ struct NewPlanAccountRequestTests {
         )
         #expect(decodedBody == expectedBody)
     }
+
+    @Test("Multi-word account types encode as camelCase per the API spec")
+    func multiWordAccountTypeEncoding() throws {
+        let serializer = Serializer()
+
+        for type in [SaveAccountType.creditCard, .otherAsset, .otherLiability] {
+            let request = NewPlanAccountRequest(
+                planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+                name: "name",
+                type: type,
+                balance: 0
+            )
+            let body = try #require(request.body)
+            let json = try #require(String(data: body, encoding: .utf8))
+
+            #expect(json.contains("\"type\" : \"\(type.rawValue)\""))
+        }
+    }
 }

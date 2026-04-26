@@ -18,6 +18,23 @@ public struct PayeeService {
 }
 
 extension PayeeService: PayeeServiceType {
+    /// Creates a single payee.
+    ///
+    /// - Parameters:
+    ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
+    /// plan)
+    ///    - payee: The payee to create
+    ///
+    /// - Returns: A single payee and the last server knowledge
+    public func createPayee(
+        planId: String,
+        payee: SavePayee
+    ) async throws -> (Payee, ServerKnowledge) {
+        let request = CreatePayeeRequest(planId: planId, payee: payee)
+        let response = try await client.perform(request)
+        return (response.payee, response.serverKnowledge)
+    }
+
     /// Returns all payees
     ///
     /// - Parameters:

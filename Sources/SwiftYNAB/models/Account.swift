@@ -16,7 +16,9 @@ public struct Account: Codable, Equatable, Sendable {
     /// Account name
     public let name: String
 
-    /// Account type
+    /// Account type as returned by the server. Note this is the read-side enum and includes
+    /// types (e.g. `.mortgage`, `.lineOfCredit`) that cannot be specified on creation.
+    /// When creating an account, use ``SaveAccountType``.
     public let type: AccountType
 
     /// Budget account or not
@@ -31,11 +33,29 @@ public struct Account: Codable, Equatable, Sendable {
     /// Account balance
     public let balance: Int
 
+    /// Account balance formatted in the plan currency
+    public let balanceFormatted: String?
+
+    /// Account balance as a decimal currency amount
+    public let balanceCurrency: Decimal?
+
     /// Cleared account balance
     public let clearedBalance: Int
 
+    /// Cleared account balance formatted in the plan currency
+    public let clearedBalanceFormatted: String?
+
+    /// Cleared account balance as a decimal currency amount
+    public let clearedBalanceCurrency: Decimal?
+
     /// Uncleared account balance
     public let unclearedBalance: Int
+
+    /// Uncleared account balance formatted in the plan currency
+    public let unclearedBalanceFormatted: String?
+
+    /// Uncleared account balance as a decimal currency amount
+    public let unclearedBalanceCurrency: Decimal?
 
     /// Payee id for transfers
     public let transferPayeeId: String?

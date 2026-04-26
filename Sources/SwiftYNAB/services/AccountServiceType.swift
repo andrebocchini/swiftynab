@@ -19,7 +19,7 @@ protocol AccountServiceType: Sendable {
     func newPlanAccount(
         planId: String,
         name: String,
-        type: AccountType,
+        type: SaveAccountType,
         balance: Int
     ) async throws -> Account
 }
