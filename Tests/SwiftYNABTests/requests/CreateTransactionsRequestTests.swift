@@ -13,9 +13,7 @@ import Testing
 struct CreateTransactionsRequestTests {
     @Test("Request uses POST method with multiple transactions in body")
     func createTransactionsRequest() throws {
-        let transaction1 = SaveTransactionWithIdOrImportId(
-            id: "transaction_id_1",
-            importId: nil,
+        let transaction1 = NewTransaction(
             accountId: "account_id_1",
             date: "2025-01-01",
             amount: 1000,
@@ -26,12 +24,11 @@ struct CreateTransactionsRequestTests {
             cleared: nil,
             approved: nil,
             flagColor: nil,
-            subtransactions: nil
+            subtransactions: nil,
+            importId: nil
         )
 
-        let transaction2 = SaveTransactionWithIdOrImportId(
-            id: "transaction_id_2",
-            importId: "import_id_2",
+        let transaction2 = NewTransaction(
             accountId: "account_id_2",
             date: "2025-01-02",
             amount: 2000,
@@ -42,7 +39,8 @@ struct CreateTransactionsRequestTests {
             cleared: nil,
             approved: nil,
             flagColor: nil,
-            subtransactions: nil
+            subtransactions: nil,
+            importId: "import_id_2"
         )
 
         let request = CreateTransactionsRequest(

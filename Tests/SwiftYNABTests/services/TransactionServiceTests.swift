@@ -344,9 +344,7 @@ struct TransactionServiceTests {
 
     @Test("Returns updated transaction when single update request succeeds")
     func updateTransactionReturnsTransactionWhenRequestSucceeds() async throws {
-        let updateTransaction = SaveTransactionWithIdOrImportId(
-            id: "transaction_id",
-            importId: nil,
+        let updateTransaction = ExistingTransaction(
             accountId: "account_id",
             date: "2022-07-07",
             amount: 150,
@@ -402,9 +400,7 @@ struct TransactionServiceTests {
 
     @Test("Throws error when single transaction update fails")
     func updateTransactionThrowsErrorWhenRequestFails() async {
-        let updateTransaction = SaveTransactionWithIdOrImportId(
-            id: "transaction_id",
-            importId: nil,
+        let updateTransaction = ExistingTransaction(
             accountId: "account_id",
             date: "2022-07-07",
             amount: 150,
@@ -581,9 +577,7 @@ struct TransactionServiceTests {
     // swiftlint:disable:next function_body_length
     @Test("Returns created transaction when single create request succeeds")
     func createTransactionReturnsTransactionWhenRequestSucceeds() async throws {
-        let newTransaction = SaveTransactionWithIdOrImportId(
-            id: nil,
-            importId: nil,
+        let newTransaction = NewTransaction(
             accountId: "account_id",
             date: "2022-07-07",
             amount: 100,
@@ -594,7 +588,8 @@ struct TransactionServiceTests {
             cleared: nil,
             approved: nil,
             flagColor: nil,
-            subtransactions: nil
+            subtransactions: nil,
+            importId: nil
         )
         let expectedTransaction = TransactionDetail(
             id: "transaction_id",
@@ -641,9 +636,7 @@ struct TransactionServiceTests {
 
     @Test("Throws error when single transaction creation fails")
     func createTransactionThrowsErrorWhenRequestFails() async {
-        let newTransaction = SaveTransactionWithIdOrImportId(
-            id: nil,
-            importId: nil,
+        let newTransaction = NewTransaction(
             accountId: "account_id",
             date: "2022-07-07",
             amount: 100,
@@ -654,7 +647,8 @@ struct TransactionServiceTests {
             cleared: nil,
             approved: nil,
             flagColor: nil,
-            subtransactions: nil
+            subtransactions: nil,
+            importId: nil
         )
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
@@ -671,9 +665,7 @@ struct TransactionServiceTests {
     // swiftlint:disable function_body_length
     @Test("Returns created transactions when bulk create request succeeds")
     func createTransactionsReturnsTransactionsWhenRequestSucceeds() async throws {
-        let newTransaction1 = SaveTransactionWithIdOrImportId(
-            id: nil,
-            importId: nil,
+        let newTransaction1 = NewTransaction(
             accountId: "account_id",
             date: "2022-07-07",
             amount: 100,
@@ -684,11 +676,10 @@ struct TransactionServiceTests {
             cleared: nil,
             approved: nil,
             flagColor: nil,
-            subtransactions: nil
+            subtransactions: nil,
+            importId: nil
         )
-        let newTransaction2 = SaveTransactionWithIdOrImportId(
-            id: nil,
-            importId: nil,
+        let newTransaction2 = NewTransaction(
             accountId: "account_id",
             date: "2022-07-08",
             amount: 200,
@@ -699,7 +690,8 @@ struct TransactionServiceTests {
             cleared: nil,
             approved: nil,
             flagColor: nil,
-            subtransactions: nil
+            subtransactions: nil,
+            importId: nil
         )
         let expectedTransaction1 = TransactionDetail(
             id: "transaction_id_1",
@@ -779,9 +771,7 @@ struct TransactionServiceTests {
 
     @Test("Throws error when bulk transaction creation fails")
     func createTransactionsThrowsErrorWhenRequestFails() async {
-        let newTransaction = SaveTransactionWithIdOrImportId(
-            id: nil,
-            importId: nil,
+        let newTransaction = NewTransaction(
             accountId: "account_id",
             date: "2022-07-07",
             amount: 100,
@@ -792,7 +782,8 @@ struct TransactionServiceTests {
             cleared: nil,
             approved: nil,
             flagColor: nil,
-            subtransactions: nil
+            subtransactions: nil,
+            importId: nil
         )
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)

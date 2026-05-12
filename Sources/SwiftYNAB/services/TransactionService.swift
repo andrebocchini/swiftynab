@@ -203,7 +203,7 @@ extension TransactionService: TransactionServiceType {
     /// import IDs
     public func createTransaction(
         planId: String,
-        transaction: SaveTransactionWithIdOrImportId
+        transaction: NewTransaction
     ) async throws -> (TransactionDetail, ServerKnowledge) {
         let request = CreateTransactionRequest(planId: planId, transaction: transaction)
         let response = try await client.perform(request)
@@ -221,7 +221,7 @@ extension TransactionService: TransactionServiceType {
     /// import IDs
     public func createTransactions(
         planId: String,
-        transactions: [SaveTransactionWithIdOrImportId]
+        transactions: [NewTransaction]
     ) async throws -> ([TransactionDetail], ServerKnowledge, [String]) {
         let request = CreateTransactionsRequest(planId: planId, transactions: transactions)
         let response = try await client.perform(request)
@@ -257,7 +257,7 @@ extension TransactionService: TransactionServiceType {
     public func updateTransaction(
         planId: String,
         transactionId: String,
-        transaction: SaveTransactionWithIdOrImportId
+        transaction: ExistingTransaction
     ) async throws -> TransactionDetail {
         let request = UpdateTransactionRequest(
             planId: planId,

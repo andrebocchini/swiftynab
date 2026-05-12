@@ -10,7 +10,7 @@ import Foundation
 
 public struct CreateTransactionRequest {
     public let planId: String
-    public let transaction: SaveTransactionWithIdOrImportId
+    public let transaction: NewTransaction
 }
 
 extension CreateTransactionRequest: Request {
@@ -35,5 +35,5 @@ extension CreateTransactionRequest: Request {
 }
 
 struct CreateTransactionRequestWrapper: Codable {
-    let transaction: SaveTransactionWithIdOrImportId
+    let transaction: NewTransaction
 }

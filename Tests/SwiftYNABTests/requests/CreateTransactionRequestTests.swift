@@ -14,9 +14,7 @@ import Testing
 struct CreateTransactionRequestTests {
     @Test("Request body contains transaction data and uses POST method")
     func createTransactionRequest() throws {
-        let transaction = SaveTransactionWithIdOrImportId(
-            id: "transaction_id",
-            importId: "import_id",
+        let transaction = NewTransaction(
             accountId: "account_id",
             date: "2025-01-01",
             amount: 1000,
@@ -27,7 +25,8 @@ struct CreateTransactionRequestTests {
             cleared: nil,
             approved: nil,
             flagColor: nil,
-            subtransactions: nil
+            subtransactions: nil,
+            importId: "import_id"
         )
 
         let request = CreateTransactionRequest(

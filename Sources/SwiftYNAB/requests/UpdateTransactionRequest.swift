@@ -11,7 +11,7 @@ import Foundation
 struct UpdateTransactionRequest {
     let planId: String
     let transactionId: String
-    let transaction: SaveTransactionWithIdOrImportId
+    let transaction: ExistingTransaction
 }
 
 extension UpdateTransactionRequest: Request {
@@ -31,9 +31,9 @@ extension UpdateTransactionRequest: Request {
 }
 
 struct UpdateTransactionRequestWrapper: Codable {
-    var transaction: SaveTransactionWithIdOrImportId
+    var transaction: ExistingTransaction
 
-    init(with transaction: SaveTransactionWithIdOrImportId) {
+    init(with transaction: ExistingTransaction) {
         self.transaction = transaction
     }
 }

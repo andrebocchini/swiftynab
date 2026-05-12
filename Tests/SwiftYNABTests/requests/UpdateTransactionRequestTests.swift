@@ -13,9 +13,7 @@ import Testing
 struct UpdateTransactionRequestTests {
     @Test("Request uses PUT method with transaction data in body")
     func updateTransactionRequest() throws {
-        let transaction = SaveTransactionWithIdOrImportId(
-            id: "transaction_id",
-            importId: "import_id",
+        let transaction = ExistingTransaction(
             accountId: "account_id",
             date: "2025-01-01",
             amount: 1500,

@@ -53,12 +53,12 @@ protocol TransactionServiceType: Sendable {
 
     func createTransaction(
         planId: String,
-        transaction: SaveTransactionWithIdOrImportId
+        transaction: NewTransaction
     ) async throws -> (TransactionDetail, ServerKnowledge)
 
     func createTransactions(
         planId: String,
-        transactions: [SaveTransactionWithIdOrImportId]
+        transactions: [NewTransaction]
     ) async throws -> ([TransactionDetail], ServerKnowledge, [String])
 
     func updateTransactions(
@@ -69,7 +69,7 @@ protocol TransactionServiceType: Sendable {
     func updateTransaction(
         planId: String,
         transactionId: String,
-        transaction: SaveTransactionWithIdOrImportId
+        transaction: ExistingTransaction
     ) async throws -> TransactionDetail
 
     func importTransactions(
