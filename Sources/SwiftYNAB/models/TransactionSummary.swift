@@ -37,6 +37,9 @@ public struct TransactionSummary: Codable, Equatable, Sendable {
     /// Flag color
     public let flagColor: String?
 
+    /// Flag name
+    public let flagName: String?
+
     /// Id of the account this transaction belongs to
     public let accountId: String
 

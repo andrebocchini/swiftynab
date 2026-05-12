@@ -31,8 +31,14 @@ public struct ScheduledSubTransaction: Codable, Equatable, Sendable {
     /// Payee id
     public let payeeId: String?
 
+    /// Payee name
+    public let payeeName: String?
+
     /// Category id
     public let categoryId: String?
+
+    /// Category name
+    public let categoryName: String?
 
     /// Transfer account id
     public let transferAccountId: String?

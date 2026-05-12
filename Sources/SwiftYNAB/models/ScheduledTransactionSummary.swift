@@ -37,6 +37,9 @@ public struct ScheduledTransactionSummary: Codable, Equatable, Sendable {
     /// Flag color
     public let flagColor: String?
 
+    /// Flag name
+    public let flagName: String?
+
     /// Account id
     public let accountId: String
 

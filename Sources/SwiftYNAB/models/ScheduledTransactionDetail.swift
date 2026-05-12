@@ -37,6 +37,9 @@ public struct ScheduledTransactionDetail: Codable, Equatable, Sendable {
     /// Flag color
     public let flagColor: String?
 
+    /// Flag name
+    public let flagName: String?
+
     /// Account id
     public let accountId: String
 
@@ -63,4 +66,49 @@ public struct ScheduledTransactionDetail: Codable, Equatable, Sendable {
 
     /// Sub transactions associated with this transaction
     public let subtransactions: [ScheduledSubTransaction]
+}
+
+extension ScheduledTransactionDetail {
+    init(
+        id: String,
+        dateFirst: String,
+        dateNext: String,
+        frequency: String,
+        amount: Int,
+        amountFormatted: String?,
+        amountCurrency: Decimal?,
+        memo: String?,
+        flagColor: String?,
+        accountId: String,
+        accountName: String,
+        payeeId: String?,
+        payeeName: String?,
+        categoryId: String?,
+        categoryName: String?,
+        transferAccountId: String?,
+        deleted: Bool,
+        subtransactions: [ScheduledSubTransaction]
+    ) {
+        self.init(
+            id: id,
+            dateFirst: dateFirst,
+            dateNext: dateNext,
+            frequency: frequency,
+            amount: amount,
+            amountFormatted: amountFormatted,
+            amountCurrency: amountCurrency,
+            memo: memo,
+            flagColor: flagColor,
+            flagName: nil,
+            accountId: accountId,
+            accountName: accountName,
+            payeeId: payeeId,
+            payeeName: payeeName,
+            categoryId: categoryId,
+            categoryName: categoryName,
+            transferAccountId: transferAccountId,
+            deleted: deleted,
+            subtransactions: subtransactions
+        )
+    }
 }
