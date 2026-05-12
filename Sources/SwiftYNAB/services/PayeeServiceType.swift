@@ -18,7 +18,7 @@ protocol PayeeServiceType: Sendable {
         planId: String,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws
-        -> [Payee]
+        -> ([Payee], ServerKnowledge)
 
     func payee(planId: String, payeeId: String) async throws -> Payee
 

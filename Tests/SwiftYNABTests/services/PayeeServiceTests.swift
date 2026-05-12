@@ -50,10 +50,11 @@ struct PayeeServiceTests {
         let expectedResponse = PayeesRequest.Response(payees: [expectedPayee], serverKnowledge: 1)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeService(client: client)
-        let actualResponse = try await service.payees(planId: "budget_id")
+        let (payees, serverKnowledge) = try await service.payees(planId: "budget_id")
 
-        #expect(actualResponse.count == 1)
-        #expect(expectedPayee == actualResponse[0])
+        #expect(payees.count == 1)
+        #expect(expectedPayee == payees[0])
+        #expect(serverKnowledge == 1)
     }
 
     @Test("Throws error when fetching all payees fails")
