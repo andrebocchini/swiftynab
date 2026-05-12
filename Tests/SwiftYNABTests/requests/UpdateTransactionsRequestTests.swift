@@ -12,7 +12,7 @@ import Testing
 @Suite("Update Transactions Request")
 struct UpdateTransactionsRequestTests {
     @Test("Request uses PATCH method with transaction body for bulk update")
-    func updateTransactionsRequest() {
+    func updateTransactionsRequest() throws {
         let transaction1 = SaveTransactionWithIdOrImportId(
             id: "transaction_id_1",
             importId: nil,
@@ -30,8 +30,8 @@ struct UpdateTransactionsRequestTests {
         )
 
         let transaction2 = SaveTransactionWithIdOrImportId(
-            id: "transaction_id_2",
-            importId: nil,
+            id: nil,
+            importId: "import_id_2",
             accountId: "account_id_2",
             date: "2025-01-02",
             amount: 2500,
@@ -53,6 +53,13 @@ struct UpdateTransactionsRequestTests {
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
         #expect(request.method == .patch)
         #expect(request.query == nil)
-        #expect(request.body != nil)
+
+        let body = try #require(request.body)
+        let object = try requestBodyJSONObject(from: body)
+        let transactions = try #require(object["transactions"] as? [[String: Any]])
+        let firstTransaction = try #require(transactions.first)
+        let secondTransaction = try #require(transactions.dropFirst().first)
+        #expect(firstTransaction["id"] as? String == "transaction_id_1")
+        #expect(secondTransaction["import_id"] as? String == "import_id_2")
     }
 }

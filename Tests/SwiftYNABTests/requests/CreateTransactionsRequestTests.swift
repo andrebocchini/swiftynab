@@ -12,9 +12,9 @@ import Testing
 @Suite("Create Transactions Request")
 struct CreateTransactionsRequestTests {
     @Test("Request uses POST method with multiple transactions in body")
-    func createTransactionsRequest() {
+    func createTransactionsRequest() throws {
         let transaction1 = SaveTransactionWithIdOrImportId(
-            id: nil,
+            id: "transaction_id_1",
             importId: nil,
             accountId: "account_id_1",
             date: "2025-01-01",
@@ -30,8 +30,8 @@ struct CreateTransactionsRequestTests {
         )
 
         let transaction2 = SaveTransactionWithIdOrImportId(
-            id: nil,
-            importId: nil,
+            id: "transaction_id_2",
+            importId: "import_id_2",
             accountId: "account_id_2",
             date: "2025-01-02",
             amount: 2000,
@@ -53,6 +53,14 @@ struct CreateTransactionsRequestTests {
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
         #expect(request.method == .post)
         #expect(request.query == nil)
-        #expect(request.body != nil)
+
+        let body = try #require(request.body)
+        let object = try requestBodyJSONObject(from: body)
+        let transactions = try #require(object["transactions"] as? [[String: Any]])
+        let firstTransaction = try #require(transactions.first)
+        let secondTransaction = try #require(transactions.dropFirst().first)
+        #expect(firstTransaction["id"] == nil)
+        #expect(secondTransaction["id"] == nil)
+        #expect(secondTransaction["import_id"] as? String == "import_id_2")
     }
 }

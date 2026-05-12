@@ -15,8 +15,8 @@ struct CreateTransactionRequestTests {
     @Test("Request body contains transaction data and uses POST method")
     func createTransactionRequest() throws {
         let transaction = SaveTransactionWithIdOrImportId(
-            id: nil,
-            importId: nil,
+            id: "transaction_id",
+            importId: "import_id",
             accountId: "account_id",
             date: "2025-01-01",
             amount: 1000,
@@ -47,5 +47,10 @@ struct CreateTransactionRequestTests {
         #expect(wrapper.transaction.accountId == "account_id")
         #expect(wrapper.transaction.payeeName == "Test Payee")
         #expect(wrapper.transaction.amount == 1000)
+
+        let object = try requestBodyJSONObject(from: body)
+        let encodedTransaction = try #require(object["transaction"] as? [String: Any])
+        #expect(encodedTransaction["id"] == nil)
+        #expect(encodedTransaction["import_id"] as? String == "import_id")
     }
 }

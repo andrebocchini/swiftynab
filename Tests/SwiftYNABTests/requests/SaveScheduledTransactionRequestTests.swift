@@ -13,10 +13,10 @@ import Testing
 @Suite("Save Scheduled Transaction Request")
 struct SaveScheduledTransactionRequestTests {
     @Test("Creating a scheduled transaction uses POST method")
-    func saveScheduledTransactionRequestCreate() {
-        let transaction = SaveScheduledTransaction(
+    func saveScheduledTransactionRequestCreate() throws {
+        let transaction = try SaveScheduledTransaction(
             accountId: "account_id",
-            date: Date(),
+            date: scheduledTransactionDate(),
             amount: 1000,
             payeeId: "payee_id",
             payeeName: "Test Payee",
@@ -36,14 +36,20 @@ struct SaveScheduledTransactionRequestTests {
             .path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions")
         #expect(request.method == .post)
         #expect(request.query == nil)
-        #expect(request.body != nil)
+
+        let body = try #require(request.body)
+        let object = try requestBodyJSONObject(from: body)
+        let scheduledTransaction = try #require(object["scheduled_transaction"] as? [String: Any])
+        let encodedDate = scheduledTransaction["date"]
+        #expect(encodedDate as? String == "2026-05-12")
+        #expect(encodedDate as? NSNumber == nil)
     }
 
     @Test("Updating a scheduled transaction uses PUT method with transaction ID in path")
-    func saveScheduledTransactionRequestUpdate() {
-        let transaction = SaveScheduledTransaction(
+    func saveScheduledTransactionRequestUpdate() throws {
+        let transaction = try SaveScheduledTransaction(
             accountId: "account_id",
-            date: Date(),
+            date: scheduledTransactionDate(),
             amount: 1500,
             payeeId: "payee_id",
             payeeName: "Updated Test Payee",
@@ -66,6 +72,22 @@ struct SaveScheduledTransactionRequestTests {
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/scheduled_transactions/scheduled_tx_id")
         #expect(request.method == .put)
         #expect(request.query == nil)
-        #expect(request.body != nil)
+
+        let body = try #require(request.body)
+        let object = try requestBodyJSONObject(from: body)
+        let scheduledTransaction = try #require(object["scheduled_transaction"] as? [String: Any])
+        let encodedDate = scheduledTransaction["date"]
+        #expect(encodedDate as? String == "2026-05-12")
+        #expect(encodedDate as? NSNumber == nil)
     }
+}
+
+private func scheduledTransactionDate() throws -> Date {
+    var components = DateComponents()
+    components.calendar = Calendar(identifier: .gregorian)
+    components.timeZone = TimeZone(secondsFromGMT: 0)
+    components.year = 2026
+    components.month = 5
+    components.day = 12
+    return try #require(components.date)
 }

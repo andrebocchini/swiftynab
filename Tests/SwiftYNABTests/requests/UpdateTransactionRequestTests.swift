@@ -12,10 +12,10 @@ import Testing
 @Suite("Update Transaction Request")
 struct UpdateTransactionRequestTests {
     @Test("Request uses PUT method with transaction data in body")
-    func updateTransactionRequest() {
+    func updateTransactionRequest() throws {
         let transaction = SaveTransactionWithIdOrImportId(
             id: "transaction_id",
-            importId: nil,
+            importId: "import_id",
             accountId: "account_id",
             date: "2025-01-01",
             amount: 1500,
@@ -39,6 +39,11 @@ struct UpdateTransactionRequestTests {
             .path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions/transaction_id")
         #expect(request.method == .put)
         #expect(request.query == nil)
-        #expect(request.body != nil)
+
+        let body = try #require(request.body)
+        let object = try requestBodyJSONObject(from: body)
+        let encodedTransaction = try #require(object["transaction"] as? [String: Any])
+        #expect(encodedTransaction["id"] == nil)
+        #expect(encodedTransaction["import_id"] == nil)
     }
 }

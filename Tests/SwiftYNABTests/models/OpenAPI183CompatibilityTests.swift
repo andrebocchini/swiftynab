@@ -35,6 +35,28 @@ struct OpenAPI183CompatibilityTests {
         #expect(account.unclearedBalanceCurrency == Decimal(string: "0.0"))
     }
 
+    @Test("Account decodes when direct import fields are omitted")
+    func accountDecodingWithOmittedDirectImportFields() throws {
+        let account = try decode(Account.self, from: """
+        {
+          "id": "account-id",
+          "name": "Checking",
+          "type": "checking",
+          "on_budget": true,
+          "closed": false,
+          "balance": 120000,
+          "cleared_balance": 120000,
+          "uncleared_balance": 0,
+          "deleted": false
+        }
+        """)
+
+        #expect(account.id == "account-id")
+        #expect(account.name == "Checking")
+        #expect(try decodedNil(named: "directImportLinked", in: account))
+        #expect(try decodedNil(named: "directImportInError", in: account))
+    }
+
     @Test("Category decodes new formatted and decimal goal fields")
     func categoryDecoding() throws {
         let category = try decode(Category.self, from: """
@@ -80,6 +102,24 @@ struct OpenAPI183CompatibilityTests {
         #expect(category.goalOverallLeftFormatted == "$5.00")
     }
 
+    @Test("TransactionSummary decodes flag_name")
+    func transactionSummaryDecodesFlagName() throws {
+        let transaction = try decode(TransactionSummary.self, from: """
+        {
+          "id": "transaction-id",
+          "date": "2026-04-01",
+          "amount": -1050,
+          "cleared": "cleared",
+          "approved": true,
+          "flag_name": "Purple",
+          "account_id": "account-id",
+          "deleted": false
+        }
+        """)
+
+        #expect(try decodedString(named: "flagName", in: transaction) == "Purple")
+    }
+
     @Test("Transaction models decode formatted and decimal amounts")
     func transactionDecoding() throws {
         let transaction = try decode(TransactionSummary.self, from: """
@@ -110,6 +150,77 @@ struct OpenAPI183CompatibilityTests {
         #expect(transaction.amountCurrency == Decimal(string: "-1.05"))
         #expect(subtransaction.amountFormatted == "-$0.50")
         #expect(subtransaction.amountCurrency == Decimal(string: "-0.5"))
+    }
+
+    @Test("ScheduledTransactionSummary decodes flag_name")
+    func scheduledTransactionSummaryDecodesFlagName() throws {
+        let summary = try decode(ScheduledTransactionSummary.self, from: """
+        {
+          "id": "scheduled-id",
+          "date_first": "2026-04-01",
+          "date_next": "2026-05-01",
+          "frequency": "monthly",
+          "amount": -1000,
+          "flag_name": "Blue",
+          "account_id": "account-id",
+          "payee_id": null,
+          "deleted": false
+        }
+        """)
+
+        #expect(try decodedString(named: "flagName", in: summary) == "Blue")
+    }
+
+    @Test("ScheduledTransactionDetail decodes flag_name")
+    func scheduledTransactionDetailDecodesFlagName() throws {
+        let detail = try decode(ScheduledTransactionDetail.self, from: """
+        {
+          "id": "scheduled-id",
+          "date_first": "2026-04-01",
+          "date_next": "2026-05-01",
+          "frequency": "monthly",
+          "amount": -1000,
+          "flag_name": "Green",
+          "account_id": "account-id",
+          "account_name": "Checking",
+          "payee_id": null,
+          "payee_name": null,
+          "deleted": false,
+          "subtransactions": []
+        }
+        """)
+
+        #expect(try decodedString(named: "flagName", in: detail) == "Green")
+    }
+
+    @Test("ScheduledSubTransaction decodes payee_name")
+    func scheduledSubTransactionDecodesPayeeName() throws {
+        let subtransaction = try decode(ScheduledSubTransaction.self, from: """
+        {
+          "id": "scheduled-sub-id",
+          "scheduled_transaction_id": "scheduled-id",
+          "amount": -250,
+          "payee_name": "Coffee Shop",
+          "deleted": false
+        }
+        """)
+
+        #expect(try decodedString(named: "payeeName", in: subtransaction) == "Coffee Shop")
+    }
+
+    @Test("ScheduledSubTransaction decodes category_name")
+    func scheduledSubTransactionDecodesCategoryName() throws {
+        let subtransaction = try decode(ScheduledSubTransaction.self, from: """
+        {
+          "id": "scheduled-sub-id",
+          "scheduled_transaction_id": "scheduled-id",
+          "amount": -250,
+          "category_name": "Coffee",
+          "deleted": false
+        }
+        """)
+
+        #expect(try decodedString(named: "categoryName", in: subtransaction) == "Coffee")
     }
 
     @Test("Scheduled transaction models decode formatted amounts and nullable payee fields")
@@ -337,4 +448,33 @@ private func decode<T: Decodable>(_ type: T.Type, from json: String) throws -> T
     let serializer = Serializer()
     let data = try #require(json.data(using: .utf8))
     return try serializer.decode(type, from: data)
+}
+
+private func decodedString(named name: String, in model: some Any) throws -> String {
+    let child = try #require(
+        Mirror(reflecting: model).children.first { $0.label == name },
+        "Expected decoded field named \(name)"
+    )
+
+    if let value = child.value as? String {
+        return value
+    }
+
+    let optionalMirror = Mirror(reflecting: child.value)
+    let wrappedValue = try #require(
+        optionalMirror.children.first?.value,
+        "Expected decoded field \(name) to contain a string"
+    )
+
+    return try #require(wrappedValue as? String)
+}
+
+private func decodedNil(named name: String, in model: some Any) throws -> Bool {
+    let child = try #require(
+        Mirror(reflecting: model).children.first { $0.label == name },
+        "Expected decoded field named \(name)"
+    )
+
+    let mirror = Mirror(reflecting: child.value)
+    return mirror.displayStyle == .optional && mirror.children.isEmpty
 }
