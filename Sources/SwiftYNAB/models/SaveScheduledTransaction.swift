@@ -10,12 +10,22 @@ import Foundation
 
 /// A model representing a scheduled transaction to be saved or updated
 public struct SaveScheduledTransaction: Codable, Equatable, Sendable {
+    private static let apiDateFormat: Date.ISO8601FormatStyle = {
+        var format = Date.ISO8601FormatStyle()
+            .dateSeparator(.dash)
+            .year()
+            .month()
+            .day()
+        format.timeZone = TimeZone(secondsFromGMT: 0)!
+        return format
+    }()
+
     /// The account ID for the scheduled transaction
     public let accountId: String
 
     /// The scheduled transaction date in ISO format (e.g. 2016-12-01). This should be a future date
     /// no more than 5 years into the future.
-    public let date: Date
+    public let date: String
 
     /// The scheduled transaction amount in milliunits format
     public let amount: Int?
@@ -45,6 +55,39 @@ public struct SaveScheduledTransaction: Codable, Equatable, Sendable {
     /// Creates a new SaveScheduledTransaction instance
     /// - Parameters:
     ///   - accountId: The account ID for the scheduled transaction
+    ///   - date: The scheduled transaction date in ISO format (must be future date within 5 years)
+    ///   - amount: The scheduled transaction amount in milliunits format
+    ///   - payeeId: The payee ID for the scheduled transaction
+    ///   - payeeName: The payee name (used if payeeId is nil)
+    ///   - categoryId: The category ID (credit card payment categories not permitted)
+    ///   - memo: A memo for the scheduled transaction
+    ///   - flagColor: The transaction flag color
+    ///   - frequency: The scheduled transaction frequency
+    public init(
+        accountId: String,
+        date: String,
+        amount: Int? = nil,
+        payeeId: String? = nil,
+        payeeName: String? = nil,
+        categoryId: String? = nil,
+        memo: String? = nil,
+        flagColor: FlagColor? = nil,
+        frequency: String
+    ) {
+        self.accountId = accountId
+        self.date = date
+        self.amount = amount
+        self.payeeId = payeeId
+        self.payeeName = payeeName
+        self.categoryId = categoryId
+        self.memo = memo
+        self.flagColor = flagColor
+        self.frequency = frequency
+    }
+
+    /// Creates a new SaveScheduledTransaction instance from a Date.
+    /// - Parameters:
+    ///   - accountId: The account ID for the scheduled transaction
     ///   - date: The scheduled transaction date (must be future date within 5 years)
     ///   - amount: The scheduled transaction amount in milliunits format
     ///   - payeeId: The payee ID for the scheduled transaction
@@ -64,14 +107,16 @@ public struct SaveScheduledTransaction: Codable, Equatable, Sendable {
         flagColor: FlagColor? = nil,
         frequency: String
     ) {
-        self.accountId = accountId
-        self.date = date
-        self.amount = amount
-        self.payeeId = payeeId
-        self.payeeName = payeeName
-        self.categoryId = categoryId
-        self.memo = memo
-        self.flagColor = flagColor
-        self.frequency = frequency
+        self.init(
+            accountId: accountId,
+            date: Self.apiDateFormat.format(date),
+            amount: amount,
+            payeeId: payeeId,
+            payeeName: payeeName,
+            categoryId: categoryId,
+            memo: memo,
+            flagColor: flagColor,
+            frequency: frequency
+        )
     }
 }

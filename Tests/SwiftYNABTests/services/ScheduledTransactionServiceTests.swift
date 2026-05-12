@@ -112,7 +112,7 @@ struct ScheduledTransactionServiceTests {
     func createScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let newScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
-            date: Date(),
+            date: "2026-05-12",
             amount: 100,
             payeeId: "payee_id",
             payeeName: "test payee",
@@ -158,7 +158,7 @@ struct ScheduledTransactionServiceTests {
     func createScheduledTransactionThrowsErrorWhenRequestFails() async {
         let newScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
-            date: Date(),
+            date: "2026-05-12",
             amount: 100,
             payeeId: "payee_id",
             payeeName: "test payee",
@@ -183,7 +183,7 @@ struct ScheduledTransactionServiceTests {
     func updateScheduledTransactionReturnsTransactionWhenRequestSucceeds() async throws {
         let updateScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
-            date: Date(),
+            date: "2026-05-12",
             amount: 150,
             payeeId: "payee_id",
             payeeName: "updated payee",
@@ -230,7 +230,7 @@ struct ScheduledTransactionServiceTests {
     func updateScheduledTransactionThrowsErrorWhenRequestFails() async {
         let updateScheduledTransaction = SaveScheduledTransaction(
             accountId: "account_id",
-            date: Date(),
+            date: "2026-05-12",
             amount: 150,
             payeeId: "payee_id",
             payeeName: "updated payee",
