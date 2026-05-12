@@ -109,14 +109,14 @@ extension TransactionService: TransactionServiceType {
     ///    - lastKnowledgeOfServer: The starting server knowledge. If provided, only entities that
     ///    have changed since `lastKnowledgeOfServer` will be included.
     ///
-    /// - Returns: A tuple containing a list of hybrid transactions and server knowledge
+    /// - Returns: A tuple containing a list of hybrid transactions and optional server knowledge
     public func transactions(
         planId: String,
         categoryId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
-    ) async throws -> ([HybridTransaction], ServerKnowledge) {
+    ) async throws -> ([HybridTransaction], ServerKnowledge?) {
         let request = TransactionsByCategoryRequest(
             planId: planId,
             categoryId: categoryId,
@@ -141,14 +141,14 @@ extension TransactionService: TransactionServiceType {
     ///    - lastKnowledgeOfServer: The starting server knowledge. If provided, only entities that
     ///    have changed since `lastKnowledgeOfServer` will be included.
     ///
-    /// - Returns: A tuple containing a list of hybrid transactions and server knowledge
+    /// - Returns: A tuple containing a list of hybrid transactions and optional server knowledge
     public func transactions(
         planId: String,
         payeeId: String,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
-    ) async throws -> ([HybridTransaction], ServerKnowledge) {
+    ) async throws -> ([HybridTransaction], ServerKnowledge?) {
         let request = TransactionsByPayeeRequest(
             planId: planId,
             payeeId: payeeId,
@@ -173,14 +173,14 @@ extension TransactionService: TransactionServiceType {
     ///    - lastKnowledgeOfServer: The starting server knowledge. If provided, only entities that
     ///    have changed since `lastKnowledgeOfServer` will be included.
     ///
-    /// - Returns: A tuple containing a list of hybrid transactions and server knowledge
+    /// - Returns: A tuple containing a list of transactions and server knowledge
     public func transactions(
         planId: String,
         month: Date,
         sinceDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
-    ) async throws -> ([HybridTransaction], ServerKnowledge) {
+    ) async throws -> ([TransactionDetail], ServerKnowledge) {
         let request = TransactionsByMonthRequest(
             planId: planId,
             month: month,

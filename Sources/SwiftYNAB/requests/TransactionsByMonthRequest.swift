@@ -49,7 +49,7 @@ extension TransactionsByMonthRequest: Request {
 
 extension TransactionsByMonthRequest {
     struct Response: Decodable {
-        let transactions: [HybridTransaction]
+        let transactions: [TransactionDetail]
         let serverKnowledge: ServerKnowledge
     }
 }

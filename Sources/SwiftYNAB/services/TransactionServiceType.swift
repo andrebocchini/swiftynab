@@ -33,7 +33,7 @@ protocol TransactionServiceType: Sendable {
         sinceDate: Date?,
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
-    ) async throws -> ([HybridTransaction], ServerKnowledge)
+    ) async throws -> ([HybridTransaction], ServerKnowledge?)
 
     func transactions(
         planId: String,
@@ -41,7 +41,7 @@ protocol TransactionServiceType: Sendable {
         sinceDate: Date?,
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
-    ) async throws -> ([HybridTransaction], ServerKnowledge)
+    ) async throws -> ([HybridTransaction], ServerKnowledge?)
 
     func transactions(
         planId: String,
@@ -49,7 +49,7 @@ protocol TransactionServiceType: Sendable {
         sinceDate: Date?,
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
-    ) async throws -> ([HybridTransaction], ServerKnowledge)
+    ) async throws -> ([TransactionDetail], ServerKnowledge)
 
     func createTransaction(
         planId: String,

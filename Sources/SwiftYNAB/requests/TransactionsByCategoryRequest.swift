@@ -47,6 +47,6 @@ extension TransactionsByCategoryRequest: Request {
 extension TransactionsByCategoryRequest {
     struct Response: Decodable {
         let transactions: [HybridTransaction]
-        let serverKnowledge: ServerKnowledge
+        let serverKnowledge: ServerKnowledge?
     }
 }

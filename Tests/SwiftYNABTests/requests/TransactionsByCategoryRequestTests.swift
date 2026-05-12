@@ -46,4 +46,34 @@ struct TransactionsByCategoryRequestTests {
         #expect(request.query?[2] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
         #expect(request.body == nil)
     }
+
+    @Test("Response decodes when optional server knowledge is omitted")
+    func categoryTransactionsResponseWithoutServerKnowledge() throws {
+        let data = Data(
+            """
+            {
+              "transactions": [
+                {
+                  "type": "transaction",
+                  "id": "transaction_id",
+                  "date": "2025-01-01",
+                  "amount": 1500,
+                  "cleared": "cleared",
+                  "approved": true,
+                  "account_id": "account_id",
+                  "account_name": "Checking",
+                  "category_name": "Groceries",
+                  "deleted": false
+                }
+              ]
+            }
+            """.utf8
+        )
+
+        let response = try Serializer()
+            .decode(TransactionsByCategoryRequest.Response.self, from: data)
+
+        #expect(response.transactions.count == 1)
+        #expect(response.serverKnowledge == nil)
+    }
 }

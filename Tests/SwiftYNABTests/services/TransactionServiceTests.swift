@@ -289,9 +289,7 @@ struct TransactionServiceTests {
 
     @Test("Returns transactions for a month when request succeeds")
     func getTransactionsByMonthReturnsTransactionsWhenRequestSucceeds() async throws {
-        let expectedTransaction = HybridTransaction(
-            type: "type",
-            parentTransactionId: nil,
+        let expectedTransaction = TransactionDetail(
             id: "id",
             date: "2022-07-07",
             amount: 0,
@@ -307,15 +305,16 @@ struct TransactionServiceTests {
             payeeId: "payee_id",
             payeeName: nil,
             categoryId: "category_id",
-            categoryName: "",
+            categoryName: nil,
             transferAccountId: nil,
             transferTransactionId: nil,
             matchedTransactionId: nil,
             importId: nil,
             importPayeeName: nil,
             importPayeeNameOriginal: nil,
-            debtTransactionType: .charge,
-            deleted: false
+            debtTransactionType: nil,
+            deleted: false,
+            subtransactions: []
         )
         let expectedResponse = TransactionsByMonthRequest
             .Response(transactions: [expectedTransaction], serverKnowledge: 1)

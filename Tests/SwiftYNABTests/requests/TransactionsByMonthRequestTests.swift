@@ -56,4 +56,33 @@ struct TransactionsByMonthRequestTests {
         #expect(query.contains { $0.name == "type" && $0.value == "uncategorized" })
         #expect(query.contains { $0.name == "last_knowledge_of_server" && $0.value == "123" })
     }
+
+    @Test("Response decodes transaction details with required server knowledge")
+    func transactionsByMonthResponse() throws {
+        let data = Data(
+            """
+            {
+              "server_knowledge": 123,
+              "transactions": [
+                {
+                  "id": "transaction_id",
+                  "date": "2025-01-01",
+                  "amount": 1500,
+                  "cleared": "cleared",
+                  "approved": true,
+                  "account_id": "account_id",
+                  "account_name": "Checking",
+                  "deleted": false,
+                  "subtransactions": []
+                }
+              ]
+            }
+            """.utf8
+        )
+
+        let response = try Serializer().decode(TransactionsByMonthRequest.Response.self, from: data)
+
+        #expect(response.serverKnowledge == 123)
+        #expect(response.transactions.first?.accountName == "Checking")
+    }
 }
