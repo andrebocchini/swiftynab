@@ -61,10 +61,10 @@ public struct Account: Codable, Equatable, Sendable {
     public let transferPayeeId: String?
 
     /// Indicates whether the account is linked via direct import
-    public let directImportLinked: Bool
+    public let directImportLinked: Bool?
 
     /// Indicates whether direct import is in an error state
-    public let directImportInError: Bool
+    public let directImportInError: Bool?
 
     /// Date when account was last reconciled
     public let lastReconciledAt: String?
