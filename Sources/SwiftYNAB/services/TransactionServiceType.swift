@@ -70,7 +70,7 @@ protocol TransactionServiceType: Sendable {
         planId: String,
         transactionId: String,
         transaction: ExistingTransaction
-    ) async throws -> TransactionDetail
+    ) async throws -> (TransactionDetail, ServerKnowledge)
 
     func importTransactions(
         planId: String
@@ -79,5 +79,5 @@ protocol TransactionServiceType: Sendable {
     func deleteTransaction(
         planId: String,
         transactionId: String
-    ) async throws -> TransactionDetail
+    ) async throws -> (TransactionDetail, ServerKnowledge)
 }

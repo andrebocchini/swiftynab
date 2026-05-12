@@ -25,6 +25,7 @@ extension DeleteTransactionRequest: Request {
 
 extension DeleteTransactionRequest {
     struct Response: Decodable {
+        let serverKnowledge: ServerKnowledge
         let transaction: TransactionDetail
     }
 }

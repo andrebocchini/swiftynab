@@ -385,17 +385,19 @@ struct TransactionServiceTests {
             subtransactions: []
         )
         let expectedResponse = UpdateTransactionRequest.Response(
+            serverKnowledge: 200,
             transaction: expectedTransaction
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let actualResponse = try await service.updateTransaction(
+        let (actualTransaction, serverKnowledge) = try await service.updateTransaction(
             planId: "budget_id",
             transactionId: "transaction_id",
             transaction: updateTransaction
         )
 
-        #expect(expectedTransaction == actualResponse)
+        #expect(expectedTransaction == actualTransaction)
+        #expect(serverKnowledge == 200)
     }
 
     @Test("Throws error when single transaction update fails")
@@ -548,16 +550,20 @@ struct TransactionServiceTests {
             deleted: false,
             subtransactions: []
         )
-        let expectedResponse = DeleteTransactionRequest.Response(transaction: expectedTransaction)
+        let expectedResponse = DeleteTransactionRequest.Response(
+            serverKnowledge: 200,
+            transaction: expectedTransaction
+        )
 
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let actualResponse = try await service.deleteTransaction(
+        let (actualTransaction, serverKnowledge) = try await service.deleteTransaction(
             planId: "budget_id",
             transactionId: "transaction_id"
         )
 
-        #expect(actualResponse == expectedTransaction)
+        #expect(actualTransaction == expectedTransaction)
+        #expect(serverKnowledge == 200)
     }
 
     @Test("Throws error when deleting a transaction fails")

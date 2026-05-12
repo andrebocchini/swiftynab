@@ -6,6 +6,7 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
+import Foundation
 import Testing
 @testable import SwiftYNAB
 
@@ -43,5 +44,32 @@ struct UpdateTransactionRequestTests {
         let encodedTransaction = try #require(object["transaction"] as? [String: Any])
         #expect(encodedTransaction["id"] == nil)
         #expect(encodedTransaction["import_id"] == nil)
+    }
+
+    @Test("Response decodes transaction with server knowledge")
+    func updateTransactionResponse() throws {
+        let data = Data(
+            """
+            {
+              "server_knowledge": 321,
+              "transaction": {
+                "id": "transaction_id",
+                "date": "2025-01-01",
+                "amount": 1500,
+                "cleared": "cleared",
+                "approved": true,
+                "account_id": "account_id",
+                "account_name": "Checking",
+                "deleted": false,
+                "subtransactions": []
+              }
+            }
+            """.utf8
+        )
+
+        let response = try Serializer().decode(UpdateTransactionRequest.Response.self, from: data)
+
+        #expect(response.serverKnowledge == 321)
+        #expect(response.transaction.id == "transaction_id")
     }
 }

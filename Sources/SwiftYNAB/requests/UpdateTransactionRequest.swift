@@ -40,6 +40,7 @@ struct UpdateTransactionRequestWrapper: Codable {
 
 extension UpdateTransactionRequest {
     struct Response: Decodable {
+        let serverKnowledge: ServerKnowledge
         let transaction: TransactionDetail
     }
 }

@@ -253,19 +253,19 @@ extension TransactionService: TransactionServiceType {
     /// plan)
     ///    - transaction: The transaction data to update
     ///
-    /// - Returns: The updated transaction
+    /// - Returns: A tuple containing the updated transaction and server knowledge
     public func updateTransaction(
         planId: String,
         transactionId: String,
         transaction: ExistingTransaction
-    ) async throws -> TransactionDetail {
+    ) async throws -> (TransactionDetail, ServerKnowledge) {
         let request = UpdateTransactionRequest(
             planId: planId,
             transactionId: transactionId,
             transaction: transaction
         )
         let response = try await client.perform(request)
-        return response.transaction
+        return (response.transaction, response.serverKnowledge)
     }
 
     /// Imports transactions that have been uploaded via file-based import.
@@ -290,13 +290,13 @@ extension TransactionService: TransactionServiceType {
     /// plan)
     ///    - transactionId: The id of the transaction to delete
     ///
-    /// - Returns: The deleted transaction
+    /// - Returns: A tuple containing the deleted transaction and server knowledge
     public func deleteTransaction(
         planId: String,
         transactionId: String
-    ) async throws -> TransactionDetail {
+    ) async throws -> (TransactionDetail, ServerKnowledge) {
         let request = DeleteTransactionRequest(planId: planId, transactionId: transactionId)
         let response = try await client.perform(request)
-        return response.transaction
+        return (response.transaction, response.serverKnowledge)
     }
 }

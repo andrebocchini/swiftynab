@@ -23,4 +23,31 @@ struct DeleteTransactionRequestTests {
         #expect(request.body == nil)
         #expect(request.path == "/v1/plans/budget_id/transactions/transaction_id")
     }
+
+    @Test("Response decodes transaction with server knowledge")
+    func deleteTransactionResponse() throws {
+        let data = Data(
+            """
+            {
+              "server_knowledge": 654,
+              "transaction": {
+                "id": "transaction_id",
+                "date": "2025-01-01",
+                "amount": 0,
+                "cleared": "cleared",
+                "approved": true,
+                "account_id": "account_id",
+                "account_name": "Checking",
+                "deleted": true,
+                "subtransactions": []
+              }
+            }
+            """.utf8
+        )
+
+        let response = try Serializer().decode(DeleteTransactionRequest.Response.self, from: data)
+
+        #expect(response.serverKnowledge == 654)
+        #expect(response.transaction.id == "transaction_id")
+    }
 }
