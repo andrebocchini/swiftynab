@@ -382,7 +382,7 @@ struct CategoryServiceTests {
         let service = CategoryService(client: client)
         let actualResponse = try await service.createCategory(
             planId: "budget_id",
-            category: SaveCategory(name: "name", categoryGroupId: "group_id")
+            category: NewCategory(name: "name", categoryGroupId: "group_id")
         )
 
         #expect(expectedCategory == actualResponse.0)
@@ -398,7 +398,7 @@ struct CategoryServiceTests {
         await #expect(throws: SwiftYNABError.httpError(statusCode: 500)) {
             try await service.createCategory(
                 planId: "budget_id",
-                category: SaveCategory(name: "name", categoryGroupId: "group_id")
+                category: NewCategory(name: "name", categoryGroupId: "group_id")
             )
         }
     }

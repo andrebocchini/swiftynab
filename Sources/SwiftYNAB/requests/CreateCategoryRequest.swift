@@ -10,7 +10,7 @@ import Foundation
 
 struct CreateCategoryRequest {
     let planId: String
-    let category: SaveCategory
+    let category: NewCategory
 }
 
 extension CreateCategoryRequest: Request {
@@ -23,9 +23,17 @@ extension CreateCategoryRequest: Request {
     }
 
     var body: Data? {
-        let wrapper = SaveCategoryWrapper(with: category)
+        let wrapper = NewCategoryWrapper(with: category)
         let serializer = Serializer()
         return try? serializer.encode(wrapper)
+    }
+}
+
+struct NewCategoryWrapper: Codable, Equatable {
+    var category: NewCategory
+
+    init(with category: NewCategory) {
+        self.category = category
     }
 }
 

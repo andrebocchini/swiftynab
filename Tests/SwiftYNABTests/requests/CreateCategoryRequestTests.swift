@@ -13,7 +13,7 @@ import Testing
 struct CreateCategoryRequestTests {
     @Test("Request uses POST method with category data in body")
     func createCategoryRequest() throws {
-        let category = SaveCategory(
+        let category = NewCategory(
             name: "New Category",
             categoryGroupId: "c36fbd68-131e-4ea8-b30f-94f43423021c",
             goalNeedsWholeAmount: true
@@ -28,10 +28,10 @@ struct CreateCategoryRequestTests {
         #expect(request.method == .post)
         #expect(request.query == nil)
 
-        let expectedBody = SaveCategoryWrapper(with: category)
+        let expectedBody = NewCategoryWrapper(with: category)
         let serializer = Serializer()
         let body = try #require(request.body)
-        let decodedBody = try serializer.decode(SaveCategoryWrapper.self, from: body)
+        let decodedBody = try serializer.decode(NewCategoryWrapper.self, from: body)
         #expect(decodedBody == expectedBody)
     }
 }

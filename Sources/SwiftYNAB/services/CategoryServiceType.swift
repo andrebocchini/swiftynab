@@ -33,7 +33,7 @@ protocol CategoryServiceType: Sendable {
 
     func createCategory(
         planId: String,
-        category: SaveCategory
+        category: NewCategory
     ) async throws -> (Category, ServerKnowledge)
 
     func createCategoryGroup(

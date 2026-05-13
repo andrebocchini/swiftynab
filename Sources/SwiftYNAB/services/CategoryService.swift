@@ -141,12 +141,12 @@ extension CategoryService: CategoryServiceType {
     /// - Parameters:
     ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
     /// plan)
-    ///    - category: The category to create. Must include `name` and `categoryGroupId`.
+    ///    - category: The category to create
     ///
     /// - Returns: The created category and the server knowledge
     public func createCategory(
         planId: String,
-        category: SaveCategory
+        category: NewCategory
     ) async throws -> (Category, ServerKnowledge) {
         let request = CreateCategoryRequest(
             planId: planId,
