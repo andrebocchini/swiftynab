@@ -76,7 +76,7 @@ public struct TransactionSummary: Codable, Equatable, Sendable {
     /// If the transaction was imported, the original payee name as it appeared on the statement
     public let importPayeeNameOriginal: String?
 
-    /// If the transaction was imported, the original payee name as it appeared on the statement
+    /// If the transaction is a debt/loan account transaction, the type of transaction
     public let debtTransactionType: DebtTransactionType?
 
     /// Whether or not the transaction has been deleted
