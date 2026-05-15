@@ -35,7 +35,7 @@ public struct ScheduledTransactionSummary: Codable, Equatable, Sendable {
     public let memo: String?
 
     /// Flag color
-    public let flagColor: String?
+    public let flagColor: FlagColor?
 
     /// Flag name
     public let flagName: String?

@@ -35,7 +35,7 @@ public struct ScheduledTransactionDetail: Codable, Equatable, Sendable {
     public let memo: String?
 
     /// Flag color
-    public let flagColor: String?
+    public let flagColor: FlagColor?
 
     /// Flag name
     public let flagName: String?
@@ -78,7 +78,7 @@ extension ScheduledTransactionDetail {
         amountFormatted: String?,
         amountCurrency: Decimal?,
         memo: String?,
-        flagColor: String?,
+        flagColor: FlagColor?,
         accountId: String,
         accountName: String,
         payeeId: String?,

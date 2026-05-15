@@ -14,7 +14,7 @@ public enum DebtTransactionType: String, Codable, Equatable, Sendable {
     case fee
     case interest
     case escrow
-    case balancedAdjustment
+    case balanceAdjustment
     case credit
     case charge
 }
