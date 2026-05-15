@@ -28,9 +28,9 @@ extension CreateTransactionsRequest: Request {
     }
 
     struct Response: Decodable {
-        let duplicateImportIds: [String]
+        let duplicateImportIds: [String]?
         let serverKnowledge: ServerKnowledge
-        let transactions: [TransactionDetail]
+        let transactions: [TransactionDetail]?
         let transactionIds: [String]
     }
 }

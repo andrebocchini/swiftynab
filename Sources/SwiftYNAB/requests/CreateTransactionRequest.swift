@@ -29,7 +29,7 @@ extension CreateTransactionRequest: Request {
 
     struct Response: Decodable {
         let serverKnowledge: ServerKnowledge
-        let transaction: TransactionDetail
+        let transaction: TransactionDetail?
         let transactionIds: [String]
     }
 }

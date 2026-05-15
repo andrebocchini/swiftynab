@@ -485,8 +485,9 @@ struct TransactionServiceTests {
             transactions: [updateTransaction]
         )
 
-        #expect(actualResponse.0.count == 1)
-        #expect(actualResponse.0[0] == expectedTransaction)
+        let actualTransactions = try #require(actualResponse.0)
+        #expect(actualTransactions.count == 1)
+        #expect(actualTransactions[0] == expectedTransaction)
         #expect(actualResponse.1 == 200)
         #expect(actualResponse.2 == [])
     }
@@ -765,9 +766,10 @@ struct TransactionServiceTests {
             transactions: [newTransaction1, newTransaction2]
         )
 
-        #expect(actualResponse.0.count == 2)
-        #expect(actualResponse.0[0] == expectedTransaction1)
-        #expect(actualResponse.0[1] == expectedTransaction2)
+        let actualTransactions = try #require(actualResponse.0)
+        #expect(actualTransactions.count == 2)
+        #expect(actualTransactions[0] == expectedTransaction1)
+        #expect(actualTransactions[1] == expectedTransaction2)
         #expect(actualResponse.1 == 200)
         #expect(actualResponse.2 == [])
     }

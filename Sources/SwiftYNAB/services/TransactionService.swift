@@ -204,7 +204,7 @@ extension TransactionService: TransactionServiceType {
     public func createTransaction(
         planId: String,
         transaction: NewTransaction
-    ) async throws -> (TransactionDetail, ServerKnowledge) {
+    ) async throws -> (TransactionDetail?, ServerKnowledge) {
         let request = CreateTransactionRequest(planId: planId, transaction: transaction)
         let response = try await client.perform(request)
         return (response.transaction, response.serverKnowledge)
@@ -222,7 +222,7 @@ extension TransactionService: TransactionServiceType {
     public func createTransactions(
         planId: String,
         transactions: [NewTransaction]
-    ) async throws -> ([TransactionDetail], ServerKnowledge, [String]) {
+    ) async throws -> ([TransactionDetail]?, ServerKnowledge, [String]?) {
         let request = CreateTransactionsRequest(planId: planId, transactions: transactions)
         let response = try await client.perform(request)
         return (response.transactions, response.serverKnowledge, response.duplicateImportIds)
@@ -240,7 +240,7 @@ extension TransactionService: TransactionServiceType {
     public func updateTransactions(
         planId: String,
         transactions: [SaveTransactionWithIdOrImportId]
-    ) async throws -> ([TransactionDetail], ServerKnowledge, [String]) {
+    ) async throws -> ([TransactionDetail]?, ServerKnowledge, [String]?) {
         let request = UpdateTransactionsRequest(planId: planId, transactions: transactions)
         let response = try await client.perform(request)
         return (response.transactions, response.serverKnowledge, response.duplicateImportIds)

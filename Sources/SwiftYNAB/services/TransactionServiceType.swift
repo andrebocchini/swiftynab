@@ -54,17 +54,17 @@ protocol TransactionServiceType: Sendable {
     func createTransaction(
         planId: String,
         transaction: NewTransaction
-    ) async throws -> (TransactionDetail, ServerKnowledge)
+    ) async throws -> (TransactionDetail?, ServerKnowledge)
 
     func createTransactions(
         planId: String,
         transactions: [NewTransaction]
-    ) async throws -> ([TransactionDetail], ServerKnowledge, [String])
+    ) async throws -> ([TransactionDetail]?, ServerKnowledge, [String]?)
 
     func updateTransactions(
         planId: String,
         transactions: [SaveTransactionWithIdOrImportId]
-    ) async throws -> ([TransactionDetail], ServerKnowledge, [String])
+    ) async throws -> ([TransactionDetail]?, ServerKnowledge, [String]?)
 
     func updateTransaction(
         planId: String,
