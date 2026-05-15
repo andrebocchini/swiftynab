@@ -20,7 +20,7 @@ public struct ScheduledTransactionDetail: Codable, Equatable, Sendable {
     public let dateNext: String
 
     /// How often the transaction happens
-    public let frequency: String
+    public let frequency: ScheduledTransactionFrequency
 
     /// Amount of the transaction in milliunits
     public let amount: Int
@@ -73,7 +73,7 @@ extension ScheduledTransactionDetail {
         id: String,
         dateFirst: String,
         dateNext: String,
-        frequency: String,
+        frequency: ScheduledTransactionFrequency,
         amount: Int,
         amountFormatted: String?,
         amountCurrency: Decimal?,

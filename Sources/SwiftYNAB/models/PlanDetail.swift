@@ -17,13 +17,13 @@ public struct PlanDetail: Codable, Equatable, Sendable {
     public let name: String
 
     /// Date the plan was last modified
-    public let lastModifiedOn: String
+    public let lastModifiedOn: String?
 
     /// Plan's first month
-    public let firstMonth: String
+    public let firstMonth: String?
 
     /// Plan's last month
-    public let lastMonth: String
+    public let lastMonth: String?
 
     /// Date formatting settings
     public let dateFormat: DateFormat?
@@ -32,32 +32,32 @@ public struct PlanDetail: Codable, Equatable, Sendable {
     public let currencyFormat: CurrencyFormat?
 
     /// Accounts on this plan
-    public let accounts: [Account]
+    public let accounts: [Account]?
 
     /// Payees on this plan
-    public let payees: [Payee]
+    public let payees: [Payee]?
 
     /// All recorded payee locations
-    public let payeeLocations: [PayeeLocation]
+    public let payeeLocations: [PayeeLocation]?
 
     /// Plan category groups
-    public let categoryGroups: [CategoryGroup]
+    public let categoryGroups: [CategoryGroup]?
 
     /// Plan categories
-    public let categories: [Category]
+    public let categories: [Category]?
 
     /// Plan months
-    public let months: [MonthDetail]
+    public let months: [MonthDetail]?
 
     /// All transactions on this plan
-    public let transactions: [TransactionSummary]
+    public let transactions: [TransactionSummary]?
 
     /// All subtransactions on this plan
-    public let subtransactions: [SubTransaction]
+    public let subtransactions: [SubTransaction]?
 
     /// All scheduled transactions on this plan
-    public let scheduledTransactions: [ScheduledTransactionSummary]
+    public let scheduledTransactions: [ScheduledTransactionSummary]?
 
     /// All scheduled sub transactions on this plan
-    public let scheduledSubtransactions: [ScheduledSubTransaction]
+    public let scheduledSubtransactions: [ScheduledSubTransaction]?
 }

@@ -23,7 +23,7 @@ struct SaveScheduledTransactionRequestTests {
             categoryId: "category_id",
             memo: "Test scheduled transaction",
             flagColor: nil,
-            frequency: "monthly"
+            frequency: .monthly
         )
 
         let request = SaveScheduledTransactionRequest(
@@ -56,7 +56,7 @@ struct SaveScheduledTransactionRequestTests {
             categoryId: "category_id",
             memo: "Updated scheduled transaction",
             flagColor: nil,
-            frequency: "weekly"
+            frequency: .weekly
         )
 
         let request = SaveScheduledTransactionRequest(

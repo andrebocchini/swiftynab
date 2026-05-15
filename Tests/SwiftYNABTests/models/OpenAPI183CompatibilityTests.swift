@@ -317,13 +317,13 @@ struct OpenAPI183CompatibilityTests {
     func planDetailBaseShapeDecoding() throws {
         let plan = try decode(PlanDetail.self, from: planDetailBaseSchemaJSON)
 
-        let account = try #require(plan.accounts.first)
-        let category = try #require(plan.categories.first)
-        let month = try #require(plan.months.first)
-        let transaction = try #require(plan.transactions.first)
-        let subtransaction = try #require(plan.subtransactions.first)
-        let scheduledTransaction = try #require(plan.scheduledTransactions.first)
-        let scheduledSubtransaction = try #require(plan.scheduledSubtransactions.first)
+        let account = try #require(plan.accounts?.first)
+        let category = try #require(plan.categories?.first)
+        let month = try #require(plan.months?.first)
+        let transaction = try #require(plan.transactions?.first)
+        let subtransaction = try #require(plan.subtransactions?.first)
+        let scheduledTransaction = try #require(plan.scheduledTransactions?.first)
+        let scheduledSubtransaction = try #require(plan.scheduledSubtransactions?.first)
 
         #expect(account.balanceFormatted == nil)
         #expect(category.balanceFormatted == nil)
@@ -332,7 +332,25 @@ struct OpenAPI183CompatibilityTests {
         #expect(subtransaction.amountFormatted == nil)
         #expect(scheduledTransaction.amountFormatted == nil)
         #expect(scheduledTransaction.payeeId == nil)
+        #expect(scheduledTransaction.frequency == .monthly)
         #expect(scheduledSubtransaction.amountFormatted == nil)
+    }
+
+    @Test("PlanDetail decodes when optional expansion fields are omitted")
+    func planDetailDecodingWithOmittedExpansionFields() throws {
+        let plan = try decode(PlanDetail.self, from: """
+        {
+          "id": "plan-id",
+          "name": "Sample Plan"
+        }
+        """)
+
+        #expect(plan.id == "plan-id")
+        #expect(plan.name == "Sample Plan")
+        #expect(plan.lastModifiedOn == nil)
+        #expect(plan.accounts == nil)
+        #expect(plan.transactions == nil)
+        #expect(plan.scheduledTransactions == nil)
     }
 }
 

@@ -50,7 +50,7 @@ public struct SaveScheduledTransaction: Codable, Equatable, Sendable {
     public let flagColor: FlagColor?
 
     /// The scheduled transaction frequency
-    public let frequency: String?
+    public let frequency: ScheduledTransactionFrequency?
 
     /// Creates a new SaveScheduledTransaction instance
     /// - Parameters:
@@ -72,7 +72,7 @@ public struct SaveScheduledTransaction: Codable, Equatable, Sendable {
         categoryId: String? = nil,
         memo: String? = nil,
         flagColor: FlagColor? = nil,
-        frequency: String? = nil
+        frequency: ScheduledTransactionFrequency? = nil
     ) {
         self.accountId = accountId
         self.date = date
@@ -105,7 +105,7 @@ public struct SaveScheduledTransaction: Codable, Equatable, Sendable {
         categoryId: String? = nil,
         memo: String? = nil,
         flagColor: FlagColor? = nil,
-        frequency: String? = nil
+        frequency: ScheduledTransactionFrequency? = nil
     ) {
         self.init(
             accountId: accountId,

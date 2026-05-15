@@ -20,7 +20,7 @@ public struct ScheduledTransactionSummary: Codable, Equatable, Sendable {
     public let dateNext: String
 
     /// How often the transaction happens
-    public let frequency: String
+    public let frequency: ScheduledTransactionFrequency
 
     /// Amount of the transaction in milliunits
     public let amount: Int

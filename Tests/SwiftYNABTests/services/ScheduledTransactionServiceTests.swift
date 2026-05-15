@@ -19,7 +19,7 @@ struct ScheduledTransactionServiceTests {
             id: "id",
             dateFirst: "2022-07-07",
             dateNext: "2022-07-08",
-            frequency: "",
+            frequency: .never,
             amount: 0,
             amountFormatted: nil,
             amountCurrency: nil,
@@ -67,7 +67,7 @@ struct ScheduledTransactionServiceTests {
             id: "id",
             dateFirst: "2022-07-07",
             dateNext: "2022-07-08",
-            frequency: "",
+            frequency: .never,
             amount: 0,
             amountFormatted: nil,
             amountCurrency: nil,
@@ -119,13 +119,13 @@ struct ScheduledTransactionServiceTests {
             categoryId: "category_id",
             memo: "test memo",
             flagColor: nil,
-            frequency: "monthly"
+            frequency: .monthly
         )
         let expectedScheduledTransaction = ScheduledTransactionDetail(
             id: "scheduled_transaction_id",
             dateFirst: "2022-07-07",
             dateNext: "2022-08-07",
-            frequency: "monthly",
+            frequency: .monthly,
             amount: 100,
             amountFormatted: nil,
             amountCurrency: nil,
@@ -165,7 +165,7 @@ struct ScheduledTransactionServiceTests {
             categoryId: "category_id",
             memo: "test memo",
             flagColor: nil,
-            frequency: "monthly"
+            frequency: .monthly
         )
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
@@ -190,13 +190,13 @@ struct ScheduledTransactionServiceTests {
             categoryId: "category_id",
             memo: "updated memo",
             flagColor: nil,
-            frequency: "weekly"
+            frequency: .weekly
         )
         let expectedScheduledTransaction = ScheduledTransactionDetail(
             id: "scheduled_transaction_id",
             dateFirst: "2022-07-07",
             dateNext: "2022-07-14",
-            frequency: "weekly",
+            frequency: .weekly,
             amount: 150,
             amountFormatted: nil,
             amountCurrency: nil,
@@ -237,7 +237,7 @@ struct ScheduledTransactionServiceTests {
             categoryId: "category_id",
             memo: "updated memo",
             flagColor: nil,
-            frequency: "weekly"
+            frequency: .weekly
         )
         let expectedError = SwiftYNABError.httpError(statusCode: 500)
         let client = MockFailureClient(expectedError: expectedError)
@@ -258,7 +258,7 @@ struct ScheduledTransactionServiceTests {
             id: "scheduled_transaction_id",
             dateFirst: "2022-07-07",
             dateNext: "2022-08-07",
-            frequency: "monthly",
+            frequency: .monthly,
             amount: 100,
             amountFormatted: nil,
             amountCurrency: nil,
