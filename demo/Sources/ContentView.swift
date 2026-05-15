@@ -27,11 +27,11 @@ struct ContentView: View {
                         navigationPath.append(token)
                     }
                 } label: {
-                    Text("View Budgets")
+                    Text("View Plans")
                         .font(.title2)
                 }
                 .navigationDestination(for: String.self) { token in
-                    BudgetsView(token: $token)
+                    PlansView(token: $token)
                 }
                 .alert("Error", isPresented: $isError) {
                     Button {

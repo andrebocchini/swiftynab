@@ -1,5 +1,5 @@
 //
-//  BudgetsView.swift
+//  PlansView.swift
 //  SwiftYNAB-SwiftUI-demo
 //
 //  Created by Andre Bocchini on 12/8/22.
@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct BudgetsView: View {
+struct PlansView: View {
     @Binding var token: String
 
-    @State var viewModel: BudgetViewModelType = BudgetViewModel()
+    @State var viewModel: PlanViewModelType = PlanViewModel()
 
     var body: some View {
         VStack {
@@ -20,24 +20,24 @@ struct BudgetsView: View {
                     .progressViewStyle(.circular)
                     .scaleEffect(2, anchor: .center)
             } else if viewModel.isError {
-                Text("Error loading budgets!")
+                Text("Error loading plans!")
             } else {
-                List(viewModel.budgets, id: \.id) { budget in
+                List(viewModel.plans, id: \.id) { plan in
                     NavigationLink {
                         AccountsView(
                             token: $token,
-                            viewModel: AccountsViewModel(budget: budget)
+                            viewModel: AccountsViewModel(plan: plan)
                         )
                     } label: {
-                        Text(budget.name)
+                        Text(plan.name)
                     }
                 }
             }
         }
-        .navigationTitle("Budgets")
+        .navigationTitle("Plans")
         .onAppear {
             Task {
-                await viewModel.fetchBudgets(using: token)
+                await viewModel.fetchPlans(using: token)
             }
         }
     }

@@ -1,5 +1,5 @@
 //
-//  BudgetViewModel.swift
+//  PlanViewModel.swift
 //  SwiftYNAB-SwiftUI-demo
 //
 //  Created by Andre Bocchini on 12/9/22.
@@ -8,22 +8,22 @@
 import Foundation
 import SwiftYNAB
 
-protocol BudgetViewModelType {
+protocol PlanViewModelType {
     var isLoading: Bool { get }
     var isError: Bool { get }
-    var budgets: [Budget] { get }
+    var plans: [Plan] { get }
 
-    mutating func fetchBudgets(using token: String) async
+    mutating func fetchPlans(using token: String) async
 }
 
-struct BudgetViewModel: BudgetViewModelType {
+struct PlanViewModel: PlanViewModelType {
     private(set) var isLoading = false
     private(set) var isError = false
-    private(set) var budgets: [Budget] = []
+    private(set) var plans: [Plan] = []
 }
 
-extension BudgetViewModel {
-    @MainActor mutating func fetchBudgets(using token: String) async {
+extension PlanViewModel {
+    @MainActor mutating func fetchPlans(using token: String) async {
         if !isLoading, !isError {
             defer {
                 isLoading = false
@@ -33,8 +33,8 @@ extension BudgetViewModel {
             let ynab = YNAB(accessToken: token)
 
             do {
-                let result = try await ynab.budgets.budgets(includeAccounts: true)
-                budgets = result.map { Budget(summary: $0) }
+                let result = try await ynab.plans.plans(includeAccounts: true)
+                plans = result.map { Plan(summary: $0) }
 
                 isError = false
             } catch {

@@ -27,7 +27,7 @@ struct AccountsView: View {
                         TransactionsView(
                             token: $token,
                             viewModel: TransactionsViewModel(
-                                budget: viewModel.budget,
+                                plan: viewModel.plan,
                                 account: account
                             )
                         )

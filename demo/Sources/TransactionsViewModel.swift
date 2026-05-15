@@ -12,7 +12,7 @@ protocol TransactionsViewModelType {
     var isLoading: Bool { get }
     var isError: Bool { get }
     var transactions: [Transaction] { get }
-    var budget: Budget { get }
+    var plan: Plan { get }
     var account: Account { get }
 
     mutating func fetchTransactions(using token: String) async
@@ -22,11 +22,11 @@ struct TransactionsViewModel: TransactionsViewModelType {
     private(set) var isLoading = false
     private(set) var isError = false
     private(set) var transactions: [Transaction] = []
-    private(set) var budget: Budget
+    private(set) var plan: Plan
     private(set) var account: Account
 
-    init(budget: Budget, account: Account) {
-        self.budget = budget
+    init(plan: Plan, account: Account) {
+        self.plan = plan
         self.account = account
     }
 }
@@ -43,12 +43,12 @@ extension TransactionsViewModel {
 
             do {
                 let (result, _) = try await ynab.transactions.transactions(
-                    budgetId: budget.id,
+                    planId: plan.id,
                     accountId: account.id,
                     lastKnowledgeOfServer: nil
                 )
 
-                guard let currencyFormat = budget.currencyFormat else {
+                guard let currencyFormat = plan.currencyFormat else {
                     isError = true
                     return
                 }

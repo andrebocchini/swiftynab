@@ -49,7 +49,7 @@ struct Account {
 }
 
 extension Account {
-    init(account: SwiftYNAB.Account, budget: Budget) {
+    init(account: SwiftYNAB.Account, plan: Plan) {
         id = account.id
         name = account.name
 
@@ -59,7 +59,7 @@ extension Account {
             kind = .unknown
         }
 
-        if let currencyFormat = budget.currencyFormat {
+        if let currencyFormat = plan.currencyFormat {
             let currencyFormatter = CurrencyFormatter(currencyFormat: currencyFormat)
             balance = currencyFormatter.currencyString(from: account.balance) ?? ""
         } else {

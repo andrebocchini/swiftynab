@@ -12,7 +12,7 @@ protocol AccountsViewModelType {
     var isLoading: Bool { get }
     var isError: Bool { get }
     var accounts: [Account] { get }
-    var budget: Budget { get }
+    var plan: Plan { get }
 
     mutating func fetchAccounts(using token: String) async
 }
@@ -21,7 +21,7 @@ struct AccountsViewModel: AccountsViewModelType {
     private(set) var isLoading = false
     private(set) var isError = false
     private(set) var accounts: [Account] = []
-    private(set) var budget: Budget
+    private(set) var plan: Plan
 }
 
 extension AccountsViewModel {
@@ -35,10 +35,10 @@ extension AccountsViewModel {
             let ynab = YNAB(accessToken: token)
 
             do {
-                let result = try await ynab.accounts.accounts(budgetId: budget.id)
+                let result = try await ynab.accounts.accounts(planId: plan.id)
                 accounts = result.accounts
                     .filter { !$0.closed }
-                    .map { Account(account: $0, budget: budget) }
+                    .map { Account(account: $0, plan: plan) }
 
                 isError = false
             } catch {
