@@ -37,10 +37,10 @@ let ynab = YNAB(accessToken: "TOKEN_GOES_HERE")
 
 Task {
     do {
-        let budgets = try await ynab.budgets.budgets(includeAccounts: false)
+        let plans = try await ynab.plans.plans(includeAccounts: false)
 
-        for budget in budgets {
-            print(budget.name)
+        for plan in plans {
+            print(plan.name)
         }
     } catch {
         print("Uh oh, something went wrong")
