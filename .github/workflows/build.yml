@@ -29,6 +29,7 @@ jobs:
       - name: Install Swift via swiftly
         if: runner.os == 'Linux'
         run: |
+          sudo apt-get -y install libcurl4-openssl-dev
           curl -O "https://download.swift.org/swiftly/linux/swiftly-1.1.1-$(uname -m).tar.gz"
           tar -zxf "swiftly-1.1.1-$(uname -m).tar.gz"
           ./swiftly init --assume-yes
