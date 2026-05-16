@@ -17,7 +17,7 @@
     <a title="Structures  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftYNAB 3.2.0 Docs</a></p>
+        <p><a href="index.html">SwiftYNAB 4.0.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="search.json">
@@ -52,6 +52,12 @@
                 <a href="Enums/FlagColor.html">FlagColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="Enums/SaveAccountType.html">SaveAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/SwiftYNABError.html">SwiftYNABError</a>
               </li>
               <li class="nav-group-task">
@@ -67,18 +73,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/AccountService.html">AccountService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/BudgetDetail.html">BudgetDetail</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/BudgetService.html">BudgetService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/BudgetSettings.html">BudgetSettings</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/BudgetSummary.html">BudgetSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Category.html">Category</a>
@@ -114,6 +108,9 @@
                 <a href="Structs/ErrorDetail.html">ErrorDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/ExistingTransaction.html">ExistingTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/HybridTransaction.html">HybridTransaction</a>
               </li>
               <li class="nav-group-task">
@@ -135,6 +132,12 @@
                 <a href="Structs/MonthSummary.html">MonthSummary</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/NewCategory.html">NewCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/NewTransaction.html">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Payee.html">Payee</a>
               </li>
               <li class="nav-group-task">
@@ -145,6 +148,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PlanDetail.html">PlanDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PlanService.html">PlanService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PlanSettings.html">PlanSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PlanSummary.html">PlanSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/SaveCategory.html">SaveCategory</a>
@@ -340,90 +355,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB12BudgetDetailV"></a>
-                    <a name="//apple_ref/swift/Struct/BudgetDetail" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB12BudgetDetailV">BudgetDetail</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Full budget model. This represents a complete budget export.</p>
-
-                        <a href="Structs/BudgetDetail.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BudgetDetail</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9SwiftYNAB14BudgetSettingsV"></a>
-                    <a name="//apple_ref/swift/Struct/BudgetSettings" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB14BudgetSettingsV">BudgetSettings</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Budget settings model</p>
-
-                        <a href="Structs/BudgetSettings.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BudgetSettings</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9SwiftYNAB13BudgetSummaryV"></a>
-                    <a name="//apple_ref/swift/Struct/BudgetSummary" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB13BudgetSummaryV">BudgetSummary</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Budget summary model</p>
-
-                        <a href="Structs/BudgetSummary.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BudgetSummary</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:9SwiftYNAB8CategoryV"></a>
                     <a name="//apple_ref/swift/Struct/Category" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB8CategoryV">Category</a>
@@ -592,6 +523,34 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB19ExistingTransactionV"></a>
+                    <a name="//apple_ref/swift/Struct/ExistingTransaction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB19ExistingTransactionV">ExistingTransaction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/ExistingTransaction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ExistingTransaction</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB17HybridTransactionV"></a>
                     <a name="//apple_ref/swift/Struct/HybridTransaction" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB17HybridTransactionV">HybridTransaction</a>
@@ -732,6 +691,63 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB11NewCategoryV"></a>
+                    <a name="//apple_ref/swift/Struct/NewCategory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB11NewCategoryV">NewCategory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A model representing a new category to be created.
+Both <code>name</code> and <code>categoryGroupId</code> are required by the API.</p>
+
+                        <a href="Structs/NewCategory.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NewCategory</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB14NewTransactionV"></a>
+                    <a name="//apple_ref/swift/Struct/NewTransaction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14NewTransactionV">NewTransaction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Structs/NewTransaction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NewTransaction</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB5PayeeV"></a>
                     <a name="//apple_ref/swift/Struct/Payee" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB5PayeeV">Payee</a>
@@ -779,6 +795,90 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PayeeLocation</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB10PlanDetailV"></a>
+                    <a name="//apple_ref/swift/Struct/PlanDetail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB10PlanDetailV">PlanDetail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Full plan model. This represents a complete plan export.</p>
+
+                        <a href="Structs/PlanDetail.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PlanDetail</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB12PlanSettingsV"></a>
+                    <a name="//apple_ref/swift/Struct/PlanSettings" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB12PlanSettingsV">PlanSettings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Plan settings model</p>
+
+                        <a href="Structs/PlanSettings.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PlanSettings</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB11PlanSummaryV"></a>
+                    <a name="//apple_ref/swift/Struct/PlanSummary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB11PlanSummaryV">PlanSummary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Plan summary model</p>
+
+                        <a href="Structs/PlanSummary.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PlanSummary</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Sendable</span></code></pre>
 
                         </div>
                       </div>
@@ -1292,34 +1392,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB13BudgetServiceV"></a>
-                    <a name="//apple_ref/swift/Struct/BudgetService" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB13BudgetServiceV">BudgetService</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Provides access to budget operations</p>
-
-                        <a href="Structs/BudgetService.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BudgetService</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:9SwiftYNAB15CategoryServiceV"></a>
                     <a name="//apple_ref/swift/Struct/CategoryService" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV">CategoryService</a>
@@ -1460,6 +1532,34 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB11PlanServiceV"></a>
+                    <a name="//apple_ref/swift/Struct/PlanService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB11PlanServiceV">PlanService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides access to plan operations</p>
+
+                        <a href="Structs/PlanService.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PlanService</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB27ScheduledTransactionServiceV"></a>
                     <a name="//apple_ref/swift/Struct/ScheduledTransactionService" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB27ScheduledTransactionServiceV">ScheduledTransactionService</a>
@@ -1546,7 +1646,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-03-07)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-05-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

@@ -17,7 +17,7 @@
     <a title="TransactionService Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 3.2.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 4.0.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -54,6 +54,12 @@
                 <a href="../Enums/FlagColor.html">FlagColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/SaveAccountType.html">SaveAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/SwiftYNABError.html">SwiftYNABError</a>
               </li>
               <li class="nav-group-task">
@@ -69,18 +75,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/AccountService.html">AccountService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetService.html">BudgetService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Category.html">Category</a>
@@ -116,6 +110,9 @@
                 <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/ExistingTransaction.html">ExistingTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
               </li>
               <li class="nav-group-task">
@@ -137,6 +134,12 @@
                 <a href="../Structs/MonthSummary.html">MonthSummary</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/NewCategory.html">NewCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NewTransaction.html">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Payee.html">Payee</a>
               </li>
               <li class="nav-group-task">
@@ -147,6 +150,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanDetail.html">PlanDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanService.html">PlanService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSettings.html">PlanSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSummary.html">PlanSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaveCategory.html">SaveCategory</a>
@@ -237,9 +252,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV11transaction8budgetId0eG0AA0C6DetailV_SitSS_SStYaKF"></a>
-                    <a name="//apple_ref/swift/Method/transaction(budgetId:transactionId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV11transaction8budgetId0eG0AA0C6DetailV_SitSS_SStYaKF">transaction(budgetId:<wbr>transactionId:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV11transaction6planId0eG0AA0C6DetailV_SitSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transaction(planId:transactionId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV11transaction6planId0eG0AA0C6DetailV_SitSS_SStYaKF">transaction(planId:<wbr>transactionId:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -258,7 +273,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transaction</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">transactionId</span><span class="p">:</span> <span class="kt">String</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
@@ -271,13 +286,13 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget).</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan).</p>
                                 </div>
                               </td>
                             </tr>
@@ -306,9 +321,9 @@ budget).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId9sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_10Foundation0I0VSgAA0C4TypeOSgSiSgtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/transactions(budgetId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId9sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_10Foundation0I0VSgAA0C4TypeOSgSiSgtYaKF">transactions(budgetId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions6planId9sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_10Foundation0I0VSgAA0C4TypeOSgSiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions6planId9sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_10Foundation0I0VSgAA0C4TypeOSgSiSgtYaKF">transactions(planId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -319,7 +334,7 @@ budget).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns all transactions for a budget.</p>
+                        <p>Returns all transactions for a plan.</p>
 
                       </div>
                       <div class="declaration">
@@ -327,7 +342,7 @@ budget).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
@@ -342,13 +357,13 @@ budget).</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -404,9 +419,9 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId07accountG09sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_SS10Foundation0J0VSgAA0C4TypeOSgSiSgtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/transactions(budgetId:accountId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId07accountG09sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_SS10Foundation0J0VSgAA0C4TypeOSgSiSgtYaKF">transactions(budgetId:<wbr>accountId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions6planId07accountG09sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_SS10Foundation0J0VSgAA0C4TypeOSgSiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:accountId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions6planId07accountG09sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_SS10Foundation0J0VSgAA0C4TypeOSgSiSgtYaKF">transactions(planId:<wbr>accountId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -417,7 +432,7 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns all transactions for an account.</p>
+                        <p>Returns all transactions for an account in a plan.</p>
 
                       </div>
                       <div class="declaration">
@@ -425,7 +440,7 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
@@ -441,13 +456,13 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -515,9 +530,9 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId08categoryG09sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SitSS_SS10Foundation0J0VSgAA0C4TypeOSgSiSgtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/transactions(budgetId:categoryId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId08categoryG09sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SitSS_SS10Foundation0J0VSgAA0C4TypeOSgSiSgtYaKF">transactions(budgetId:<wbr>categoryId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions6planId08categoryG09sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SiSgtSS_SS10Foundation0J0VSgAA0C4TypeOSgAMtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:categoryId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions6planId08categoryG09sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SiSgtSS_SS10Foundation0J0VSgAA0C4TypeOSgAMtYaKF">transactions(planId:<wbr>categoryId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -528,7 +543,7 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns all transactions for a category.</p>
+                        <p>Returns all transactions for a category in a plan.</p>
 
                       </div>
                       <div class="declaration">
@@ -536,12 +551,12 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/HybridTransaction.html">HybridTransaction</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/HybridTransaction.html">HybridTransaction</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -552,13 +567,13 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -618,7 +633,7 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A tuple containing a list of hybrid transactions and server knowledge</p>
+                        <p>A tuple containing a list of hybrid transactions and optional server knowledge</p>
                       </div>
                     </section>
                   </div>
@@ -626,9 +641,9 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId05payeeG09sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SitSS_SS10Foundation0J0VSgAA0C4TypeOSgSiSgtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/transactions(budgetId:payeeId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId05payeeG09sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SitSS_SS10Foundation0J0VSgAA0C4TypeOSgSiSgtYaKF">transactions(budgetId:<wbr>payeeId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions6planId05payeeG09sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SiSgtSS_SS10Foundation0J0VSgAA0C4TypeOSgAMtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:payeeId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions6planId05payeeG09sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SiSgtSS_SS10Foundation0J0VSgAA0C4TypeOSgAMtYaKF">transactions(planId:<wbr>payeeId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -639,7 +654,7 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns all transactions for a payee.</p>
+                        <p>Returns all transactions for a payee in a plan.</p>
 
                       </div>
                       <div class="declaration">
@@ -647,12 +662,12 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">payeeId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/HybridTransaction.html">HybridTransaction</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/HybridTransaction.html">HybridTransaction</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -663,13 +678,13 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -729,7 +744,7 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A tuple containing a list of hybrid transactions and server knowledge</p>
+                        <p>A tuple containing a list of hybrid transactions and optional server knowledge</p>
                       </div>
                     </section>
                   </div>
@@ -737,9 +752,9 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId5month9sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SitSS_10Foundation0J0VAOSgAA0C4TypeOSgSiSgtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/transactions(budgetId:month:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions8budgetId5month9sinceDate4type21lastKnowledgeOfServerSayAA06HybridC0VG_SitSS_10Foundation0J0VAOSgAA0C4TypeOSgSiSgtYaKF">transactions(budgetId:<wbr>month:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV12transactions6planId5month9sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_10Foundation0J0VAOSgAA0C4TypeOSgSiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:month:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV12transactions6planId5month9sinceDate4type21lastKnowledgeOfServerSayAA0C6DetailVG_SitSS_10Foundation0J0VAOSgAA0C4TypeOSgSiSgtYaKF">transactions(planId:<wbr>month:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -758,12 +773,12 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">month</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
     <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/HybridTransaction.html">HybridTransaction</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -774,13 +789,13 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -840,7 +855,7 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A tuple containing a list of hybrid transactions and server knowledge</p>
+                        <p>A tuple containing a list of transactions and server knowledge</p>
                       </div>
                     </section>
                   </div>
@@ -848,9 +863,9 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV06createC08budgetId11transactionAA0C6DetailV_SitSS_AA04Savec4Withg8OrImportG0VtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/createTransaction(budgetId:transaction:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV06createC08budgetId11transactionAA0C6DetailV_SitSS_AA04Savec4Withg8OrImportG0VtYaKF">createTransaction(budgetId:<wbr>transaction:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV06createC06planId11transactionAA0C6DetailVSg_SitSS_AA03NewC0VtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/createTransaction(planId:transaction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV06createC06planId11transactionAA0C6DetailVSg_SitSS_AA03NewC0VtYaKF">createTransaction(planId:<wbr>transaction:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -869,9 +884,9 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createTransaction</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-    <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaveTransactionWithIdOrImportId.html">SaveTransactionWithIdOrImportId</a></span>
-<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/NewTransaction.html">NewTransaction</a></span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">?,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -882,13 +897,13 @@ have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -918,9 +933,9 @@ import IDs</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV18createTransactions8budgetId12transactionsSayAA0C6DetailVG_SiSaySSGtSS_SayAA04Savec4Withh8OrImportH0VGtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/createTransactions(budgetId:transactions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV18createTransactions8budgetId12transactionsSayAA0C6DetailVG_SiSaySSGtSS_SayAA04Savec4Withh8OrImportH0VGtYaKF">createTransactions(budgetId:<wbr>transactions:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV18createTransactions6planId12transactionsSayAA0C6DetailVGSg_SiSaySSGSgtSS_SayAA03NewC0VGtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/createTransactions(planId:transactions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV18createTransactions6planId12transactionsSayAA0C6DetailVGSg_SiSaySSGSgtSS_SayAA03NewC0VGtYaKF">createTransactions(planId:<wbr>transactions:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -939,9 +954,9 @@ import IDs</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createTransactions</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-    <span class="nv">transactions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SaveTransactionWithIdOrImportId.html">SaveTransactionWithIdOrImportId</a></span><span class="p">]</span>
-<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transactions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/NewTransaction.html">NewTransaction</a></span><span class="p">]</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">]?,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?)</span></code></pre>
 
                         </div>
                       </div>
@@ -952,13 +967,13 @@ import IDs</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -988,9 +1003,9 @@ import IDs</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV18updateTransactions8budgetId12transactionsSayAA0C6DetailVG_SiSaySSGtSS_SayAA04Savec4Withh8OrImportH0VGtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/updateTransactions(budgetId:transactions:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV18updateTransactions8budgetId12transactionsSayAA0C6DetailVG_SiSaySSGtSS_SayAA04Savec4Withh8OrImportH0VGtYaKF">updateTransactions(budgetId:<wbr>transactions:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV18updateTransactions6planId12transactionsSayAA0C6DetailVGSg_SiSaySSGSgtSS_SayAA04Savec4Withh8OrImportH0VGtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/updateTransactions(planId:transactions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV18updateTransactions6planId12transactionsSayAA0C6DetailVGSg_SiSaySSGSgtSS_SayAA04Savec4Withh8OrImportH0VGtYaKF">updateTransactions(planId:<wbr>transactions:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -1009,9 +1024,9 @@ import IDs</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateTransactions</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">transactions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SaveTransactionWithIdOrImportId.html">SaveTransactionWithIdOrImportId</a></span><span class="p">]</span>
-<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">]?,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?)</span></code></pre>
 
                         </div>
                       </div>
@@ -1022,13 +1037,13 @@ import IDs</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -1058,9 +1073,9 @@ import IDs</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV06updateC08budgetId011transactionG00H0AA0C6DetailVSS_SSAA04Savec4Withg8OrImportG0VtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/updateTransaction(budgetId:transactionId:transaction:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV06updateC08budgetId011transactionG00H0AA0C6DetailVSS_SSAA04Savec4Withg8OrImportG0VtYaKF">updateTransaction(budgetId:<wbr>transactionId:<wbr>transaction:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV06updateC06planId011transactionG00H0AA0C6DetailV_SitSS_SSAA08ExistingC0VtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/updateTransaction(planId:transactionId:transaction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV06updateC06planId011transactionG00H0AA0C6DetailV_SitSS_SSAA08ExistingC0VtYaKF">updateTransaction(planId:<wbr>transactionId:<wbr>transaction:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -1079,10 +1094,10 @@ import IDs</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateTransaction</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">transactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-    <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaveTransactionWithIdOrImportId.html">SaveTransactionWithIdOrImportId</a></span>
-<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span></code></pre>
+    <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/ExistingTransaction.html">ExistingTransaction</a></span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1093,13 +1108,13 @@ import IDs</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -1120,7 +1135,7 @@ budget)</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The updated transaction</p>
+                        <p>A tuple containing the updated transaction and server knowledge</p>
                       </div>
                     </section>
                   </div>
@@ -1128,9 +1143,9 @@ budget)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV18importTransactions8budgetIdSaySSGSS_tYaKF"></a>
-                    <a name="//apple_ref/swift/Method/importTransactions(budgetId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV18importTransactions8budgetIdSaySSGSS_tYaKF">importTransactions(budgetId:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV18importTransactions6planIdSaySSGSS_tYaKF"></a>
+                    <a name="//apple_ref/swift/Method/importTransactions(planId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV18importTransactions6planIdSaySSGSS_tYaKF">importTransactions(planId:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -1149,7 +1164,7 @@ budget)</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">importTransactions</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
 
                         </div>
@@ -1161,13 +1176,13 @@ budget)</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -1184,9 +1199,9 @@ budget)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB18TransactionServiceV06deleteC08budgetId011transactionG0AA0C6DetailVSS_SStYaKF"></a>
-                    <a name="//apple_ref/swift/Method/deleteTransaction(budgetId:transactionId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV06deleteC08budgetId011transactionG0AA0C6DetailVSS_SStYaKF">deleteTransaction(budgetId:<wbr>transactionId:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB18TransactionServiceV06deleteC06planId011transactionG0AA0C6DetailV_SitSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/deleteTransaction(planId:transactionId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB18TransactionServiceV06deleteC06planId011transactionG0AA0C6DetailV_SitSS_SStYaKF">deleteTransaction(planId:<wbr>transactionId:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -1205,9 +1220,9 @@ budget)</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteTransaction</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">transactionId</span><span class="p">:</span> <span class="kt">String</span>
-<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span></code></pre>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/TransactionDetail.html">TransactionDetail</a></span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1218,13 +1233,13 @@ budget)</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -1245,7 +1260,7 @@ budget)</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The deleted transaction</p>
+                        <p>A tuple containing the deleted transaction and server knowledge</p>
                       </div>
                     </section>
                   </div>
@@ -1255,7 +1270,7 @@ budget)</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-03-07)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-05-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

@@ -17,7 +17,7 @@
     <a title="CategoryService Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 3.2.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 4.0.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -54,6 +54,12 @@
                 <a href="../Enums/FlagColor.html">FlagColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/SaveAccountType.html">SaveAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/SwiftYNABError.html">SwiftYNABError</a>
               </li>
               <li class="nav-group-task">
@@ -69,18 +75,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/AccountService.html">AccountService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetService.html">BudgetService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Category.html">Category</a>
@@ -116,6 +110,9 @@
                 <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/ExistingTransaction.html">ExistingTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
               </li>
               <li class="nav-group-task">
@@ -137,6 +134,12 @@
                 <a href="../Structs/MonthSummary.html">MonthSummary</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/NewCategory.html">NewCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NewTransaction.html">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Payee.html">Payee</a>
               </li>
               <li class="nav-group-task">
@@ -147,6 +150,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanDetail.html">PlanDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanService.html">PlanService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSettings.html">PlanSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSummary.html">PlanSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaveCategory.html">SaveCategory</a>
@@ -237,9 +252,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceV10categories8budgetId21lastKnowledgeOfServerSayAA0C19GroupWithCategoriesVG_SitSS_SiSgtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/categories(budgetId:lastKnowledgeOfServer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV10categories8budgetId21lastKnowledgeOfServerSayAA0C19GroupWithCategoriesVG_SitSS_SiSgtYaKF">categories(budgetId:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceV10categories6planId21lastKnowledgeOfServerSayAA0C19GroupWithCategoriesVG_SitSS_SiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/categories(planId:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV10categories6planId21lastKnowledgeOfServerSayAA0C19GroupWithCategoriesVG_SitSS_SiSgtYaKF">categories(planId:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -250,11 +265,11 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns a list of budget categories.</p>
+                        <p>Returns a list of plan categories.</p>
 
 <p>Returns all categories grouped by category group. Amounts (budgeted, activity, balance,
 etc.)
-are specific to the current budget month (UTC).</p>
+are specific to the current plan month (UTC).</p>
 
                       </div>
                       <div class="declaration">
@@ -262,7 +277,7 @@ are specific to the current budget month (UTC).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">categories</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
@@ -275,13 +290,13 @@ are specific to the current budget month (UTC).</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -312,9 +327,9 @@ will be included.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceV8category8budgetId0eG0AA0C0VSS_SStYaKF"></a>
-                    <a name="//apple_ref/swift/Method/category(budgetId:categoryId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV8category8budgetId0eG0AA0C0VSS_SStYaKF">category(budgetId:<wbr>categoryId:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceV8category6planId0eG0AA0C0VSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/category(planId:categoryId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV8category6planId0eG0AA0C0VSS_SStYaKF">category(planId:<wbr>categoryId:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -327,14 +342,14 @@ will be included.</p>
                       <div class="abstract">
                         <p>Returns a single category.</p>
 
-<p>Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC).</p>
+<p>Amounts (budgeted, activity, balance, etc.) are specific to the current plan month (UTC).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">category</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Category.html">Category</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">category</span><span class="p">(</span><span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Category.html">Category</a></span></code></pre>
 
                         </div>
                       </div>
@@ -345,13 +360,13 @@ will be included.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -380,9 +395,9 @@ budget)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceV8category8budgetId5month0eG0AA0C0VSS_S2StYaKF"></a>
-                    <a name="//apple_ref/swift/Method/category(budgetId:month:categoryId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV8category8budgetId5month0eG0AA0C0VSS_S2StYaKF">category(budgetId:<wbr>month:<wbr>categoryId:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceV8category6planId5month0eG0AA0C0VSS_S2StYaKF"></a>
+                    <a name="//apple_ref/swift/Method/category(planId:month:categoryId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV8category6planId5month0eG0AA0C0VSS_S2StYaKF">category(planId:<wbr>month:<wbr>categoryId:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -393,7 +408,7 @@ budget)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns a single category for a specific budget month.</p>
+                        <p>Returns a single category for a specific plan month.</p>
 
                       </div>
                       <div class="declaration">
@@ -401,7 +416,7 @@ budget)</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">category</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Category.html">Category</a></span></code></pre>
@@ -415,13 +430,13 @@ budget)</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -433,7 +448,7 @@ budget)</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The budget month in ISO format (e.g. 2016-12-01) (“current” can also be used to
+                                  <p>The plan month in ISO format (e.g. 2016-12-01) (“current” can also be used to
 specify the current
 calendar month (UTC))</p>
                                 </div>
@@ -464,9 +479,9 @@ calendar month (UTC))</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceV06updateC08budgetId08categoryG00H0AA0C0V_SitSS_SSAA04SaveC0VtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/updateCategory(budgetId:categoryId:category:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06updateC08budgetId08categoryG00H0AA0C0V_SitSS_SSAA04SaveC0VtYaKF">updateCategory(budgetId:<wbr>categoryId:<wbr>category:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceV06updateC06planId08categoryG00H0AA0C0V_SitSS_SSAA04SaveC0VtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/updateCategory(planId:categoryId:category:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06updateC06planId08categoryG00H0AA0C0V_SitSS_SSAA04SaveC0VtYaKF">updateCategory(planId:<wbr>categoryId:<wbr>category:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -485,7 +500,7 @@ calendar month (UTC))</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateCategory</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">category</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaveCategory.html">SaveCategory</a></span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/Category.html">Category</a></span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
@@ -499,13 +514,13 @@ calendar month (UTC))</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -546,9 +561,9 @@ budget)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceV06updateC08budgetId5month08categoryG08budgetedAA0C0VSS_S2SSitYaKF"></a>
-                    <a name="//apple_ref/swift/Method/updateCategory(budgetId:month:categoryId:budgeted:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06updateC08budgetId5month08categoryG08budgetedAA0C0VSS_S2SSitYaKF">updateCategory(budgetId:<wbr>month:<wbr>categoryId:<wbr>budgeted:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceV06updateC06planId5month08categoryG08budgetedAA0C0VSS_S2SSitYaKF"></a>
+                    <a name="//apple_ref/swift/Method/updateCategory(planId:month:categoryId:budgeted:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06updateC06planId5month08categoryG08budgetedAA0C0VSS_S2SSitYaKF">updateCategory(planId:<wbr>month:<wbr>categoryId:<wbr>budgeted:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -567,7 +582,7 @@ budget)</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateCategory</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">budgeted</span><span class="p">:</span> <span class="kt">Int</span>
@@ -582,13 +597,13 @@ budget)</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -600,7 +615,7 @@ budget)</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The budget month in ISO format (e.g. 2016-12-01) (“current” can also be used to
+                                  <p>The plan month in ISO format (e.g. 2016-12-01) (“current” can also be used to
 specify the current
 calendar month (UTC))</p>
                                 </div>
@@ -643,9 +658,9 @@ calendar month (UTC))</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceV06createC08budgetId8categoryAA0C0V_SitSS_AA04SaveC0VtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/createCategory(budgetId:category:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06createC08budgetId8categoryAA0C0V_SitSS_AA04SaveC0VtYaKF">createCategory(budgetId:<wbr>category:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceV06createC06planId8categoryAA0C0V_SitSS_AA03NewC0VtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/createCategory(planId:category:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06createC06planId8categoryAA0C0V_SitSS_AA03NewC0VtYaKF">createCategory(planId:<wbr>category:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -664,8 +679,8 @@ calendar month (UTC))</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createCategory</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-    <span class="nv">category</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaveCategory.html">SaveCategory</a></span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">category</span><span class="p">:</span> <span class="kt"><a href="../Structs/NewCategory.html">NewCategory</a></span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/Category.html">Category</a></span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -677,13 +692,13 @@ calendar month (UTC))</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -695,7 +710,7 @@ budget)</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The category to create. Must include <code>name</code> and <code>categoryGroupId</code>.</p>
+                                  <p>The category to create</p>
                                 </div>
                               </td>
                             </tr>
@@ -712,9 +727,9 @@ budget)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceV06createC5Group8budgetId08categoryF0AA0cF0V_SitSS_AA04SavecF0VtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/createCategoryGroup(budgetId:categoryGroup:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06createC5Group8budgetId08categoryF0AA0cF0V_SitSS_AA04SavecF0VtYaKF">createCategoryGroup(budgetId:<wbr>categoryGroup:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceV06createC5Group6planId08categoryF0AA0cF0V_SitSS_AA04SavecF0VtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/createCategoryGroup(planId:categoryGroup:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06createC5Group6planId08categoryF0AA0cF0V_SitSS_AA04SavecF0VtYaKF">createCategoryGroup(planId:<wbr>categoryGroup:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -733,7 +748,7 @@ budget)</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createCategoryGroup</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">categoryGroup</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaveCategoryGroup.html">SaveCategoryGroup</a></span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/CategoryGroup.html">CategoryGroup</a></span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
@@ -746,13 +761,13 @@ budget)</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -781,9 +796,9 @@ budget)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB15CategoryServiceV06updateC5Group8budgetId08categoryfH00iF0AA0cF0V_SitSS_SSAA04SavecF0VtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/updateCategoryGroup(budgetId:categoryGroupId:categoryGroup:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06updateC5Group8budgetId08categoryfH00iF0AA0cF0V_SitSS_SSAA04SavecF0VtYaKF">updateCategoryGroup(budgetId:<wbr>categoryGroupId:<wbr>categoryGroup:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB15CategoryServiceV06updateC5Group6planId08categoryfH00iF0AA0cF0V_SitSS_SSAA04SavecF0VtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/updateCategoryGroup(planId:categoryGroupId:categoryGroup:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB15CategoryServiceV06updateC5Group6planId08categoryfH00iF0AA0cF0V_SitSS_SSAA04SavecF0VtYaKF">updateCategoryGroup(planId:<wbr>categoryGroupId:<wbr>categoryGroup:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -802,7 +817,7 @@ budget)</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateCategoryGroup</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">categoryGroupId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">categoryGroup</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaveCategoryGroup.html">SaveCategoryGroup</a></span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Structs/CategoryGroup.html">CategoryGroup</a></span><span class="p">,</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
@@ -816,13 +831,13 @@ budget)</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -865,7 +880,7 @@ budget)</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-03-07)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-05-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

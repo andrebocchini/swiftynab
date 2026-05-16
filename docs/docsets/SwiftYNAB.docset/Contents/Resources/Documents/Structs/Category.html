@@ -17,7 +17,7 @@
     <a title="Category Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 3.2.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 4.0.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -54,6 +54,12 @@
                 <a href="../Enums/FlagColor.html">FlagColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/SaveAccountType.html">SaveAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/SwiftYNABError.html">SwiftYNABError</a>
               </li>
               <li class="nav-group-task">
@@ -69,18 +75,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/AccountService.html">AccountService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetService.html">BudgetService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Category.html">Category</a>
@@ -116,6 +110,9 @@
                 <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/ExistingTransaction.html">ExistingTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
               </li>
               <li class="nav-group-task">
@@ -137,6 +134,12 @@
                 <a href="../Structs/MonthSummary.html">MonthSummary</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/NewCategory.html">NewCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NewTransaction.html">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Payee.html">Payee</a>
               </li>
               <li class="nav-group-task">
@@ -147,6 +150,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanDetail.html">PlanDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanService.html">PlanService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSettings.html">PlanSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSummary.html">PlanSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaveCategory.html">SaveCategory</a>
@@ -507,6 +522,168 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB8CategoryV16balanceFormattedSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/balanceFormatted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV16balanceFormattedSSSgvp">balanceFormatted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Current balance on this category formatted in the plan currency</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">balanceFormatted</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV15balanceCurrencySo9NSDecimalaSgvp"></a>
+                    <a name="//apple_ref/swift/Property/balanceCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV15balanceCurrencySo9NSDecimalaSgvp">balanceCurrency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Current balance on this category as a decimal currency amount</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">balanceCurrency</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV17activityFormattedSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/activityFormatted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV17activityFormattedSSSgvp">activityFormatted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Activity on this category formatted in the plan currency</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">activityFormatted</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV16activityCurrencySo9NSDecimalaSgvp"></a>
+                    <a name="//apple_ref/swift/Property/activityCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV16activityCurrencySo9NSDecimalaSgvp">activityCurrency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Activity on this category as a decimal currency amount</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">activityCurrency</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV17budgetedFormattedSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/budgetedFormatted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV17budgetedFormattedSSSgvp">budgetedFormatted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Amount budgeted to this category formatted in the plan currency</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">budgetedFormatted</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV16budgetedCurrencySo9NSDecimalaSgvp"></a>
+                    <a name="//apple_ref/swift/Property/budgetedCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV16budgetedCurrencySo9NSDecimalaSgvp">budgetedCurrency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Amount budgeted to this category as a decimal currency amount</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">budgetedCurrency</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB8CategoryV8goalTypeSSSgvp"></a>
                     <a name="//apple_ref/swift/Property/goalType" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB8CategoryV8goalTypeSSSgvp">goalType</a>
@@ -718,6 +895,60 @@ When goal_cadence is 3-12 or 14, goal_cadence_frequency is ignored.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB8CategoryV19goalTargetFormattedSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalTargetFormatted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV19goalTargetFormattedSSSgvp">goalTargetFormatted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Goal target amount formatted in the plan currency</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalTargetFormatted</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV18goalTargetCurrencySo9NSDecimalaSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalTargetCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV18goalTargetCurrencySo9NSDecimalaSgvp">goalTargetCurrency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Goal target amount as a decimal currency amount</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalTargetCurrency</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB8CategoryV15goalTargetMonthSSSgvp"></a>
                     <a name="//apple_ref/swift/Property/goalTargetMonth" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB8CategoryV15goalTargetMonthSSSgvp">goalTargetMonth</a>
@@ -861,6 +1092,60 @@ Spending Goal in a future month.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB8CategoryV24goalUnderFundedFormattedSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalUnderFundedFormatted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV24goalUnderFundedFormattedSSSgvp">goalUnderFundedFormatted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The amount still needed this month formatted in the plan currency</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalUnderFundedFormatted</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV23goalUnderFundedCurrencySo9NSDecimalaSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalUnderFundedCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV23goalUnderFundedCurrencySo9NSDecimalaSgvp">goalUnderFundedCurrency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The amount still needed this month as a decimal currency amount</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalUnderFundedCurrency</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB8CategoryV17goalOverallFundedSiSgvp"></a>
                     <a name="//apple_ref/swift/Property/goalOverallFunded" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB8CategoryV17goalOverallFundedSiSgvp">goalOverallFunded</a>
@@ -879,6 +1164,62 @@ Spending Goal in a future month.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalOverallFunded</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV26goalOverallFundedFormattedSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalOverallFundedFormatted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV26goalOverallFundedFormattedSSSgvp">goalOverallFundedFormatted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The total amount funded towards the goal within the current goal period formatted in the
+plan currency</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalOverallFundedFormatted</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV25goalOverallFundedCurrencySo9NSDecimalaSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalOverallFundedCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV25goalOverallFundedCurrencySo9NSDecimalaSgvp">goalOverallFundedCurrency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The total amount funded towards the goal within the current goal period as a decimal
+currency amount</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalOverallFundedCurrency</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -907,6 +1248,60 @@ milliunits</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalOverallLeft</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV24goalOverallLeftFormattedSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalOverallLeftFormatted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV24goalOverallLeftFormattedSSSgvp">goalOverallLeftFormatted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The amount still needed to complete the goal formatted in the plan currency</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalOverallLeftFormatted</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB8CategoryV23goalOverallLeftCurrencySo9NSDecimalaSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalOverallLeftCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB8CategoryV23goalOverallLeftCurrencySo9NSDecimalaSgvp">goalOverallLeftCurrency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The amount still needed to complete the goal as a decimal currency amount</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalOverallLeftCurrency</span><span class="p">:</span> <span class="kt">Decimal</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -972,7 +1367,7 @@ milliunits</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-03-07)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-05-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

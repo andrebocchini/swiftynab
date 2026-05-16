@@ -17,7 +17,7 @@
     <a title="MoneyMovementService Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 3.2.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 4.0.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -54,6 +54,12 @@
                 <a href="../Enums/FlagColor.html">FlagColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/SaveAccountType.html">SaveAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/SwiftYNABError.html">SwiftYNABError</a>
               </li>
               <li class="nav-group-task">
@@ -69,18 +75,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/AccountService.html">AccountService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetService.html">BudgetService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Category.html">Category</a>
@@ -116,6 +110,9 @@
                 <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/ExistingTransaction.html">ExistingTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
               </li>
               <li class="nav-group-task">
@@ -137,6 +134,12 @@
                 <a href="../Structs/MonthSummary.html">MonthSummary</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/NewCategory.html">NewCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NewTransaction.html">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Payee.html">Payee</a>
               </li>
               <li class="nav-group-task">
@@ -147,6 +150,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanDetail.html">PlanDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanService.html">PlanService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSettings.html">PlanSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSummary.html">PlanSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaveCategory.html">SaveCategory</a>
@@ -237,9 +252,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB20MoneyMovementServiceV14moneyMovements8budgetIdSayAA0cD0VG_SitSS_tYaKF"></a>
-                    <a name="//apple_ref/swift/Method/moneyMovements(budgetId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB20MoneyMovementServiceV14moneyMovements8budgetIdSayAA0cD0VG_SitSS_tYaKF">moneyMovements(budgetId:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB20MoneyMovementServiceV14moneyMovements6planIdSayAA0cD0VG_SitSS_tYaKF"></a>
+                    <a name="//apple_ref/swift/Method/moneyMovements(planId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB20MoneyMovementServiceV14moneyMovements6planIdSayAA0cD0VG_SitSS_tYaKF">moneyMovements(planId:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -250,7 +265,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns all money movements for a budget.</p>
+                        <p>Returns all money movements for a plan.</p>
 
                       </div>
                       <div class="declaration">
@@ -258,7 +273,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">moneyMovements</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/MoneyMovement.html">MoneyMovement</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -270,13 +285,13 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -293,9 +308,9 @@ budget)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB20MoneyMovementServiceV14moneyMovements8budgetId5monthSayAA0cD0VG_SitSS_SStYaKF"></a>
-                    <a name="//apple_ref/swift/Method/moneyMovements(budgetId:month:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB20MoneyMovementServiceV14moneyMovements8budgetId5monthSayAA0cD0VG_SitSS_SStYaKF">moneyMovements(budgetId:<wbr>month:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB20MoneyMovementServiceV14moneyMovements6planId5monthSayAA0cD0VG_SitSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/moneyMovements(planId:month:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB20MoneyMovementServiceV14moneyMovements6planId5monthSayAA0cD0VG_SitSS_SStYaKF">moneyMovements(planId:<wbr>month:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -306,7 +321,7 @@ budget)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns money movements for a specific budget month.</p>
+                        <p>Returns money movements for a specific plan month.</p>
 
                       </div>
                       <div class="declaration">
@@ -314,7 +329,7 @@ budget)</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">moneyMovements</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/MoneyMovement.html">MoneyMovement</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
@@ -327,13 +342,13 @@ budget)</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -345,7 +360,7 @@ budget)</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The budget month in ISO format (e.g. 2016-12-01) (&ldquo;current&rdquo; can also be used to
+                                  <p>The plan month in ISO format (e.g. 2016-12-01) (&ldquo;current&rdquo; can also be used to
 specify the current calendar month (UTC))</p>
                                 </div>
                               </td>
@@ -363,9 +378,9 @@ specify the current calendar month (UTC))</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB20MoneyMovementServiceV05moneyD6Groups8budgetIdSayAA0cD5GroupVG_SitSS_tYaKF"></a>
-                    <a name="//apple_ref/swift/Method/moneyMovementGroups(budgetId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB20MoneyMovementServiceV05moneyD6Groups8budgetIdSayAA0cD5GroupVG_SitSS_tYaKF">moneyMovementGroups(budgetId:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB20MoneyMovementServiceV05moneyD6Groups6planIdSayAA0cD5GroupVG_SitSS_tYaKF"></a>
+                    <a name="//apple_ref/swift/Method/moneyMovementGroups(planId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB20MoneyMovementServiceV05moneyD6Groups6planIdSayAA0cD5GroupVG_SitSS_tYaKF">moneyMovementGroups(planId:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -376,7 +391,7 @@ specify the current calendar month (UTC))</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns all money movement groups for a budget.</p>
+                        <p>Returns all money movement groups for a plan.</p>
 
                       </div>
                       <div class="declaration">
@@ -384,7 +399,7 @@ specify the current calendar month (UTC))</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">moneyMovementGroups</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/MoneyMovementGroup.html">MoneyMovementGroup</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -396,13 +411,13 @@ specify the current calendar month (UTC))</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -419,9 +434,9 @@ budget)</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB20MoneyMovementServiceV05moneyD6Groups8budgetId5monthSayAA0cD5GroupVG_SitSS_SStYaKF"></a>
-                    <a name="//apple_ref/swift/Method/moneyMovementGroups(budgetId:month:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB20MoneyMovementServiceV05moneyD6Groups8budgetId5monthSayAA0cD5GroupVG_SitSS_SStYaKF">moneyMovementGroups(budgetId:<wbr>month:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB20MoneyMovementServiceV05moneyD6Groups6planId5monthSayAA0cD5GroupVG_SitSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/moneyMovementGroups(planId:month:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB20MoneyMovementServiceV05moneyD6Groups6planId5monthSayAA0cD5GroupVG_SitSS_SStYaKF">moneyMovementGroups(planId:<wbr>month:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -432,7 +447,7 @@ budget)</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns money movement groups for a specific budget month.</p>
+                        <p>Returns money movement groups for a specific plan month.</p>
 
                       </div>
                       <div class="declaration">
@@ -440,7 +455,7 @@ budget)</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">moneyMovementGroups</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">month</span><span class="p">:</span> <span class="kt">String</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt"><a href="../Structs/MoneyMovementGroup.html">MoneyMovementGroup</a></span><span class="p">],</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
@@ -453,13 +468,13 @@ budget)</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -471,7 +486,7 @@ budget)</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The budget month in ISO format (e.g. 2016-12-01) (&ldquo;current&rdquo; can also be used to
+                                  <p>The plan month in ISO format (e.g. 2016-12-01) (&ldquo;current&rdquo; can also be used to
 specify the current calendar month (UTC))</p>
                                 </div>
                               </td>
@@ -491,7 +506,7 @@ specify the current calendar month (UTC))</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-03-07)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-05-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

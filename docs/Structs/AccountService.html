@@ -17,7 +17,7 @@
     <a title="AccountService Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 3.2.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 4.0.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -54,6 +54,12 @@
                 <a href="../Enums/FlagColor.html">FlagColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/SaveAccountType.html">SaveAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/SwiftYNABError.html">SwiftYNABError</a>
               </li>
               <li class="nav-group-task">
@@ -69,18 +75,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/AccountService.html">AccountService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetService.html">BudgetService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Category.html">Category</a>
@@ -116,6 +110,9 @@
                 <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/ExistingTransaction.html">ExistingTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
               </li>
               <li class="nav-group-task">
@@ -137,6 +134,12 @@
                 <a href="../Structs/MonthSummary.html">MonthSummary</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/NewCategory.html">NewCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NewTransaction.html">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Payee.html">Payee</a>
               </li>
               <li class="nav-group-task">
@@ -147,6 +150,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanDetail.html">PlanDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanService.html">PlanService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSettings.html">PlanSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSummary.html">PlanSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaveCategory.html">SaveCategory</a>
@@ -237,9 +252,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB14AccountServiceV7account8budgetId0eG0AA0C0VSS_SStYaKF"></a>
-                    <a name="//apple_ref/swift/Method/account(budgetId:accountId:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceV7account8budgetId0eG0AA0C0VSS_SStYaKF">account(budgetId:<wbr>accountId:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB14AccountServiceV7account6planId0eG0AA0C0VSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/account(planId:accountId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceV7account6planId0eG0AA0C0VSS_SStYaKF">account(planId:<wbr>accountId:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -257,7 +272,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">account</span><span class="p">(</span><span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Account.html">Account</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">account</span><span class="p">(</span><span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Account.html">Account</a></span></code></pre>
 
                         </div>
                       </div>
@@ -268,12 +283,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Id of the budget the account belongs to</p>
+                                  <p>Id of the plan the account belongs to</p>
                                 </div>
                               </td>
                             </tr>
@@ -302,9 +317,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB14AccountServiceV8accounts8budgetId21lastKnowledgeOfServerSayAA0C0VGAD_SiAFtSS_SiSgtYaKF"></a>
-                    <a name="//apple_ref/swift/Method/accounts(budgetId:lastKnowledgeOfServer:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceV8accounts8budgetId21lastKnowledgeOfServerSayAA0C0VGAD_SiAFtSS_SiSgtYaKF">accounts(budgetId:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB14AccountServiceV8accounts6planId21lastKnowledgeOfServerSayAA0C0VGAD_SiAFtSS_SiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/accounts(planId:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceV8accounts6planId21lastKnowledgeOfServerSayAA0C0VGAD_SiAFtSS_SiSgtYaKF">accounts(planId:<wbr>lastKnowledgeOfServer:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -315,7 +330,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Retrieves all accounts for a single budget.</p>
+                        <p>Retrieves all accounts for a single plan.</p>
 
                       </div>
                       <div class="declaration">
@@ -323,7 +338,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">accounts</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">accounts</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Account.html">Account</a></span><span class="p">],</span> <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">)</span></code></pre>
 
@@ -336,12 +351,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Id of the budget the accounts belongs to</p>
+                                  <p>Id of the plan the accounts belongs to</p>
                                 </div>
                               </td>
                             </tr>
@@ -372,9 +387,9 @@ will be included.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB14AccountServiceV09newBudgetC08budgetId4name4type7balanceAA0C0VSS_SSAA0C4TypeOSitYaKF"></a>
-                    <a name="//apple_ref/swift/Method/newBudgetAccount(budgetId:name:type:balance:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceV09newBudgetC08budgetId4name4type7balanceAA0C0VSS_SSAA0C4TypeOSitYaKF">newBudgetAccount(budgetId:<wbr>name:<wbr>type:<wbr>balance:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB14AccountServiceV07newPlanC06planId4name4type7balanceAA0C0VSS_SSAA04SaveC4TypeOSitYaKF"></a>
+                    <a name="//apple_ref/swift/Method/newPlanAccount(planId:name:type:balance:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB14AccountServiceV07newPlanC06planId4name4type7balanceAA0C0VSS_SSAA04SaveC4TypeOSitYaKF">newPlanAccount(planId:<wbr>name:<wbr>type:<wbr>balance:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Asynchronous
@@ -385,17 +400,17 @@ will be included.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a new unlinked account in a budget.</p>
+                        <p>Creates a new unlinked account in a plan.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">newBudgetAccount</span><span class="p">(</span>
-    <span class="nv">budgetId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">newPlanAccount</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-    <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/AccountType.html">AccountType</a></span><span class="p">,</span>
+    <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/SaveAccountType.html">SaveAccountType</a></span><span class="p">,</span>
     <span class="nv">balance</span><span class="p">:</span> <span class="kt">Int</span>
 <span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Account.html">Account</a></span></code></pre>
 
@@ -408,13 +423,13 @@ will be included.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>budgetId</em>
+                                <em>planId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The id of the budget (<em>last_used</em> can also be used to specify the last used
-budget)</p>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
                                 </div>
                               </td>
                             </tr>
@@ -469,7 +484,7 @@ budget)</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-03-07)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-05-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

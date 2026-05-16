@@ -17,7 +17,7 @@
     <a title="SaveScheduledTransaction Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 3.2.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 4.0.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -54,6 +54,12 @@
                 <a href="../Enums/FlagColor.html">FlagColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/SaveAccountType.html">SaveAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/SwiftYNABError.html">SwiftYNABError</a>
               </li>
               <li class="nav-group-task">
@@ -69,18 +75,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/AccountService.html">AccountService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetDetail.html">BudgetDetail</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetService.html">BudgetService</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSettings.html">BudgetSettings</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/BudgetSummary.html">BudgetSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Category.html">Category</a>
@@ -116,6 +110,9 @@
                 <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/ExistingTransaction.html">ExistingTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
               </li>
               <li class="nav-group-task">
@@ -137,6 +134,12 @@
                 <a href="../Structs/MonthSummary.html">MonthSummary</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/NewCategory.html">NewCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NewTransaction.html">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Payee.html">Payee</a>
               </li>
               <li class="nav-group-task">
@@ -147,6 +150,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanDetail.html">PlanDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanService.html">PlanService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSettings.html">PlanSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSummary.html">PlanSummary</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/SaveCategory.html">SaveCategory</a>
@@ -264,9 +279,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB24SaveScheduledTransactionV4date10Foundation4DateVvp"></a>
+                    <a name="/s:9SwiftYNAB24SaveScheduledTransactionV4dateSSvp"></a>
                     <a name="//apple_ref/swift/Property/date" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB24SaveScheduledTransactionV4date10Foundation4DateVvp">date</a>
+                    <a class="token" href="#/s:9SwiftYNAB24SaveScheduledTransactionV4dateSSvp">date</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -282,7 +297,7 @@ no more than 5 years into the future.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -458,9 +473,9 @@ Creating a split scheduled transaction is not currently supported.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB24SaveScheduledTransactionV9frequencySSvp"></a>
+                    <a name="/s:9SwiftYNAB24SaveScheduledTransactionV9frequencyAA0dE9FrequencyOSgvp"></a>
                     <a name="//apple_ref/swift/Property/frequency" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB24SaveScheduledTransactionV9frequencySSvp">frequency</a>
+                    <a class="token" href="#/s:9SwiftYNAB24SaveScheduledTransactionV9frequencyAA0dE9FrequencyOSgvp">frequency</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -475,7 +490,7 @@ Creating a split scheduled transaction is not currently supported.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">frequency</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">frequency</span><span class="p">:</span> <span class="kt"><a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -485,9 +500,9 @@ Creating a split scheduled transaction is not currently supported.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB24SaveScheduledTransactionV9accountId4date6amount05payeeG00J4Name08categoryG04memo9flagColor9frequencyACSS_10Foundation4DateVSiSgSSSgA3qA04FlagO0OSgSStcfc"></a>
+                    <a name="/s:9SwiftYNAB24SaveScheduledTransactionV9accountId4date6amount05payeeG00J4Name08categoryG04memo9flagColor9frequencyACSS_SSSiSgSSSgA3nA04FlagO0OSgAA0dE9FrequencyOSgtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(accountId:date:amount:payeeId:payeeName:categoryId:memo:flagColor:frequency:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB24SaveScheduledTransactionV9accountId4date6amount05payeeG00J4Name08categoryG04memo9flagColor9frequencyACSS_10Foundation4DateVSiSgSSSgA3qA04FlagO0OSgSStcfc">init(accountId:<wbr>date:<wbr>amount:<wbr>payeeId:<wbr>payeeName:<wbr>categoryId:<wbr>memo:<wbr>flagColor:<wbr>frequency:<wbr>)</a>
+                    <a class="token" href="#/s:9SwiftYNAB24SaveScheduledTransactionV9accountId4date6amount05payeeG00J4Name08categoryG04memo9flagColor9frequencyACSS_SSSiSgSSSgA3nA04FlagO0OSgAA0dE9FrequencyOSgtcfc">init(accountId:<wbr>date:<wbr>amount:<wbr>payeeId:<wbr>payeeName:<wbr>categoryId:<wbr>memo:<wbr>flagColor:<wbr>frequency:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -504,6 +519,158 @@ Creating a split scheduled transaction is not currently supported.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
     <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">date</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">amount</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">payeeId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">payeeName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">memo</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">flagColor</span><span class="p">:</span> <span class="kt"><a href="../Enums/FlagColor.html">FlagColor</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">frequency</span><span class="p">:</span> <span class="kt"><a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>accountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The account ID for the scheduled transaction</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>date</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scheduled transaction date in ISO format (must be future date within 5 years)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scheduled transaction amount in milliunits format</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>payeeId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The payee ID for the scheduled transaction</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>payeeName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The payee name (used if payeeId is nil)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>categoryId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The category ID (credit card payment categories not permitted)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>memo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A memo for the scheduled transaction</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>flagColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The transaction flag color</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frequency</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scheduled transaction frequency</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB24SaveScheduledTransactionV9accountId4date6amount05payeeG00J4Name08categoryG04memo9flagColor9frequencyACSS_10Foundation4DateVSiSgSSSgA3qA04FlagO0OSgAA0dE9FrequencyOSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(accountId:date:amount:payeeId:payeeName:categoryId:memo:flagColor:frequency:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB24SaveScheduledTransactionV9accountId4date6amount05payeeG00J4Name08categoryG04memo9flagColor9frequencyACSS_10Foundation4DateVSiSgSSSgA3qA04FlagO0OSgAA0dE9FrequencyOSgtcfc">init(accountId:<wbr>date:<wbr>amount:<wbr>payeeId:<wbr>payeeName:<wbr>categoryId:<wbr>memo:<wbr>flagColor:<wbr>frequency:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new SaveScheduledTransaction instance from a Date.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
     <span class="nv">amount</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">payeeId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
@@ -511,7 +678,7 @@ Creating a split scheduled transaction is not currently supported.</p>
     <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">memo</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">flagColor</span><span class="p">:</span> <span class="kt"><a href="../Enums/FlagColor.html">FlagColor</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-    <span class="nv">frequency</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="nv">frequency</span><span class="p">:</span> <span class="kt"><a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="p">)</span></code></pre>
 
                         </div>
@@ -639,7 +806,7 @@ Creating a split scheduled transaction is not currently supported.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-03-07)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-05-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
