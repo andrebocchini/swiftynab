@@ -43,7 +43,7 @@ extension PlanService: PlanServiceType {
     /// - Returns: A single plan and the last knowledge of the server
     public func plan(
         planId: String,
-        lastKnowledgeOfServer: Int? = nil
+        lastKnowledgeOfServer: ServerKnowledge? = nil
     ) async throws -> (PlanDetail, ServerKnowledge) {
         let request = PlanDetailRequest(
             planId: planId,
