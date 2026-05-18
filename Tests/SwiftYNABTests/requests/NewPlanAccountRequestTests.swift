@@ -40,8 +40,6 @@ struct NewPlanAccountRequestTests {
 
     @Test("Multi-word account types encode as camelCase per the API spec")
     func multiWordAccountTypeEncoding() throws {
-        let serializer = Serializer()
-
         for type in [SaveAccountType.creditCard, .otherAsset, .otherLiability] {
             let request = NewPlanAccountRequest(
                 planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
