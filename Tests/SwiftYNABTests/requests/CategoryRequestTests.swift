@@ -12,7 +12,7 @@ import Testing
 @Suite("Category Request")
 struct CategoryRequestTests {
     @Test("Path includes plan ID and category ID")
-    func categoryRequest() {
+    func categoryRequest() throws {
         let request = CategoryRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             categoryId: "9b6ff04f-b123-d126-4605-0ae2c2f5e3ba"
@@ -22,6 +22,6 @@ struct CategoryRequestTests {
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/categories/9b6ff04f-b123-d126-4605-0ae2c2f5e3ba")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

@@ -39,7 +39,7 @@ struct UpdateTransactionRequestTests {
         #expect(request.method == .put)
         #expect(request.query == nil)
 
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
         let object = try requestBodyJSONObject(from: body)
         let encodedTransaction = try #require(object["transaction"] as? [String: Any])
         #expect(encodedTransaction["id"] == nil)

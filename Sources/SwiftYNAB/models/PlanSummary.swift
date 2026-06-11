@@ -33,4 +33,24 @@ public struct PlanSummary: Codable, Equatable, Sendable {
 
     /// Optional accounts
     public let accounts: [Account]?
+
+    public init(
+        id: String,
+        name: String,
+        lastModifiedOn: String?,
+        firstMonth: String?,
+        lastMonth: String?,
+        dateFormat: DateFormat?,
+        currencyFormat: CurrencyFormat?,
+        accounts: [Account]?
+    ) {
+        self.id = id
+        self.name = name
+        self.lastModifiedOn = lastModifiedOn
+        self.firstMonth = firstMonth
+        self.lastMonth = lastMonth
+        self.dateFormat = dateFormat
+        self.currencyFormat = currencyFormat
+        self.accounts = accounts
+    }
 }

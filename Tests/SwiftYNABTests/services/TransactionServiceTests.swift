@@ -53,8 +53,8 @@ struct TransactionServiceTests {
             transactionId: "id"
         )
 
-        #expect(expectedTransaction == actualResponse.0)
-        #expect(actualResponse.1 == 200)
+        #expect(expectedTransaction == actualResponse.transaction)
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when fetching a single transaction fails")
@@ -103,7 +103,9 @@ struct TransactionServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let (transactions, serverKnowledge) = try await service.transactions(planId: "budget_id")
+        let response = try await service.transactions(planId: "budget_id")
+        let transactions = response.transactions
+        let serverKnowledge = response.serverKnowledge
 
         #expect(transactions.count == 1)
         #expect(expectedTransaction == transactions.first)
@@ -156,10 +158,12 @@ struct TransactionServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let (transactions, serverKnowledge) = try await service.transactions(
+        let response = try await service.transactions(
             planId: "budget_id",
             accountId: "account_id"
         )
+        let transactions = response.transactions
+        let serverKnowledge = response.serverKnowledge
 
         #expect(transactions.count == 1)
         #expect(expectedTransaction == transactions.first)
@@ -211,10 +215,12 @@ struct TransactionServiceTests {
             .Response(transactions: [expectedTransaction], serverKnowledge: 1)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let (transactions, serverKnowledge) = try await service.transactions(
+        let response = try await service.transactions(
             planId: "budget_id",
             categoryId: "category_id"
         )
+        let transactions = response.transactions
+        let serverKnowledge = response.serverKnowledge
 
         #expect(transactions.count == 1)
         #expect(expectedTransaction == transactions.first)
@@ -266,10 +272,12 @@ struct TransactionServiceTests {
             .Response(transactions: [expectedTransaction], serverKnowledge: 1)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let (transactions, serverKnowledge) = try await service.transactions(
+        let response = try await service.transactions(
             planId: "budget_id",
             payeeId: "payee_id"
         )
+        let transactions = response.transactions
+        let serverKnowledge = response.serverKnowledge
 
         #expect(transactions.count == 1)
         #expect(expectedTransaction == transactions.first)
@@ -320,10 +328,12 @@ struct TransactionServiceTests {
             .Response(transactions: [expectedTransaction], serverKnowledge: 1)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let (transactions, serverKnowledge) = try await service.transactions(
+        let response = try await service.transactions(
             planId: "budget_id",
             month: Date.now
         )
+        let transactions = response.transactions
+        let serverKnowledge = response.serverKnowledge
 
         #expect(transactions.count == 1)
         #expect(expectedTransaction == transactions.first)
@@ -389,11 +399,13 @@ struct TransactionServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let (actualTransaction, serverKnowledge) = try await service.updateTransaction(
+        let response = try await service.updateTransaction(
             planId: "budget_id",
             transactionId: "transaction_id",
             transaction: updateTransaction
         )
+        let actualTransaction = response.transaction
+        let serverKnowledge = response.serverKnowledge
 
         #expect(expectedTransaction == actualTransaction)
         #expect(serverKnowledge == 200)
@@ -485,11 +497,11 @@ struct TransactionServiceTests {
             transactions: [updateTransaction]
         )
 
-        let actualTransactions = try #require(actualResponse.0)
+        let actualTransactions = try #require(actualResponse.transactions)
         #expect(actualTransactions.count == 1)
         #expect(actualTransactions[0] == expectedTransaction)
-        #expect(actualResponse.1 == 200)
-        #expect(actualResponse.2 == [])
+        #expect(actualResponse.serverKnowledge == 200)
+        #expect(actualResponse.duplicateImportIds == [])
     }
 
     @Test("Throws error when bulk transaction update fails")
@@ -557,10 +569,12 @@ struct TransactionServiceTests {
 
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let (actualTransaction, serverKnowledge) = try await service.deleteTransaction(
+        let response = try await service.deleteTransaction(
             planId: "budget_id",
             transactionId: "transaction_id"
         )
+        let actualTransaction = response.transaction
+        let serverKnowledge = response.serverKnowledge
 
         #expect(actualTransaction == expectedTransaction)
         #expect(serverKnowledge == 200)
@@ -636,8 +650,8 @@ struct TransactionServiceTests {
             transaction: newTransaction
         )
 
-        #expect(actualResponse.0 == expectedTransaction)
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.transaction == expectedTransaction)
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when single transaction creation fails")
@@ -766,12 +780,12 @@ struct TransactionServiceTests {
             transactions: [newTransaction1, newTransaction2]
         )
 
-        let actualTransactions = try #require(actualResponse.0)
+        let actualTransactions = try #require(actualResponse.transactions)
         #expect(actualTransactions.count == 2)
         #expect(actualTransactions[0] == expectedTransaction1)
         #expect(actualTransactions[1] == expectedTransaction2)
-        #expect(actualResponse.1 == 200)
-        #expect(actualResponse.2 == [])
+        #expect(actualResponse.serverKnowledge == 200)
+        #expect(actualResponse.duplicateImportIds == [])
     }
 
     // swiftlint:enable function_body_length

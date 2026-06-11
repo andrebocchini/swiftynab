@@ -98,8 +98,8 @@ struct PlanServiceTests {
         let service = PlanService(client: client)
         let actualResponse = try await service.plan(planId: "budget_id")
 
-        #expect(expectedResponse.plan == actualResponse.0)
-        #expect(expectedResponse.serverKnowledge == actualResponse.1)
+        #expect(expectedResponse.plan == actualResponse.plan)
+        #expect(expectedResponse.serverKnowledge == actualResponse.serverKnowledge)
     }
 
     @Test("Throws error when fetching plan detail fails")

@@ -13,11 +13,11 @@ import Testing
 @Suite("Plans Summary Request")
 struct BudgetsSummaryRequestTests {
     @Test("Request includes include_accounts query parameter")
-    func budgetSummaryRequest() {
+    func budgetSummaryRequest() throws {
         let request = PlanSummaryRequest(includeAccounts: false)
         #expect(request.path == "/v1/plans")
         #expect(request.method == .get)
         #expect(request.query == [URLQueryItem(name: "include_accounts", value: "false")])
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

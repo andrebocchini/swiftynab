@@ -15,4 +15,12 @@ public struct PlanSettings: Codable, Equatable, Sendable {
 
     /// Currency formatting settings
     public let currencyFormat: CurrencyFormat
+
+    public init(
+        dateFormat: DateFormat,
+        currencyFormat: CurrencyFormat
+    ) {
+        self.dateFormat = dateFormat
+        self.currencyFormat = currencyFormat
+    }
 }

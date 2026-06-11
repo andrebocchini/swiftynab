@@ -21,4 +21,16 @@ public struct Payee: Codable, Equatable, Sendable {
 
     /// Whether or not the payee is deleted
     public let deleted: Bool
+
+    public init(
+        id: String,
+        name: String,
+        transferAccountId: String?,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.name = name
+        self.transferAccountId = transferAccountId
+        self.deleted = deleted
+    }
 }

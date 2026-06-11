@@ -26,4 +26,18 @@ public struct CategoryGroupWithCategories: Codable, Equatable, Sendable {
     /// Categories belonging to this group. Amounts (budgeted, activity, balance, etc.) are specific
     /// to the current budget month (UTC).
     public let categories: [Category]
+
+    public init(
+        id: String,
+        name: String,
+        hidden: Bool,
+        deleted: Bool,
+        categories: [Category]
+    ) {
+        self.id = id
+        self.name = name
+        self.hidden = hidden
+        self.deleted = deleted
+        self.categories = categories
+    }
 }

@@ -37,9 +37,9 @@ struct MoneyMovementServiceTests {
         let service = MoneyMovementService(client: client)
         let actualResponse = try await service.moneyMovements(planId: "budget_id")
 
-        #expect(actualResponse.0.count == 1)
-        #expect(expectedMovement == actualResponse.0[0])
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.moneyMovements.count == 1)
+        #expect(expectedMovement == actualResponse.moneyMovements[0])
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when fetching all money movements fails")
@@ -81,9 +81,9 @@ struct MoneyMovementServiceTests {
             month: "2024-01-01"
         )
 
-        #expect(actualResponse.0.count == 1)
-        #expect(expectedMovement == actualResponse.0[0])
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.moneyMovements.count == 1)
+        #expect(expectedMovement == actualResponse.moneyMovements[0])
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when fetching money movements by month fails")
@@ -116,9 +116,9 @@ struct MoneyMovementServiceTests {
         let service = MoneyMovementService(client: client)
         let actualResponse = try await service.moneyMovementGroups(planId: "budget_id")
 
-        #expect(actualResponse.0.count == 1)
-        #expect(expectedGroup == actualResponse.0[0])
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.moneyMovementGroups.count == 1)
+        #expect(expectedGroup == actualResponse.moneyMovementGroups[0])
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when fetching all money movement groups fails")
@@ -154,9 +154,9 @@ struct MoneyMovementServiceTests {
             month: "2024-01-01"
         )
 
-        #expect(actualResponse.0.count == 1)
-        #expect(expectedGroup == actualResponse.0[0])
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.moneyMovementGroups.count == 1)
+        #expect(expectedGroup == actualResponse.moneyMovementGroups[0])
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when fetching money movement groups by month fails")

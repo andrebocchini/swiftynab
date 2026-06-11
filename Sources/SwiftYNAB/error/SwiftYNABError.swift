@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Errors that occur during encoding or decoding of JSON requests and responses
+/// Errors that occur while building requests or handling responses
 public enum SwiftYNABError: Error, Sendable {
     /// Failure decoding JSON
     case decodingFailure(message: String)
@@ -18,6 +18,8 @@ public enum SwiftYNABError: Error, Sendable {
     case httpError(statusCode: Int)
     /// YNAB API Error
     case apiError(detail: ErrorDetail)
+    /// A valid URL could not be constructed for the request
+    case invalidRequest(path: String)
     /// Unknown error
     case unknown
 }
@@ -33,6 +35,8 @@ extension SwiftYNABError: Equatable {
             lhsStatusCode == rhsStatusCode
         case let (.apiError(lhsErrorDetail), .apiError(rhsErrorDetail)):
             lhsErrorDetail == rhsErrorDetail
+        case let (.invalidRequest(lhsPath), .invalidRequest(rhsPath)):
+            lhsPath == rhsPath
         case (.unknown, .unknown):
             true
         default:

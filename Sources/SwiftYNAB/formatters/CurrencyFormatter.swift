@@ -27,13 +27,13 @@ public struct CurrencyFormatter: Sendable {
     ///
     ///  - Returns: Budget format currency string if conversion is successful, nil otherwise
     public func currencyString(from amount: Int) -> String? {
-        // swiftlint:disable:next compiler_protocol_init
-        let amountAsNumber = NSNumber(floatLiteral: Double(amount) / 1000)
+        let amountAsNumber = NSDecimalNumber(decimal: Decimal(amount) / 1000)
 
+        // NumberFormatter is not thread-safe, so a fresh instance is created per call to keep
+        // this type Sendable
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.generatesDecimalNumbers = true
-        formatter.currencySymbol = currencyFormat.currencySymbol
         formatter.groupingSeparator = currencyFormat.groupSeparator
         formatter.usesGroupingSeparator = true
         formatter.decimalSeparator = currencyFormat.decimalSeparator

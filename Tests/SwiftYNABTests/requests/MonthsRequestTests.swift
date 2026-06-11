@@ -14,16 +14,16 @@ import Testing
 @Suite("Months Request")
 struct MonthsRequestTests {
     @Test("Request has no query parameters without last knowledge of server")
-    func monthsRequestNoLastKnowledge() {
+    func monthsRequestNoLastKnowledge() throws {
         let request = MonthsRequest(planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 
     @Test("Request includes last knowledge of server as query parameter")
-    func monthsRequestWithLastKnowledge() {
+    func monthsRequestWithLastKnowledge() throws {
         let request = MonthsRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             lastKnowledgeOfServer: 100
@@ -32,6 +32,6 @@ struct MonthsRequestTests {
         #expect(request.method == .get)
         #expect(request.query?.count == 1)
         #expect(request.query?[0] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

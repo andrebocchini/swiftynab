@@ -34,13 +34,13 @@ extension Client: ClientType {
     }
 
     func perform<R: Request>(_ request: R) async throws -> R.Response {
-        var mutableURLRequest = request.request
+        var urlRequest = try request.urlRequest(using: serializer)
 
         if request.requiresAuthentication {
-            mutableURLRequest.setValue(authorizationHeader, forHTTPHeaderField: "Authorization")
+            urlRequest.setValue(authorizationHeader, forHTTPHeaderField: "Authorization")
         }
 
-        let (data, urlResponse) = try await urlSession.data(for: mutableURLRequest, delegate: nil)
+        let (data, urlResponse) = try await urlSession.data(for: urlRequest, delegate: nil)
 
         try Task.checkCancellation()
 

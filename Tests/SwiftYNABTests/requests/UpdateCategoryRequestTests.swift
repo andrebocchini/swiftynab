@@ -32,7 +32,7 @@ struct UpdateCategoryRequestTests {
         #expect(request.query == nil)
 
         let serializer = Serializer()
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
         let decodedBody = try serializer.decode(SaveCategoryWrapper.self, from: body)
         #expect(decodedBody == SaveCategoryWrapper(with: category))
     }

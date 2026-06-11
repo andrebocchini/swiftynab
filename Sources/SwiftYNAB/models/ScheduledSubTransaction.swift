@@ -45,4 +45,32 @@ public struct ScheduledSubTransaction: Codable, Equatable, Sendable {
 
     /// Whether or not the account is deleted
     public let deleted: Bool
+
+    public init(
+        id: String,
+        scheduledTransactionId: String,
+        amount: Int,
+        amountFormatted: String?,
+        amountCurrency: Decimal?,
+        memo: String?,
+        payeeId: String?,
+        payeeName: String?,
+        categoryId: String?,
+        categoryName: String?,
+        transferAccountId: String?,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.scheduledTransactionId = scheduledTransactionId
+        self.amount = amount
+        self.amountFormatted = amountFormatted
+        self.amountCurrency = amountCurrency
+        self.memo = memo
+        self.payeeId = payeeId
+        self.payeeName = payeeName
+        self.categoryId = categoryId
+        self.categoryName = categoryName
+        self.transferAccountId = transferAccountId
+        self.deleted = deleted
+    }
 }

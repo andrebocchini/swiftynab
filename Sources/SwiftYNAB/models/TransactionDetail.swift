@@ -84,4 +84,58 @@ public struct TransactionDetail: Codable, Equatable, Sendable {
 
     /// Sub transactions belonging to this transaction
     public let subtransactions: [SubTransaction]
+
+    public init(
+        id: String,
+        date: String,
+        amount: Int,
+        amountFormatted: String?,
+        amountCurrency: Decimal?,
+        memo: String?,
+        cleared: ClearedStatus,
+        approved: Bool,
+        flagColor: FlagColor?,
+        flagName: String?,
+        accountId: String,
+        accountName: String,
+        payeeId: String?,
+        payeeName: String?,
+        categoryId: String?,
+        categoryName: String?,
+        transferAccountId: String?,
+        transferTransactionId: String?,
+        matchedTransactionId: String?,
+        importId: String?,
+        importPayeeName: String?,
+        importPayeeNameOriginal: String?,
+        debtTransactionType: DebtTransactionType?,
+        deleted: Bool,
+        subtransactions: [SubTransaction]
+    ) {
+        self.id = id
+        self.date = date
+        self.amount = amount
+        self.amountFormatted = amountFormatted
+        self.amountCurrency = amountCurrency
+        self.memo = memo
+        self.cleared = cleared
+        self.approved = approved
+        self.flagColor = flagColor
+        self.flagName = flagName
+        self.accountId = accountId
+        self.accountName = accountName
+        self.payeeId = payeeId
+        self.payeeName = payeeName
+        self.categoryId = categoryId
+        self.categoryName = categoryName
+        self.transferAccountId = transferAccountId
+        self.transferTransactionId = transferTransactionId
+        self.matchedTransactionId = matchedTransactionId
+        self.importId = importId
+        self.importPayeeName = importPayeeName
+        self.importPayeeNameOriginal = importPayeeNameOriginal
+        self.debtTransactionType = debtTransactionType
+        self.deleted = deleted
+        self.subtransactions = subtransactions
+    }
 }

@@ -24,4 +24,18 @@ public struct MoneyMovementGroup: Codable, Equatable, Sendable {
 
     /// The id of the user who performed the money movement group
     public let performedByUserId: String?
+
+    public init(
+        id: String,
+        groupCreatedAt: String,
+        month: String,
+        note: String?,
+        performedByUserId: String?
+    ) {
+        self.id = id
+        self.groupCreatedAt = groupCreatedAt
+        self.month = month
+        self.note = note
+        self.performedByUserId = performedByUserId
+    }
 }

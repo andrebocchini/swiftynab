@@ -12,4 +12,10 @@ import Foundation
 public struct DateFormat: Codable, Equatable, Sendable {
     /// Date display format
     public let format: String
+
+    public init(
+        format: String
+    ) {
+        self.format = format
+    }
 }

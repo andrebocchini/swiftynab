@@ -37,7 +37,7 @@ struct SaveScheduledTransactionRequestTests {
         #expect(request.method == .post)
         #expect(request.query == nil)
 
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
         let object = try requestBodyJSONObject(from: body)
         let scheduledTransaction = try #require(object["scheduled_transaction"] as? [String: Any])
         let encodedDate = scheduledTransaction["date"]
@@ -73,7 +73,7 @@ struct SaveScheduledTransactionRequestTests {
         #expect(request.method == .put)
         #expect(request.query == nil)
 
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
         let object = try requestBodyJSONObject(from: body)
         let scheduledTransaction = try #require(object["scheduled_transaction"] as? [String: Any])
         let encodedDate = scheduledTransaction["date"]

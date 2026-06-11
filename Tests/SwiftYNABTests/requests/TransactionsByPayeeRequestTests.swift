@@ -13,7 +13,7 @@ import Testing
 @Suite("Transactions By Payee Request")
 struct TransactionsByPayeeRequestTests {
     @Test("Path includes plan ID and payee ID with no query parameters")
-    func payeeTransactionsNoQuery() {
+    func payeeTransactionsNoQuery() throws {
         let request = TransactionsByPayeeRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             payeeId: "63509599-7805-4f30-24bf-0ae2c2f967f0"
@@ -23,11 +23,11 @@ struct TransactionsByPayeeRequestTests {
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/payees/63509599-7805-4f30-24bf-0ae2c2f967f0/transactions")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 
     @Test("Request includes since date, type, and last knowledge as query parameters")
-    func payeeTransactionsWithQuery() {
+    func payeeTransactionsWithQuery() throws {
         let date = Date(timeIntervalSince1970: 1_556_717_342.216656)
         let request = TransactionsByPayeeRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
@@ -44,7 +44,7 @@ struct TransactionsByPayeeRequestTests {
         #expect(request.query?[0] == URLQueryItem(name: "since_date", value: "2019-05-01"))
         #expect(request.query?[1] == URLQueryItem(name: "type", value: "uncategorized"))
         #expect(request.query?[2] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 
     @Test("Response decodes when optional server knowledge is omitted")

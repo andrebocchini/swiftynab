@@ -13,13 +13,6 @@ struct NewPlanAccountRequest {
     let name: String
     let type: SaveAccountType
     let balance: Int
-
-    init(planId: String, name: String, type: SaveAccountType, balance: Int) {
-        self.planId = planId
-        self.name = name
-        self.type = type
-        self.balance = balance
-    }
 }
 
 extension NewPlanAccountRequest {
@@ -47,10 +40,9 @@ extension NewPlanAccountRequest: Request {
         "/v1/plans/\(planId)/accounts"
     }
 
-    var body: Data? {
+    func body(using serializer: SerializerType) throws -> Data? {
         let body = PostAccountWrapper(name: name, type: type, balance: balance)
-        let serializer = Serializer()
-        return try? serializer.encode(body)
+        return try serializer.encode(body)
     }
 }
 

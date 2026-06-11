@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct UpdateTransactionsRequest {
-    public let planId: String
-    public let transactions: [SaveTransactionWithIdOrImportId]
+struct UpdateTransactionsRequest {
+    let planId: String
+    let transactions: [SaveTransactionWithIdOrImportId]
 }
 
 extension UpdateTransactionsRequest: Request {
@@ -22,9 +22,8 @@ extension UpdateTransactionsRequest: Request {
         .patch
     }
 
-    var body: Data? {
-        let serializer = Serializer()
-        return try? serializer.encode(UpdateTransactionsRequestWrapper(transactions: transactions))
+    func body(using serializer: SerializerType) throws -> Data? {
+        try serializer.encode(UpdateTransactionsRequestWrapper(transactions: transactions))
     }
 
     struct Response: Decodable {

@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct CreateTransactionsRequest {
-    public let planId: String
-    public let transactions: [NewTransaction]
+struct CreateTransactionsRequest {
+    let planId: String
+    let transactions: [NewTransaction]
 }
 
 extension CreateTransactionsRequest: Request {
@@ -22,9 +22,8 @@ extension CreateTransactionsRequest: Request {
         .post
     }
 
-    var body: Data? {
-        let serializer = Serializer()
-        return try? serializer.encode(CreateTransactionsRequestWrapper(transactions: transactions))
+    func body(using serializer: SerializerType) throws -> Data? {
+        try serializer.encode(CreateTransactionsRequestWrapper(transactions: transactions))
     }
 
     struct Response: Decodable {

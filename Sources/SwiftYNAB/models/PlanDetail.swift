@@ -60,4 +60,42 @@ public struct PlanDetail: Codable, Equatable, Sendable {
 
     /// All scheduled sub transactions on this plan
     public let scheduledSubtransactions: [ScheduledSubTransaction]?
+
+    public init(
+        id: String,
+        name: String,
+        lastModifiedOn: String?,
+        firstMonth: String?,
+        lastMonth: String?,
+        dateFormat: DateFormat?,
+        currencyFormat: CurrencyFormat?,
+        accounts: [Account]?,
+        payees: [Payee]?,
+        payeeLocations: [PayeeLocation]?,
+        categoryGroups: [CategoryGroup]?,
+        categories: [Category]?,
+        months: [MonthDetail]?,
+        transactions: [TransactionSummary]?,
+        subtransactions: [SubTransaction]?,
+        scheduledTransactions: [ScheduledTransactionSummary]?,
+        scheduledSubtransactions: [ScheduledSubTransaction]?
+    ) {
+        self.id = id
+        self.name = name
+        self.lastModifiedOn = lastModifiedOn
+        self.firstMonth = firstMonth
+        self.lastMonth = lastMonth
+        self.dateFormat = dateFormat
+        self.currencyFormat = currencyFormat
+        self.accounts = accounts
+        self.payees = payees
+        self.payeeLocations = payeeLocations
+        self.categoryGroups = categoryGroups
+        self.categories = categories
+        self.months = months
+        self.transactions = transactions
+        self.subtransactions = subtransactions
+        self.scheduledTransactions = scheduledTransactions
+        self.scheduledSubtransactions = scheduledSubtransactions
+    }
 }

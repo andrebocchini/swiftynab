@@ -162,4 +162,88 @@ public struct Category: Codable, Equatable, Sendable {
 
     /// Whether or not the category has been deleted
     public let deleted: Bool
+
+    public init(
+        id: String,
+        categoryGroupId: String,
+        categoryGroupName: String?,
+        name: String,
+        hidden: Bool,
+        originalCategoryGroupId: String?,
+        note: String?,
+        budgeted: Int,
+        activity: Int,
+        balance: Int,
+        balanceFormatted: String?,
+        balanceCurrency: Decimal?,
+        activityFormatted: String?,
+        activityCurrency: Decimal?,
+        budgetedFormatted: String?,
+        budgetedCurrency: Decimal?,
+        goalType: String?,
+        goalNeedsWholeAmount: Bool?,
+        goalDay: Int?,
+        goalCadence: Int?,
+        goalCadenceFrequency: Int?,
+        goalCreationMonth: String?,
+        goalTarget: Int?,
+        goalTargetFormatted: String?,
+        goalTargetCurrency: Decimal?,
+        goalTargetMonth: String?,
+        goalTargetDate: String?,
+        goalPercentageComplete: Int?,
+        goalMonthsToBudget: Int?,
+        goalUnderFunded: Int?,
+        goalUnderFundedFormatted: String?,
+        goalUnderFundedCurrency: Decimal?,
+        goalOverallFunded: Int?,
+        goalOverallFundedFormatted: String?,
+        goalOverallFundedCurrency: Decimal?,
+        goalOverallLeft: Int?,
+        goalOverallLeftFormatted: String?,
+        goalOverallLeftCurrency: Decimal?,
+        goalSnoozedAt: String?,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.categoryGroupId = categoryGroupId
+        self.categoryGroupName = categoryGroupName
+        self.name = name
+        self.hidden = hidden
+        self.originalCategoryGroupId = originalCategoryGroupId
+        self.note = note
+        self.budgeted = budgeted
+        self.activity = activity
+        self.balance = balance
+        self.balanceFormatted = balanceFormatted
+        self.balanceCurrency = balanceCurrency
+        self.activityFormatted = activityFormatted
+        self.activityCurrency = activityCurrency
+        self.budgetedFormatted = budgetedFormatted
+        self.budgetedCurrency = budgetedCurrency
+        self.goalType = goalType
+        self.goalNeedsWholeAmount = goalNeedsWholeAmount
+        self.goalDay = goalDay
+        self.goalCadence = goalCadence
+        self.goalCadenceFrequency = goalCadenceFrequency
+        self.goalCreationMonth = goalCreationMonth
+        self.goalTarget = goalTarget
+        self.goalTargetFormatted = goalTargetFormatted
+        self.goalTargetCurrency = goalTargetCurrency
+        self.goalTargetMonth = goalTargetMonth
+        self.goalTargetDate = goalTargetDate
+        self.goalPercentageComplete = goalPercentageComplete
+        self.goalMonthsToBudget = goalMonthsToBudget
+        self.goalUnderFunded = goalUnderFunded
+        self.goalUnderFundedFormatted = goalUnderFundedFormatted
+        self.goalUnderFundedCurrency = goalUnderFundedCurrency
+        self.goalOverallFunded = goalOverallFunded
+        self.goalOverallFundedFormatted = goalOverallFundedFormatted
+        self.goalOverallFundedCurrency = goalOverallFundedCurrency
+        self.goalOverallLeft = goalOverallLeft
+        self.goalOverallLeftFormatted = goalOverallLeftFormatted
+        self.goalOverallLeftCurrency = goalOverallLeftCurrency
+        self.goalSnoozedAt = goalSnoozedAt
+        self.deleted = deleted
+    }
 }

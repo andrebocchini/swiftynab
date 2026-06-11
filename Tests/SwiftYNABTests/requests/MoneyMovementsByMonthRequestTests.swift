@@ -12,7 +12,7 @@ import Testing
 @Suite("Money Movements By Month Request")
 struct MoneyMovementsByMonthRequestTests {
     @Test("Path includes plan ID and month for listing money movements")
-    func moneyMovementsByMonthRequest() {
+    func moneyMovementsByMonthRequest() throws {
         let request = MoneyMovementsByMonthRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             month: "2024-01-01"
@@ -22,6 +22,6 @@ struct MoneyMovementsByMonthRequestTests {
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2024-01-01/money_movements")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

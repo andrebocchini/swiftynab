@@ -89,8 +89,10 @@ struct ScheduledTransactionServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = ScheduledTransactionService(client: client)
-        let (transactions, serverKnowledge) = try await service
+        let response = try await service
             .scheduledTransactions(planId: "budget_id")
+        let transactions = response.scheduledTransactions
+        let serverKnowledge = response.serverKnowledge
 
         #expect(transactions.count == 1)
         #expect(expectedTransaction == transactions.first)

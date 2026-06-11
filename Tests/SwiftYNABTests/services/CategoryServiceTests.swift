@@ -30,9 +30,9 @@ struct CategoryServiceTests {
         let service = CategoryService(client: client)
         let actualResponse = try await service.categories(planId: "budget_id")
 
-        #expect(actualResponse.0.count == 1)
-        #expect(expectedCategoryGroup == actualResponse.0[0])
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.categoryGroups.count == 1)
+        #expect(expectedCategoryGroup == actualResponse.categoryGroups[0])
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when fetching categories fails")
@@ -236,8 +236,8 @@ struct CategoryServiceTests {
             category: SaveCategory()
         )
 
-        #expect(expectedCategory == actualResponse.0)
-        #expect(actualResponse.1 == 200)
+        #expect(expectedCategory == actualResponse.category)
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when updating category fails")
@@ -385,8 +385,8 @@ struct CategoryServiceTests {
             category: NewCategory(name: "name", categoryGroupId: "group_id")
         )
 
-        #expect(expectedCategory == actualResponse.0)
-        #expect(actualResponse.1 == 200)
+        #expect(expectedCategory == actualResponse.category)
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when creating category fails")
@@ -424,8 +424,8 @@ struct CategoryServiceTests {
             categoryGroup: SaveCategoryGroup(name: "name")
         )
 
-        #expect(expectedCategoryGroup == actualResponse.0)
-        #expect(actualResponse.1 == 200)
+        #expect(expectedCategoryGroup == actualResponse.categoryGroup)
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when creating category group fails")
@@ -464,8 +464,8 @@ struct CategoryServiceTests {
             categoryGroup: SaveCategoryGroup(name: "updated name")
         )
 
-        #expect(expectedCategoryGroup == actualResponse.0)
-        #expect(actualResponse.1 == 200)
+        #expect(expectedCategoryGroup == actualResponse.categoryGroup)
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when updating category group fails")

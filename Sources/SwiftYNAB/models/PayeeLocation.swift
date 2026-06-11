@@ -24,4 +24,18 @@ public struct PayeeLocation: Codable, Equatable, Sendable {
 
     /// Whether or not the payee is deleted
     public let deleted: Bool
+
+    public init(
+        id: String,
+        payeeId: String,
+        longitude: String,
+        latitude: String,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.payeeId = payeeId
+        self.longitude = longitude
+        self.latitude = latitude
+        self.deleted = deleted
+    }
 }

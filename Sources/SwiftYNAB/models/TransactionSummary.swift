@@ -81,4 +81,50 @@ public struct TransactionSummary: Codable, Equatable, Sendable {
 
     /// Whether or not the transaction has been deleted
     public let deleted: Bool
+
+    public init(
+        id: String,
+        date: String,
+        amount: Int,
+        amountFormatted: String?,
+        amountCurrency: Decimal?,
+        memo: String?,
+        cleared: ClearedStatus,
+        approved: Bool,
+        flagColor: FlagColor?,
+        flagName: String?,
+        accountId: String,
+        payeeId: String?,
+        categoryId: String?,
+        transferAccountId: String?,
+        transferTransactionId: String?,
+        matchedTransactionId: String?,
+        importId: String?,
+        importPayeeName: String?,
+        importPayeeNameOriginal: String?,
+        debtTransactionType: DebtTransactionType?,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.date = date
+        self.amount = amount
+        self.amountFormatted = amountFormatted
+        self.amountCurrency = amountCurrency
+        self.memo = memo
+        self.cleared = cleared
+        self.approved = approved
+        self.flagColor = flagColor
+        self.flagName = flagName
+        self.accountId = accountId
+        self.payeeId = payeeId
+        self.categoryId = categoryId
+        self.transferAccountId = transferAccountId
+        self.transferTransactionId = transferTransactionId
+        self.matchedTransactionId = matchedTransactionId
+        self.importId = importId
+        self.importPayeeName = importPayeeName
+        self.importPayeeNameOriginal = importPayeeNameOriginal
+        self.debtTransactionType = debtTransactionType
+        self.deleted = deleted
+    }
 }

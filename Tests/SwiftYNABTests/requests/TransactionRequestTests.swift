@@ -12,7 +12,7 @@ import Testing
 @Suite("Transaction Request")
 struct TransactionRequestTests {
     @Test("Path includes plan ID and transaction ID")
-    func transactionRequest() {
+    func transactionRequest() throws {
         let request = TransactionRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             transactionId: "c36fbd68-131e-4ea8-b30f-94f43423021c"
@@ -22,6 +22,6 @@ struct TransactionRequestTests {
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions/c36fbd68-131e-4ea8-b30f-94f43423021c")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

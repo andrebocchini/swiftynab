@@ -12,7 +12,7 @@ import Testing
 @Suite("Locations For Payee Request")
 struct LocationsForPayeeRequestTests {
     @Test("Path includes plan ID and payee ID for payee locations")
-    func locationsForPayeeRequest() {
+    func locationsForPayeeRequest() throws {
         let request = LocationsForPayeeRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             payeeId: "0bfe752a-89e1-65d4-73d4-0ae2c2f71d54"
@@ -22,6 +22,6 @@ struct LocationsForPayeeRequestTests {
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/payees/0bfe752a-89e1-65d4-73d4-0ae2c2f71d54/payee_locations")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

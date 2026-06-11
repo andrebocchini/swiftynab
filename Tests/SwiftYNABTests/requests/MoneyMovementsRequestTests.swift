@@ -12,13 +12,13 @@ import Testing
 @Suite("Money Movements Request")
 struct MoneyMovementsRequestTests {
     @Test("Path includes plan ID for listing money movements")
-    func moneyMovementsRequest() {
+    func moneyMovementsRequest() throws {
         let request = MoneyMovementsRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99"
         )
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/money_movements")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

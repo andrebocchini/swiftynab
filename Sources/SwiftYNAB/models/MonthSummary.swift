@@ -57,4 +57,40 @@ public struct MonthSummary: Codable, Equatable, Sendable {
 
     /// Whether or not the month is deleted
     public let deleted: Bool
+
+    public init(
+        month: String,
+        note: String?,
+        income: Int,
+        incomeFormatted: String?,
+        incomeCurrency: Decimal?,
+        budgeted: Int,
+        budgetedFormatted: String?,
+        budgetedCurrency: Decimal?,
+        activity: Int,
+        activityFormatted: String?,
+        activityCurrency: Decimal?,
+        toBeBudgeted: Int,
+        toBeBudgetedFormatted: String?,
+        toBeBudgetedCurrency: Decimal?,
+        ageOfMoney: Int?,
+        deleted: Bool
+    ) {
+        self.month = month
+        self.note = note
+        self.income = income
+        self.incomeFormatted = incomeFormatted
+        self.incomeCurrency = incomeCurrency
+        self.budgeted = budgeted
+        self.budgetedFormatted = budgetedFormatted
+        self.budgetedCurrency = budgetedCurrency
+        self.activity = activity
+        self.activityFormatted = activityFormatted
+        self.activityCurrency = activityCurrency
+        self.toBeBudgeted = toBeBudgeted
+        self.toBeBudgetedFormatted = toBeBudgetedFormatted
+        self.toBeBudgetedCurrency = toBeBudgetedCurrency
+        self.ageOfMoney = ageOfMoney
+        self.deleted = deleted
+    }
 }

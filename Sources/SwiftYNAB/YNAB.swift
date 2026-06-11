@@ -16,34 +16,34 @@ public struct YNAB {
     private let client: ClientType
 
     /// Provides access to user operations
-    public let users: UserService
+    public let users: any UserServiceType
 
     /// Provides access to plan operations
-    public let plans: PlanService
+    public let plans: any PlanServiceType
 
     /// Provides access to account operations
-    public let accounts: AccountService
+    public let accounts: any AccountServiceType
 
     /// Provides access to category operations
-    public let categories: CategoryService
+    public let categories: any CategoryServiceType
 
     /// Provides access to payee operations
-    public let payees: PayeeService
+    public let payees: any PayeeServiceType
 
     /// Provides access to payee location operations
-    public let payeeLocations: PayeeLocationService
+    public let payeeLocations: any PayeeLocationServiceType
 
     /// Provides access to month operations
-    public let months: MonthService
+    public let months: any MonthServiceType
 
     /// Provides access to transaction operations
-    public let transactions: TransactionService
+    public let transactions: any TransactionServiceType
 
     /// Provides access to scheduled transaction operations
-    public let scheduledTransactions: ScheduledTransactionService
+    public let scheduledTransactions: any ScheduledTransactionServiceType
 
     /// Provides access to money movement operations
-    public let moneyMovements: MoneyMovementService
+    public let moneyMovements: any MoneyMovementServiceType
 
     /// Initializes the YNAB API client
     ///

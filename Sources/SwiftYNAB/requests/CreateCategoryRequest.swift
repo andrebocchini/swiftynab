@@ -22,10 +22,9 @@ extension CreateCategoryRequest: Request {
         .post
     }
 
-    var body: Data? {
+    func body(using serializer: SerializerType) throws -> Data? {
         let wrapper = NewCategoryWrapper(with: category)
-        let serializer = Serializer()
-        return try? serializer.encode(wrapper)
+        return try serializer.encode(wrapper)
     }
 }
 

@@ -83,4 +83,56 @@ public struct Account: Codable, Equatable, Sendable {
 
     /// Deleted account or not
     public let deleted: Bool
+
+    public init(
+        id: String,
+        name: String,
+        type: AccountType,
+        onBudget: Bool,
+        closed: Bool,
+        note: String?,
+        balance: Int,
+        balanceFormatted: String?,
+        balanceCurrency: Decimal?,
+        clearedBalance: Int,
+        clearedBalanceFormatted: String?,
+        clearedBalanceCurrency: Decimal?,
+        unclearedBalance: Int,
+        unclearedBalanceFormatted: String?,
+        unclearedBalanceCurrency: Decimal?,
+        transferPayeeId: String?,
+        directImportLinked: Bool?,
+        directImportInError: Bool?,
+        lastReconciledAt: String?,
+        debtOriginalBalance: Int?,
+        debtInterestRates: [String: Int]?,
+        debtMinimumPayments: [String: Int]?,
+        debtEscrowAmounts: [String: Int]?,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.name = name
+        self.type = type
+        self.onBudget = onBudget
+        self.closed = closed
+        self.note = note
+        self.balance = balance
+        self.balanceFormatted = balanceFormatted
+        self.balanceCurrency = balanceCurrency
+        self.clearedBalance = clearedBalance
+        self.clearedBalanceFormatted = clearedBalanceFormatted
+        self.clearedBalanceCurrency = clearedBalanceCurrency
+        self.unclearedBalance = unclearedBalance
+        self.unclearedBalanceFormatted = unclearedBalanceFormatted
+        self.unclearedBalanceCurrency = unclearedBalanceCurrency
+        self.transferPayeeId = transferPayeeId
+        self.directImportLinked = directImportLinked
+        self.directImportInError = directImportInError
+        self.lastReconciledAt = lastReconciledAt
+        self.debtOriginalBalance = debtOriginalBalance
+        self.debtInterestRates = debtInterestRates
+        self.debtMinimumPayments = debtMinimumPayments
+        self.debtEscrowAmounts = debtEscrowAmounts
+        self.deleted = deleted
+    }
 }

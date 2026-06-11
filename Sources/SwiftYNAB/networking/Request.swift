@@ -11,6 +11,10 @@ import Foundation
     import FoundationNetworking
 #endif
 
+enum Endpoint {
+    static let host = "api.ynab.com"
+}
+
 protocol Request: Sendable {
     associatedtype Response: Decodable, Sendable
 
@@ -18,9 +22,9 @@ protocol Request: Sendable {
     var method: RequestMethod { get }
     var requiresAuthentication: Bool { get }
     var query: [URLQueryItem]? { get }
-    var body: Data? { get }
     var timeout: TimeInterval { get }
-    var request: URLRequest { get }
+
+    func body(using serializer: SerializerType) throws -> Data?
 }
 
 extension Request {
@@ -36,29 +40,33 @@ extension Request {
         nil
     }
 
-    var body: Data? {
-        nil
-    }
-
     var timeout: TimeInterval {
         60
     }
 
-    var request: URLRequest {
+    func body(using _: SerializerType) throws -> Data? {
+        nil
+    }
+
+    func urlRequest(using serializer: SerializerType) throws -> URLRequest {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = "api.youneedabudget.com"
-        urlComponents.path = "\(path)"
+        urlComponents.host = Endpoint.host
+        urlComponents.path = path
         urlComponents.queryItems = query
 
-        var request = URLRequest(url: urlComponents.url!)
+        guard let url = urlComponents.url else {
+            throw SwiftYNABError.invalidRequest(path: path)
+        }
+
+        var request = URLRequest(url: url)
         request.timeoutInterval = timeout
         request.httpMethod = method.rawValue
 
         switch method {
         case .patch, .post, .put:
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = body
+            request.httpBody = try body(using: serializer)
         case .delete, .get:
             break
         }

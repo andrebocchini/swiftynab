@@ -12,7 +12,7 @@ import Testing
 @Suite("Import Transactions Request")
 struct ImportTransactionsRequestTests {
     @Test("Request uses POST method with import transactions path")
-    func importTransactionsRequest() {
+    func importTransactionsRequest() throws {
         let request = ImportTransactionsRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99"
         )
@@ -21,6 +21,6 @@ struct ImportTransactionsRequestTests {
             .path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions/import")
         #expect(request.method == .post)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

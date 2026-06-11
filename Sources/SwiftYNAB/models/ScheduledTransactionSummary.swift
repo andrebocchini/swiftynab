@@ -54,4 +54,38 @@ public struct ScheduledTransactionSummary: Codable, Equatable, Sendable {
 
     /// Whether or not the transaction has been deleted
     public let deleted: Bool
+
+    public init(
+        id: String,
+        dateFirst: String,
+        dateNext: String,
+        frequency: ScheduledTransactionFrequency,
+        amount: Int,
+        amountFormatted: String?,
+        amountCurrency: Decimal?,
+        memo: String?,
+        flagColor: FlagColor?,
+        flagName: String?,
+        accountId: String,
+        payeeId: String?,
+        categoryId: String?,
+        transferAccountId: String?,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.dateFirst = dateFirst
+        self.dateNext = dateNext
+        self.frequency = frequency
+        self.amount = amount
+        self.amountFormatted = amountFormatted
+        self.amountCurrency = amountCurrency
+        self.memo = memo
+        self.flagColor = flagColor
+        self.flagName = flagName
+        self.accountId = accountId
+        self.payeeId = payeeId
+        self.categoryId = categoryId
+        self.transferAccountId = transferAccountId
+        self.deleted = deleted
+    }
 }

@@ -42,4 +42,30 @@ public struct MoneyMovement: Codable, Equatable, Sendable {
 
     /// The amount of the money movement as a decimal currency amount
     public let amountCurrency: Decimal?
+
+    public init(
+        id: String,
+        month: String?,
+        movedAt: String?,
+        note: String?,
+        moneyMovementGroupId: String?,
+        performedByUserId: String?,
+        fromCategoryId: String?,
+        toCategoryId: String?,
+        amount: Int,
+        amountFormatted: String?,
+        amountCurrency: Decimal?
+    ) {
+        self.id = id
+        self.month = month
+        self.movedAt = movedAt
+        self.note = note
+        self.moneyMovementGroupId = moneyMovementGroupId
+        self.performedByUserId = performedByUserId
+        self.fromCategoryId = fromCategoryId
+        self.toCategoryId = toCategoryId
+        self.amount = amount
+        self.amountFormatted = amountFormatted
+        self.amountCurrency = amountCurrency
+    }
 }

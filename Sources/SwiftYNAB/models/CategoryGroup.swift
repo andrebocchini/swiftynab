@@ -22,4 +22,16 @@ public struct CategoryGroup: Codable, Equatable, Sendable {
     /// Whether or not the category group has been deleted. Deleted category groups will only be
     /// included in delta requests.
     public let deleted: Bool
+
+    public init(
+        id: String,
+        name: String,
+        hidden: Bool,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.name = name
+        self.hidden = hidden
+        self.deleted = deleted
+    }
 }

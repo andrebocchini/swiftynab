@@ -13,16 +13,16 @@ import Testing
 @Suite("Transactions By Plan Request")
 struct TransactionsByPlanRequestTests {
     @Test("Path includes plan ID with no query parameters")
-    func budgetTransactionsNoQuery() {
+    func budgetTransactionsNoQuery() throws {
         let request = TransactionsByPlanRequest(planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 
     @Test("Request includes since date, type, and last knowledge as query parameters")
-    func budgetTransactionsWithQuery() {
+    func budgetTransactionsWithQuery() throws {
         let date = Date(timeIntervalSince1970: 1_556_717_342.216656)
         let request = TransactionsByPlanRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
@@ -36,6 +36,6 @@ struct TransactionsByPlanRequestTests {
         #expect(request.query?[0] == URLQueryItem(name: "since_date", value: "2019-05-01"))
         #expect(request.query?[1] == URLQueryItem(name: "type", value: "uncategorized"))
         #expect(request.query?[2] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

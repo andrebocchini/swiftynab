@@ -12,11 +12,11 @@ import Testing
 @Suite("Plans Settings Request")
 struct BudgetsSettingsRequestTests {
     @Test("Path includes plan ID for settings endpoint")
-    func budgetSettingsRequest() {
+    func budgetSettingsRequest() throws {
         let request = PlanSettingsRequest(planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/settings")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

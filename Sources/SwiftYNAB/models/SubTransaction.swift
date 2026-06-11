@@ -48,4 +48,34 @@ public struct SubTransaction: Codable, Equatable, Sendable {
 
     /// Whether or not the transaction has been deleted
     public let deleted: Bool
+
+    public init(
+        id: String,
+        transactionId: String,
+        amount: Int,
+        amountFormatted: String?,
+        amountCurrency: Decimal?,
+        memo: String?,
+        payeeId: String?,
+        payeeName: String?,
+        categoryId: String?,
+        categoryName: String?,
+        transferAccountId: String?,
+        transferTransactionId: String?,
+        deleted: Bool
+    ) {
+        self.id = id
+        self.transactionId = transactionId
+        self.amount = amount
+        self.amountFormatted = amountFormatted
+        self.amountCurrency = amountCurrency
+        self.memo = memo
+        self.payeeId = payeeId
+        self.payeeName = payeeName
+        self.categoryId = categoryId
+        self.categoryName = categoryName
+        self.transferAccountId = transferAccountId
+        self.transferTransactionId = transferTransactionId
+        self.deleted = deleted
+    }
 }

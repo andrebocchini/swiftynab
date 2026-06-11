@@ -18,4 +18,14 @@ public struct ErrorDetail: Codable, Equatable, Sendable {
 
     /// Detailed message explaining the error
     public let detail: String
+
+    public init(
+        id: String,
+        name: String,
+        detail: String
+    ) {
+        self.id = id
+        self.name = name
+        self.detail = detail
+    }
 }

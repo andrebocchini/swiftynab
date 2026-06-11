@@ -40,9 +40,9 @@ struct MonthServiceTests {
             lastKnowledgeOfServer: 200
         )
 
-        #expect(actualResponse.0.count == 1)
-        #expect(expectedMonth == actualResponse.0[0])
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.months.count == 1)
+        #expect(expectedMonth == actualResponse.months[0])
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when fetching plan months fails")

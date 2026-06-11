@@ -30,7 +30,7 @@ struct UpdateCategoryGroupRequestTests {
 
         let expectedBody = PatchCategoryGroupWrapper(categoryGroup: categoryGroup)
         let serializer = Serializer()
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
         let decodedBody = try serializer.decode(PatchCategoryGroupWrapper.self, from: body)
         #expect(decodedBody == expectedBody)
     }

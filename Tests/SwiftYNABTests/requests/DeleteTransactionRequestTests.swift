@@ -20,7 +20,7 @@ struct DeleteTransactionRequestTests {
         )
 
         #expect(request.method == .delete)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
         #expect(request.path == "/v1/plans/budget_id/transactions/transaction_id")
     }
 

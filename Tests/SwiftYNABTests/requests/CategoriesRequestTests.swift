@@ -13,7 +13,7 @@ import Testing
 @Suite("Categories Request")
 struct CategoriesRequestTests {
     @Test("Request includes last knowledge of server query parameter")
-    func categoriesRequestWithKnowledge() {
+    func categoriesRequestWithKnowledge() throws {
         let request = CategoriesRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             lastKnowledgeOfServer: 100
@@ -22,15 +22,15 @@ struct CategoriesRequestTests {
         #expect(request.method == .get)
         #expect(request.query?.count == 1)
         #expect(request.query?[0] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 
     @Test("Request omits query when no server knowledge provided")
-    func categoriesRequest() {
+    func categoriesRequest() throws {
         let request = CategoriesRequest(planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99")
         #expect(request.path == "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/categories")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

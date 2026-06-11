@@ -44,10 +44,9 @@ extension SaveScheduledTransactionRequest: Request {
         update ? .put : .post
     }
 
-    var body: Data? {
+    func body(using serializer: SerializerType) throws -> Data? {
         let wrapper = SaveScheduledTransactionWrapper(with: transaction)
-        let serializer = Serializer()
-        return try? serializer.encode(wrapper)
+        return try serializer.encode(wrapper)
     }
 }
 

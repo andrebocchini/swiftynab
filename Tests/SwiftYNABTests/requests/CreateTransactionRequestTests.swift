@@ -38,7 +38,7 @@ struct CreateTransactionRequestTests {
         #expect(request.method == .post)
         #expect(request.query == nil)
 
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

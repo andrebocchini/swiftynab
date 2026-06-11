@@ -23,7 +23,7 @@ struct CreatePayeeRequestTests {
         #expect(request.query == nil)
 
         let serializer = Serializer()
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
         let decodedBody = try serializer.decode(SavePayeeWrapper.self, from: body)
         #expect(decodedBody == SavePayeeWrapper(with: payee))
     }

@@ -23,10 +23,9 @@ extension UpdatePayeeRequest: Request {
         .patch
     }
 
-    var body: Data? {
+    func body(using serializer: SerializerType) throws -> Data? {
         let wrapper = SavePayeeWrapper(with: payee)
-        let serializer = Serializer()
-        return try? serializer.encode(wrapper)
+        return try serializer.encode(wrapper)
     }
 }
 

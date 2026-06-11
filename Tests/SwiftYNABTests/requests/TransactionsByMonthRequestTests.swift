@@ -13,7 +13,7 @@ import Testing
 @Suite("Transactions By Month Request")
 struct TransactionsByMonthRequestTests {
     @Test("Path includes plan ID and month with no query parameters")
-    func transactionsByMonthRequestNoQuery() {
+    func transactionsByMonthRequestNoQuery() throws {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let month = dateFormatter.date(from: "2025-01-01")!
@@ -27,11 +27,11 @@ struct TransactionsByMonthRequestTests {
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 
     @Test("Request includes since date, type, and last knowledge as query parameters")
-    func transactionsByMonthRequestWithQuery() {
+    func transactionsByMonthRequestWithQuery() throws {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let month = dateFormatter.date(from: "2025-01-01")!
@@ -49,7 +49,7 @@ struct TransactionsByMonthRequestTests {
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/months/2025-01-01/transactions")
         #expect(request.method == .get)
         #expect(request.query != nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
 
         let query = request.query!
         #expect(query.contains { $0.name == "since_date" && $0.value == "2025-01-15" })

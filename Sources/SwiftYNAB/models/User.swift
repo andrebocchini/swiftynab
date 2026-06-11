@@ -12,4 +12,10 @@ import Foundation
 public struct User: Codable, Equatable, Sendable {
     /// User id
     public let id: String
+
+    public init(
+        id: String
+    ) {
+        self.id = id
+    }
 }

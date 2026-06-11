@@ -26,8 +26,8 @@ struct PayeeServiceTests {
             payee: SavePayee(name: "name")
         )
 
-        #expect(actualResponse.0 == expectedPayee)
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.payee == expectedPayee)
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when creating a payee fails")
@@ -50,7 +50,9 @@ struct PayeeServiceTests {
         let expectedResponse = PayeesRequest.Response(payees: [expectedPayee], serverKnowledge: 1)
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = PayeeService(client: client)
-        let (payees, serverKnowledge) = try await service.payees(planId: "budget_id")
+        let response = try await service.payees(planId: "budget_id")
+        let payees = response.payees
+        let serverKnowledge = response.serverKnowledge
 
         #expect(payees.count == 1)
         #expect(expectedPayee == payees[0])
@@ -105,8 +107,8 @@ struct PayeeServiceTests {
             payee: SavePayee(name: "name")
         )
 
-        #expect(actualResponse.0 == expectedPayee)
-        #expect(actualResponse.1 == 200)
+        #expect(actualResponse.payee == expectedPayee)
+        #expect(actualResponse.serverKnowledge == 200)
     }
 
     @Test("Throws error when updating a payee fails")

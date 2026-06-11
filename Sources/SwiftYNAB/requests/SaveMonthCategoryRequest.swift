@@ -24,11 +24,10 @@ extension SaveMonthCategoryRequest: Request {
         .patch
     }
 
-    var body: Data? {
+    func body(using serializer: SerializerType) throws -> Data? {
         let categoryUpdate = SaveMonthCategory(budgeted: budgeted)
         let wrapper = SaveMonthCategoryRequestWrapper(with: categoryUpdate)
-        let serializer = Serializer()
-        return try? serializer.encode(wrapper)
+        return try serializer.encode(wrapper)
     }
 }
 

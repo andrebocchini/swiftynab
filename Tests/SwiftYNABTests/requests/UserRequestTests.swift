@@ -12,11 +12,11 @@ import Testing
 @Suite("User Request")
 struct UserRequestTests {
     @Test("Request targets user endpoint with GET method")
-    func userRequest() {
+    func userRequest() throws {
         let request = UserRequest()
         #expect(request.path == "/v1/user")
         #expect(request.method == .get)
         #expect(request.query == nil)
-        #expect(request.body == nil)
+        #expect(try request.body(using: Serializer()) == nil)
     }
 }

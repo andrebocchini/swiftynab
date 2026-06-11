@@ -38,6 +38,26 @@ struct ClientTests {
         }
     }
 
+    @Test("Throws an encoding error when the request body cannot be encoded")
+    func unencodableBodyThrowsEncodingError() async {
+        let mockURLResponse = URLResponse(
+            url: URL(string: "https://api.ynab.com")!,
+            mimeType: nil,
+            expectedContentLength: 0,
+            textEncodingName: nil
+        )
+        let mockURLSession = MockURLSession(data: Data(), response: mockURLResponse)
+        let client = Client(
+            accessToken: "",
+            urlSession: mockURLSession,
+            serializer: Serializer()
+        )
+
+        await #expect(throws: SwiftYNABError.encodingFailure(message: "test")) {
+            try await client.perform(MockUnencodableBodyRequest())
+        }
+    }
+
     @Test("Throws a decoding error when the response cannot be parsed")
     func nonParseableResponseThrowsDecodingError() async {
         let mockURLResponse = URLResponse(
@@ -68,4 +88,24 @@ private struct MockRequest: Request {
     let path = "/test"
 
     struct Response: Decodable {}
+}
+
+private struct MockUnencodableBodyRequest: Request {
+    let path = "/test"
+    let method: RequestMethod = .post
+
+    func body(using serializer: SerializerType) throws -> Data? {
+        try serializer.encode(UnencodableModel())
+    }
+
+    struct Response: Decodable {}
+}
+
+private struct UnencodableModel: Encodable {
+    func encode(to _: any Encoder) throws {
+        throw EncodingError.invalidValue(
+            self,
+            EncodingError.Context(codingPath: [], debugDescription: "test")
+        )
+    }
 }

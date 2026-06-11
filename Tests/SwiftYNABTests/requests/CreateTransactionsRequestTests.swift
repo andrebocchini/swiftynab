@@ -52,7 +52,7 @@ struct CreateTransactionsRequestTests {
         #expect(request.method == .post)
         #expect(request.query == nil)
 
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
         let object = try requestBodyJSONObject(from: body)
         let transactions = try #require(object["transactions"] as? [[String: Any]])
         let firstTransaction = try #require(transactions.first)

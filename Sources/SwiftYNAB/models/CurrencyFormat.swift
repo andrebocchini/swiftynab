@@ -33,4 +33,24 @@ public struct CurrencyFormat: Codable, Equatable, Sendable {
 
     /// Whether or not to display the currency symbol
     public let displaySymbol: Bool
+
+    public init(
+        isoCode: String,
+        exampleFormat: String,
+        decimalDigits: Int,
+        decimalSeparator: String,
+        symbolFirst: Bool,
+        groupSeparator: String,
+        currencySymbol: String,
+        displaySymbol: Bool
+    ) {
+        self.isoCode = isoCode
+        self.exampleFormat = exampleFormat
+        self.decimalDigits = decimalDigits
+        self.decimalSeparator = decimalSeparator
+        self.symbolFirst = symbolFirst
+        self.groupSeparator = groupSeparator
+        self.currencySymbol = currencySymbol
+        self.displaySymbol = displaySymbol
+    }
 }

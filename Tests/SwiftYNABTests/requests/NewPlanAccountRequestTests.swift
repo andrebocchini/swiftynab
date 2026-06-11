@@ -30,7 +30,7 @@ struct NewPlanAccountRequestTests {
             balance: 0
         )
         let serializer = Serializer()
-        let body = try #require(request.body)
+        let body = try #require(try request.body(using: Serializer()))
         let decodedBody = try serializer.decode(
             NewPlanAccountRequest.PostAccountWrapper.self,
             from: body
@@ -47,7 +47,7 @@ struct NewPlanAccountRequestTests {
                 type: type,
                 balance: 0
             )
-            let body = try #require(request.body)
+            let body = try #require(try request.body(using: Serializer()))
             let json = try #require(String(data: body, encoding: .utf8))
 
             #expect(json.contains("\"type\" : \"\(type.rawValue)\""))

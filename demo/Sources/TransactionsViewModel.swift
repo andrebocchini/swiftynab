@@ -42,7 +42,7 @@ extension TransactionsViewModel {
             let ynab = YNAB(accessToken: token)
 
             do {
-                let (result, _) = try await ynab.transactions.transactions(
+                let result = try await ynab.transactions.transactions(
                     planId: plan.id,
                     accountId: account.id,
                     lastKnowledgeOfServer: nil
@@ -53,7 +53,7 @@ extension TransactionsViewModel {
                     return
                 }
 
-                transactions = result
+                transactions = result.transactions
                     .map { Transaction(transaction: $0, currencyFormat: currencyFormat) }
                     .reversed()
 
