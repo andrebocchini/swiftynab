@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TransactionServiceType Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/TransactionServiceType" class="dashAnchor"></a>
+    <a title="TransactionServiceType Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftYNAB 5.0.0 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftYNAB</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        <a href="../Protocols.html">Protocols</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        TransactionServiceType Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AccountType.html">AccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ClearedStatus.html">ClearedStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DebtTransactionType.html">DebtTransactionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/FlagColor.html">FlagColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SaveAccountType.html">SaveAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ScheduledTransactionFrequency.html">ScheduledTransactionFrequency</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SwiftYNABError.html">SwiftYNABError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TransactionType.html">TransactionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AccountServiceType.html">AccountServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CategoryServiceType.html">CategoryServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MoneyMovementServiceType.html">MoneyMovementServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MonthServiceType.html">MonthServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PayeeLocationServiceType.html">PayeeLocationServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PayeeServiceType.html">PayeeServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlanServiceType.html">PlanServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ScheduledTransactionServiceType.html">ScheduledTransactionServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TransactionServiceType.html">TransactionServiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserServiceType.html">UserServiceType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Account.html">Account</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AccountService.html">AccountService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AccountsResponse.html">AccountsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoriesResponse.html">CategoriesResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Category.html">Category</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroup.html">CategoryGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroupResponse.html">CategoryGroupResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryGroupWithCategories.html">CategoryGroupWithCategories</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryResponse.html">CategoryResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CategoryService.html">CategoryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CurrencyFormat.html">CurrencyFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CurrencyFormatter.html">CurrencyFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DateConverter.html">DateConverter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DateFormat.html">DateFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ErrorDetail.html">ErrorDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExistingTransaction.html">ExistingTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HybridTransaction.html">HybridTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HybridTransactionsResponse.html">HybridTransactionsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MoneyMovement.html">MoneyMovement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MoneyMovementGroup.html">MoneyMovementGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MoneyMovementGroupsResponse.html">MoneyMovementGroupsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MoneyMovementService.html">MoneyMovementService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MoneyMovementsResponse.html">MoneyMovementsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthDetail.html">MonthDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthService.html">MonthService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthSummary.html">MonthSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MonthsResponse.html">MonthsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NewCategory.html">NewCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NewTransaction.html">NewTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Payee.html">Payee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeeLocation.html">PayeeLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeeLocationService.html">PayeeLocationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeeResponse.html">PayeeResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeeService.html">PayeeService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PayeesResponse.html">PayeesResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanDetail.html">PlanDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanResponse.html">PlanResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanService.html">PlanService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSettings.html">PlanSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlanSummary.html">PlanSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveCategory.html">SaveCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveCategoryGroup.html">SaveCategoryGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveMonthCategory.html">SaveMonthCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SavePayee.html">SavePayee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveScheduledTransaction.html">SaveScheduledTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveSubTransaction.html">SaveSubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveTransactionResponse.html">SaveTransactionResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveTransactionWithIdOrImportId.html">SaveTransactionWithIdOrImportId</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveTransactionsResponse.html">SaveTransactionsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledSubTransaction.html">ScheduledSubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionDetail.html">ScheduledTransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionService.html">ScheduledTransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionSummary.html">ScheduledTransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduledTransactionsResponse.html">ScheduledTransactionsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SubTransaction.html">SubTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionDetail.html">TransactionDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionResponse.html">TransactionResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionService.html">TransactionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionSummary.html">TransactionSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransactionsResponse.html">TransactionsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/User.html">User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserService.html">UserService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/YNAB.html">YNAB</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TransactionServiceType</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TransactionServiceType</span> <span class="p">:</span> <span class="kt">Sendable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Provides access to transaction operations</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP11transaction6planId0fH0AA0C8ResponseVSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transaction(planId:transactionId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP11transaction6planId0fH0AA0C8ResponseVSS_SStYaKF">transaction(planId:<wbr>transactionId:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a single transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transaction</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transactionId</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionResponse.html">TransactionResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transactionId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Id of the transaction.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A single transaction and the knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId9sinceDate4type21lastKnowledgeOfServerAA20TransactionsResponseVSS_10Foundation0J0VSgAA0cE0OSgSiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId9sinceDate4type21lastKnowledgeOfServerAA20TransactionsResponseVSS_10Foundation0J0VSgAA0cE0OSgSiSgtYaKF">transactions(planId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation, asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all transactions for a plan.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns all transactions for a plan, with optional parameters defaulted.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span>
+    <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?,</span>
+    <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionsResponse.html">TransactionsResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sinceDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions on or after this date will be included. The
+date should be ISO formatted
+(e.g. 2016-12-30).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions of the specified type will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastKnowledgeOfServer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The starting server knowledge. If provided, only entities that
+have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A list of transactions and the knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId07accountH09sinceDate4type21lastKnowledgeOfServerAA20TransactionsResponseVSS_SS10Foundation0K0VSgAA0cE0OSgSiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:accountId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId07accountH09sinceDate4type21lastKnowledgeOfServerAA20TransactionsResponseVSS_SS10Foundation0K0VSgAA0cE0OSgSiSgtYaKF">transactions(planId:<wbr>accountId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation, asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all transactions for an account in a plan.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns all transactions for an account in a plan, with optional parameters defaulted.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span>
+    <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?,</span>
+    <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionsResponse.html">TransactionsResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>accountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the account.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sinceDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions on or after this date will be included. The
+date should be ISO formatted
+(e.g. 2016-12-30).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions of the specified type will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastKnowledgeOfServer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The starting server knowledge. If provided, only entities that
+have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A list of transactions and the knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId08categoryH09sinceDate4type21lastKnowledgeOfServerAA26HybridTransactionsResponseVSS_SS10Foundation0K0VSgAA0cE0OSgSiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:categoryId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId08categoryH09sinceDate4type21lastKnowledgeOfServerAA26HybridTransactionsResponseVSS_SS10Foundation0K0VSgAA0cE0OSgSiSgtYaKF">transactions(planId:<wbr>categoryId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation, asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all transactions for a category in a plan.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns all transactions for a category in a plan, with optional parameters defaulted.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">categoryId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span>
+    <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?,</span>
+    <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/HybridTransactionsResponse.html">HybridTransactionsResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>categoryId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the category.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sinceDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions on or after this date will be included. The
+date should be ISO formatted
+(e.g. 2016-12-30).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions of the specified type will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastKnowledgeOfServer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The starting server knowledge. If provided, only entities that
+have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A list of hybrid transactions and the optional knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId05payeeH09sinceDate4type21lastKnowledgeOfServerAA26HybridTransactionsResponseVSS_SS10Foundation0K0VSgAA0cE0OSgSiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:payeeId:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId05payeeH09sinceDate4type21lastKnowledgeOfServerAA26HybridTransactionsResponseVSS_SS10Foundation0K0VSgAA0cE0OSgSiSgtYaKF">transactions(planId:<wbr>payeeId:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation, asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all transactions for a payee in a plan.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns all transactions for a payee in a plan, with optional parameters defaulted.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">payeeId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span>
+    <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?,</span>
+    <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/HybridTransactionsResponse.html">HybridTransactionsResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>payeeId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the payee.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sinceDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions on or after this date will be included. The
+date should be ISO formatted
+(e.g. 2016-12-30).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions of the specified type will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastKnowledgeOfServer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The starting server knowledge. If provided, only entities that
+have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A list of hybrid transactions and the optional knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId5month9sinceDate4type21lastKnowledgeOfServerAA20TransactionsResponseVSS_10Foundation0K0VANSgAA0cE0OSgSiSgtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/transactions(planId:month:sinceDate:type:lastKnowledgeOfServer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP12transactions6planId5month9sinceDate4type21lastKnowledgeOfServerAA20TransactionsResponseVSS_10Foundation0K0VANSgAA0cE0OSgSiSgtYaKF">transactions(planId:<wbr>month:<wbr>sinceDate:<wbr>type:<wbr>lastKnowledgeOfServer:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation, asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all transactions for a specific month.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns all transactions for a specific month, with optional parameters defaulted.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transactions</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">month</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
+    <span class="nv">sinceDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?,</span>
+    <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TransactionType.html">TransactionType</a></span><span class="p">?,</span>
+    <span class="nv">lastKnowledgeOfServer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9SwiftYNAB15ServerKnowledgea">ServerKnowledge</a></span><span class="p">?</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionsResponse.html">TransactionsResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>month</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The month to filter transactions by.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sinceDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions on or after this date will be included. The
+date should be ISO formatted
+(e.g. 2016-12-30).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If specified, only transactions of the specified type will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastKnowledgeOfServer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The starting server knowledge. If provided, only entities that
+have changed since <code>lastKnowledgeOfServer</code> will be included.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A list of transactions and the knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP06createC06planId11transactionAA04SaveC8ResponseVSS_AA03NewC0VtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/createTransaction(planId:transaction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP06createC06planId11transactionAA04SaveC8ResponseVSS_AA03NewC0VtYaKF">createTransaction(planId:<wbr>transaction:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a single transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createTransaction</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/NewTransaction.html">NewTransaction</a></span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SaveTransactionResponse.html">SaveTransactionResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transaction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The transaction data to create</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The created transaction and the knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP18createTransactions6planId12transactionsAA04SaveG8ResponseVSS_SayAA03NewC0VGtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/createTransactions(planId:transactions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP18createTransactions6planId12transactionsAA04SaveG8ResponseVSS_SayAA03NewC0VGtYaKF">createTransactions(planId:<wbr>transactions:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates multiple transactions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createTransactions</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transactions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/NewTransaction.html">NewTransaction</a></span><span class="p">]</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SaveTransactionsResponse.html">SaveTransactionsResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transactions</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of transaction data to create</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The created transactions, the knowledge of the server, and duplicate
+import ids</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP18updateTransactions6planId12transactionsAA04SaveG8ResponseVSS_SayAA0kc4Withi8OrImportI0VGtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/updateTransactions(planId:transactions:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP18updateTransactions6planId12transactionsAA04SaveG8ResponseVSS_SayAA0kc4Withi8OrImportI0VGtYaKF">updateTransactions(planId:<wbr>transactions:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates multiple transactions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateTransactions</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transactions</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SaveTransactionWithIdOrImportId.html">SaveTransactionWithIdOrImportId</a></span><span class="p">]</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SaveTransactionsResponse.html">SaveTransactionsResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transactions</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of transaction data to update</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The updated transactions, the knowledge of the server, and duplicate
+import ids</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP06updateC06planId011transactionH00I0AA0C8ResponseVSS_SSAA08ExistingC0VtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/updateTransaction(planId:transactionId:transaction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP06updateC06planId011transactionH00I0AA0C8ResponseVSS_SSAA08ExistingC0VtYaKF">updateTransaction(planId:<wbr>transactionId:<wbr>transaction:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates a single transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateTransaction</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transaction</span><span class="p">:</span> <span class="kt"><a href="../Structs/ExistingTransaction.html">ExistingTransaction</a></span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionResponse.html">TransactionResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transactionId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the transaction to update</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transaction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The transaction data to update</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The updated transaction and the knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP18importTransactions6planIdSaySSGSS_tYaKF"></a>
+                    <a name="//apple_ref/swift/Method/importTransactions(planId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP18importTransactions6planIdSaySSGSS_tYaKF">importTransactions(planId:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Imports transactions that have been uploaded via file-based import.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">importTransactions</span><span class="p">(</span><span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of transaction ids for the imported transactions</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB22TransactionServiceTypeP06deleteC06planId011transactionH0AA0C8ResponseVSS_SStYaKF"></a>
+                    <a name="//apple_ref/swift/Method/deleteTransaction(planId:transactionId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB22TransactionServiceTypeP06deleteC06planId011transactionH0AA0C8ResponseVSS_SStYaKF">deleteTransaction(planId:<wbr>transactionId:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deletes a transaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">deleteTransaction</span><span class="p">(</span>
+    <span class="nv">planId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">transactionId</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/TransactionResponse.html">TransactionResponse</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>planId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the plan (<em>last_used</em> can also be used to specify the last used
+plan)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transactionId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id of the transaction to delete</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The deleted transaction and the knowledge of the server</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-06-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

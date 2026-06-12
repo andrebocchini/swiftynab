@@ -1,6 +1,13 @@
 {
   "warnings": [
     {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/Account.swift",
+      "line": 87,
+      "symbol": "Account.init(id:name:type:onBudget:closed:note:balance:balanceFormatted:balanceCurrency:clearedBalance:clearedBalanceFormatted:clearedBalanceCurrency:unclearedBalance:unclearedBalanceFormatted:unclearedBalanceCurrency:transferPayeeId:directImportLinked:directImportInError:lastReconciledAt:debtOriginalBalance:debtInterestRates:debtMinimumPayments:debtEscrowAmounts:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/AccountType.swift",
       "line": 8,
       "symbol": "AccountType",
@@ -99,6 +106,27 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/Category.swift",
+      "line": 166,
+      "symbol": "Category.init(id:categoryGroupId:categoryGroupName:name:hidden:originalCategoryGroupId:note:budgeted:activity:balance:balanceFormatted:balanceCurrency:activityFormatted:activityCurrency:budgetedFormatted:budgetedCurrency:goalType:goalNeedsWholeAmount:goalDay:goalCadence:goalCadenceFrequency:goalCreationMonth:goalTarget:goalTargetFormatted:goalTargetCurrency:goalTargetMonth:goalTargetDate:goalPercentageComplete:goalMonthsToBudget:goalUnderFunded:goalUnderFundedFormatted:goalUnderFundedCurrency:goalOverallFunded:goalOverallFundedFormatted:goalOverallFundedCurrency:goalOverallLeft:goalOverallLeftFormatted:goalOverallLeftCurrency:goalSnoozedAt:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/CategoryGroup.swift",
+      "line": 26,
+      "symbol": "CategoryGroup.init(id:name:hidden:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/CategoryGroupWithCategories.swift",
+      "line": 30,
+      "symbol": "CategoryGroupWithCategories.init(id:name:hidden:deleted:categories:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ClearedStatus.swift",
       "line": 8,
       "symbol": "ClearedStatus",
@@ -124,6 +152,20 @@
       "line": 11,
       "symbol": "ClearedStatus.reconciled",
       "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/CurrencyFormat.swift",
+      "line": 37,
+      "symbol": "CurrencyFormat.init(isoCode:exampleFormat:decimalDigits:decimalSeparator:symbolFirst:groupSeparator:currencySymbol:displaySymbol:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/DateFormat.swift",
+      "line": 16,
+      "symbol": "DateFormat.init(format:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -187,6 +229,13 @@
       "line": 19,
       "symbol": "DebtTransactionType.charge",
       "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ErrorDetail.swift",
+      "line": 22,
+      "symbol": "ErrorDetail.init(id:name:detail:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -344,6 +393,41 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/HybridTransaction.swift",
+      "line": 91,
+      "symbol": "HybridTransaction.init(type:parentTransactionId:id:date:amount:amountFormatted:amountCurrency:memo:cleared:approved:flagColor:flagName:accountId:accountName:payeeId:payeeName:categoryId:categoryName:transferAccountId:transferTransactionId:matchedTransactionId:importId:importPayeeName:importPayeeNameOriginal:debtTransactionType:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/MoneyMovement.swift",
+      "line": 46,
+      "symbol": "MoneyMovement.init(id:month:movedAt:note:moneyMovementGroupId:performedByUserId:fromCategoryId:toCategoryId:amount:amountFormatted:amountCurrency:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/MoneyMovementGroup.swift",
+      "line": 28,
+      "symbol": "MoneyMovementGroup.init(id:groupCreatedAt:month:note:performedByUserId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/MonthDetail.swift",
+      "line": 64,
+      "symbol": "MonthDetail.init(month:note:income:incomeFormatted:incomeCurrency:budgeted:budgetedFormatted:budgetedCurrency:activity:activityFormatted:activityCurrency:toBeBudgeted:toBeBudgetedFormatted:toBeBudgetedCurrency:ageOfMoney:deleted:categories:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/MonthSummary.swift",
+      "line": 61,
+      "symbol": "MonthSummary.init(month:note:income:incomeFormatted:incomeCurrency:budgeted:budgetedFormatted:budgetedCurrency:activity:activityFormatted:activityCurrency:toBeBudgeted:toBeBudgetedFormatted:toBeBudgetedCurrency:ageOfMoney:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/NewTransaction.swift",
       "line": 8,
       "symbol": "NewTransaction",
@@ -438,6 +522,41 @@
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/NewTransaction.swift",
       "line": 22,
       "symbol": "NewTransaction.init(accountId:date:amount:payeeId:payeeName:categoryId:memo:cleared:approved:flagColor:subtransactions:importId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/Payee.swift",
+      "line": 25,
+      "symbol": "Payee.init(id:name:transferAccountId:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/PayeeLocation.swift",
+      "line": 28,
+      "symbol": "PayeeLocation.init(id:payeeId:longitude:latitude:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/PlanDetail.swift",
+      "line": 64,
+      "symbol": "PlanDetail.init(id:name:lastModifiedOn:firstMonth:lastMonth:dateFormat:currencyFormat:accounts:payees:payeeLocations:categoryGroups:categories:months:transactions:subtransactions:scheduledTransactions:scheduledSubtransactions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/PlanSettings.swift",
+      "line": 19,
+      "symbol": "PlanSettings.init(dateFormat:currencyFormat:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/PlanSummary.swift",
+      "line": 37,
+      "symbol": "PlanSummary.init(id:name:lastModifiedOn:firstMonth:lastMonth:dateFormat:currencyFormat:accounts:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -589,6 +708,20 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ScheduledSubTransaction.swift",
+      "line": 49,
+      "symbol": "ScheduledSubTransaction.init(id:scheduledTransactionId:amount:amountFormatted:amountCurrency:memo:payeeId:payeeName:categoryId:categoryName:transferAccountId:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ScheduledTransactionDetail.swift",
+      "line": 70,
+      "symbol": "ScheduledTransactionDetail.init(id:dateFirst:dateNext:frequency:amount:amountFormatted:amountCurrency:memo:flagColor:flagName:accountId:accountName:payeeId:payeeName:categoryId:categoryName:transferAccountId:deleted:subtransactions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ScheduledTransactionFrequency.swift",
       "line": 8,
       "symbol": "ScheduledTransactionFrequency",
@@ -687,6 +820,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ScheduledTransactionSummary.swift",
+      "line": 58,
+      "symbol": "ScheduledTransactionSummary.init(id:dateFirst:dateNext:frequency:amount:amountFormatted:amountCurrency:memo:flagColor:flagName:accountId:payeeId:categoryId:transferAccountId:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/ServerKnowledge.swift",
       "line": 9,
       "symbol": "ServerKnowledge",
@@ -694,66 +834,143 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionRequest.swift",
-      "line": 11,
-      "symbol": "CreateTransactionRequest",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/SubTransaction.swift",
+      "line": 52,
+      "symbol": "SubTransaction.init(id:transactionId:amount:amountFormatted:amountCurrency:memo:payeeId:payeeName:categoryId:categoryName:transferAccountId:transferTransactionId:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionRequest.swift",
-      "line": 12,
-      "symbol": "CreateTransactionRequest.planId",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/TransactionDetail.swift",
+      "line": 88,
+      "symbol": "TransactionDetail.init(id:date:amount:amountFormatted:amountCurrency:memo:cleared:approved:flagColor:flagName:accountId:accountName:payeeId:payeeName:categoryId:categoryName:transferAccountId:transferTransactionId:matchedTransactionId:importId:importPayeeName:importPayeeNameOriginal:debtTransactionType:deleted:subtransactions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionRequest.swift",
-      "line": 13,
-      "symbol": "CreateTransactionRequest.transaction",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/TransactionSummary.swift",
+      "line": 85,
+      "symbol": "TransactionSummary.init(id:date:amount:amountFormatted:amountCurrency:memo:cleared:approved:flagColor:flagName:accountId:payeeId:categoryId:transferAccountId:transferTransactionId:matchedTransactionId:importId:importPayeeName:importPayeeNameOriginal:debtTransactionType:deleted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionsRequest.swift",
-      "line": 11,
-      "symbol": "CreateTransactionsRequest",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/User.swift",
+      "line": 16,
+      "symbol": "User.init(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionsRequest.swift",
-      "line": 12,
-      "symbol": "CreateTransactionsRequest.planId",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/AccountsResponse.swift",
+      "line": 17,
+      "symbol": "AccountsResponse.init(accounts:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/CreateTransactionsRequest.swift",
-      "line": 13,
-      "symbol": "CreateTransactionsRequest.transactions",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/CategoriesResponse.swift",
+      "line": 17,
+      "symbol": "CategoriesResponse.init(categoryGroups:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/UpdateTransactionsRequest.swift",
-      "line": 11,
-      "symbol": "UpdateTransactionsRequest",
-      "symbol_kind": "source.lang.swift.decl.struct",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/CategoryGroupResponse.swift",
+      "line": 17,
+      "symbol": "CategoryGroupResponse.init(categoryGroup:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/UpdateTransactionsRequest.swift",
-      "line": 12,
-      "symbol": "UpdateTransactionsRequest.planId",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/CategoryResponse.swift",
+      "line": 17,
+      "symbol": "CategoryResponse.init(category:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/requests/UpdateTransactionsRequest.swift",
-      "line": 13,
-      "symbol": "UpdateTransactionsRequest.transactions",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/HybridTransactionsResponse.swift",
+      "line": 17,
+      "symbol": "HybridTransactionsResponse.init(transactions:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/MoneyMovementGroupsResponse.swift",
+      "line": 17,
+      "symbol": "MoneyMovementGroupsResponse.init(moneyMovementGroups:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/MoneyMovementsResponse.swift",
+      "line": 17,
+      "symbol": "MoneyMovementsResponse.init(moneyMovements:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/MonthsResponse.swift",
+      "line": 17,
+      "symbol": "MonthsResponse.init(months:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/PayeeResponse.swift",
+      "line": 17,
+      "symbol": "PayeeResponse.init(payee:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/PayeesResponse.swift",
+      "line": 17,
+      "symbol": "PayeesResponse.init(payees:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/PlanResponse.swift",
+      "line": 17,
+      "symbol": "PlanResponse.init(plan:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/SaveTransactionResponse.swift",
+      "line": 17,
+      "symbol": "SaveTransactionResponse.init(transaction:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/SaveTransactionsResponse.swift",
+      "line": 20,
+      "symbol": "SaveTransactionsResponse.init(transactions:serverKnowledge:duplicateImportIds:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/ScheduledTransactionsResponse.swift",
+      "line": 17,
+      "symbol": "ScheduledTransactionsResponse.init(scheduledTransactions:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/TransactionResponse.swift",
+      "line": 17,
+      "symbol": "TransactionResponse.init(transaction:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/responses/TransactionsResponse.swift",
+      "line": 17,
+      "symbol": "TransactionsResponse.init(transactions:serverKnowledge:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],
