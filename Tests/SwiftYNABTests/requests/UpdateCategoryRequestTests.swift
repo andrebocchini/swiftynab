@@ -6,6 +6,7 @@
 //  Copyright © 2025 Andre Bocchini. All rights reserved.
 //
 
+import Foundation
 import Testing
 @testable import SwiftYNAB
 
@@ -15,6 +16,7 @@ struct UpdateCategoryRequestTests {
     func updateCategoryRequest() throws {
         let category = SaveCategory(
             name: "Updated Category Name",
+            goalTargetUpdate: .remove,
             goalNeedsWholeAmount: false
         )
 
@@ -35,5 +37,30 @@ struct UpdateCategoryRequestTests {
         let body = try #require(try request.body(using: Serializer()))
         let decodedBody = try serializer.decode(SaveCategoryWrapper.self, from: body)
         #expect(decodedBody == SaveCategoryWrapper(with: category))
+
+        let object = try requestBodyJSONObject(from: body)
+        let encodedCategory = try #require(object["category"] as? [String: Any])
+        #expect(encodedCategory.keys.contains("goal_target"))
+        #expect(encodedCategory["goal_target"] is NSNull)
+    }
+
+    @Test("Request encodes a recurring goal target")
+    func recurringGoalTarget() throws {
+        let category = SaveCategory(
+            goalTargetUpdate: .set(15000),
+            goalFrequency: .yearly
+        )
+        let request = UpdateCategoryRequest(
+            planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
+            categoryId: "c36fbd68-131e-4ea8-b30f-94f43423021c",
+            category: category
+        )
+
+        let body = try #require(try request.body(using: Serializer()))
+        let object = try requestBodyJSONObject(from: body)
+        let encodedCategory = try #require(object["category"] as? [String: Any])
+
+        #expect(encodedCategory["goal_target"] as? Int64 == 15000)
+        #expect(encodedCategory["goal_frequency"] as? String == "yearly")
     }
 }

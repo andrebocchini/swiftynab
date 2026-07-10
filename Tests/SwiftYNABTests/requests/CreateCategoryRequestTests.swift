@@ -16,7 +16,9 @@ struct CreateCategoryRequestTests {
         let category = NewCategory(
             name: "New Category",
             categoryGroupId: "c36fbd68-131e-4ea8-b30f-94f43423021c",
-            goalNeedsWholeAmount: true
+            goalTarget: 10000,
+            goalNeedsWholeAmount: true,
+            goalFrequency: .monthly
         )
 
         let request = CreateCategoryRequest(
@@ -33,5 +35,10 @@ struct CreateCategoryRequestTests {
         let body = try #require(try request.body(using: Serializer()))
         let decodedBody = try serializer.decode(NewCategoryWrapper.self, from: body)
         #expect(decodedBody == expectedBody)
+
+        let object = try requestBodyJSONObject(from: body)
+        let encodedCategory = try #require(object["category"] as? [String: Any])
+        #expect(encodedCategory["goal_target"] as? Int64 == 10000)
+        #expect(encodedCategory["goal_frequency"] as? String == "monthly")
     }
 }

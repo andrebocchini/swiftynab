@@ -12,7 +12,8 @@ public struct NewCategory: Codable, Equatable, Sendable {
     /// The name of the category
     public let name: String
 
-    /// The ID of the category group this category belongs to
+    /// The ID of the category group this category belongs to. An internal category group may not
+    /// be specified.
     public let categoryGroupId: String
 
     /// Optional note for the category
@@ -30,6 +31,10 @@ public struct NewCategory: Codable, Equatable, Sendable {
     /// Whether the goal requires the full target amount each period.
     public let goalNeedsWholeAmount: Bool?
 
+    /// The recurrence frequency for the goal target. Requires `goalTarget`, cannot be combined
+    /// with `goalTargetDate`, and is not supported for Credit Card Payment categories.
+    public let goalFrequency: CategoryGoalFrequency?
+
     /// Creates a new NewCategory instance
     /// - Parameters:
     ///   - name: The name of the category
@@ -38,13 +43,15 @@ public struct NewCategory: Codable, Equatable, Sendable {
     ///   - goalTarget: The goal target amount in milliunits format
     ///   - goalTargetDate: The goal target date in ISO format (e.g. 2016-12-01)
     ///   - goalNeedsWholeAmount: Whether the goal requires the full target amount each period
+    ///   - goalFrequency: The recurrence frequency for the goal target
     public init(
         name: String,
         categoryGroupId: String,
         note: String? = nil,
         goalTarget: Int64? = nil,
         goalTargetDate: String? = nil,
-        goalNeedsWholeAmount: Bool? = nil
+        goalNeedsWholeAmount: Bool? = nil,
+        goalFrequency: CategoryGoalFrequency? = nil
     ) {
         self.name = name
         self.categoryGroupId = categoryGroupId
@@ -52,5 +59,6 @@ public struct NewCategory: Codable, Equatable, Sendable {
         self.goalTarget = goalTarget
         self.goalTargetDate = goalTargetDate
         self.goalNeedsWholeAmount = goalNeedsWholeAmount
+        self.goalFrequency = goalFrequency
     }
 }
