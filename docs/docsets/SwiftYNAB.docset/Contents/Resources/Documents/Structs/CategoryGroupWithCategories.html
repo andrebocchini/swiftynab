@@ -17,7 +17,7 @@
     <a title="CategoryGroupWithCategories Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 5.0.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 5.1.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -43,6 +43,12 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/AccountType.html">AccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CategoryGoalFrequency.html">CategoryGoalFrequency</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CategoryGoalTargetUpdate.html">CategoryGoalTargetUpdate</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/ClearedStatus.html">ClearedStatus</a>
@@ -274,6 +280,9 @@
                 <a href="../Structs/TransactionDetail.html">TransactionDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/TransactionQuery.html">TransactionQuery</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/TransactionResponse.html">TransactionResponse</a>
               </li>
               <li class="nav-group-task">
@@ -407,6 +416,33 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:9SwiftYNAB27CategoryGroupWithCategoriesV8internalSbvp"></a>
+                    <a name="//apple_ref/swift/Property/internal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB27CategoryGroupWithCategoriesV8internalSbvp">internal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not the category group is internal</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">let</span> <span class="p">`</span><span class="nv">internal</span><span class="p">`:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9SwiftYNAB27CategoryGroupWithCategoriesV7deletedSbvp"></a>
                     <a name="//apple_ref/swift/Property/deleted" class="dashAnchor"></a>
                     <a class="token" href="#/s:9SwiftYNAB27CategoryGroupWithCategoriesV7deletedSbvp">deleted</a>
@@ -463,9 +499,9 @@ to the current budget month (UTC).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB27CategoryGroupWithCategoriesV2id4name6hidden7deleted10categoriesACSS_SSS2bSayAA0C0VGtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(id:name:hidden:deleted:categories:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB27CategoryGroupWithCategoriesV2id4name6hidden7deleted10categoriesACSS_SSS2bSayAA0C0VGtcfc">init(id:<wbr>name:<wbr>hidden:<wbr>deleted:<wbr>categories:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB27CategoryGroupWithCategoriesV2id4name6hidden8internal7deleted10categoriesACSS_SSS3bSayAA0C0VGtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(id:name:hidden:internal:deleted:categories:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB27CategoryGroupWithCategoriesV2id4name6hidden8internal7deleted10categoriesACSS_SSS3bSayAA0C0VGtcfc">init(id:<wbr>name:<wbr>hidden:<wbr>internal:<wbr>deleted:<wbr>categories:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -484,6 +520,7 @@ to the current budget month (UTC).</p>
     <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
     <span class="nv">hidden</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
+    <span class="nv">internal</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nv">deleted</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
     <span class="nv">categories</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Category.html">Category</a></span><span class="p">]</span>
 <span class="p">)</span></code></pre>
@@ -498,7 +535,7 @@ to the current budget month (UTC).</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-06-11)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-07-09)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

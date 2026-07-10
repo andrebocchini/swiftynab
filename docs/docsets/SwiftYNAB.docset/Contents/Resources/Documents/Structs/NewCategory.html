@@ -17,7 +17,7 @@
     <a title="NewCategory Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftYNAB 5.0.0 Docs</a></p>
+        <p><a href="../index.html">SwiftYNAB 5.1.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/andrebocchini/swiftynab"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -43,6 +43,12 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/AccountType.html">AccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CategoryGoalFrequency.html">CategoryGoalFrequency</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CategoryGoalTargetUpdate.html">CategoryGoalTargetUpdate</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/ClearedStatus.html">ClearedStatus</a>
@@ -274,6 +280,9 @@
                 <a href="../Structs/TransactionDetail.html">TransactionDetail</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/TransactionQuery.html">TransactionQuery</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/TransactionResponse.html">TransactionResponse</a>
               </li>
               <li class="nav-group-task">
@@ -364,7 +373,8 @@ Both <code>name</code> and <code>categoryGroupId</code> are required by the API.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The ID of the category group this category belongs to</p>
+                        <p>The ID of the category group this category belongs to. An internal category group may not
+be specified.</p>
 
                       </div>
                       <div class="declaration">
@@ -492,9 +502,37 @@ card payment categories.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9SwiftYNAB11NewCategoryV4name15categoryGroupId4note10goalTarget0jK4Date0J16NeedsWholeAmountACSS_S2SSgs5Int64VSgAJSbSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(name:categoryGroupId:note:goalTarget:goalTargetDate:goalNeedsWholeAmount:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9SwiftYNAB11NewCategoryV4name15categoryGroupId4note10goalTarget0jK4Date0J16NeedsWholeAmountACSS_S2SSgs5Int64VSgAJSbSgtcfc">init(name:<wbr>categoryGroupId:<wbr>note:<wbr>goalTarget:<wbr>goalTargetDate:<wbr>goalNeedsWholeAmount:<wbr>)</a>
+                    <a name="/s:9SwiftYNAB11NewCategoryV13goalFrequencyAA0d4GoalF0OSgvp"></a>
+                    <a name="//apple_ref/swift/Property/goalFrequency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB11NewCategoryV13goalFrequencyAA0d4GoalF0OSgvp">goalFrequency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The recurrence frequency for the goal target. Requires <code><a href="../Structs/NewCategory.html#/s:9SwiftYNAB11NewCategoryV10goalTargets5Int64VSgvp">goalTarget</a></code>, cannot be combined
+with <code><a href="../Structs/NewCategory.html#/s:9SwiftYNAB11NewCategoryV14goalTargetDateSSSgvp">goalTargetDate</a></code>, and is not supported for Credit Card Payment categories.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">goalFrequency</span><span class="p">:</span> <span class="kt"><a href="../Enums/CategoryGoalFrequency.html">CategoryGoalFrequency</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftYNAB11NewCategoryV4name15categoryGroupId4note10goalTarget0jK4Date0J16NeedsWholeAmount0J9FrequencyACSS_S2SSgs5Int64VSgAKSbSgAA0d4GoalP0OSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(name:categoryGroupId:note:goalTarget:goalTargetDate:goalNeedsWholeAmount:goalFrequency:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftYNAB11NewCategoryV4name15categoryGroupId4note10goalTarget0jK4Date0J16NeedsWholeAmount0J9FrequencyACSS_S2SSgs5Int64VSgAKSbSgAA0d4GoalP0OSgtcfc">init(name:<wbr>categoryGroupId:<wbr>note:<wbr>goalTarget:<wbr>goalTargetDate:<wbr>goalNeedsWholeAmount:<wbr>goalFrequency:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -515,7 +553,8 @@ card payment categories.</p>
     <span class="nv">note</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">goalTarget</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="nv">goalTargetDate</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-    <span class="nv">goalNeedsWholeAmount</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="nv">goalNeedsWholeAmount</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">goalFrequency</span><span class="p">:</span> <span class="kt"><a href="../Enums/CategoryGoalFrequency.html">CategoryGoalFrequency</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="p">)</span></code></pre>
 
                         </div>
@@ -596,6 +635,18 @@ card payment categories.</p>
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>goalFrequency</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The recurrence frequency for the goal target</p>
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -607,7 +658,7 @@ card payment categories.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-06-11)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">Andre Bocchini</a>. All rights reserved. (Last updated: 2026-07-09)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

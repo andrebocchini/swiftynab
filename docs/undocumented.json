@@ -107,22 +107,43 @@
     },
     {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/Category.swift",
-      "line": 166,
-      "symbol": "Category.init(id:categoryGroupId:categoryGroupName:name:hidden:originalCategoryGroupId:note:budgeted:activity:balance:balanceFormatted:balanceCurrency:activityFormatted:activityCurrency:budgetedFormatted:budgetedCurrency:goalType:goalNeedsWholeAmount:goalDay:goalCadence:goalCadenceFrequency:goalCreationMonth:goalTarget:goalTargetFormatted:goalTargetCurrency:goalTargetMonth:goalTargetDate:goalPercentageComplete:goalMonthsToBudget:goalUnderFunded:goalUnderFundedFormatted:goalUnderFundedCurrency:goalOverallFunded:goalOverallFundedFormatted:goalOverallFundedCurrency:goalOverallLeft:goalOverallLeftFormatted:goalOverallLeftCurrency:goalSnoozedAt:deleted:)",
+      "line": 169,
+      "symbol": "Category.init(id:categoryGroupId:categoryGroupName:name:hidden:internal:originalCategoryGroupId:note:budgeted:activity:balance:balanceFormatted:balanceCurrency:activityFormatted:activityCurrency:budgetedFormatted:budgetedCurrency:goalType:goalNeedsWholeAmount:goalDay:goalCadence:goalCadenceFrequency:goalCreationMonth:goalTarget:goalTargetFormatted:goalTargetCurrency:goalTargetMonth:goalTargetDate:goalPercentageComplete:goalMonthsToBudget:goalUnderFunded:goalUnderFundedFormatted:goalUnderFundedCurrency:goalOverallFunded:goalOverallFundedFormatted:goalOverallFundedCurrency:goalOverallLeft:goalOverallLeftFormatted:goalOverallLeftCurrency:goalSnoozedAt:deleted:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/CategoryGoalFrequency.swift",
+      "line": 10,
+      "symbol": "CategoryGoalFrequency.monthly",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/CategoryGoalFrequency.swift",
+      "line": 11,
+      "symbol": "CategoryGoalFrequency.weekly",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/CategoryGoalFrequency.swift",
+      "line": 12,
+      "symbol": "CategoryGoalFrequency.yearly",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/CategoryGroup.swift",
-      "line": 26,
-      "symbol": "CategoryGroup.init(id:name:hidden:deleted:)",
+      "line": 29,
+      "symbol": "CategoryGroup.init(id:name:hidden:internal:deleted:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/CategoryGroupWithCategories.swift",
-      "line": 30,
-      "symbol": "CategoryGroupWithCategories.init(id:name:hidden:deleted:categories:)",
+      "line": 33,
+      "symbol": "CategoryGroupWithCategories.init(id:name:hidden:internal:deleted:categories:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -844,6 +865,13 @@
       "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/TransactionDetail.swift",
       "line": 88,
       "symbol": "TransactionDetail.init(id:date:amount:amountFormatted:amountCurrency:memo:cleared:approved:flagColor:flagName:accountId:accountName:payeeId:payeeName:categoryId:categoryName:transferAccountId:transferTransactionId:matchedTransactionId:importId:importPayeeName:importPayeeNameOriginal:debtTransactionType:deleted:subtransactions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/andrebocchini/Developer/swiftynab/Sources/SwiftYNAB/models/TransactionQuery.swift",
+      "line": 25,
+      "symbol": "TransactionQuery.init(sinceDate:untilDate:type:lastKnowledgeOfServer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
