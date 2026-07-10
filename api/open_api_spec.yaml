@@ -1,24 +1,43 @@
 openapi: 3.1.1
 info:
   title: YNAB API Endpoints
-  description: Our API uses a REST based design, leverages the JSON data format,
-    and relies upon HTTPS for transport. We respond with meaningful HTTP
-    response codes and if an error occurs, we include error details in the
-    response body.  API Documentation is at https://api.ynab.com
-  version: 1.83.0
+  description: >-
+    Our API uses a REST based design, leverages the JSON data format, and relies
+    upon HTTPS for transport. We respond with meaningful HTTP response codes and
+    if an error occurs, we include error details in the response body.
+
+
+    Read the [API Documentation](https://api.ynab.com) for more information
+    about the API, including how to obtain an access token and how to use it to
+    make requests.
+  version: 1.86.0
 servers:
   - url: https://api.ynab.com/v1
 security:
   - bearer: []
 tags:
   - name: User
+    description: The currently authenticated user
   - name: Plans
+    description: Plans are the top-level container for your YNAB data; accounts,
+      categories, payees, and transactions all belong to a plan. Most endpoints
+      require a plan_id, which can be obtained from "Get all plans".
+      Alternatively, "last-used" can be used in place of a plan_id to specify
+      the most recently used plan, and "default" can be used if [default plan
+      selection](https://api.ynab.com/#oauth-default-plan) is enabled.
   - name: Accounts
-    description: The accounts for a plan
+    description: The accounts for a plan. Every transaction belongs to an account,
+      and an account is either "on budget", where its activity is categorized
+      and planned, or a tracking account, where only its balance is tracked (see
+      the on_budget flag).
   - name: Categories
-    description: The categories for a plan
+    description: The categories for a plan, organized into category groups. Category
+      amounts (assigned, activity, available) are specific to a month, and can
+      be read and updated through the month-scoped category endpoints.
   - name: Payees
-    description: The payees for a plan
+    description: The payees for a plan. Transfers between accounts are represented
+      with special transfer payees; a payee with transfer_account_id set is the
+      transfer payee for that account.
   - name: Payee Locations
     description: When you enter a transaction and specify a payee on the YNAB mobile
       apps, the GPS coordinates for that location are stored, with your
@@ -31,11 +50,20 @@ tags:
       Assign, Age of Money and category (assigned / activity / available)
       amounts are available.
   - name: Money Movements
-    description: The money movements for a plan
+    description: Money movements record money moved between two categories, or
+      between a category and Ready to Assign, within a plan month. Movements
+      performed together as a single action are linked by a money movement
+      group.
   - name: Transactions
-    description: The transactions for a plan
+    description: The transactions for a plan. Transaction amounts are specified in
+      [milliunits format](https://api.ynab.com/#formats). Split transactions are
+      represented with subtransactions, and transfers between accounts are
+      represented with transfer payees.
   - name: Scheduled Transactions
-    description: The scheduled transactions for a plan
+    description: The scheduled transactions for a plan; upcoming and recurring
+      transactions that have not yet been entered into an account. Each has a
+      frequency along with the first and next dates it will occur (date_first
+      and date_next).
 paths:
   /user:
     get:
@@ -1045,7 +1073,7 @@ paths:
     get:
       tags:
         - Transactions
-      summary: Get all transactions
+      summary: Get transactions
       description: Returns plan transactions, excluding any pending transactions
       operationId: getTransactions
       parameters:
@@ -1060,6 +1088,14 @@ paths:
         - name: since_date
           in: query
           description: If specified, only transactions on or after this date will be
+            included.  The date should be ISO formatted (e.g. 2016-12-30).
+            Defaults to one year ago when not specified.
+          schema:
+            type: string
+            format: date
+        - name: until_date
+          in: query
+          description: If specified, only transactions on or before this date will be
             included.  The date should be ISO formatted (e.g. 2016-12-30).
           schema:
             type: string
@@ -1353,7 +1389,7 @@ paths:
     get:
       tags:
         - Transactions
-      summary: Get all account transactions
+      summary: Get account transactions
       description: Returns all transactions for a specified account, excluding any
         pending transactions
       operationId: getTransactionsByAccount
@@ -1375,6 +1411,14 @@ paths:
         - name: since_date
           in: query
           description: If specified, only transactions on or after this date will be
+            included.  The date should be ISO formatted (e.g. 2016-12-30).
+            Defaults to one year ago when not specified.
+          schema:
+            type: string
+            format: date
+        - name: until_date
+          in: query
+          description: If specified, only transactions on or before this date will be
             included.  The date should be ISO formatted (e.g. 2016-12-30).
           schema:
             type: string
@@ -1412,7 +1456,7 @@ paths:
     get:
       tags:
         - Transactions
-      summary: Get all category transactions
+      summary: Get category transactions
       description: Returns all transactions for a specified category, excluding any
         pending transactions
       operationId: getTransactionsByCategory
@@ -1434,6 +1478,14 @@ paths:
         - name: since_date
           in: query
           description: If specified, only transactions on or after this date will be
+            included.  The date should be ISO formatted (e.g. 2016-12-30).
+            Defaults to one year ago when not specified.
+          schema:
+            type: string
+            format: date
+        - name: until_date
+          in: query
+          description: If specified, only transactions on or before this date will be
             included.  The date should be ISO formatted (e.g. 2016-12-30).
           schema:
             type: string
@@ -1471,7 +1523,7 @@ paths:
     get:
       tags:
         - Transactions
-      summary: Get all payee transactions
+      summary: Get payee transactions
       description: Returns all transactions for a specified payee, excluding any
         pending transactions
       operationId: getTransactionsByPayee
@@ -1493,6 +1545,14 @@ paths:
         - name: since_date
           in: query
           description: If specified, only transactions on or after this date will be
+            included.  The date should be ISO formatted (e.g. 2016-12-30).
+            Defaults to one year ago when not specified.
+          schema:
+            type: string
+            format: date
+        - name: until_date
+          in: query
+          description: If specified, only transactions on or before this date will be
             included.  The date should be ISO formatted (e.g. 2016-12-30).
           schema:
             type: string
@@ -1530,7 +1590,7 @@ paths:
     get:
       tags:
         - Transactions
-      summary: Get all plan month transactions
+      summary: Get plan month transactions
       description: Returns all transactions for a specified month, excluding any
         pending transactions
       operationId: getTransactionsByMonth
@@ -1553,6 +1613,13 @@ paths:
         - name: since_date
           in: query
           description: If specified, only transactions on or after this date will be
+            included.  The date should be ISO formatted (e.g. 2016-12-30).
+          schema:
+            type: string
+            format: date
+        - name: until_date
+          in: query
+          description: If specified, only transactions on or before this date will be
             included.  The date should be ISO formatted (e.g. 2016-12-30).
           schema:
             type: string
@@ -2241,6 +2308,7 @@ components:
       required:
         - deleted
         - hidden
+        - internal
         - id
         - name
       type: object
@@ -2253,6 +2321,9 @@ components:
         hidden:
           type: boolean
           description: Whether or not the category group is hidden
+        internal:
+          type: boolean
+          description: Whether or not the category group is internal
         deleted:
           type: boolean
           description: Whether or not the category group has been deleted.  Deleted
@@ -2265,6 +2336,7 @@ components:
         - category_group_id
         - deleted
         - hidden
+        - internal
         - id
         - name
       type: object
@@ -2282,6 +2354,9 @@ components:
         hidden:
           type: boolean
           description: Whether or not the category is hidden
+        internal:
+          type: boolean
+          description: Whether or not the category is internal
         original_category_group_id:
           type:
             - string
@@ -3203,6 +3278,8 @@ components:
         category_group_id:
           type: string
           format: uuid
+          description: The id of the category group to which this category belongs.  An
+            internal category group may not be specified.
         goal_target:
           type:
             - integer
@@ -3211,7 +3288,8 @@ components:
             and goal has not already been configured for category, a monthly
             goal will be created for the category with this target amount.  If
             goal_type is not specified, it will default to 'NEED' or 'MF' for
-            Credit Card Payment categories.
+            Credit Card Payment categories. When updating a category, passing
+            null removes any existing target.
           format: int64
         goal_target_date:
           type:
@@ -3227,6 +3305,17 @@ components:
             supported for 'NEED' goals. When true, the goal is configured as
             'Set aside another...'. When false, the goal is configured as
             'Refill up to...'.
+        goal_frequency:
+          type: string
+          enum:
+            - monthly
+            - weekly
+            - yearly
+          description: When specified, configures a recurring 'NEED' target of goal_target
+            that repeats at this frequency, replacing any existing target.
+            Requires goal_target. Cannot be combined with goal_target_date and
+            is not supported for Credit Card Payment categories. Omit to leave
+            an existing target's cadence unchanged.
     ExistingCategory:
       allOf:
         - $ref: "#/components/schemas/SaveCategory"

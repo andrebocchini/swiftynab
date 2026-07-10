@@ -19,6 +19,7 @@ struct CategoryServiceTests {
             id: "id",
             name: "name",
             hidden: false,
+            internal: true,
             deleted: false,
             categories: []
         )
@@ -32,6 +33,7 @@ struct CategoryServiceTests {
 
         #expect(actualResponse.categoryGroups.count == 1)
         #expect(expectedCategoryGroup == actualResponse.categoryGroups[0])
+        #expect(actualResponse.categoryGroups[0].internal)
         #expect(actualResponse.serverKnowledge == 200)
     }
 
@@ -54,6 +56,7 @@ struct CategoryServiceTests {
             categoryGroupName: "category",
             name: "name",
             hidden: false,
+            internal: false,
             originalCategoryGroupId: nil,
             note: nil,
             budgeted: 0,
@@ -96,6 +99,7 @@ struct CategoryServiceTests {
         let actualResponse = try await service.category(planId: "budget_id", categoryId: "id")
 
         #expect(expectedCategory == actualResponse)
+        #expect(actualResponse.internal == false)
     }
 
     @Test("Throws error when fetching a single category fails")
