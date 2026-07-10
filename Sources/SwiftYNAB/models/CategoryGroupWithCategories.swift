@@ -34,7 +34,7 @@ public struct CategoryGroupWithCategories: Codable, Equatable, Sendable {
         id: String,
         name: String,
         hidden: Bool,
-        `internal`: Bool = false,
+        internal: Bool = false,
         deleted: Bool,
         categories: [Category]
     ) {

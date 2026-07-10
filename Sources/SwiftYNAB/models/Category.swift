@@ -172,7 +172,7 @@ public struct Category: Codable, Equatable, Sendable {
         categoryGroupName: String?,
         name: String,
         hidden: Bool,
-        `internal`: Bool = false,
+        internal: Bool = false,
         originalCategoryGroupId: String?,
         note: String?,
         budgeted: Int,
