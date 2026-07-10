@@ -95,7 +95,7 @@ struct OpenAPI185CompatibilityTests {
         """)
 
         #expect(category.balanceFormatted == "$7.50")
-        #expect(category.isInternal)
+        #expect(category.internal)
         #expect(category.activityCurrency == Decimal(string: "-2.5"))
         #expect(category.budgetedFormatted == "$10.00")
         #expect(category.goalNeedsWholeAmount == true)
@@ -139,9 +139,9 @@ struct OpenAPI185CompatibilityTests {
         }
         """)
 
-        #expect(categoryGroup.isInternal)
-        #expect(!categoryGroupWithCategories.isInternal)
-        #expect(categoryGroupWithCategories.categories.first?.isInternal == true)
+        #expect(categoryGroup.internal)
+        #expect(!categoryGroupWithCategories.internal)
+        #expect(categoryGroupWithCategories.categories.first?.internal == true)
     }
 
     @Test("TransactionSummary decodes flag_name")
@@ -368,9 +368,9 @@ struct OpenAPI185CompatibilityTests {
         let scheduledSubtransaction = try #require(plan.scheduledSubtransactions?.first)
 
         #expect(account.balanceFormatted == nil)
-        #expect(plan.categoryGroups?.first?.isInternal == false)
-        #expect(category.isInternal == false)
-        #expect(month.categories.first?.isInternal == false)
+        #expect(plan.categoryGroups?.first?.internal == false)
+        #expect(category.internal == false)
+        #expect(month.categories.first?.internal == false)
         #expect(category.balanceFormatted == nil)
         #expect(month.incomeFormatted == nil)
         #expect(transaction.amountFormatted == nil)
