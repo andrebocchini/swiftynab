@@ -28,9 +28,8 @@ public protocol TransactionServiceType: Sendable {
     /// - Parameters:
     ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
     /// plan)
-    ///    - sinceDate: If specified, only transactions on or after this date will be included. The
-    /// date should be ISO formatted
-    ///    (e.g. 2016-12-30).
+    ///    - sinceDate: If specified, only transactions on or after this date will be included. If
+    /// omitted, the API defaults to one year ago.
     ///    - type: If specified, only transactions of the specified type will be included.
     ///    - lastKnowledgeOfServer: The starting server knowledge. If provided, only entities that
     ///    have changed since `lastKnowledgeOfServer` will be included.
@@ -43,15 +42,20 @@ public protocol TransactionServiceType: Sendable {
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> TransactionsResponse
 
+    /// Returns transactions for a plan matching the supplied query.
+    func transactions(
+        planId: String,
+        query: TransactionQuery
+    ) async throws -> TransactionsResponse
+
     /// Returns all transactions for an account in a plan.
     ///
     /// - Parameters:
     ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
     /// plan)
     ///    - accountId: The id of the account.
-    ///    - sinceDate: If specified, only transactions on or after this date will be included. The
-    /// date should be ISO formatted
-    ///    (e.g. 2016-12-30).
+    ///    - sinceDate: If specified, only transactions on or after this date will be included. If
+    /// omitted, the API defaults to one year ago.
     ///    - type: If specified, only transactions of the specified type will be included.
     ///    - lastKnowledgeOfServer: The starting server knowledge. If provided, only entities that
     ///    have changed since `lastKnowledgeOfServer` will be included.
@@ -65,15 +69,21 @@ public protocol TransactionServiceType: Sendable {
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> TransactionsResponse
 
+    /// Returns transactions for an account matching the supplied query.
+    func transactions(
+        planId: String,
+        accountId: String,
+        query: TransactionQuery
+    ) async throws -> TransactionsResponse
+
     /// Returns all transactions for a category in a plan.
     ///
     /// - Parameters:
     ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
     /// plan)
     ///    - categoryId: The id of the category.
-    ///    - sinceDate: If specified, only transactions on or after this date will be included. The
-    /// date should be ISO formatted
-    ///    (e.g. 2016-12-30).
+    ///    - sinceDate: If specified, only transactions on or after this date will be included. If
+    /// omitted, the API defaults to one year ago.
     ///    - type: If specified, only transactions of the specified type will be included.
     ///    - lastKnowledgeOfServer: The starting server knowledge. If provided, only entities that
     ///    have changed since `lastKnowledgeOfServer` will be included.
@@ -87,15 +97,21 @@ public protocol TransactionServiceType: Sendable {
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> HybridTransactionsResponse
 
+    /// Returns transactions for a category matching the supplied query.
+    func transactions(
+        planId: String,
+        categoryId: String,
+        query: TransactionQuery
+    ) async throws -> HybridTransactionsResponse
+
     /// Returns all transactions for a payee in a plan.
     ///
     /// - Parameters:
     ///    - planId: The id of the plan (*last_used* can also be used to specify the last used
     /// plan)
     ///    - payeeId: The id of the payee.
-    ///    - sinceDate: If specified, only transactions on or after this date will be included. The
-    /// date should be ISO formatted
-    ///    (e.g. 2016-12-30).
+    ///    - sinceDate: If specified, only transactions on or after this date will be included. If
+    /// omitted, the API defaults to one year ago.
     ///    - type: If specified, only transactions of the specified type will be included.
     ///    - lastKnowledgeOfServer: The starting server knowledge. If provided, only entities that
     ///    have changed since `lastKnowledgeOfServer` will be included.
@@ -107,6 +123,13 @@ public protocol TransactionServiceType: Sendable {
         sinceDate: Date?,
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
+    ) async throws -> HybridTransactionsResponse
+
+    /// Returns transactions for a payee matching the supplied query.
+    func transactions(
+        planId: String,
+        payeeId: String,
+        query: TransactionQuery
     ) async throws -> HybridTransactionsResponse
 
     /// Returns all transactions for a specific month.
@@ -129,6 +152,13 @@ public protocol TransactionServiceType: Sendable {
         sinceDate: Date?,
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
+    ) async throws -> TransactionsResponse
+
+    /// Returns transactions for a month matching the supplied query.
+    func transactions(
+        planId: String,
+        month: Date,
+        query: TransactionQuery
     ) async throws -> TransactionsResponse
 
     /// Creates a single transaction.
@@ -293,4 +323,239 @@ public extension TransactionServiceType {
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )
     }
+
+    /// Returns all transactions for a plan matching the supplied query.
+    func transactions(
+        planId: String,
+        query: TransactionQuery
+    ) async throws -> TransactionsResponse {
+        let response = try await transactions(
+            planId: planId,
+            sinceDate: query.sinceDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
+        )
+        return TransactionsResponse(
+            transactions: filteredTransactions(
+                response.transactions,
+                onOrBefore: query.untilDate
+            ),
+            serverKnowledge: response.serverKnowledge
+        )
+    }
+
+    /// Returns all transactions for an account matching the supplied query.
+    func transactions(
+        planId: String,
+        accountId: String,
+        query: TransactionQuery
+    ) async throws -> TransactionsResponse {
+        let response = try await transactions(
+            planId: planId,
+            accountId: accountId,
+            sinceDate: query.sinceDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
+        )
+        return TransactionsResponse(
+            transactions: filteredTransactions(
+                response.transactions,
+                onOrBefore: query.untilDate
+            ),
+            serverKnowledge: response.serverKnowledge
+        )
+    }
+
+    /// Returns all transactions for a category matching the supplied query.
+    func transactions(
+        planId: String,
+        categoryId: String,
+        query: TransactionQuery
+    ) async throws -> HybridTransactionsResponse {
+        let response = try await transactions(
+            planId: planId,
+            categoryId: categoryId,
+            sinceDate: query.sinceDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
+        )
+        return HybridTransactionsResponse(
+            transactions: filteredTransactions(
+                response.transactions,
+                onOrBefore: query.untilDate
+            ),
+            serverKnowledge: response.serverKnowledge
+        )
+    }
+
+    /// Returns all transactions for a payee matching the supplied query.
+    func transactions(
+        planId: String,
+        payeeId: String,
+        query: TransactionQuery
+    ) async throws -> HybridTransactionsResponse {
+        let response = try await transactions(
+            planId: planId,
+            payeeId: payeeId,
+            sinceDate: query.sinceDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
+        )
+        return HybridTransactionsResponse(
+            transactions: filteredTransactions(
+                response.transactions,
+                onOrBefore: query.untilDate
+            ),
+            serverKnowledge: response.serverKnowledge
+        )
+    }
+
+    /// Returns all transactions for a month matching the supplied query.
+    func transactions(
+        planId: String,
+        month: Date,
+        query: TransactionQuery
+    ) async throws -> TransactionsResponse {
+        let response = try await transactions(
+            planId: planId,
+            month: month,
+            sinceDate: query.sinceDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
+        )
+        return TransactionsResponse(
+            transactions: filteredTransactions(
+                response.transactions,
+                onOrBefore: query.untilDate
+            ),
+            serverKnowledge: response.serverKnowledge
+        )
+    }
+
+    /// Returns all transactions for a plan through an inclusive end date.
+    func transactions(
+        planId: String,
+        sinceDate: Date? = nil,
+        untilDate: Date,
+        type: TransactionType? = nil,
+        lastKnowledgeOfServer: ServerKnowledge? = nil
+    ) async throws -> TransactionsResponse {
+        try await transactions(
+            planId: planId,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                untilDate: untilDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    /// Returns all transactions for an account through an inclusive end date.
+    func transactions(
+        planId: String,
+        accountId: String,
+        sinceDate: Date? = nil,
+        untilDate: Date,
+        type: TransactionType? = nil,
+        lastKnowledgeOfServer: ServerKnowledge? = nil
+    ) async throws -> TransactionsResponse {
+        try await transactions(
+            planId: planId,
+            accountId: accountId,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                untilDate: untilDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    /// Returns all transactions for a category through an inclusive end date.
+    func transactions(
+        planId: String,
+        categoryId: String,
+        sinceDate: Date? = nil,
+        untilDate: Date,
+        type: TransactionType? = nil,
+        lastKnowledgeOfServer: ServerKnowledge? = nil
+    ) async throws -> HybridTransactionsResponse {
+        try await transactions(
+            planId: planId,
+            categoryId: categoryId,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                untilDate: untilDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    /// Returns all transactions for a payee through an inclusive end date.
+    func transactions(
+        planId: String,
+        payeeId: String,
+        sinceDate: Date? = nil,
+        untilDate: Date,
+        type: TransactionType? = nil,
+        lastKnowledgeOfServer: ServerKnowledge? = nil
+    ) async throws -> HybridTransactionsResponse {
+        try await transactions(
+            planId: planId,
+            payeeId: payeeId,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                untilDate: untilDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    /// Returns all transactions for a month through an inclusive end date.
+    func transactions(
+        planId: String,
+        month: Date,
+        sinceDate: Date? = nil,
+        untilDate: Date,
+        type: TransactionType? = nil,
+        lastKnowledgeOfServer: ServerKnowledge? = nil
+    ) async throws -> TransactionsResponse {
+        try await transactions(
+            planId: planId,
+            month: month,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                untilDate: untilDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+}
+
+private func filteredTransactions(
+    _ transactions: [TransactionDetail],
+    onOrBefore untilDate: Date?
+) -> [TransactionDetail] {
+    guard let untilDate else {
+        return transactions
+    }
+
+    let untilDateString = DateConverter.iso8601DateString(from: untilDate)
+    return transactions.filter { $0.date <= untilDateString }
+}
+
+private func filteredTransactions(
+    _ transactions: [HybridTransaction],
+    onOrBefore untilDate: Date?
+) -> [HybridTransaction] {
+    guard let untilDate else {
+        return transactions
+    }
+
+    let untilDateString = DateConverter.iso8601DateString(from: untilDate)
+    return transactions.filter { $0.date <= untilDateString }
 }

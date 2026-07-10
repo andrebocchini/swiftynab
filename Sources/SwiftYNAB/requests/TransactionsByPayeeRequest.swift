@@ -12,6 +12,7 @@ struct TransactionsByPayeeRequest {
     let planId: String
     let payeeId: String
     let sinceDate: Date?
+    let untilDate: Date?
     let type: TransactionType?
     let lastKnowledgeOfServer: ServerKnowledge?
 
@@ -19,12 +20,14 @@ struct TransactionsByPayeeRequest {
         planId: String,
         payeeId: String,
         sinceDate: Date? = nil,
+        untilDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) {
         self.planId = planId
         self.payeeId = payeeId
         self.sinceDate = sinceDate
+        self.untilDate = untilDate
         self.type = type
         self.lastKnowledgeOfServer = lastKnowledgeOfServer
     }
@@ -38,6 +41,7 @@ extension TransactionsByPayeeRequest: Request {
     var query: [URLQueryItem]? {
         TransactionQueryBuilder.buildQuery(
             sinceDate: sinceDate,
+            untilDate: untilDate,
             type: type,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )

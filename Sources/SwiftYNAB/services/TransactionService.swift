@@ -36,11 +36,26 @@ extension TransactionService: TransactionServiceType {
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> TransactionsResponse {
+        try await transactions(
+            planId: planId,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    public func transactions(
+        planId: String,
+        query: TransactionQuery
+    ) async throws -> TransactionsResponse {
         let request = TransactionsByPlanRequest(
             planId: planId,
-            sinceDate: sinceDate,
-            type: type,
-            lastKnowledgeOfServer: lastKnowledgeOfServer
+            sinceDate: query.sinceDate,
+            untilDate: query.untilDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
         return TransactionsResponse(
@@ -56,12 +71,29 @@ extension TransactionService: TransactionServiceType {
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> TransactionsResponse {
+        try await transactions(
+            planId: planId,
+            accountId: accountId,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    public func transactions(
+        planId: String,
+        accountId: String,
+        query: TransactionQuery
+    ) async throws -> TransactionsResponse {
         let request = TransactionsByAccountRequest(
             planId: planId,
             accountId: accountId,
-            sinceDate: sinceDate,
-            type: type,
-            lastKnowledgeOfServer: lastKnowledgeOfServer
+            sinceDate: query.sinceDate,
+            untilDate: query.untilDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
         return TransactionsResponse(
@@ -77,12 +109,29 @@ extension TransactionService: TransactionServiceType {
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> HybridTransactionsResponse {
+        try await transactions(
+            planId: planId,
+            categoryId: categoryId,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    public func transactions(
+        planId: String,
+        categoryId: String,
+        query: TransactionQuery
+    ) async throws -> HybridTransactionsResponse {
         let request = TransactionsByCategoryRequest(
             planId: planId,
             categoryId: categoryId,
-            sinceDate: sinceDate,
-            type: type,
-            lastKnowledgeOfServer: lastKnowledgeOfServer
+            sinceDate: query.sinceDate,
+            untilDate: query.untilDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
         return HybridTransactionsResponse(
@@ -98,12 +147,29 @@ extension TransactionService: TransactionServiceType {
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> HybridTransactionsResponse {
+        try await transactions(
+            planId: planId,
+            payeeId: payeeId,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    public func transactions(
+        planId: String,
+        payeeId: String,
+        query: TransactionQuery
+    ) async throws -> HybridTransactionsResponse {
         let request = TransactionsByPayeeRequest(
             planId: planId,
             payeeId: payeeId,
-            sinceDate: sinceDate,
-            type: type,
-            lastKnowledgeOfServer: lastKnowledgeOfServer
+            sinceDate: query.sinceDate,
+            untilDate: query.untilDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
         return HybridTransactionsResponse(
@@ -119,12 +185,29 @@ extension TransactionService: TransactionServiceType {
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
     ) async throws -> TransactionsResponse {
+        try await transactions(
+            planId: planId,
+            month: month,
+            query: TransactionQuery(
+                sinceDate: sinceDate,
+                type: type,
+                lastKnowledgeOfServer: lastKnowledgeOfServer
+            )
+        )
+    }
+
+    public func transactions(
+        planId: String,
+        month: Date,
+        query: TransactionQuery
+    ) async throws -> TransactionsResponse {
         let request = TransactionsByMonthRequest(
             planId: planId,
             month: month,
-            sinceDate: sinceDate,
-            type: type,
-            lastKnowledgeOfServer: lastKnowledgeOfServer
+            sinceDate: query.sinceDate,
+            untilDate: query.untilDate,
+            type: query.type,
+            lastKnowledgeOfServer: query.lastKnowledgeOfServer
         )
         let response = try await client.perform(request)
         return TransactionsResponse(

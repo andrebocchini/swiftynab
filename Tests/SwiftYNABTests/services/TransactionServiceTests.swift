@@ -103,7 +103,10 @@ struct TransactionServiceTests {
         )
         let client = MockSuccessClient(expectedResponse: expectedResponse)
         let service = TransactionService(client: client)
-        let response = try await service.transactions(planId: "budget_id")
+        let response = try await service.transactions(
+            planId: "budget_id",
+            untilDate: .now
+        )
         let transactions = response.transactions
         let serverKnowledge = response.serverKnowledge
 
@@ -160,7 +163,8 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
         let response = try await service.transactions(
             planId: "budget_id",
-            accountId: "account_id"
+            accountId: "account_id",
+            untilDate: .now
         )
         let transactions = response.transactions
         let serverKnowledge = response.serverKnowledge
@@ -217,7 +221,8 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
         let response = try await service.transactions(
             planId: "budget_id",
-            categoryId: "category_id"
+            categoryId: "category_id",
+            untilDate: .now
         )
         let transactions = response.transactions
         let serverKnowledge = response.serverKnowledge
@@ -274,7 +279,8 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
         let response = try await service.transactions(
             planId: "budget_id",
-            payeeId: "payee_id"
+            payeeId: "payee_id",
+            untilDate: .now
         )
         let transactions = response.transactions
         let serverKnowledge = response.serverKnowledge
@@ -330,7 +336,8 @@ struct TransactionServiceTests {
         let service = TransactionService(client: client)
         let response = try await service.transactions(
             planId: "budget_id",
-            month: Date.now
+            month: Date.now,
+            untilDate: .now
         )
         let transactions = response.transactions
         let serverKnowledge = response.serverKnowledge

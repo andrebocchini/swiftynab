@@ -26,13 +26,15 @@ struct TransactionsByAccountRequestTests {
         #expect(try request.body(using: Serializer()) == nil)
     }
 
-    @Test("Request includes since date, type, and last knowledge as query parameters")
+    @Test("Request includes both dates, type, and last knowledge as query parameters")
     func accountTransactionsWithQuery() throws {
-        let date = Date(timeIntervalSince1970: 1_556_717_342.216656)
+        let sinceDate = Date(timeIntervalSince1970: 1_556_717_342.216656)
+        let untilDate = try #require(DateConverter.date(from: "2019-05-31"))
         let request = TransactionsByAccountRequest(
             planId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
             accountId: "43dcbde6-ccf4-4367-9d13-d6d7e9beeb99",
-            sinceDate: date,
+            sinceDate: sinceDate,
+            untilDate: untilDate,
             type: .uncategorized,
             lastKnowledgeOfServer: 100
         )
@@ -40,10 +42,23 @@ struct TransactionsByAccountRequestTests {
         #expect(request.path ==
             "/v1/plans/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/accounts/43dcbde6-ccf4-4367-9d13-d6d7e9beeb99/transactions")
         #expect(request.method == .get)
-        #expect(request.query?.count == 3)
+        #expect(request.query?.count == 4)
         #expect(request.query?[0] == URLQueryItem(name: "since_date", value: "2019-05-01"))
-        #expect(request.query?[1] == URLQueryItem(name: "type", value: "uncategorized"))
-        #expect(request.query?[2] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
+        #expect(request.query?[1] == URLQueryItem(name: "until_date", value: "2019-05-31"))
+        #expect(request.query?[2] == URLQueryItem(name: "type", value: "uncategorized"))
+        #expect(request.query?[3] == URLQueryItem(name: "last_knowledge_of_server", value: "100"))
         #expect(try request.body(using: Serializer()) == nil)
+    }
+
+    @Test("Request can include only an until date")
+    func accountTransactionsWithOnlyUntilDate() throws {
+        let untilDate = try #require(DateConverter.date(from: "2019-05-31"))
+        let request = TransactionsByAccountRequest(
+            planId: "plan_id",
+            accountId: "account_id",
+            untilDate: untilDate
+        )
+
+        #expect(request.query == [URLQueryItem(name: "until_date", value: "2019-05-31")])
     }
 }

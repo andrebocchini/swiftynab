@@ -12,6 +12,7 @@ struct TransactionsByMonthRequest {
     let planId: String
     let month: Date
     let sinceDate: Date?
+    let untilDate: Date?
     let type: TransactionType?
     let lastKnowledgeOfServer: ServerKnowledge?
 
@@ -19,12 +20,14 @@ struct TransactionsByMonthRequest {
         planId: String,
         month: Date,
         sinceDate: Date? = nil,
+        untilDate: Date? = nil,
         type: TransactionType? = nil,
         lastKnowledgeOfServer: ServerKnowledge? = nil
     ) {
         self.planId = planId
         self.month = month
         self.sinceDate = sinceDate
+        self.untilDate = untilDate
         self.type = type
         self.lastKnowledgeOfServer = lastKnowledgeOfServer
     }
@@ -41,6 +44,7 @@ extension TransactionsByMonthRequest: Request {
     var query: [URLQueryItem]? {
         TransactionQueryBuilder.buildQuery(
             sinceDate: sinceDate,
+            untilDate: untilDate,
             type: type,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )

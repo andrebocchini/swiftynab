@@ -21,6 +21,7 @@ extension ScheduledTransactionsRequest: Request {
     var query: [URLQueryItem]? {
         TransactionQueryBuilder.buildQuery(
             sinceDate: nil,
+            untilDate: nil,
             type: nil,
             lastKnowledgeOfServer: lastKnowledgeOfServer
         )

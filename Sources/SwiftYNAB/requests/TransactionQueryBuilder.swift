@@ -11,6 +11,7 @@ import Foundation
 enum TransactionQueryBuilder {
     static func buildQuery(
         sinceDate: Date?,
+        untilDate: Date?,
         type: TransactionType?,
         lastKnowledgeOfServer: ServerKnowledge?
     ) -> [URLQueryItem]? {
@@ -19,6 +20,12 @@ enum TransactionQueryBuilder {
         if let sinceDate {
             let sinceDateString = DateConverter.iso8601DateString(from: sinceDate)
             let queryItem = URLQueryItem(name: "since_date", value: sinceDateString)
+            queryItems.append(queryItem)
+        }
+
+        if let untilDate {
+            let untilDateString = DateConverter.iso8601DateString(from: untilDate)
+            let queryItem = URLQueryItem(name: "until_date", value: untilDateString)
             queryItems.append(queryItem)
         }
 
