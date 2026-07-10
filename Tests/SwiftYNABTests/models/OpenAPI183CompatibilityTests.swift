@@ -65,6 +65,7 @@ struct OpenAPI183CompatibilityTests {
           "category_group_id": "group-id",
           "name": "Groceries",
           "hidden": false,
+          "internal": false,
           "budgeted": 10000,
           "budgeted_formatted": "$10.00",
           "budgeted_currency": 10.0,
@@ -318,15 +319,20 @@ struct OpenAPI183CompatibilityTests {
         let plan = try decode(PlanDetail.self, from: planDetailBaseSchemaJSON)
 
         let account = try #require(plan.accounts?.first)
+        let categoryGroup = try #require(plan.categoryGroups?.first)
         let category = try #require(plan.categories?.first)
         let month = try #require(plan.months?.first)
+        let monthCategory = try #require(month.categories.first)
         let transaction = try #require(plan.transactions?.first)
         let subtransaction = try #require(plan.subtransactions?.first)
         let scheduledTransaction = try #require(plan.scheduledTransactions?.first)
         let scheduledSubtransaction = try #require(plan.scheduledSubtransactions?.first)
 
         #expect(account.balanceFormatted == nil)
+        #expect(categoryGroup.internal == false)
+        #expect(category.internal == false)
         #expect(category.balanceFormatted == nil)
+        #expect(monthCategory.internal == false)
         #expect(month.incomeFormatted == nil)
         #expect(transaction.amountFormatted == nil)
         #expect(subtransaction.amountFormatted == nil)
@@ -383,6 +389,7 @@ private let planDetailBaseSchemaJSON = """
       "id": "group-id",
       "name": "Everyday",
       "hidden": false,
+      "internal": false,
       "deleted": false
     }
   ],
@@ -392,6 +399,7 @@ private let planDetailBaseSchemaJSON = """
       "category_group_id": "group-id",
       "name": "Groceries",
       "hidden": false,
+      "internal": false,
       "budgeted": 10000,
       "activity": -2500,
       "balance": 7500,
@@ -412,6 +420,7 @@ private let planDetailBaseSchemaJSON = """
           "category_group_id": "group-id",
           "name": "Groceries",
           "hidden": false,
+          "internal": false,
           "budgeted": 10000,
           "activity": -2500,
           "balance": 7500,

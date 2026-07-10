@@ -19,6 +19,9 @@ public struct CategoryGroupWithCategories: Codable, Equatable, Sendable {
     /// Whether or not the category group is hidden
     public let hidden: Bool
 
+    /// Whether or not the category group is internal
+    public let `internal`: Bool
+
     /// Whether or not the category group has been deleted. Deleted category groups will only be
     /// included in delta requests.
     public let deleted: Bool
@@ -31,12 +34,14 @@ public struct CategoryGroupWithCategories: Codable, Equatable, Sendable {
         id: String,
         name: String,
         hidden: Bool,
+        `internal`: Bool = false,
         deleted: Bool,
         categories: [Category]
     ) {
         self.id = id
         self.name = name
         self.hidden = hidden
+        self.internal = `internal`
         self.deleted = deleted
         self.categories = categories
     }

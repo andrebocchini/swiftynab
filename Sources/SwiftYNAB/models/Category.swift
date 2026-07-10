@@ -25,6 +25,9 @@ public struct Category: Codable, Equatable, Sendable {
     /// Whether or not the category is hidden
     public let hidden: Bool
 
+    /// Whether or not the category is internal
+    public let `internal`: Bool
+
     /// Original category group id (DEPRECATED: No longer used. Value will always be null)
     public let originalCategoryGroupId: String?
 
@@ -169,6 +172,7 @@ public struct Category: Codable, Equatable, Sendable {
         categoryGroupName: String?,
         name: String,
         hidden: Bool,
+        `internal`: Bool = false,
         originalCategoryGroupId: String?,
         note: String?,
         budgeted: Int,
@@ -210,6 +214,7 @@ public struct Category: Codable, Equatable, Sendable {
         self.categoryGroupName = categoryGroupName
         self.name = name
         self.hidden = hidden
+        self.internal = `internal`
         self.originalCategoryGroupId = originalCategoryGroupId
         self.note = note
         self.budgeted = budgeted
